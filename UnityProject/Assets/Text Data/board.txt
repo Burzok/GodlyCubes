@@ -1,0 +1,226 @@
+{
+  "Grid":[9,7],
+  "Tiles":[
+  	{
+  	  "Pos":[9,7],
+  	  "Title":"Town",
+  	  "Rules":"Heal damage\nPurchase equipment",
+  	  "Color":[143,91,51]
+    }{
+  	  "Pos":[8,7],
+  	  "Title":"Rapids",
+  	  "Rules":"You may take one\n damage to move\nforwards 2D6 spaces",
+  	  "Color":[90,143,89],
+    }{
+  	  "Pos":[7,7],
+  	  "Title":"Clearing",
+  	  "Rules":"Draw two, choose one",
+  	  "Color":[90,143,89],
+    }{
+  	  "Pos":[6,7],
+  	  "Title":"Undergrowth",
+  	  "Rules":"Draw one",
+  	  "Color":[90,143,89],
+    }{
+  	  "Pos":[5,7],
+  	  "Title":"Tall Trees",
+  	  "Rules":"Draw three, choose one\nSkip your next turn",
+  	  "Color":[90,143,89],
+    }{
+  	  "Pos":[4,7],
+  	  "Title":"Meadow",
+  	  "Rules":"Take another turn!",
+  	  "Color":[90,143,89],
+    }{
+  	  "Pos":[3,7],
+  	  "Title":"Swamp",
+  	  "Rules":"Draw two, pick one\nCannot leave unless\n you roll doubles OR\n take one damage",
+  	  "Color":[90,143,89]
+    }{
+  	  "Pos":[2,7],
+  	  "Title":"Wasteland",
+  	  "Rules":"Draw two, opponent picks\none for you",
+  	  "Color":[90,143,89]
+    }{
+  	  "Pos":[1,7],
+  	  "Title":"Entrance",
+  	  "Rules":"Move D6 squares forward",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[1,6],
+  	  "Title":"Dark Stairs",
+  	  "Rules":"Draw one",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[1,5],
+  	  "Title":"Cells",
+  	  "Rules":"Draw two, pick one",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[1,4],
+  	  "Title":"Library",
+  	  "Rules":"Draw four, pick one\nSkip next turn",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[1,3],
+  	  "Title":"Trap door",
+  	  "Rules":"Fall down to the Stacks,\n take one damage",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[1,2],
+  	  "Title":"Laboratory",
+  	  "Rules":"Draw two, pick one",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[1,1],
+  	  "Title":"Kennel",
+  	  "Rules":"Draw one from town deck\nDraw three, opponent\n picks one",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[2,1],
+  	  "Title":"Town Portal",
+  	  "Rules":"Go back to town",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[3,1],
+  	  "Title":"Mirror",
+  	  "Rules":"Swap places with\nanother player",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[4,1],
+  	  "Title":"Wrong Turn",
+  	  "Rules":"Move backwards D6",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[5,1],
+  	  "Title":"Junk Heap",
+  	  "Rules":"Draw three from town\ndeck, opponent chooses\n one for you",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[6,1],
+  	  "Title":"Hidden Door",
+  	  "Rules":"Take another turn!",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[7,1],
+  	  "Title":"Guard Tower",
+  	  "Rules":"Draw three, pick one",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[8,1],
+  	  "Title":"Bright Stairs",
+  	  "Rules":"Draw two, pick one",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[9,1],
+  	  "Title":"Exit",
+  	  "Rules":"Move forwards D6 spaces",
+  	  "Color":[101,101,101]
+    }{
+  	  "Pos":[9,2],
+  	  "Title":"Hedge Maze",
+  	  "Rules":"Skip a turn",
+  	  "Color":[90,143,89],
+    }{
+  	  "Pos":[9,3],
+  	  "Title":"Desert",
+  	  "Rules":"Draw one",
+  	  "Color":[90,143,89],
+    }{
+  	  "Pos":[9,4],
+  	  "Title":"Mirage",
+  	  "Rules":"Go back to desert",
+  	  "Color":[90,143,89],
+    }{
+  	  "Pos":[9,5],
+  	  "Title":"Oasis",
+  	  "Rules":"Draw three, pick one",
+  	  "Color":[90,143,89],
+    }{
+  	  "Pos":[9,6],
+  	  "Title":"Outskirts",
+  	  "Rules":"You may pay one\ngold to move to Town",
+  	  "Color":[90,143,89],
+    }{
+  	  "Pos":[2,2],
+  	  "Title":"Guillotine",
+  	  "Rules":"Draw three, opponent\n picks one",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[3,2],
+  	  "Title":"Solitary",
+  	  "Rules":"Skip a turn",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[4,2],
+  	  "Title":"Interrogation",
+  	  "Rules":"Discard a defeated\ncard to convert\nvictory points into\ngold",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[5,2],
+  	  "Title":"Church",
+  	  "Rules":"Draw two, pick one",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[5,3],
+  	  "Title":"Cemetery",
+  	  "Rules":"Fight a creature from\n opponent's victory pile",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[5,4],
+  	  "Title":"Infirmary",
+  	  "Rules":"Heal all damage\nSkip next turn",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[5,5],
+  	  "Title":"Labyrinth",
+  	  "Rules":"Move back D6",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[4,5],
+  	  "Title":"Gauntlet",
+  	  "Rules":"Draw one\nDraw another one",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[3,5],
+  	  "Title":"Marionette",
+  	  "Rules":"Until your next turn,\nmove for other players",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[2,5],
+  	  "Title":"Abyss",
+  	  "Rules":"Fall down to the\nPentacle",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[2,4],
+  	  "Title":"Asylum",
+  	  "Rules":"Draw one\nYour movement direction\nis permanently reversed",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[2,3],
+  	  "Title":"Stacks",
+  	  "Rules":"Draw three, pick one",
+  	  "Color":[69,60,60],
+    }{
+  	  "Pos":[4,4],
+  	  "Title":"Altar",
+  	  "Rules":"Take two damage\nGet the gold from limbo",
+  	  "Color":[84,0,0],
+    }{
+  	  "Pos":[3,4],
+  	  "Title":"Pentacle",
+  	  "Rules":"Take one damage\nDraw two, pick one",
+  	  "Color":[84,0,0],
+    }{
+  	  "Pos":[3,3],
+  	  "Title":"Hellgate",
+  	  "Rules":"Draw one",
+  	  "Color":[84,0,0],
+    }{
+  	  "Pos":[4,3],
+  	  "Title":"Darkness",
+  	  "Rules":"Move back D6",
+  	  "Color":[84,0,0],
+    }
+  ]
+}
