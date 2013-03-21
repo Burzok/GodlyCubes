@@ -3,7 +3,15 @@
 #pragma downcast
 
 // Does this script currently respond to input?
-var canControl : boolean = true;
+var canControl : boolean;
+if(this.name=="You")
+{
+	 canControl = true;
+}
+else
+{
+	 canControl = false;
+}
 
 var useFixedUpdate : boolean = true;
 

@@ -1,8 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\test.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js">
     <Files>
-      <File FileName="Assets\Scripts\test.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NetworkRigidbody.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NetUIScript.cs" Line="239" Column="24" />
+      <File FileName="Assets\Scripts\PlayerListScript.cs" Line="68" Column="17" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" Line="7" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" Line="14" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

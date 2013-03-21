@@ -9,8 +9,8 @@ public class NetUIScript : MonoBehaviour {
 	State state_ = State.MAIN_MENU;
 	const string DEFAULT_GAME_NAME = "Unnamed Game";
 	const string DEFAULT_PLAYER_NAME = "Unknown Player";
-	const string GAME_IDENTIFIER = "BurzokTesting3";
-	const string GAME_DISPLAY_IDENTIFIER = "My testing games";
+	const string GAME_IDENTIFIER = "GodlyCubes";
+	const string GAME_DISPLAY_IDENTIFIER = "Godly Cubes";
 	const int DEFAULT_PORT = 30000;
 	const int MAX_PLAYERS = 4;
 	const int MAX_CONNECTIONS = MAX_PLAYERS-1;
@@ -19,20 +19,8 @@ public class NetUIScript : MonoBehaviour {
 	bool help_shown_ = false;
 	bool chat_shown_ = false;
 	string chat_ = "";
-	public GameObject cursor_prefab;
-	public GameObject board_prefab;
-	public GameObject play_area_prefab;
-	public GameObject token_prefab;
-	public GUISkin help_gui_skin;
-	public AudioClip[] chat_sounds;
-	public AudioClip[] songs;
-	AudioSource music_;
-	int current_song_ = -1;
-	int target_song_ = -1;
+	public GameObject player_prefab;
 	int first_state_ui_update = 0;
-	const float MAX_SONG_VOLUME = 0.4f;
-	List<GameObject> play_areas = new List<GameObject>();
-	Vector2 scroll_pos = new Vector2();
 	
 	string queued_join_game_name_ = "";
 	string game_name_ = "???";
@@ -43,69 +31,9 @@ public class NetUIScript : MonoBehaviour {
 	void Start() {
 		RequestPageURLForAutoJoin();
 		//TryToCreateGame(true);
-		music_ = gameObject.AddComponent<AudioSource>();
-		music_.volume = 0.0f;
-		music_.loop = true;
-		target_song_ = Random.Range(0,4);
 		ConsoleScript.Log(GAME_DISPLAY_IDENTIFIER);
 	}
-	
-	[RPC]
-	void TargetSongWasSet(int player, int song){
-		string song_name = "";
-		switch(song){
-			case -1:
-				song_name = "silence"; break;
-			case 0:
-				song_name = "\"Forest\""; break;
-			case 1:
-				song_name = "\"Dungeon\""; break;
-			case 2:
-				song_name = "\"HellGate\""; break;
-			case 3:
-				song_name = "\"The Grim\""; break;
-		}
-		var player_info_list = PlayerListScript.Instance().GetPlayerInfoList();
-		string player_name = "You";
-		if(player_info_list.ContainsKey(player)){
-			player_name = player_info_list[player].name_;	
-		}
-		ConsoleScript.Log(player_name + " changed song to " + song_name);
-		target_song_ = song;
-	}
-	
-	[RPC]
-	void SyncSongWithServer(int player, int current_song, int target_song, float volume, float time){
-		if(player != Net.GetMyID()){
-			return;
-		}
-		current_song_ = current_song;
-		target_song_ = target_song;
-		if(current_song_ != -1){
-			music_.clip = songs[current_song_];
-		}
-		music_.Play();
-		music_.volume = volume;
-		music_.time = time;
-	}
-	
-	
-	void SetTargetSong(int which) {
-		if(Network.connections.Length > 0){
-			networkView.RPC("TargetSongWasSet", RPCMode.All, Net.GetMyID(),which);
-		} else {
-			TargetSongWasSet(Net.GetMyID(),which);
-		}
-	}
-	
-	public void SpawnHealthTokens() {
-		foreach(GameObject play_area in play_areas){
-			Transform token_spawns = play_area.transform.Find("TokenSpawns");
-			foreach(Transform token_spawn in play_area.transform.FindChild("token_spawns")){
-				GameObject token_object = (GameObject)Network.Instantiate(token_prefab, token_spawn.position, Quaternion.identity, 0);
-			}
-		}
-	}
+
 	
 	void NetEventServerInitialized(){
 		if(state_ == State.CREATING){
@@ -113,18 +41,7 @@ public class NetUIScript : MonoBehaviour {
 		}
 		ConsoleScript.Log("Server initialized");
 		int player_id = int.Parse(Network.player.ToString());
-		TellServerPlayerName(player_name_);
-		Network.Instantiate(board_prefab, GameObject.Find("board_spawn").transform.position, GameObject.Find("board_spawn").transform.rotation,0);
-		int count = 0;
-		foreach(Transform player_spawn in GameObject.Find("play_areas").transform){
-			GameObject play_area_obj = (GameObject)Network.Instantiate(play_area_prefab, player_spawn.transform.position, player_spawn.transform.rotation,0);
-			play_area_obj.GetComponent<PlayAreaScript>().SetColor(count);
-			play_areas.Add (play_area_obj);
-			++count;
-		}
-		SpawnHealthTokens();
-		
-		Network.Instantiate(cursor_prefab, new Vector3(0,0,0), Quaternion.identity, 0);
+		TellServerPlayerName(player_name_);		
 	}
 	
 	void NetEventConnectedToServer(){
@@ -132,8 +49,6 @@ public class NetUIScript : MonoBehaviour {
 			SetState(State.JOIN_SUCCESS);
 		}
 		ConsoleScript.Log("Connected to server with ID: "+Network.player);
-		TellServerPlayerName(player_name_);
-		Network.Instantiate(cursor_prefab, new Vector3(0,0,0), Quaternion.identity, 0);
 	}
 	
 	void NetEventFailedToConnectToMasterServer(NetEvent net_event) {
@@ -225,24 +140,7 @@ public class NetUIScript : MonoBehaviour {
 		}
 	}
 	
-	void Update() {
-		if(current_song_ != target_song_){
-			if(music_.volume == 0.0f){
-				current_song_ = target_song_;
-				if(current_song_ != -1){
-					music_.clip = songs[current_song_];
-				} else {
-					music_.Stop();
-				}
-			} else {
-				music_.volume = Mathf.Max(0.0f, music_.volume - Time.deltaTime);
-			}
-		} else if(current_song_ != -1){
-			music_.volume = Mathf.Min(MAX_SONG_VOLUME, music_.volume + Time.deltaTime);
-		}
-		if(!music_.isPlaying){
-			music_.Play();
-		}	
+	void Update() {	
 		NetEvent net_event = NetEventScript.Instance().GetEvent();
 		while(net_event != null){
 			switch(net_event.type()){
@@ -263,7 +161,6 @@ public class NetUIScript : MonoBehaviour {
 					break;
 				case NetEvent.Type.PLAYER_CONNECTED:
 					ConsoleScript.Log("Player "+net_event.network_player()+" connected");
-					networkView.RPC("SyncSongWithServer",RPCMode.Others,int.Parse(net_event.network_player().ToString()), current_song_, target_song_, music_.volume, music_.time);
 					break;
 				case NetEvent.Type.PLAYER_DISCONNECTED:
 					NetEventPlayerDisconnected(net_event);
@@ -337,6 +234,8 @@ public class NetUIScript : MonoBehaviour {
 	void TellServerPlayerName(string name){		
 		int player_id = int.Parse(Network.player.ToString());
 		ConsoleScript.Log("Telling server that player "+player_id+" is named: "+player_name_);
+		GameObject player_obj=(GameObject)Network.Instantiate(player_prefab, GameObject.Find("player_spawn").transform.position, GameObject.Find("player_spawn").transform.rotation,0);
+		player_obj.name="You";
 		if(Network.isClient){
 			networkView.RPC("SetPlayerName", RPCMode.Server, player_id, name);
 		} else {
@@ -348,14 +247,9 @@ public class NetUIScript : MonoBehaviour {
 		networkView.RPC ("ReceiveChatMessage",RPCMode.All,Net.GetMyID(), msg);	
 	}
 	
-	void PlayRandomSound(AudioClip[] clips, float volume){
-		audio.PlayOneShot(clips[Random.Range(0,clips.Length)], volume);
-	}		
-	
 	[RPC]
     void ReceiveChatMessage(int id, string msg){
-		ConsoleScript.Log (PlayerListScript.Instance().GetPlayerInfoList()[id].name_+": "+msg);	   
-		PlayRandomSound(chat_sounds, 0.6f);
+		ConsoleScript.Log(PlayerListScript.Instance().GetPlayerInfoList()[id].name_+": "+msg);	   
 	}
 	
 	void SetState(State state) {
@@ -423,23 +317,6 @@ public class NetUIScript : MonoBehaviour {
 				break;
 		}
 		++first_state_ui_update;
-		
-		if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Alpha1) {
-	      	SetTargetSong(-1);
-	    } 
-	    if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Alpha2) {
-	      	SetTargetSong(0);
-	    } 
-	    if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Alpha3) {
-	      	SetTargetSong(1);
-	    } 
-	    if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Alpha4) {
-	      	SetTargetSong(2);
-	    } 
-	    if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Alpha5) {
-	      	SetTargetSong(3);
-	    } 
-	    
 	}
 	
 	void DrawGameGUI() {
@@ -480,7 +357,7 @@ public class NetUIScript : MonoBehaviour {
 		GUILayout.EndHorizontal();*/
 		GUILayout.BeginHorizontal();
 		if(GUILayout.Button("Restart Game")){
-			ObjectManagerScript.Instance().RecoverDice();
+
 		}
 		GUILayout.EndHorizontal();
 		GUILayout.BeginHorizontal();
@@ -494,43 +371,6 @@ public class NetUIScript : MonoBehaviour {
 			GUILayout.EndHorizontal();
 			GUI.contentColor = Color.white;
 		}
-		
-		
-		GUILayout.BeginArea(new Rect(Screen.width - 200, 0, 200, 300));
-		if(!help_shown_){
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Press '?' for help", help_gui_skin.label);
-			GUILayout.EndHorizontal();
-		} else {
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Press '?' to close help", help_gui_skin.label);
-			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Press 'Z' to zoom in", help_gui_skin.label);
-			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Press 'WASD' to move while zoomed", help_gui_skin.label);
-			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Press 'Q' or 'E' to rotate cards", help_gui_skin.label);
-			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Press 'R' to rotate a card to be readable", help_gui_skin.label);
-			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Press 'F' to flip cards", help_gui_skin.label);
-			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Press 'T' to tap tokens", help_gui_skin.label);
-			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Press 'RETURN' to chat", help_gui_skin.label);
-			GUILayout.EndHorizontal();
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Press '1-5' to play different songs", help_gui_skin.label);
-			GUILayout.EndHorizontal();
-		}
-		GUILayout.EndArea();
 		
 		if(chat_shown_){    
 			GUILayout.BeginArea(new Rect(Screen.width*0.5f - 200, Screen.height-30, 400, 200));
@@ -640,7 +480,6 @@ public class NetUIScript : MonoBehaviour {
 		GUILayout.Label("Available servers:");
 		GUILayout.EndHorizontal();
 		HostData[] servers = MasterServer.PollHostList();
-		scroll_pos = GUILayout.BeginScrollView(scroll_pos);
 		foreach(HostData server in servers){
 			GUILayout.BeginHorizontal();
 			string display_name = server.gameName + " " + server.connectedPlayers + "/" + server.playerLimit;
@@ -649,7 +488,6 @@ public class NetUIScript : MonoBehaviour {
 			}
 			GUILayout.EndHorizontal();
 		}
-		GUILayout.EndScrollView();
 		GUILayout.BeginHorizontal();
 		if(GUILayout.Button("Back")){
 			SetState(State.MAIN_MENU);
