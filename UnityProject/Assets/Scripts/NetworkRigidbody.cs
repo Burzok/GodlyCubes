@@ -15,6 +15,10 @@ public class NetworkRigidbody : MonoBehaviour {
 		internal Vector3 angularVelocity;
 	}
 	
+	void Start() {
+		networkView.observed = this;
+	}
+	
 	// We store twenty states with "playback" information
 	State[] m_BufferedState = new State[20];
 	// Keep track of what slots are used
@@ -82,11 +86,15 @@ public class NetworkRigidbody : MonoBehaviour {
 	// And only if no more data arrives we will use extra polation
 	void Update () {
 		if(networkView.isMine){
+			//Debug.Log(networkView.isMine +" "+ Network.player + " " + this.name);
 			return;
 		}
-		rigidbody.isKinematic = true;
+		//Debug.Log(networkView.isMine +" "+ Network.player + " " + this.name);
+		//rigidbody.isKinematic = true;
 		rigidbody.position = m_BufferedState[0].pos;
 		rigidbody.rotation = m_BufferedState[0].rot;
+		//rigidbody.velocity = m_BufferedState[0].velocity; // nie roznicy z velocity, czy bez, lag i tak jest
+		//rigidbody.angularVelocity = m_BufferedState[0].angularVelocity;
 		/*if(!networkView.isMine){
 			rigidbody.useGravity = false;
 		}
