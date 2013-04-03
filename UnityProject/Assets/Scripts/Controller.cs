@@ -3,11 +3,21 @@ using System.Collections;
 
 public class Controller : MonoBehaviour {
 	
-	public float speed = 0.1f;
+	public float speed = 1f;
+	
+	public bool mine;
 	
 	// Use this for initialization
 	void Start () {
-		networkView.observed = this;
+
+		mine = networkView.isMine;
+		if( networkView.isMine){
+			//rigidbody.isKinematic = true;
+			rigidbody.useGravity = true;
+		}
+		else{
+			rigidbody.useGravity = false;
+		}
 	}
 	
 	// Update is called once per frame

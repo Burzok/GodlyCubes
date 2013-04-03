@@ -46,6 +46,7 @@ public class NetworkRigidbody : MonoBehaviour {
 			Vector3 velocity = Vector3.zero;
 			Quaternion rot = Quaternion.identity;
 			Vector3 angularVelocity = Vector3.zero;
+			
 			stream.Serialize(ref pos);
 			stream.Serialize(ref velocity);
 			stream.Serialize(ref rot);
@@ -85,14 +86,16 @@ public class NetworkRigidbody : MonoBehaviour {
 	// By having interpolationBackTime the average ping, you will usually use interpolation.
 	// And only if no more data arrives we will use extra polation
 	void Update () {
-		if(networkView.isMine){
+		//if(networkView.isMine){
 			//Debug.Log(networkView.isMine +" "+ Network.player + " " + this.name);
-			return;
-		}
+			//return;
+		//}
 		//Debug.Log(networkView.isMine +" "+ Network.player + " " + this.name);
 		//rigidbody.isKinematic = true;
-		rigidbody.position = m_BufferedState[0].pos;
-		rigidbody.rotation = m_BufferedState[0].rot;
+		if(!networkView.isMine){
+			rigidbody.position = m_BufferedState[0].pos;
+			rigidbody.rotation = m_BufferedState[0].rot;
+		}
 		//rigidbody.velocity = m_BufferedState[0].velocity; // nie roznicy z velocity, czy bez, lag i tak jest
 		//rigidbody.angularVelocity = m_BufferedState[0].angularVelocity;
 		/*if(!networkView.isMine){
