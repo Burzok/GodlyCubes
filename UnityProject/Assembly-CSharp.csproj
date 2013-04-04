@@ -37,62 +37,35 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity4/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity 4.1/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity4/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity 4.1/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BoardCreateScript.cs" />
-     <Compile Include="Assets\Scripts\BoardScript.cs" />
-     <Compile Include="Assets\Scripts\CardBakeScript.cs" />
-     <Compile Include="Assets\Scripts\CardData.cs" />
-     <Compile Include="Assets\Scripts\CardEditScript.cs" />
-     <Compile Include="Assets\Scripts\CardManagerScript.cs" />
-     <Compile Include="Assets\Scripts\CardScript.cs" />
-     <Compile Include="Assets\Scripts\CoinScript.cs" />
-     <Compile Include="Assets\Scripts\ColorPalette.cs" />
      <Compile Include="Assets\Scripts\ConsoleScript.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\CursorScript.cs" />
-     <Compile Include="Assets\Scripts\DeckScript.cs" />
-     <Compile Include="Assets\Scripts\DiceScript.cs" />
-     <Compile Include="Assets\Scripts\DrawEmptyScript.cs" />
-     <Compile Include="Assets\Scripts\DrawSpawnerScript.cs" />
      <Compile Include="Assets\Scripts\GrabbableScript.cs" />
-     <Compile Include="Assets\Scripts\JSONTest.cs" />
      <Compile Include="Assets\Scripts\MainCameraScript.cs" />
-     <Compile Include="Assets\Scripts\MiniJSON.cs" />
      <Compile Include="Assets\Scripts\Net.cs" />
      <Compile Include="Assets\Scripts\NetEventScript.cs" />
      <Compile Include="Assets\Scripts\NetUIScript.cs" />
      <Compile Include="Assets\Scripts\NetworkRigidbody.cs" />
      <Compile Include="Assets\Scripts\ObjectManagerScript.cs" />
-     <Compile Include="Assets\Scripts\ParentTokenScript.cs" />
-     <Compile Include="Assets\Scripts\PlayAreaScript.cs" />
      <Compile Include="Assets\Scripts\PlayerListScript.cs" />
-     <Compile Include="Assets\Scripts\ShadowCamScript.cs" />
-     <Compile Include="Assets\Scripts\TileManagerScript.cs" />
-     <Compile Include="Assets\Scripts\TileScript.cs" />
-     <Compile Include="Assets\Scripts\TitleHolderScript.cs" />
-     <Compile Include="Assets\Scripts\TokenScript.cs" />
-     <Compile Include="Assets\Scripts\ZoomCameraScript.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
-     <None Include="Assets\Art\Multiply.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
-     <None Include="Assets\Materials\Alpha-Bumped CatchProject.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
-     <None Include="Assets\Text Data\board.txt" />
-     <None Include="Assets\Text Data\cards.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
