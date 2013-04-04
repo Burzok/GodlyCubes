@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Controler : MonoBehaviour {
+public class Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {

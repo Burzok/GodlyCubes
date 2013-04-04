@@ -5,6 +5,7 @@ public class Networking : MonoBehaviour {
 	
 	string IPServer = "127.0.0.1";
 	string IPServ = "";
+	float timeHostWasRegistered;
 	
 	void Awake () {
         MasterServer.ClearHostList();
@@ -21,6 +22,7 @@ public class Networking : MonoBehaviour {
 			if (GUI.Button (new Rect(10,50,100,30),"Start Server")) {
 				Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
 	  			MasterServer.RegisterHost("GodlyCubesLight", "Godly Cubes Testserver", "Testing GodlyCubes" );
+				timeHostWasRegistered = Time.time;
 		 		foreach (GameObject go in FindObjectsOfType(typeof(GameObject))) {
 		 			 go.SendMessage("OnLoaded", SendMessageOptions.DontRequireReceiver);	
 				}
@@ -41,8 +43,12 @@ public class Networking : MonoBehaviour {
   				Application.Quit();
   			}
  		}
+		
+		if (Time.time - timeHostWasRegistered >= 1.0f)
+		{
+			MasterServer.RequestHostList("GodlyCubesLight");
+		}
 		HostData[] data = MasterServer.PollHostList();
-		Debug.Log (data);
 		// Go through all the hosts in the host list
 		foreach (var element in data)
 		{
