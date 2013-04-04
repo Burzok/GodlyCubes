@@ -44,17 +44,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ConsoleScript.cs" />
-     <Compile Include="Assets\Scripts\Controller.cs" />
-     <Compile Include="Assets\Scripts\CursorScript.cs" />
-     <Compile Include="Assets\Scripts\GrabbableScript.cs" />
-     <Compile Include="Assets\Scripts\MainCameraScript.cs" />
-     <Compile Include="Assets\Scripts\Net.cs" />
-     <Compile Include="Assets\Scripts\NetEventScript.cs" />
-     <Compile Include="Assets\Scripts\NetUIScript.cs" />
-     <Compile Include="Assets\Scripts\NetworkRigidbody.cs" />
-     <Compile Include="Assets\Scripts\ObjectManagerScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerListScript.cs" />
+     <Compile Include="Assets\Scripts\Controler.cs" />
+     <Compile Include="Assets\Scripts\Networking.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
