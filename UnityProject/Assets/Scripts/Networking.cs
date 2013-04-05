@@ -7,7 +7,7 @@ public class Networking : MonoBehaviour {
 	
 	string serverName = "Server Name";
 	float timeHostWasRegistered;	
-	Rect windowRect = new Rect(Screen.width * .5f-150f, 20f, 300f, 150f);
+	Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
 	MenuState guiState=MenuState.Main;
 	
 	void Awake () {
@@ -22,6 +22,9 @@ public class Networking : MonoBehaviour {
 				
 			if (GUI.Button (new Rect(Screen.width * .5f+20f, 20f, 100f, 50f),"Connect")) 
 				guiState = MenuState.Connect;
+			
+			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Quit"))
+				Application.Quit();
 		}
 		
  		if(guiState==MenuState.CreateServer) { 
@@ -44,8 +47,31 @@ public class Networking : MonoBehaviour {
 			
 			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
 				guiState = MenuState.Main;
-		}			
-	}
+		}
+		
+		if(guiState==MenuState.ServerGame) {  
+			if(Network.isServer) {
+				GUI.Label(new Rect(10,10,250,40),"Server name: " + serverName);
+  			}    
+			
+			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {				 
+				if(Network.isServer)
+   					networkView.RPC("ExitCL", RPCMode.Others);
+   				
+				Network.Disconnect();
+				guiState = MenuState.Main;
+			}
+		}
+		
+		if(guiState==MenuState.ClientGame) {
+			GUI.Label(new Rect(10,10,250,40),"Server name: " + serverName);
+			
+			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {  				
+				Network.Disconnect();
+				guiState = MenuState.Main;
+			}
+		}
+	}	
 	
 	void OnConnectedToServer() {	 
 		foreach (GameObject go in FindObjectsOfType(typeof(GameObject)))
@@ -54,7 +80,8 @@ public class Networking : MonoBehaviour {
 	
 	[RPC]
 	void ExitCL() {
-  		Application.Quit();
+  		Network.Disconnect();
+		guiState = MenuState.Main;
 	}
 	
 	void ServerList (int windowID) {
@@ -63,8 +90,8 @@ public class Networking : MonoBehaviour {
 				MasterServer.RequestHostList("GodlyCubesLight");
 			}
 			HostData[] data = MasterServer.PollHostList();
-		// Go through all the hosts in the host list
-			foreach (var element in data)
+			
+		foreach (var element in data)
 			{
 				GUILayout.BeginHorizontal();	
 				var name = element.gameName + " " + element.connectedPlayers + " / " + element.playerLimit;
@@ -80,8 +107,9 @@ public class Networking : MonoBehaviour {
 				GUILayout.FlexibleSpace();
 				if (GUILayout.Button("Connect"))
 				{
-					// Connect to HostData struct, internally the correct method is used (GUID when using NAT).
-					Network.Connect(element);			
+					Network.Connect(element);
+					serverName = element.gameName;
+					guiState = MenuState.ClientGame;					
 				}
 				GUILayout.EndHorizontal();	
 			}
