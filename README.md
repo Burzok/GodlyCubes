@@ -3,11 +3,11 @@ GodlyCubes
 
 The ultimate battle between cubes. (2 man project)
 
-TASKS (18.03.13)
+TASKS FOR 22.04.13
 
-- create repo (DONE)
-- add Clean Unity Project (DONE)
-- add Networking code (DONE)
-- rewrite Networking code
-- add cube players
-- add simple attack (Force Push) (I tough it will be shooting?)
+- Server List (Done)
+- Chat
+- Server-client sepparation
+- Global Player List
+- Skillshot
+- WASD, network movement. (Partialy Done)
