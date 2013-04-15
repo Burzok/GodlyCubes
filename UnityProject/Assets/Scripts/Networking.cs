@@ -14,7 +14,7 @@ public class Networking : MonoBehaviour {
 	
 	void Awake () {
         MasterServer.ClearHostList();
-        MasterServer.RequestHostList("GodlyCubesLight");	
+        MasterServer.RequestHostList("GodlyCubesLight");
 	}
 	
 	void OnGUI () {		
@@ -30,17 +30,13 @@ public class Networking : MonoBehaviour {
 		}
 		
  		if(guiState==MenuState.CreateServer) { 
-			serverName = GUI.TextField(new Rect(Screen.width * .5f-50f, 5f, 100f, 20f), serverName);
-			playerName = GUI.TextField(new Rect(Screen.width * .5f-50f, 30f, 100f, 20f), playerName);
+			serverName = GUI.TextField(new Rect(Screen.width * .5f-50f, 30f, 100f, 20f), serverName);
 			if (GUI.Button (new Rect(Screen.width * .5f-50f, 55f, 100f, 50f),"Create")) {
   				Network.InitializeServer(2, 25000, !Network.HavePublicAddress());
 	  			MasterServer.RegisterHost("GodlyCubesLight", serverName);
 				timeHostWasRegistered = Time.time;
 				GameObject spawner = GameObject.Find ("Spawner");
-				goPlayer = Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) as GameObject;
-		 		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName);	
-				
-				guiState=MenuState.ServerGame;
+			guiState=MenuState.ServerGame;
 			}
 			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
 				guiState = MenuState.Main;
@@ -79,8 +75,6 @@ public class Networking : MonoBehaviour {
 			
 			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {  				
 				networkView.RPC("UnregisterPlayer", RPCMode.Server, goPlayer.networkView.viewID);
-				Network.RemoveRPCs(goPlayer.networkView.viewID);
-				Network.Destroy(goPlayer.networkView.viewID);
 				GameObject []players = GameObject.FindGameObjectsWithTag("Player");
 
 				Network.Disconnect();
@@ -101,6 +95,11 @@ public class Networking : MonoBehaviour {
 		{
 			GameObject.Destroy(player);					
 		}	
+	}
+	
+	void OnPlayerDisconnected(NetworkPlayer player) {
+		Network.RemoveRPCs(player);
+		Network.DestroyPlayerObjects(player);
 	}
 	
 	[RPC]
