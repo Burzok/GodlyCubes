@@ -5,11 +5,12 @@ public class Networking : MonoBehaviour {
 	public GameObject player_prefab;
 	
 	enum MenuState{Main, CreateServer, Connect, ServerGame, ClientGame};
+	MenuState guiState=MenuState.Main;
 	string serverName = "Server Name";
 	string playerName = "Player Name";
+	GameObject goPlayer;
 	float timeHostWasRegistered;	
-	Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
-	MenuState guiState=MenuState.Main;
+	Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);	
 	
 	void Awake () {
         MasterServer.ClearHostList();
@@ -32,14 +33,13 @@ public class Networking : MonoBehaviour {
 			serverName = GUI.TextField(new Rect(Screen.width * .5f-50f, 5f, 100f, 20f), serverName);
 			playerName = GUI.TextField(new Rect(Screen.width * .5f-50f, 30f, 100f, 20f), playerName);
 			if (GUI.Button (new Rect(Screen.width * .5f-50f, 55f, 100f, 50f),"Create")) {
-  				Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
+  				Network.InitializeServer(2, 25000, !Network.HavePublicAddress());
 	  			MasterServer.RegisterHost("GodlyCubesLight", serverName);
 				timeHostWasRegistered = Time.time;
 				GameObject spawner = GameObject.Find ("Spawner");
-				Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0);
-		 		foreach (GameObject go in FindObjectsOfType(typeof(GameObject))) {
-		 			 go.SendMessage("OnLoaded", SendMessageOptions.DontRequireReceiver);	
-				}
+				goPlayer = Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) as GameObject;
+		 		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName);	
+				
 				guiState=MenuState.ServerGame;
 			}
 			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
@@ -62,7 +62,13 @@ public class Networking : MonoBehaviour {
 			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {				 
 				if(Network.isServer)
    					networkView.RPC("ExitCL", RPCMode.Others);
-   				
+				
+				GameObject []players = GameObject.FindGameObjectsWithTag("Player");
+				foreach(GameObject player in players)
+				{
+					Network.Destroy(player.networkView.viewID);					
+				}
+				
 				Network.Disconnect();
 				guiState = MenuState.Main;
 			}
@@ -72,6 +78,11 @@ public class Networking : MonoBehaviour {
 			GUI.Label(new Rect(10,10,250,40),"Server name: " + serverName);
 			
 			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {  				
+				networkView.RPC("UnregisterPlayer", RPCMode.Server, goPlayer.networkView.viewID);
+				Network.RemoveRPCs(goPlayer.networkView.viewID);
+				Network.Destroy(goPlayer.networkView.viewID);
+				GameObject []players = GameObject.FindGameObjectsWithTag("Player");
+
 				Network.Disconnect();
 				guiState = MenuState.Main;
 			}
@@ -80,9 +91,16 @@ public class Networking : MonoBehaviour {
 	
 	void OnConnectedToServer() {			
 		GameObject spawner = GameObject.Find ("Spawner");
-		Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0);
-		foreach (GameObject go in FindObjectsOfType(typeof(GameObject)))
-			go.SendMessage("OnLoaded", SendMessageOptions.DontRequireReceiver);		
+		goPlayer = Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) as GameObject;
+		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName);	
+	}
+	
+	void OnDisconnectedFromServer () {
+		GameObject []players = GameObject.FindGameObjectsWithTag("Player");
+		foreach(GameObject player in players)
+		{
+			GameObject.Destroy(player);					
+		}	
 	}
 	
 	[RPC]
