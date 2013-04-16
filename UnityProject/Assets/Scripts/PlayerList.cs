@@ -34,7 +34,7 @@ public class PlayerList : MonoBehaviour {
 		player.assist=0;		
 		
 		playerList.Add(player);
-		networkView.RPC("UpdatePlayer", RPCMode.All, player.id, player.color);
+		networkView.RPC("UpdatePlayer", RPCMode.AllBuffered, player.id, player.color);
 	}
 	
 	[RPC] //Server function
