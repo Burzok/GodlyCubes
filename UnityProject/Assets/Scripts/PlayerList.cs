@@ -15,7 +15,7 @@ struct PlayerData
 public class PlayerList : MonoBehaviour {
 	
 	List<PlayerData> playerList = new List<PlayerData>(2);
-	
+
 	[RPC] //Server function
 	void RegisterPlayer(string playerName, NetworkViewID playerID) {
 		
@@ -34,11 +34,6 @@ public class PlayerList : MonoBehaviour {
 		player.assist=0;		
 		playerList.Add(player);
 		networkView.RPC("UpdatePlayer", RPCMode.AllBuffered, player.id, player.color);
-		
-		foreach(var element in playerList)
-		{
-			Debug.Log(element.id);
-		}
 	}
 	
 	[RPC] //Server function
@@ -59,31 +54,20 @@ public class PlayerList : MonoBehaviour {
 		}
 	}
 	
-	[RPC]
+	[RPC] //Server function
 	void GetPlayerInfo(NetworkViewID idToFind){ 
-		
-		Debug.Log (playerList.Count);
-		
-		foreach(var element in playerList)
-		{
-			Debug.Log(element.id);
-		}
 		
 		PlayerData playerToSend = new PlayerData();
 		playerToSend = playerList.Find(playerToFind => playerToFind.id == idToFind);
-		Debug.Log (playerToSend.id);
-		Debug.Log (playerToSend.name);
-		Debug.Log (playerToSend.color);
-		Debug.Log (playerToSend.kills);
-		Debug.Log (playerToSend.deaths);
-		Debug.Log (playerToSend.assist);
 		
 		string playername = playerToSend.name;
-		if (playerToSend.color == new Vector3(1, 0, 0))		
-			playername="<color=red>"+playername+": ";
+		if (playerToSend.color == new Vector3(1, 0, 0))	
+			playername=playername+": ";
+			//playername="<color=red>"+playername+": ";
 		
 		if (playerToSend.color == new Vector3(0, 0, 1))
-			playername="<color=blue>"+playername+": ";
+			playername=playername+": ";
+			//playername="<color=blue>"+playername+": ";
 		
 		networkView.RPC("InfoToClient",idToFind.owner,playername);
 	}

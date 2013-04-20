@@ -51,11 +51,9 @@ public class Networking : MonoBehaviour {
 		}
 		
 		if(guiState==MenuState.ServerGame) {  
-			if(Network.isServer) {
-				GUI.Label(new Rect(10,10,250,40),"Server name: " + serverName);
-  			}    
+				GUI.Label(new Rect(5,5,250,40),"Server name: " + serverName);
 			
-			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {				 
+			if (GUI.Button (new Rect(Screen.width-105f, 5f, 100f, 50f),"Back")) {				 
 				if(Network.isServer)
    					networkView.RPC("ExitCL", RPCMode.Others);
 				
@@ -71,9 +69,9 @@ public class Networking : MonoBehaviour {
 		}
 		
 		if(guiState==MenuState.ClientGame) {
-			GUI.Label(new Rect(10,10,250,40),"Server name: " + serverName);
+			GUI.Label(new Rect(5,5,250,40),"Server name: " + serverName);
 			
-			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {  				
+			if (GUI.Button (new Rect(Screen.width-105f, 5f, 100f, 50f),"Back")) {  				
 				networkView.RPC("UnregisterPlayer", RPCMode.Server, goPlayer.networkView.viewID);
 				GameObject []players = GameObject.FindGameObjectsWithTag("Player");
 
@@ -137,5 +135,10 @@ public class Networking : MonoBehaviour {
 			}
 			GUILayout.EndHorizontal();	
 		}
+	}
+	
+	public NetworkViewID getPlayerID()
+	{
+		return goPlayer.networkView.viewID;
 	}
 }
