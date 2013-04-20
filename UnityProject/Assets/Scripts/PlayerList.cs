@@ -28,13 +28,17 @@ public class PlayerList : MonoBehaviour {
 			player.color = new Vector3(1,0,0);
 		else
 			player.color = new Vector3(0,0,1);
-		
+
 		player.kills=0;
 		player.deaths=0;
 		player.assist=0;		
-		
 		playerList.Add(player);
 		networkView.RPC("UpdatePlayer", RPCMode.AllBuffered, player.id, player.color);
+		
+		foreach(var element in playerList)
+		{
+			Debug.Log(element.id);
+		}
 	}
 	
 	[RPC] //Server function
@@ -53,5 +57,34 @@ public class PlayerList : MonoBehaviour {
 				player.GetComponentInChildren<Renderer>().material.color = new Color(color[0],color[1],color[2]);
 			}
 		}
+	}
+	
+	[RPC]
+	void GetPlayerInfo(NetworkViewID idToFind){ 
+		
+		Debug.Log (playerList.Count);
+		
+		foreach(var element in playerList)
+		{
+			Debug.Log(element.id);
+		}
+		
+		PlayerData playerToSend = new PlayerData();
+		playerToSend = playerList.Find(playerToFind => playerToFind.id == idToFind);
+		Debug.Log (playerToSend.id);
+		Debug.Log (playerToSend.name);
+		Debug.Log (playerToSend.color);
+		Debug.Log (playerToSend.kills);
+		Debug.Log (playerToSend.deaths);
+		Debug.Log (playerToSend.assist);
+		
+		string playername = playerToSend.name;
+		if (playerToSend.color == new Vector3(1, 0, 0))		
+			playername="<color=red>"+playername+": ";
+		
+		if (playerToSend.color == new Vector3(0, 0, 1))
+			playername="<color=blue>"+playername+": ";
+		
+		networkView.RPC("InfoToClient",idToFind.owner,playername);
 	}
 }

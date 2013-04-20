@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioOffset.cs" />
      <Compile Include="Assets\Scripts\CaptureNormals.cs" />
+     <Compile Include="Assets\Scripts\ChatClient.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\ControllerBasic.cs" />
      <Compile Include="Assets\Scripts\Networking.cs" />
