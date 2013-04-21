@@ -39,7 +39,10 @@ public class Chat : MonoBehaviour {
 				currentMessage = "";
 			}
 			if(Event.current.Equals (Event.KeyboardEvent ("escape")))
+			{
+				currentMessage = "";
 				typing = !typing;
+			}
 			
 			GUI.SetNextControlName("Chat_Entry");
 			currentMessage = GUI.TextField(new Rect(5f, Screen.height-30f, 300f, 20f), currentMessage); 
@@ -86,7 +89,7 @@ public class Chat : MonoBehaviour {
 	}
 	
 	[RPC] //Client function
-	void InfoToClient(string playerInfo)
+	void InfoToClient(string playerInfo, Vector3 color)
 	{
 		playerName=playerInfo;
 	}

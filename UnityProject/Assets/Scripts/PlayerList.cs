@@ -69,6 +69,23 @@ public class PlayerList : MonoBehaviour {
 			playername=playername+": ";
 			//playername="<color=blue>"+playername+": ";
 		
-		networkView.RPC("InfoToClient",idToFind.owner,playername);
+		networkView.RPC("InfoToClient",idToFind.owner,playername, playerToSend.color);
+	}
+	
+	void OnGUI()
+	{
+		if (Network.isClient || Network.isServer)
+		{
+			Debug.Log(playerList.Count);
+			foreach(PlayerData player in playerList)
+			{
+				if (player.color == new Vector3(1, 0, 0))	
+					GUI.contentColor = Color.red;
+				if (player.color == new Vector3(0, 0, 1))
+					GUI.contentColor = Color.blue;
+				
+				GUI.Label(new Rect(5,20,100,100),player.name);
+			}
+		}
 	}
 }
