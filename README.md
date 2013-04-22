@@ -3,11 +3,14 @@ GodlyCubes
 
 The ultimate battle between cubes. (2 man project)
 
-TASKS (18.03.13)
+TASKS (deadline 29.04.13)
 
-- create repo (DONE)
-- add Clean Unity Project (DONE)
-- add Networking code (DONE)
-- rewrite Networking code
-- add cube players
-- add simple attack (Force Push) (I tough it will be shooting?)
+- add towers
+- add base
+- add counters K/D/A
+- add your own hero
+
+last to finish:
+
+- shooting
+- wasd movement (fix)
