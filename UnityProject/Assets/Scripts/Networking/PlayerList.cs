@@ -2,8 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-struct PlayerData
-{
+struct PlayerData {
 		public NetworkViewID id;
 		public string name;
 		public Vector3 color;
@@ -44,7 +43,7 @@ public class PlayerList : MonoBehaviour {
 	
 	[RPC] //Server & Client function
 	void UpdatePlayer(NetworkViewID id, Vector3 color) {
-		GameObject []players = GameObject.FindGameObjectsWithTag("Player");
+		GameObject []players = GameObject.FindGameObjectsWithTag(Tags.player);
 		foreach(GameObject player in players)
 		{
 			if (id == player.networkView.viewID)
@@ -55,32 +54,31 @@ public class PlayerList : MonoBehaviour {
 	}
 	
 	[RPC] //Server function
-	void GetPlayerInfo(NetworkViewID idToFind){ 
+	void GetPlayerInfo(NetworkViewID idToFind) { 
 		
 		PlayerData playerToSend = new PlayerData();
 		playerToSend = playerList.Find(playerToFind => playerToFind.id == idToFind);
 		
 		string playername = playerToSend.name;
 		if (playerToSend.color == new Vector3(1, 0, 0))	
-			playername=playername+": ";
-			//playername="<color=red>"+playername+": ";
+			playername = playername+": ";
+			//playername = "<color=red>"+playername+": ";
 		
 		if (playerToSend.color == new Vector3(0, 0, 1))
-			playername=playername+": ";
-			//playername="<color=blue>"+playername+": ";
+			playername = playername+": ";
+			//playername = "<color=blue>"+playername+": ";
 		
 		networkView.RPC("InfoToClient",idToFind.owner,playername, playerToSend.color);
 	}
 	
-	void OnGUI()
-	{
-		if (Network.isClient || Network.isServer)
-		{
+	void OnGUI() {
+		if (Network.isClient || Network.isServer) {
 			Debug.Log(playerList.Count);
-			foreach(PlayerData player in playerList)
-			{
+			
+			foreach(PlayerData player in playerList) {
 				if (player.color == new Vector3(1, 0, 0))	
 					GUI.contentColor = Color.red;
+				
 				if (player.color == new Vector3(0, 0, 1))
 					GUI.contentColor = Color.blue;
 				

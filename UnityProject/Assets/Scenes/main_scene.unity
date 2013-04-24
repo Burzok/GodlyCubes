@@ -89,7 +89,7 @@ GameObject:
   - 114: {fileID: 113685777}
   m_Layer: 0
   m_Name: GlobalScriptObject
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -434,6 +434,10 @@ Prefab:
       propertyPath: player_prefab
       value: 
       objectReference: {fileID: 100002, guid: 8eee3ccacffcec74c8528c3809ec5a4b, type: 2}
+    - target: {fileID: 100000, guid: 021a0db1e9293b14ea2d1d89034909d6, type: 2}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 021a0db1e9293b14ea2d1d89034909d6, type: 2}
   m_RootGameObject: {fileID: 113685771}
@@ -450,7 +454,7 @@ GameObject:
   - 108: {fileID: 2060967501}
   m_Layer: 0
   m_Name: Directional light
-  m_TagString: Untagged
+  m_TagString: MainLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

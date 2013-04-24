@@ -44,17 +44,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AudioOffset.cs" />
-     <Compile Include="Assets\Scripts\CaptureNormals.cs" />
-     <Compile Include="Assets\Scripts\Chat.cs" />
-     <Compile Include="Assets\Scripts\Controller.cs" />
-     <Compile Include="Assets\Scripts\ControllerBasic.cs" />
-     <Compile Include="Assets\Scripts\Networking.cs" />
-     <Compile Include="Assets\Scripts\PlayerList.cs" />
-     <Compile Include="Assets\Scripts\Punch.cs" />
-     <Compile Include="Assets\Scripts\RandomFloorBotMovement.cs" />
-     <Compile Include="Assets\Scripts\Rotator.cs" />
-     <Compile Include="Assets\Scripts\ScrollingUVs.cs" />
+     <Compile Include="Assets\Scripts\Networking\Chat.cs" />
+     <Compile Include="Assets\Scripts\Networking\Networking.cs" />
+     <Compile Include="Assets\Scripts\Networking\PlayerList.cs" />
+     <Compile Include="Assets\Scripts\Player\ControllerBasic.cs" />
+     <Compile Include="Assets\Scripts\Unapplied\Tags.cs" />
+     <Compile Include="Assets\Scripts\Unused\AudioOffset.cs" />
+     <Compile Include="Assets\Scripts\Unused\CaptureNormals.cs" />
+     <Compile Include="Assets\Scripts\Unused\Controller.cs" />
+     <Compile Include="Assets\Scripts\Unused\Punch.cs" />
+     <Compile Include="Assets\Scripts\Unused\RandomFloorBotMovement.cs" />
+     <Compile Include="Assets\Scripts\Unused\Rotator.cs" />
+     <Compile Include="Assets\Scripts\Unused\ScrollingUVs.cs" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />

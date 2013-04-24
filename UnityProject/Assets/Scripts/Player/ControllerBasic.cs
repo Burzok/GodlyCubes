@@ -6,15 +6,14 @@ public class ControllerBasic : MonoBehaviour {
 	public float horizontalInput = 0f;
 	public float verticalInput = 0f;
 	public float rotationInput = 0f;
-	
 	public float forwardSpeed = 5f; 
 	public float rotateSpeed = 250f;
 	
 
-	void Start () {
+	void Start() {
 	}
 	
-	void FixedUpdate(){
+	void FixedUpdate() {
 		horizontalInput = Input.GetAxis("Horizontal");
 		verticalInput = Input.GetAxis("Vertical");
 		rotationInput = Input.GetAxis("Mouse X");
@@ -28,6 +27,6 @@ public class ControllerBasic : MonoBehaviour {
 			transform.Rotate( Vector3.up, rotateSpeed * rotationInput * Time.deltaTime);
 	}
 
-	void Update () {
+	void Update() {
 	}
 }
