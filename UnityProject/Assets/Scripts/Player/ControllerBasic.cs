@@ -2,15 +2,19 @@ using UnityEngine;
 using System.Collections;
 
 public class ControllerBasic : MonoBehaviour {
-	public float horizontalInput = 0f;
-	public float verticalInput = 0f;
-	public float rotationInput = 0f;
+	
 	public float forwardSpeed = 20f; 
 	public float rotateSpeed = 250f;
+	public int health = 100;
 	
 	private GameObject[] mainCam;
+	private float horizontalInput;
+	private float verticalInput;
+	private float rotationInput;
 	
 	void Awake() {
+		mainCam = GameObject.FindGameObjectsWithTag(Tags.mainCamera);
+		
 		if(!networkView.isMine) {
 			rigidbody.isKinematic = true;
 			rigidbody.useGravity = false;
@@ -25,9 +29,13 @@ public class ControllerBasic : MonoBehaviour {
 	}
 	
 	void TurnOffMainCameras() {
-		mainCam = GameObject.FindGameObjectsWithTag(Tags.mainCamera);
 		foreach( GameObject cam in mainCam )
 			cam.SetActive(false);
+	}
+	
+	void TurnONMainCameras() {
+		foreach( GameObject cam in mainCam )
+			cam.SetActive(true);
 	}
 	
 	void FixedUpdate() {
@@ -37,17 +45,37 @@ public class ControllerBasic : MonoBehaviour {
 			rotationInput = Input.GetAxis("Mouse X");
 			
 			if ( verticalInput != 0 ) {
-				//transform.Translate( Vector3.forward  * forwardSpeed * verticalInput * Time.deltaTime);
 				rigidbody.AddForce( transform.forward * Time.deltaTime * forwardSpeed * verticalInput, ForceMode.VelocityChange);
 			}
 			
 			if ( horizontalInput != 0 ) {
-				//transform.Translate( Vector3.right * forwardSpeed * horizontalInput * Time.deltaTime);
 				rigidbody.AddForce( transform.right * Time.deltaTime * forwardSpeed * horizontalInput, ForceMode.VelocityChange);
 			}
 			
 			if ( rotationInput != 0 )
 				transform.Rotate( transform.up, rotateSpeed * rotationInput * Time.deltaTime);
 		}
+	}
+	
+	void Hit(int demage) {
+		health -= demage;
+		if(health <= 0){
+			networkView.RPC("TurnDeadClientCameras",RPCMode.Others, networkView.viewID);
+			Network.Destroy(this.gameObject);
+		}
+		else
+			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, demage);
+	}
+	
+	[RPC]
+	void SendHitConfirmationToClients(NetworkViewID viewID, int demage) {
+		if(networkView.viewID == viewID)
+			health -= demage;
+	}
+	
+	[RPC]
+	void TurnDeadClientCameras(NetworkViewID viewID) {
+		if(networkView.viewID == viewID)
+			TurnONMainCameras();
 	}
 }

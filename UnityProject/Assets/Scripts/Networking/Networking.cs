@@ -83,7 +83,7 @@ public class Networking : MonoBehaviour {
 	}	
 	
 	void OnConnectedToServer() {			
-		GameObject spawner = GameObject.Find ("Spawner");
+		GameObject spawner = GameObject.Find("Spawner");
 		goPlayer = Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) as GameObject;
 		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, goPlayer.networkView.viewID);	
 	}
