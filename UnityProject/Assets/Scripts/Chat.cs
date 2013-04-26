@@ -5,66 +5,60 @@ using System.Collections.Generic;
 public class Chat : MonoBehaviour {
 	
 	bool typing = false;
-	bool getInfo = false;
 	string currentMessage = "";
 	string playerName = "";
 	Vector2 scroll;
 	List<string> chatHistory = new List<string>();
 	
 	void Update () {
-		if (Network.isClient)
-		{
-			if (Input.GetKeyUp(KeyCode.Return))
-			{
-				networkView.RPC("GetPlayerInfo", RPCMode.Server, gameObject.GetComponent<Networking>().getPlayerID());
+		if (Network.isClient) {
+			if (Input.GetKeyUp(KeyCode.Return))	{
+				GetPlayerChatInfo();
 				typing = !typing;
 			}
 		}
 	}
 	
-	void OnGUI () {		
+	void OnGUI () {
 		CheckChatInput();
 		DrawChat();
 	}
 	
 	void CheckChatInput() {
-		if(typing)
-		{
-			if(Event.current.Equals( Event.KeyboardEvent("return")))
-			{
+		if(typing) {
+			if(Event.current.Equals( Event.KeyboardEvent("return"))) {				
+				playerName = playerName + ": ";
 				currentMessage = playerName + currentMessage;
+				
 				if (currentMessage!=playerName)
 					networkView.RPC("sendChatMessageToServer",RPCMode.Server,currentMessage);
+				
 				typing = !typing;
 				currentMessage = "";
 			}
-			if(Event.current.Equals (Event.KeyboardEvent ("escape")))
-			{
+			if(Event.current.Equals (Event.KeyboardEvent ("escape"))) {
 				currentMessage = "";
 				typing = !typing;
 			}
 			
 			GUI.SetNextControlName("Chat_Entry");
 			currentMessage = GUI.TextField(new Rect(5f, Screen.height-30f, 300f, 20f), currentMessage); 
-			if (currentMessage == string.Empty) {
-				GUI.FocusControl("Chat_Entry");
-			}			
+			if (currentMessage == string.Empty) 
+				GUI.FocusControl("Chat_Entry");		
 		}	
 	}
 	
-	void DrawChat()
-	{
-		if (Network.isClient || Network.isServer)
-		{
-			GUI.Box (new Rect(5f, Screen.height-200f, 300, 165f),"");
+	void DrawChat()	{
+		if (Network.isClient || Network.isServer) {
+			GUI.Box (new Rect(5f, Screen.height-200f, 300f, 165f),"");
 			GUI.BeginGroup(new Rect(5f, Screen.height-200f, 300, 165f));
 			scroll = GUILayout.BeginScrollView(scroll,GUILayout.Width(300),GUILayout.Height(165));			
-			foreach (string entry in chatHistory)
-			{
+			
+			foreach (string entry in chatHistory) {
 				GUILayout.BeginHorizontal();
-				GUILayout.Space(5f);
+				GUILayout.Space(5f);				
 				GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-				GUILayout.Label(entry, GUILayout.Width(270));
+				GUILayout.Label(entry, GUILayout.Width(250));
 				GUILayout.EndHorizontal();
 			}
 			GUILayout.EndScrollView(); 
@@ -74,35 +68,23 @@ public class Chat : MonoBehaviour {
 
 	
 	[RPC] //Server function
-	void sendChatMessageToServer(string message)
-	{
+	void sendChatMessageToServer(string message) {
 		chatHistory.Add(message);
 		scroll.y=10000000;
 		networkView.RPC("sendChatMessageToClient",RPCMode.Others,message);
 	}
 	
 	[RPC] //Client function
-	void sendChatMessageToClient(string message)
-	{
+	void sendChatMessageToClient(string message) {
 		chatHistory.Add(message);
 		scroll.y=10000000;
-	}
+	}	
 	
-	[RPC] //Client function
-	void InfoToClient(string playerInfo, Vector3 color)
-	{
-		playerName=playerInfo;
-	}
-	
-	[RPC] //Server & Client function
-	void UpdatePlayer(NetworkViewID id, Vector3 color) {
-		GameObject []players = GameObject.FindGameObjectsWithTag("Player");
-		foreach(GameObject player in players)
-		{
-			if (id == player.networkView.viewID)
-			{					
-				player.GetComponentInChildren<Renderer>().material.color = new Color(color[0],color[1],color[2]);
-			}
-		}
-	}
+	void GetPlayerChatInfo() {
+		NetworkViewID id = GetComponent<Networking>().getPlayerID();
+		List<PlayerData> playerList = GetComponent<PlayerList>().playerList;
+		PlayerData player = playerList.Find(playerToFind => playerToFind.id == id);
+			
+		playerName=player.name;		
+	}	
 }
