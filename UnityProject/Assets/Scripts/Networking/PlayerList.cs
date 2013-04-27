@@ -73,7 +73,7 @@ public class PlayerList : MonoBehaviour {
 	
 	void OnGUI() {
 		if (Network.isClient || Network.isServer) {
-			Debug.Log(playerList.Count);
+			//Debug.Log(playerList.Count);
 			
 			foreach(PlayerData player in playerList) {
 				if (player.color == new Vector3(1, 0, 0))	

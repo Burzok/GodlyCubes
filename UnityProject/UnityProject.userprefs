@@ -1,14 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\ControllerBasic.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Networking\PlayerList.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\ControllerBasic.cs" Line="64" Column="37" />
+      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="81" Column="5" />
+      <File FileName="Assets\Scripts\Player\ControllerBasic.cs" Line="44" Column="46" />
       <File FileName="Assets\Scripts\Networking\Networking.cs" Line="88" Column="29" />
-      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="25" Column="3" />
       <File FileName="Assets\Scripts\Networking\Chat.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Unapplied\Tags.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="19" Column="2" />
-      <File FileName="Assets\Scripts\BulletController.cs" Line="12" Column="22" />
+      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BulletController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
