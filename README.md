@@ -1,34 +1,32 @@
 GodlyCubes
 ==========
 
-The ultimate battle between cubes. (2 man project)
+The ultimate battle between cubes. (made by 2 students)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-TASKS FOR 22.04.13
+Simple moba style game made in Unity3d, for learning purposes and for fun ;)
 
-- Server List (Done)
-- Chat
-- Server-client sepparation
-- Global Player List
-- Skillshot
-- WASD, network movement. (Partialy Done)
-=======
-=======
->>>>>>> origin/master
+==========
+
 TASKS (deadline 29.04.13)
 
 - add towers
 - add base
 - add counters K/D/A
 - add your own hero
+- death state (Done)
 
 last to finish:
 
-- shooting
-<<<<<<< HEAD
-- wasd movement (fix)
->>>>>>> origin/master
-=======
-- wasd movement (fix)
->>>>>>> origin/master
+- shooting (Done)
+- wasd movement (Done)
+
+==========
+
+TASKS FOR 22.04.13
+
+- Server List (Done)
+- Chat (Done)
+- Server-client sepparation (Done)
+- Global Player List (Done)
+- Skillshot
+- WASD, network movement. (Partialy Done)
