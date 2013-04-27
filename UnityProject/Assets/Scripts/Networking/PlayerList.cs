@@ -2,11 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-<<<<<<< HEAD:UnityProject/Assets/Scripts/Networking/PlayerList.cs
-struct PlayerData {
-=======
 public struct PlayerData {
->>>>>>> origin/master:UnityProject/Assets/Scripts/PlayerList.cs
 		public NetworkViewID id;
 		public string name;
 		public Vector3 color;
@@ -48,17 +44,9 @@ public class PlayerList : MonoBehaviour {
 	
 	[RPC] //Server & Client function
 	void UpdatePlayer(NetworkViewID id, Vector3 color) {
-<<<<<<< HEAD:UnityProject/Assets/Scripts/Networking/PlayerList.cs
-		GameObject []players = GameObject.FindGameObjectsWithTag(Tags.player);
-		foreach(GameObject player in players)
-		{
-			if (id == player.networkView.viewID)
-			{					
-=======
 		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 		foreach(GameObject player in players) {
 			if (id == player.networkView.viewID) {					
->>>>>>> origin/master:UnityProject/Assets/Scripts/PlayerList.cs
 				player.GetComponentInChildren<Renderer>().material.color = new Color(color[0],color[1],color[2]);
 			}
 		}
@@ -70,16 +58,6 @@ public class PlayerList : MonoBehaviour {
 		PlayerData playerToSend = new PlayerData();
 		playerToSend = playerList.Find(playerToFind => playerToFind.id == idToFind);
 		
-<<<<<<< HEAD:UnityProject/Assets/Scripts/Networking/PlayerList.cs
-		string playername = playerToSend.name;
-		if (playerToSend.color == new Vector3(1, 0, 0))	
-			playername = playername+": ";
-			//playername = "<color=red>"+playername+": ";
-		
-		if (playerToSend.color == new Vector3(0, 0, 1))
-			playername = playername+": ";
-			//playername = "<color=blue>"+playername+": ";
-=======
 		networkView.RPC("InfoToClient",idToFind.owner,idToFind.owner ,playerToSend.name, playerToSend.color, playerToSend.kills, playerToSend.deaths, playerToSend.assist);
 	}
 	
@@ -87,7 +65,6 @@ public class PlayerList : MonoBehaviour {
 	void InfoToClient(NetworkViewID id, string playerName, Vector3 color, int kills, int deaths, int assist)	{
 		
 		PlayerData player = new PlayerData();
->>>>>>> origin/master:UnityProject/Assets/Scripts/PlayerList.cs
 		
 		player.id=id;
 		player.name=playerName;
@@ -100,17 +77,6 @@ public class PlayerList : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-<<<<<<< HEAD:UnityProject/Assets/Scripts/Networking/PlayerList.cs
-		if (Network.isClient || Network.isServer) {
-			//Debug.Log(playerList.Count);
-			
-			foreach(PlayerData player in playerList) {
-				if (player.color == new Vector3(1, 0, 0))	
-					GUI.contentColor = Color.red;
-				
-				if (player.color == new Vector3(0, 0, 1))
-					GUI.contentColor = Color.blue;
-=======
 		if (Network.isClient || Network.isServer) { 
 			GUI.Box (new Rect(5f, 50f, 140f, 50f),"");
 			GUI.BeginGroup(new Rect(5f, 50f, 140f, 50f));
@@ -136,7 +102,6 @@ public class PlayerList : MonoBehaviour {
 				GUI.contentColor = Color.yellow;
 				GUILayout.Label("A: "+player.assist);
 				GUILayout.FlexibleSpace();
->>>>>>> origin/master:UnityProject/Assets/Scripts/PlayerList.cs
 				
 				GUILayout.EndHorizontal();
 			}
