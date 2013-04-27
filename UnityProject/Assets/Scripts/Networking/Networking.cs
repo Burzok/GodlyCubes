@@ -85,14 +85,15 @@ public class Networking : MonoBehaviour {
 	void OnConnectedToServer() {			
 		GameObject spawner = GameObject.Find("Spawner");
 		goPlayer = Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) as GameObject;
-		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, goPlayer.networkView.viewID);	
+		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, goPlayer.networkView.viewID);
 	}
 	
 	void OnDisconnectedFromServer () {
 		GameObject []players = GameObject.FindGameObjectsWithTag(Tags.player);
 		foreach(GameObject player in players) {
 			GameObject.Destroy(player);					
-		}	
+		}
+		GetComponent<PlayerList>().playerList.Clear();
 	}
 	
 	void OnPlayerDisconnected(NetworkPlayer player) {

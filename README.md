@@ -4,6 +4,7 @@ GodlyCubes
 The ultimate battle between cubes. (2 man project)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 TASKS FOR 22.04.13
 
 - Server List (Done)
@@ -13,6 +14,8 @@ TASKS FOR 22.04.13
 - Skillshot
 - WASD, network movement. (Partialy Done)
 =======
+=======
+>>>>>>> origin/master
 TASKS (deadline 29.04.13)
 
 - add towers
@@ -23,5 +26,9 @@ TASKS (deadline 29.04.13)
 last to finish:
 
 - shooting
+<<<<<<< HEAD
+- wasd movement (fix)
+>>>>>>> origin/master
+=======
 - wasd movement (fix)
 >>>>>>> origin/master
