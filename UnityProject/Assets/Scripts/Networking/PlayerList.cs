@@ -45,9 +45,29 @@ public class PlayerList : MonoBehaviour {
 	[RPC] //Server & Client function
 	void UpdatePlayer(NetworkViewID id, Vector3 color) {
 		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+		
+		ChangeColor(ref id, ref color, ref players);
+		
+		ChangePosition(ref id, ref players);
+	}
+	
+	private void ChangeColor(ref NetworkViewID id, ref Vector3 color, ref GameObject[] players) {
+		
 		foreach(GameObject player in players) {
 			if (id == player.networkView.viewID) {					
 				player.GetComponentInChildren<Renderer>().material.color = new Color(color[0],color[1],color[2]);
+			}
+		}
+	}
+	
+	private void ChangePosition(ref NetworkViewID id, ref GameObject[] players) {
+		int numberOfPlayers = playerList.Count;
+		
+		Transform spawningPoint = gameObject.GetComponent<Networking>().FindSpawn(ref numberOfPlayers);
+		foreach(GameObject player in players) {
+			if (id == player.networkView.viewID) {
+				player.GetComponent<PlayerGameData>().respawnPosition = spawningPoint.position;
+				player.transform.position = spawningPoint.position;
 			}
 		}
 	}

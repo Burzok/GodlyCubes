@@ -10,14 +10,17 @@ public class Networking : MonoBehaviour {
 	string playerName = "Player Name";
 	GameObject goPlayer;
 	float timeHostWasRegistered;	
-	Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);	
+	Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
+	private GameObject spawners;
 	
 	void Awake () {
         MasterServer.ClearHostList();
         MasterServer.RequestHostList("GodlyCubesLight");
+		
+		spawners = GameObject.Find("Spawners");
 	}
 	
-	void OnGUI () {		
+	void OnGUI () {
 		if (guiState==MenuState.Main) {
 			if (GUI.Button (new Rect(Screen.width * 0.5f-120f, 20f, 100f, 50f), "Create Server"))
 				guiState = MenuState.CreateServer;
@@ -33,7 +36,7 @@ public class Networking : MonoBehaviour {
 			serverName = GUI.TextField(new Rect(Screen.width * 0.5f-50f, 30f, 100f, 20f), serverName);
 			
 			if (GUI.Button (new Rect(Screen.width * 0.5f-50f, 55f, 100f, 50f),"Create")) {
-  				Network.InitializeServer(2, 25000, !Network.HavePublicAddress());
+  				Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
 	  			MasterServer.RegisterHost("GodlyCubesLight", serverName);
 				timeHostWasRegistered = Time.time;
 				GameObject spawner = GameObject.Find("Spawner");
@@ -83,9 +86,27 @@ public class Networking : MonoBehaviour {
 	}	
 	
 	void OnConnectedToServer() {			
-		GameObject spawner = GameObject.Find("Spawner");
-		goPlayer = Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) as GameObject;
+		Transform spawner = spawners.transform;
+		goPlayer = SpawnPlayer(ref spawner);
 		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, goPlayer.networkView.viewID);
+	}
+	
+	public Transform FindSpawn(ref int numberOfPlayers) {
+		if (numberOfPlayers == 0) 
+			return spawners.transform.FindChild("Spawn1");
+		else if (numberOfPlayers == 1)
+			return spawners.transform.FindChild("Spawn2");
+		else if (numberOfPlayers == 2)
+			return spawners.transform.FindChild("Spawn3");
+		else if (numberOfPlayers == 3)
+			return spawners.transform.FindChild("Spawn4");
+		else
+			return spawners.transform;
+	}
+	
+	private GameObject SpawnPlayer(ref Transform spawner) {
+		return Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) 
+			as GameObject;
 	}
 	
 	void OnDisconnectedFromServer () {

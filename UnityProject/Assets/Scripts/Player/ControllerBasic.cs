@@ -3,17 +3,18 @@ using System.Collections;
 
 public class ControllerBasic : MonoBehaviour {
 	
-	public float forwardSpeed = 20f; 
 	public float rotateSpeed = 250f;
-	public int health = 100;
+	public float rotationInput;
 	
 	private GameObject[] mainCam;
-	private float horizontalInput;
-	private float verticalInput;
-	private float rotationInput;
+	private PlayerGameData data;
+	private bool resFlag = false;
+	private float Timer=0;
 	
 	void Awake() {
 		mainCam = GameObject.FindGameObjectsWithTag(Tags.mainCamera);
+		
+		data = gameObject.GetComponent<PlayerGameData>();
 		
 		if(!networkView.isMine) {
 			rigidbody.isKinematic = true;
@@ -40,42 +41,70 @@ public class ControllerBasic : MonoBehaviour {
 	
 	void FixedUpdate() {
 		if(networkView.isMine) {
-			horizontalInput = Input.GetAxis("Horizontal");
-			verticalInput = Input.GetAxis("Vertical");
 			rotationInput = Input.GetAxis("Mouse X");
-			
-			if ( verticalInput != 0 ) {
-				rigidbody.AddForce( transform.forward * Time.deltaTime * forwardSpeed * verticalInput, ForceMode.VelocityChange);
-			}
-			
-			if ( horizontalInput != 0 ) {
-				rigidbody.AddForce( transform.right * Time.deltaTime * forwardSpeed * horizontalInput, ForceMode.VelocityChange);
-			}
-			
+		
 			if ( rotationInput != 0 )
 				transform.Rotate( transform.up, rotateSpeed * rotationInput * Time.deltaTime);
 		}
 	}
 	
-	void Hit(int demage) {
-		health -= demage;
-		if(health <= 0){
-			networkView.RPC("TurnDeadClientCameras",RPCMode.Others, networkView.viewID);
-			Network.Destroy(this.gameObject);
+	void Update() {
+		if(resFlag) {
+			Respawn();
+		}
+	}
+	
+	void Respawn() {
+		Timer += Time.deltaTime;
+		if(Timer >= data.respawnTime ) {
+			networkView.RPC("ChangePlayerState",RPCMode.AllBuffered, networkView.viewID);
+			networkView.RPC("SwichPlayerState",RPCMode.AllBuffered, networkView.viewID);
+	
+			Timer = 0;
+			resFlag = false;
+		}
+	}
+	
+	void Hit(int damage) {
+		data.health -= damage;
+		if(data.health <= 0){
+			//networkView.RPC("TurnDeadClientCameras",RPCMode.Others, networkView.viewID);
+			networkView.RPC("SwichPlayerState",RPCMode.AllBuffered, networkView.viewID);
+			resFlag = true;
+			//Network.Destroy(this.gameObject);
 		}
 		else
-			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, demage);
+			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, damage);
 	}
 	
 	[RPC]
-	void SendHitConfirmationToClients(NetworkViewID viewID, int demage) {
+	void SendHitConfirmationToClients(NetworkViewID viewID, int damage) {
 		if(networkView.viewID == viewID)
-			health -= demage;
+			data.health -= damage;
 	}
 	
 	[RPC]
 	void TurnDeadClientCameras(NetworkViewID viewID) {
 		if(networkView.viewID == viewID)
 			TurnONMainCameras();
+	}
+	
+	[RPC]
+	void SwichPlayerState(NetworkViewID viewID) {
+		if(networkView.viewID == viewID) {
+			this.rigidbody.useGravity = !this.rigidbody.useGravity;
+			this.collider.enabled = !this.collider.enabled;
+			this.GetComponent<MovementBasic>().enabled = !this.GetComponent<MovementBasic>().enabled;
+			this.GetComponent<Shooting>().enabled = !this.GetComponent<Shooting>().enabled;
+			this.transform.FindChild("Mesh").renderer.enabled = !this.transform.FindChild("Mesh").renderer.enabled;
+		}
+	}
+	
+	[RPC]
+	void ChangePlayerState(NetworkViewID viewID) {
+		if(networkView.viewID == viewID) {
+			this.transform.position = data.respawnPosition;
+			data.health = data.maxHealth;
+		}
 	}
 }
