@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Unused\RandomFloorBotMovement.cs" />
      <Compile Include="Assets\Scripts\Unused\Rotator.cs" />
      <Compile Include="Assets\Scripts\Unused\ScrollingUVs.cs" />
+     <Compile Include="Assets\Scripts\World\Reloader.cs" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />

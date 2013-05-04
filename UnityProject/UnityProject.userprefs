@@ -1,15 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\ControllerBasic.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\World\Reloader.cs">
     <Files>
+      <File FileName="Assets\Scripts\World\Reloader.cs" Line="20" Column="28" />
       <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Networking\Networking.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Networking\Chat.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="13" Column="17" />
-      <File FileName="Assets\Scripts\Skills\BulletController.cs" Line="10" Column="3" />
-      <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="6" Column="29" />
-      <File FileName="Assets\Scripts\Player\ControllerBasic.cs" Line="62" Column="2" />
-      <File FileName="Assets\Scripts\Player\MovementBasic.cs" Line="20" Column="33" />
+      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Skills\BulletController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\ControllerBasic.cs" Line="12" Column="24" />
+      <File FileName="Assets\Scripts\Player\MovementBasic.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
