@@ -10,13 +10,13 @@ GameObject:
   - 4: {fileID: 400000}
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400014}
-  - 148: {fileID: 14800000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 148: {fileID: 14800000}
   m_Layer: 0
   m_Name: GlobalScriptObject
   m_TagString: GameController
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -125,8 +125,8 @@ NetworkView:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
-  m_StateSynchronization: 1
-  m_Observed: {fileID: 400000}
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 0}
   m_ViewID:
     m_ID: 0
     m_Type: 0

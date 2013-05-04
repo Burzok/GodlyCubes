@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c4a9e348b21a584a9629045ce0dc5a9, type: 3}
   m_Name: 
   health: 100
+  maxHealth: 100
   respawnTime: 3
   respawnPosition: {x: 0, y: 0, z: 0}
   name: 
@@ -245,7 +246,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 105e952d449dd9c49893209d63560a65, type: 3}
   m_Name: 
-  forwardSpeed: 20
+  forwardSpeed: 50
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
