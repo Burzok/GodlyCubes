@@ -41,18 +41,17 @@ public class ControllerBasic : MonoBehaviour {
 	
 	void FixedUpdate() {
 		if(networkView.isMine) {
-			//rotationInput = Input.GetAxis("Mouse X");
+			rotationInput = Input.GetAxis("Mouse X");
+		
 			if ( rotationInput != 0 )
 				transform.Rotate( transform.up, rotateSpeed * rotationInput * Time.deltaTime);
 		}
 	}
 	
 	void Update() {
-		if(networkView.isMine)
-			rotationInput = Input.GetAxis("Mouse X");
-	
-		if(resFlag)
+		if(resFlag) {
 			Respawn();
+		}
 	}
 	
 	void Respawn() {

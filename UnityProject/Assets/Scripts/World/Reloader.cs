@@ -21,12 +21,7 @@ public class Reloader : MonoBehaviour {
 		
 		if (bullet == null && timer >= reloadTime) {
 			bullet = Network.Instantiate(bulletPrefab, spawner.position, spawner.rotation, 0) as Transform;
-			Debug.Log(bullet.transform);
-			bullet.renderer.material.color = Color.red;
 			timer = 0;
 		}
-		
-		
-		
 	}
 }

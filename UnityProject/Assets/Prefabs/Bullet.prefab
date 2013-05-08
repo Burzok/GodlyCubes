@@ -14,7 +14,7 @@ GameObject:
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,8 +82,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b5d8e2c02f67e34489e09e8ddb688b6, type: 3}
   m_Name: 
-  bulletSpeed: 15
-  damage: 10
+  bulletSpeed: 10
+  demage: 10
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

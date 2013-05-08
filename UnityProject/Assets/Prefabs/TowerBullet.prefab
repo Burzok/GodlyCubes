@@ -13,7 +13,7 @@ GameObject:
   - 111: {fileID: 11100000}
   - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: TowerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
