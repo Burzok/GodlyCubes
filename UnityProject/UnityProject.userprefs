@@ -1,8 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 <<<<<<< HEAD
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench />
 =======
+=======
+>>>>>>> origin/Basic-Gameplay---4-Towers
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\ControllerBasic.cs">
     <Files>
       <File FileName="Assets\Scripts\Player\ControllerBasic.cs" Line="95" Column="47" />
