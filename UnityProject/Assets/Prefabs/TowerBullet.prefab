@@ -13,6 +13,12 @@ GameObject:
   - 111: {fileID: 11100002}
   - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
+<<<<<<< HEAD
+=======
+  - 148: {fileID: 14800000}
+  - 114: {fileID: 11400000}
+  m_Layer: 12
+>>>>>>> origin/Basic-Gameplay---4-Towers
   m_Name: TowerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
