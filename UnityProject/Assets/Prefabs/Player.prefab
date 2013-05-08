@@ -26,26 +26,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 54: {fileID: 5400000}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - 136: {fileID: 13600000}
-=======
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
-  - 65: {fileID: 6500000}
->>>>>>> origin/Basic-Gameplay---4-Towers
   - 148: {fileID: 14800000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
@@ -273,37 +253,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!136 &13600000
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
-=======
->>>>>>> origin/Basic-Gameplay---4-Towers
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1
