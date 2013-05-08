@@ -21,6 +21,7 @@ public class Reloader : MonoBehaviour {
 	
 	void Update() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if (bullet == null)
 			timer += Time.deltaTime;
 		
@@ -28,6 +29,8 @@ public class Reloader : MonoBehaviour {
 			bullet = Network.Instantiate(bulletPrefab, spawner.position, spawner.rotation, 0) as Transform;
 			timer = 0;
 =======
+=======
+>>>>>>> origin/Basic-Gameplay---4-Towers
 		if (Network.isServer) {
 			if (bullet == null)
 				timer += Time.deltaTime;
@@ -38,6 +41,9 @@ public class Reloader : MonoBehaviour {
 				bullet.GetComponent<TowerBullet>().towerDetector = detector;
 				timer = 0;
 			}
+<<<<<<< HEAD
+>>>>>>> origin/Basic-Gameplay---4-Towers
+=======
 >>>>>>> origin/Basic-Gameplay---4-Towers
 		}
 	}

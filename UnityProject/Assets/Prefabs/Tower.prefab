@@ -9,7 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  m_Layer: 12
+>>>>>>> origin/Basic-Gameplay---4-Towers
 =======
   m_Layer: 12
 >>>>>>> origin/Basic-Gameplay---4-Towers
@@ -133,6 +137,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 400000, guid: 8629abf722634c74a8dea372c523dfbf, type: 2}
   reloadTime: 3
   target: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> origin/Basic-Gameplay---4-Towers
+=======
 >>>>>>> origin/Basic-Gameplay---4-Towers
 --- !u!135 &13500000
 SphereCollider:
