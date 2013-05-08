@@ -8,7 +8,7 @@ public class PlayerGameData : MonoBehaviour {
 	public float respawnTime = 3.0f;
 	public Vector3 respawnPosition;
 	
-	public string name;
+	public string playerName;
 	public Vector3 color;
 	
 	public int kills;

@@ -10,10 +10,16 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 111: {fileID: 11100000}
+  - 111: {fileID: 11100002}
   - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  - 148: {fileID: 14800000}
+  - 114: {fileID: 11400000}
+  m_Layer: 12
+>>>>>>> origin/Basic-Gameplay---4-Towers
   m_Name: TowerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +33,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .353553414, y: .353553414, z: -.14644663, w: .853553355}
-  m_LocalPosition: {x: 4.05270004, y: 1.15114117, z: 33.4467278}
+  m_LocalPosition: {x: 6.57245207, y: -2, z: 27.9531097}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,7 +89,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!111 &11100000
+--- !u!111 &11100002
 Animation:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -91,8 +97,9 @@ Animation:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 334a69cbb9aede942ac93e0abeec4998, type: 2}
+  m_Animation: {fileID: 7400000, guid: 04f1ebd97c5b0784aa32c34b6be5efbd, type: 2}
   m_Animations:
+  - {fileID: 7400000, guid: 04f1ebd97c5b0784aa32c34b6be5efbd, type: 2}
   - {fileID: 7400000, guid: 334a69cbb9aede942ac93e0abeec4998, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -101,6 +108,31 @@ Animation:
   m_UserAABB:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2fa39539d12e244b9596517379e59d, type: 3}
+  m_Name: 
+  target: {fileID: 0}
+  bulletSpeed: 1
+  damage: 30
+--- !u!148 &14800000
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 0}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

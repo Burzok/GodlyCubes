@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BulletRotation
+  m_Name: TowerBulletShoot
   serializedVersion: 3
   m_AnimationType: 1
   m_Compressed: 0
@@ -62,58 +62,7 @@ AnimationClip:
       m_PostInfinity: 2
     path: 
   m_CompressedRotationCurves: []
-  m_PositionCurves:
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: {x: 0, y: 4, z: 25}
-        inSlope: {x: 0, y: -1, z: 0}
-        outSlope: {x: 0, y: -1, z: 0}
-        tangentMode: -559038737
-      - time: .5
-        value: {x: 0, y: 3.5, z: 25}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
-      - time: 1
-        value: {x: 0, y: 4, z: 25}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
-      - time: 1.5
-        value: {x: 0, y: 3.5, z: 25}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
-      - time: 2
-        value: {x: 0, y: 4, z: 25}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
-      - time: 2.5
-        value: {x: 0, y: 3.5, z: 25}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
-      - time: 3
-        value: {x: 0, y: 4, z: 25}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
-      - time: 3.5
-        value: {x: 0, y: 3.5, z: 25}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
-      - time: 4
-        value: {x: 0, y: 4, z: 25}
-        inSlope: {x: 0, y: 1, z: 0}
-        outSlope: {x: 0, y: 1, z: 0}
-        tangentMode: -559038737
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    path: 
+  m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
   m_SampleRate: 60
@@ -137,98 +86,6 @@ AnimationClip:
     m_HeightFromFeet: 0
     m_Mirror: 0
   m_EditorCurves:
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .5
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.x
-    path: 
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 4
-        inSlope: -1
-        outSlope: -1
-        tangentMode: 10
-      - time: .5
-        value: 3.5
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 1
-        value: 4
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 1.5
-        value: 3.5
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 2
-        value: 4
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 2.5
-        value: 3.5
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 3
-        value: 4
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 3.5
-        value: 3.5
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 4
-        value: 4
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.y
-    path: 
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 25
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .5
-        value: 25
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.z
-    path: 
-    classID: 4
-    script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:

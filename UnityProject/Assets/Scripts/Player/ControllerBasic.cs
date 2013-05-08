@@ -9,12 +9,15 @@ public class ControllerBasic : MonoBehaviour {
 	private GameObject[] mainCam;
 	private PlayerGameData data;
 	private bool resFlag = false;
-	private float Timer=0;
+	private float timer=0;
+	private Transform meshChild;
 	
 	void Awake() {
 		mainCam = GameObject.FindGameObjectsWithTag(Tags.mainCamera);
 		
 		data = gameObject.GetComponent<PlayerGameData>();
+		
+		meshChild = this.transform.FindChild("Mesh");
 		
 		if(!networkView.isMine) {
 			rigidbody.isKinematic = true;
@@ -55,12 +58,12 @@ public class ControllerBasic : MonoBehaviour {
 	}
 	
 	void Respawn() {
-		Timer += Time.deltaTime;
-		if(Timer >= data.respawnTime ) {
+		timer += Time.deltaTime;
+		if(timer >= data.respawnTime ) {
 			networkView.RPC("ChangePlayerState",RPCMode.AllBuffered, networkView.viewID);
 			networkView.RPC("SwichPlayerState",RPCMode.AllBuffered, networkView.viewID);
 	
-			Timer = 0;
+			timer = 0;
 			resFlag = false;
 		}
 	}
@@ -68,10 +71,8 @@ public class ControllerBasic : MonoBehaviour {
 	void Hit(int damage) {
 		data.health -= damage;
 		if(data.health <= 0){
-			//networkView.RPC("TurnDeadClientCameras",RPCMode.Others, networkView.viewID);
 			networkView.RPC("SwichPlayerState",RPCMode.AllBuffered, networkView.viewID);
 			resFlag = true;
-			//Network.Destroy(this.gameObject);
 		}
 		else
 			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, damage);
@@ -92,11 +93,10 @@ public class ControllerBasic : MonoBehaviour {
 	[RPC]
 	void SwichPlayerState(NetworkViewID viewID) {
 		if(networkView.viewID == viewID) {
-			this.rigidbody.useGravity = !this.rigidbody.useGravity;
 			this.collider.enabled = !this.collider.enabled;
 			this.GetComponent<MovementBasic>().enabled = !this.GetComponent<MovementBasic>().enabled;
 			this.GetComponent<Shooting>().enabled = !this.GetComponent<Shooting>().enabled;
-			this.transform.FindChild("Mesh").renderer.enabled = !this.transform.FindChild("Mesh").renderer.enabled;
+			meshChild.renderer.enabled = !meshChild.renderer.enabled;
 		}
 	}
 	

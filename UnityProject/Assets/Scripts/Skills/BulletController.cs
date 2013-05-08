@@ -4,9 +4,18 @@ using System.Collections;
 public class BulletController : MonoBehaviour {
 	public float bulletSpeed = 10f;
 	public int damage = 10;
+	public float lifeTime = 2.0f;
 	
 	void Start() {
-		Destroy(this.gameObject,2);
+		Network.RemoveRPCs(networkView.viewID);
+		
+		if(Network.isServer)
+			StartCoroutine(DestroyAfterLifeTime());
+	}
+	
+	IEnumerator DestroyAfterLifeTime() {
+		yield return new WaitForSeconds(lifeTime);
+		Network.Destroy(this.gameObject);
 	}
 	
 	void FixedUpdate() {
@@ -15,7 +24,7 @@ public class BulletController : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 		if(Network.isServer) {
-			other.SendMessage("Hit",damage);
+			other.SendMessage("Hit", damage);
 			Network.Destroy(this.gameObject);
 		}
 	}
