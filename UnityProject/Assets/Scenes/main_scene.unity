@@ -231,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168710741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1254347835}
@@ -450,7 +450,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
@@ -465,7 +465,7 @@ GameObject:
   - 33: {fileID: 420171366}
   - 64: {fileID: 420171365}
   - 23: {fileID: 420171364}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ Transform:
   m_GameObject: {fileID: 420171363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 24}
-  m_LocalScale: {x: 1, y: 1, z: 6}
+  m_LocalScale: {x: 5, y: 1, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &496576749
@@ -606,7 +606,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 780752182}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -868,9 +868,8 @@ GameObject:
   - 33: {fileID: 2118972119}
   - 23: {fileID: 2118972117}
   - 65: {fileID: 2118972118}
-  - 135: {fileID: 2118972121}
   - 114: {fileID: 2118972122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,21 +926,9 @@ Transform:
   m_LocalPosition: {x: 0, y: .5, z: 25}
   m_LocalScale: {x: 2, y: 5, z: 2}
   m_Children:
+  - {fileID: 1512800478}
   - {fileID: 780752182}
   m_Father: {fileID: 0}
---- !u!135 &2118972121
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13500000, guid: 0b1bc64e7ddc7664abb06d2959d4dd44,
-    type: 2}
-  m_PrefabInternal: {fileID: 1067545276}
-  m_GameObject: {fileID: 2118972116}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: -.300000012, z: 0}
 --- !u!114 &2118972122
 MonoBehaviour:
   m_ObjectHideFlags: 0
