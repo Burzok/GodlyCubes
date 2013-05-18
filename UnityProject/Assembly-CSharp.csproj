@@ -44,7 +44,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AITower.cs" />
      <Compile Include="Assets\Scripts\Networking\Chat.cs" />
      <Compile Include="Assets\Scripts\Networking\Networking.cs" />
      <Compile Include="Assets\Scripts\Networking\PlayerList.cs" />
@@ -61,6 +60,7 @@
      <Compile Include="Assets\Scripts\Unused\RandomFloorBotMovement.cs" />
      <Compile Include="Assets\Scripts\Unused\Rotator.cs" />
      <Compile Include="Assets\Scripts\Unused\ScrollingUVs.cs" />
+     <Compile Include="Assets\Scripts\World\AITower.cs" />
      <Compile Include="Assets\Scripts\World\Reloader.cs" />
      <Compile Include="Assets\Scripts\World\TowerBullet.cs" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />

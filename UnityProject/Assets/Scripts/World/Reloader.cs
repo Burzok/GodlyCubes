@@ -21,15 +21,34 @@ public class Reloader : MonoBehaviour {
 	
 	void Update() {
 		if (Network.isServer) {
-			if (bullet == null)
-				timer += Time.deltaTime;
-			
-			if (bullet == null && timer >= reloadTime) {
-				bullet = Network.Instantiate(bulletPrefab, spawner.position, spawner.rotation, 0) as Transform;
-				detector.GetComponent<AITower>().bullet = bullet;
-				bullet.GetComponent<TowerBullet>().towerDetector = detector;
-				timer = 0;
-			}
+			CheckIfTargetIsAlive();
+			IncrementTimer();
+			RealoadIfItsTime();
 		}
+	}
+	
+	private void CheckIfTargetIsAlive() {
+		if (target != null) {
+			if (!target.GetComponent<PlayerGameData>().isAlive)
+				target = null;
+		}
+	}
+	
+	private void IncrementTimer() {
+		if (bullet == null)
+			timer += Time.deltaTime;
+	}
+	
+	private void RealoadIfItsTime() {
+		if (bullet == null && timer >= reloadTime)
+			Reload();
+	}
+	
+	private void Reload() {
+		bullet = Network.Instantiate(bulletPrefab, spawner.position, spawner.rotation, 0) as Transform;
+		detector.GetComponent<AITower>().bullet = bullet;
+		bullet.GetComponent<TowerBullet>().towerDetector = detector;
+		bullet.GetComponent<TowerBullet>().reloder = this.transform;
+		timer = 0;
 	}
 }

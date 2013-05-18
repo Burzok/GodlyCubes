@@ -94,6 +94,7 @@ public class ControllerBasic : MonoBehaviour {
 	[RPC]
 	void SwichPlayerState(NetworkViewID viewID) {
 		if(networkView.viewID == viewID) {
+			this.GetComponent<PlayerGameData>().isAlive = !this.GetComponent<PlayerGameData>().isAlive;
 			this.collider.enabled = !this.collider.enabled;
 			this.GetComponent<MovementBasic>().enabled = !this.GetComponent<MovementBasic>().enabled;
 			this.GetComponent<Shooting>().enabled = !this.GetComponent<Shooting>().enabled;

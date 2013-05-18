@@ -117,6 +117,10 @@ MonoBehaviour:
   target: {fileID: 0}
   bulletSpeed: 1
   damage: 30
+  towerDetector: {fileID: 0}
+  reloder: {fileID: 0}
+  modif: 1
+  mag: 0
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

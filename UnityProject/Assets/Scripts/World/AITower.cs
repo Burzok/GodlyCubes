@@ -7,7 +7,10 @@ public class AITower : MonoBehaviour {
 	
 	void FixedUpdate() {
 		if (target != null && bullet != null) {
-			bullet.GetComponent<TowerBullet>().target = target;
+			if (target.GetComponent<PlayerGameData>().isAlive)
+				bullet.GetComponent<TowerBullet>().target = target;
+			else
+				target = null;
 		}
 	}
 	

@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerGameData : MonoBehaviour {
+	public bool isAlive = true;
+	
 	public int health = 100;
 	public int maxHealth = 100;
 	
