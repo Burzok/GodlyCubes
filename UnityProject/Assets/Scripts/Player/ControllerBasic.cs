@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ControllerBasic : MonoBehaviour {
 	
@@ -7,6 +8,7 @@ public class ControllerBasic : MonoBehaviour {
 	public float rotationInput;
 	
 	private GameObject[] mainCam;
+	private GameObject mainScript;
 	private PlayerGameData data;
 	private bool resFlag = false;
 	private float timer=0;
@@ -14,6 +16,7 @@ public class ControllerBasic : MonoBehaviour {
 	
 	void Awake() {
 		mainCam = GameObject.FindGameObjectsWithTag(Tags.mainCamera);
+		mainScript = GameObject.FindGameObjectWithTag(Tags.gameController);
 		
 		data = gameObject.GetComponent<PlayerGameData>();
 		
@@ -73,10 +76,23 @@ public class ControllerBasic : MonoBehaviour {
 		data.health -= damage;
 		if(data.health <= 0){
 			networkView.RPC("SwichPlayerState",RPCMode.AllBuffered, networkView.viewID);
+			
+			List<PlayerData> playerList = mainScript.GetComponent<PlayerList>().playerList;
+			int id = playerList.FindIndex(player => player.id == networkView.viewID);
+			playerList[id].deaths++;			
+			networkView.RPC ("UpdateDeath", RPCMode.Others, networkView.viewID);
+				
 			resFlag = true;
 		}
 		else
 			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, damage);
+	}
+	
+	[RPC]
+	void UpdateDeath(NetworkViewID viewID) {
+		List<PlayerData> playerList = mainScript.GetComponent<PlayerList>().playerList;
+		int id = playerList.FindIndex(player => player.id == viewID);
+		playerList[id].deaths++;		
 	}
 	
 	[RPC]

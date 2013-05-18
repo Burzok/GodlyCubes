@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public struct PlayerData {
+public class PlayerData {
 		public NetworkViewID id;
 		public string name;
 		public Vector3 color;
