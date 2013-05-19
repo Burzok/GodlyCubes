@@ -34,6 +34,21 @@ public class PlayerList : MonoBehaviour {
 		playerList.Add(player);
 		networkView.RPC("UpdatePlayer", RPCMode.AllBuffered, player.id, player.color);
 		networkView.RPC("InfoToClient", RPCMode.OthersBuffered, player.id, player.name, player.color, player.kills, player.deaths, player.assist);
+		SynchronizeClient(playerID);
+	}
+	
+	private void SynchronizeClient(NetworkViewID clientID) {
+		foreach(PlayerData data in playerList) {
+			networkView.RPC("SynchronizeList", clientID.owner, data.id, data.kills, data.deaths, data.assist);
+		}
+	}
+	
+	[RPC]
+	private void SynchronizeList(NetworkViewID id, int kills, int deaths, int assist) {
+		int ind = playerList.FindIndex(player => player.id == id);
+		playerList[ind].kills=kills;
+		playerList[ind].deaths=deaths;
+		playerList[ind].assist=assist;
 	}
 	
 	[RPC] //Server function

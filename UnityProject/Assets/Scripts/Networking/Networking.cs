@@ -3,14 +3,13 @@ using System.Collections;
 
 public class Networking : MonoBehaviour {
 	public GameObject player_prefab;
-	// TODO: Marcin jesli to sa zmienne prywatne to je nazwij jako prywatne
-	enum MenuState{Main, CreateServer, Connect, ServerGame, ClientGame};
-	MenuState guiState=MenuState.Main;
-	string serverName = "Server Name";
-	string playerName = "Player Name";
-	GameObject goPlayer;
-	float timeHostWasRegistered;	
-	Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
+	private enum MenuState{Main, CreateServer, Connect, ServerGame, ClientGame};
+	private MenuState guiState=MenuState.Main;
+	private string serverName = "Server Name";
+	private string playerName = "Player Name";
+	private GameObject goPlayer;
+	private float timeHostWasRegistered;	
+	private Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
 	private GameObject spawners;
 	
 	void Awake () {
