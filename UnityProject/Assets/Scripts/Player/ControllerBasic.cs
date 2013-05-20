@@ -74,7 +74,7 @@ public class ControllerBasic : MonoBehaviour {
 	}
 	
 	void Hit(object []package) {
-		data.health -= package[0];
+		data.health -= (int)package[0];
 		if(data.health <= 0){
 			networkView.RPC("SwichPlayerState",RPCMode.AllBuffered, networkView.viewID);
 			
@@ -83,11 +83,14 @@ public class ControllerBasic : MonoBehaviour {
 			playerList[id].deaths++;			
 			networkView.RPC ("UpdateDeath", RPCMode.Others, networkView.viewID);
 			
-			id = playerList.FindIndex(player => player.id == package[1]);
-			playerList[id].kills++;	
-			networkView.RPC ("UpdateKill", RPCMode.Others, package[1]);
+			id = playerList.FindIndex(player => player.id == (NetworkViewID)package[1]);	
+			if(id!= -1) {
+				playerList[id].kills++;	
+				networkView.RPC ("UpdateKill", RPCMode.Others, (NetworkViewID)package[1]);
+			}	
 			
 			resFlag = true;
+			
 		}
 		else
 			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, damage);

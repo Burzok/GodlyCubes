@@ -15,6 +15,7 @@ public class TowerBullet : MonoBehaviour {
 	public float mag;
 	
 	void Start () {
+		owner = networkView.viewID;
 		target = null;
 		flag = true;
 		modif = 1f;
