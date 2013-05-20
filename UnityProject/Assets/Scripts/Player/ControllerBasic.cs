@@ -6,6 +6,7 @@ public class ControllerBasic : MonoBehaviour {
 	
 	public float rotateSpeed = 250f;
 	public float rotationInput;
+	public int damage = 10;
 	
 	private GameObject[] mainCam;
 	private GameObject mainScript;
@@ -72,8 +73,8 @@ public class ControllerBasic : MonoBehaviour {
 		}
 	}
 	
-	void Hit(int damage) {
-		data.health -= damage;
+	void Hit(object []package) {
+		data.health -= package[0];
 		if(data.health <= 0){
 			networkView.RPC("SwichPlayerState",RPCMode.AllBuffered, networkView.viewID);
 			
@@ -81,11 +82,22 @@ public class ControllerBasic : MonoBehaviour {
 			int id = playerList.FindIndex(player => player.id == networkView.viewID);
 			playerList[id].deaths++;			
 			networkView.RPC ("UpdateDeath", RPCMode.Others, networkView.viewID);
-				
+			
+			id = playerList.FindIndex(player => player.id == package[1]);
+			playerList[id].kills++;	
+			networkView.RPC ("UpdateKill", RPCMode.Others, package[1]);
+			
 			resFlag = true;
 		}
 		else
 			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, damage);
+	}
+	
+	[RPC]
+	void UpdateKill(NetworkViewID viewID) {
+		List<PlayerData> playerList = mainScript.GetComponent<PlayerList>().playerList;
+		int id = playerList.FindIndex(player => player.id == viewID);
+		playerList[id].kills++;		
 	}
 	
 	[RPC]

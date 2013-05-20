@@ -6,6 +6,7 @@ public class TowerBullet : MonoBehaviour {
 	public float bulletSpeed;
 	public int damage = 30;
 	public Transform towerDetector;
+	public NetworkViewID owner;
 	
 	private bool flag;
 	public Transform reloder;
@@ -53,7 +54,10 @@ public class TowerBullet : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 		if(Network.isServer) {
-			other.SendMessage("Hit", damage);
+			object[] data = new object[2];
+			data[0]=damage;
+			data[1]=owner;
+			other.SendMessage("Hit", data);
 			Network.RemoveRPCs(networkView.viewID);
 			Network.Destroy(this.gameObject);
 		}

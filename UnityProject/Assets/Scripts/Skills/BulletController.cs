@@ -3,8 +3,9 @@ using System.Collections;
 
 public class BulletController : MonoBehaviour {
 	public float bulletSpeed = 10f;
-	public int damage = 10;
 	public float lifeTime = 2.0f;
+	public int damage = 10;
+	public NetworkViewID owner;
 	
 	void Start() {
 		Network.RemoveRPCs(networkView.viewID);
@@ -24,7 +25,10 @@ public class BulletController : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 		if(Network.isServer) {
-			other.SendMessage("Hit", damage);
+			object[] data = new object[2];
+			data[0]=damage;
+			data[1]=owner;
+			other.SendMessage("Hit", data);
 			Network.Destroy(this.gameObject);
 		}
 	}
