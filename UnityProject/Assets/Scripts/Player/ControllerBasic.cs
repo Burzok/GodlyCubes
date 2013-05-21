@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class ControllerBasic : MonoBehaviour {
 	
-	public float rotateSpeed = 250f;
-	public float rotationInput;
 	public int damage = 10;
 	
 	private GameObject[] mainCam;
@@ -14,6 +12,7 @@ public class ControllerBasic : MonoBehaviour {
 	private bool resFlag = false;
 	private float timer=0;
 	private Transform meshChild;
+	private bool locked = false; 
 	
 	void Awake() {
 		mainCam = GameObject.FindGameObjectsWithTag(Tags.mainCamera);
@@ -36,6 +35,10 @@ public class ControllerBasic : MonoBehaviour {
 		}
 	}
 	
+	void Start() {
+		LockMousePosition();
+	}
+	
 	void TurnOffMainCameras() {
 		foreach( GameObject cam in mainCam )
 			cam.SetActive(false);
@@ -46,20 +49,12 @@ public class ControllerBasic : MonoBehaviour {
 			cam.SetActive(true);
 	}
 	
-	void FixedUpdate() {
-		if(networkView.isMine) {
-			//rotationInput = Input.GetAxis("Mouse X");
-			if ( rotationInput != 0 )
-				transform.Rotate( transform.up, rotateSpeed * rotationInput * Time.deltaTime);
-		}
-	}
-	
 	void Update() {
-		if(networkView.isMine)
-			rotationInput = Input.GetAxis("Mouse X");
-	
 		if(resFlag)
 			Respawn();
+		
+		if(networkView.isMine)
+			InputCheck();
 	}
 	
 	void Respawn() {
@@ -71,6 +66,27 @@ public class ControllerBasic : MonoBehaviour {
 			timer = 0;
 			resFlag = false;
 		}
+	}
+	
+	private void InputCheck() {
+		if (Input.GetKeyDown(KeyCode.Escape))
+			CheckCursorLock();
+	}
+	
+	private void CheckCursorLock() {
+		if (locked)
+			UnlockMousePosition();
+		else
+			LockMousePosition();
+	}
+	
+	private void LockMousePosition() {
+		locked = true;
+		Screen.lockCursor = true;
+	}
+	private void UnlockMousePosition() {
+		locked = false;
+		Screen.lockCursor = false;
 	}
 	
 	void Hit(object []package) {
