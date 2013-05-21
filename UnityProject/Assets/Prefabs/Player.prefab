@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c4f2bf1b4ed82d4da2be9dc3d6b4af3, type: 3}
   m_Name: 
   bulletPrefab: {fileID: 400000, guid: 9bc14f7c8929afc4c81a3a37c3605dc8, type: 2}
+  coolDown: 1.20000005
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,7 +243,7 @@ MonoBehaviour:
   isAlive: 1
   health: 100
   maxHealth: 100
-  respawnTime: 3
+  respawnTime: 5
   respawnPosition: {x: 0, y: 0, z: 0}
   playerName: 
   color: {x: 0, y: 0, z: 0}
@@ -271,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef9dabcc2d120c4b91899985c3a1644, type: 3}
   m_Name: 
   rotateSpeed: 250
+  rotationInput: 0
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
