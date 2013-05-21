@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Networking : MonoBehaviour {
 	public GameObject player_prefab;
+	
 	private enum MenuState{Main, CreateServer, Connect, ServerGame, ClientGame};
 	private MenuState guiState=MenuState.Main;
 	private string serverName = "Server Name";
@@ -11,6 +12,7 @@ public class Networking : MonoBehaviour {
 	private float timeHostWasRegistered;	
 	private Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
 	private GameObject spawners;
+	private Transform tempTransform;
 	
 	void Awake () {
         MasterServer.ClearHostList();
@@ -84,10 +86,42 @@ public class Networking : MonoBehaviour {
 		}
 	}	
 	
-	void OnConnectedToServer() {			
+	/*
+	void OnPlayerConnected(NetworkPlayer player) {
+		Transform spawner = spawners.transform;
+		NetworkViewID viewID = Network.AllocateViewID();
+		
+		networkView.RPC("SpawnPlayer", RPCMode.AllBuffered, viewID, spawner.position);
+		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, tempTransform.networkView.viewID);
+	}
+	*/
+	/*
+	[RPC]
+	private void SpawnPlayer(NetworkViewID viewID, Vector3 location) {
+		tempTransform = Instantiate(player_prefab, location, Quaternion.identity) as Transform;
+		NetworkView nView;
+        nView = tempTransform.GetComponent<NetworkView>();
+        nView.viewID = viewID;
+	}
+	*/
+	void OnConnectedToServer() {		
+		
 		Transform spawner = spawners.transform;
 		goPlayer = SpawnPlayer(ref spawner);
 		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, goPlayer.networkView.viewID);
+		
+		/*
+		Transform spawner = spawners.transform;
+		NetworkViewID viewID = Network.AllocateViewID();
+		
+		networkView.RPC("SpawnPlayer", RPCMode.AllBuffered, viewID, spawner.position);
+		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, tempTransform.networkView.viewID);
+		*/
+	}
+	
+	private GameObject SpawnPlayer(ref Transform spawner) {
+		return Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) 
+			as GameObject;
 	}
 	
 	public Transform FindSpawn(ref int numberOfPlayers) {
@@ -101,11 +135,6 @@ public class Networking : MonoBehaviour {
 			return spawners.transform.FindChild("Spawn4");
 		else
 			return spawners.transform;
-	}
-	
-	private GameObject SpawnPlayer(ref Transform spawner) {
-		return Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) 
-			as GameObject;
 	}
 	
 	void OnDisconnectedFromServer () {

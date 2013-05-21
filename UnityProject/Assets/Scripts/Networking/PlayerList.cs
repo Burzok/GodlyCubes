@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerData {
-		public NetworkViewID id;
-		public string name;
-		public Vector3 color;
-		public int kills;
-		public int deaths;
-		public int assist;	
+	public NetworkViewID id;
+	public Transform lokalTransform;
+	public string name;
+	public Vector3 color;
+	public int kills;
+	public int deaths;
+	public int assist;	
 };
 
 public class PlayerList : MonoBehaviour {
@@ -22,6 +23,12 @@ public class PlayerList : MonoBehaviour {
 		
 		player.id = playerID;
 		player.name = playerName;
+		
+		GameObject[] lokalPlayers = GameObject.FindGameObjectsWithTag(Tags.player);
+		foreach (GameObject lokalPlayer in lokalPlayers) {
+			if (player.id == lokalPlayer.networkView.viewID)
+				player.lokalTransform = lokalPlayer.transform;
+		}
 		
 		if (playerList.Count == 0)
 			player.color = new Vector3(1,0,0);

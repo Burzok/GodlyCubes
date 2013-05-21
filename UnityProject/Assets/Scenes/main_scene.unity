@@ -907,6 +907,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1512800478}
   - 135: {fileID: 1512800479}
+  - 148: {fileID: 1512800481}
   - 114: {fileID: 1512800480}
   m_Layer: 10
   m_Name: Detection
@@ -951,6 +952,18 @@ MonoBehaviour:
   m_Name: 
   target: {fileID: 0}
   bullet: {fileID: 0}
+--- !u!148 &1512800481
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512800477}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 0}
+  m_ViewID:
+    m_ID: 2
+    m_Type: 1
 --- !u!1001 &1814760338
 Prefab:
   m_ObjectHideFlags: 0
