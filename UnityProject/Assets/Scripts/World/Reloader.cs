@@ -19,7 +19,7 @@ public class Reloader : MonoBehaviour {
 		spawner = transform.FindChild("Spawner");
 	}
 	
-	void Update() {
+	void FixedUpdate() {
 		if (Network.isServer) {
 			CheckIfTargetIsAlive();
 			IncrementTimer();
@@ -45,10 +45,21 @@ public class Reloader : MonoBehaviour {
 	}
 	
 	private void Reload() {
-		bullet = Network.Instantiate(bulletPrefab, spawner.position, spawner.rotation, 0) as Transform;
+		NetworkViewID viewID = Network.AllocateViewID();
+		
+		networkView.RPC("InstantiateTowerBullet", RPCMode.AllBuffered, viewID);
+		
+		timer = 0;
+	}
+	
+	[RPC]
+	private void InstantiateTowerBullet(NetworkViewID id) {
+		bullet = Instantiate(bulletPrefab, spawner.position, spawner.rotation) as Transform;
+		bullet.GetComponent<NetworkView>().viewID = id;
+		
 		detector.GetComponent<AITower>().bullet = bullet;
+		
 		bullet.GetComponent<TowerBullet>().towerDetector = detector;
 		bullet.GetComponent<TowerBullet>().reloder = this.transform;
-		timer = 0;
 	}
 }

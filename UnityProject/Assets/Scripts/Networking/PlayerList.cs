@@ -38,10 +38,60 @@ public class PlayerList : MonoBehaviour {
 		player.kills=0;
 		player.deaths=0;
 		player.assist=0;		
+		
 		playerList.Add(player);
+		
 		networkView.RPC("UpdatePlayer", RPCMode.AllBuffered, player.id, player.color);
 		networkView.RPC("InfoToClient", RPCMode.OthersBuffered, player.id, player.name, player.color, player.kills, player.deaths, player.assist);
 		SynchronizeClient(playerID);
+	}
+	
+	[RPC] //Server & Client function
+	private void UpdatePlayer(NetworkViewID id, Vector3 color) {
+		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
+		
+		ChangeColor(ref id, ref color, ref players);
+		ChangePosition(ref id, ref players);
+	}
+	
+	private void ChangeColor(ref NetworkViewID id, ref Vector3 color, ref GameObject[] players) {
+		foreach(GameObject player in players) {
+			if (id == player.networkView.viewID)
+				player.GetComponentInChildren<Renderer>().material.color = new Color(color.x,color.y,color.z);
+		}
+	}
+	
+	private void ChangePosition(ref NetworkViewID id, ref GameObject[] players) {
+		int numberOfPlayers = playerList.Count;
+		
+		Transform spawningPoint = gameObject.GetComponent<Networking>().FindSpawn(ref numberOfPlayers);
+		foreach(GameObject player in players) {
+			if (id == player.networkView.viewID) {
+				player.GetComponent<PlayerGameData>().respawnPosition = spawningPoint.position;
+				player.transform.position = spawningPoint.position;
+			}
+		}
+	}
+	
+	[RPC] //Client function
+	private void InfoToClient(NetworkViewID id, string playerName, Vector3 color, int kills, int deaths, int assist) {
+		
+		PlayerData player = new PlayerData();
+		
+		player.id=id;
+		player.name=playerName;
+		player.color=color;
+		player.kills=kills;
+		player.deaths=deaths;
+		player.assist=assist;
+		
+		GameObject[] lokalPlayers = GameObject.FindGameObjectsWithTag(Tags.player);
+		foreach (GameObject lokalPlayer in lokalPlayers) {
+			if (player.id == lokalPlayer.networkView.viewID)
+				player.lokalTransform = lokalPlayer.transform;
+		}
+		
+		playerList.Add(player);
 	}
 	
 	private void SynchronizeClient(NetworkViewID clientID) {
@@ -59,63 +109,20 @@ public class PlayerList : MonoBehaviour {
 	}
 	
 	[RPC] //Server function
-	void UnregisterPlayer(NetworkViewID idToDelete)	{
+	private void UnregisterPlayer(NetworkViewID idToDelete)	{
 		Network.RemoveRPCs(idToDelete);
 		playerList.RemoveAll(playerToDelete => playerToDelete.id == idToDelete);		
 	}
 	
-	[RPC] //Server & Client function
-	void UpdatePlayer(NetworkViewID id, Vector3 color) {
-		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-		
-		ChangeColor(ref id, ref color, ref players);
-		
-		ChangePosition(ref id, ref players);
-	}
-	
-	private void ChangeColor(ref NetworkViewID id, ref Vector3 color, ref GameObject[] players) {
-		
-		foreach(GameObject player in players) {
-			if (id == player.networkView.viewID) {					
-				player.GetComponentInChildren<Renderer>().material.color = new Color(color[0],color[1],color[2]);
-			}
-		}
-	}
-	
-	private void ChangePosition(ref NetworkViewID id, ref GameObject[] players) {
-		int numberOfPlayers = playerList.Count;
-		
-		Transform spawningPoint = gameObject.GetComponent<Networking>().FindSpawn(ref numberOfPlayers);
-		foreach(GameObject player in players) {
-			if (id == player.networkView.viewID) {
-				player.GetComponent<PlayerGameData>().respawnPosition = spawningPoint.position;
-				player.transform.position = spawningPoint.position;
-			}
-		}
-	}
-	
 	[RPC] //Server function
-	void GetPlayerInfo(NetworkViewID idToFind) { 
+	private void GetPlayerInfo(NetworkViewID idToFind) { 
 		
 		PlayerData playerToSend = new PlayerData();
 		playerToSend = playerList.Find(playerToFind => playerToFind.id == idToFind);
 		
-		networkView.RPC("InfoToClient",idToFind.owner,idToFind.owner ,playerToSend.name, playerToSend.color, playerToSend.kills, playerToSend.deaths, playerToSend.assist);
-	}
-	
-	[RPC] //Client function
-	void InfoToClient(NetworkViewID id, string playerName, Vector3 color, int kills, int deaths, int assist)	{
-		
-		PlayerData player = new PlayerData();
-		
-		player.id=id;
-		player.name=playerName;
-		player.color=color;
-		player.kills=kills;
-		player.deaths=deaths;
-		player.assist=assist;
-		
-		playerList.Add(player);
+		networkView.RPC("InfoToClient", idToFind.owner, idToFind.owner, 
+						playerToSend.name, playerToSend.color, playerToSend.kills, 
+						playerToSend.deaths, playerToSend.assist);
 	}
 	
 	void OnGUI() {

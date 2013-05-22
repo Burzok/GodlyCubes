@@ -16,14 +16,19 @@ public class AITower : MonoBehaviour {
 		if (Network.isServer) {
 			if (target != null && bullet != null) {
 				if (target.GetComponent<PlayerGameData>().isAlive) {
-					TowerBullet towerBulletRefference = bullet.GetComponent<TowerBullet>();
-					if (towerBulletRefference.target == null)
-						towerBulletRefference.target = target;
+					networkView.RPC("SetBulletTarget", RPCMode.All);
 				}
 				else
 					networkView.RPC("ClearTowerTarget", RPCMode.All, networkView.viewID);
 			}
 		}
+	}
+	
+	[RPC]
+	private void SetBulletTarget() {
+		TowerBullet towerBulletRefference = bullet.GetComponent<TowerBullet>();
+			if (towerBulletRefference.target == null)
+				towerBulletRefference.target = target;
 	}
 	
 	void OnTriggerEnter(Collider other) {

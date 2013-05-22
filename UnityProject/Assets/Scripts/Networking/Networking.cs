@@ -85,38 +85,12 @@ public class Networking : MonoBehaviour {
 			}
 		}
 	}	
-	
-	/*
-	void OnPlayerConnected(NetworkPlayer player) {
-		Transform spawner = spawners.transform;
-		NetworkViewID viewID = Network.AllocateViewID();
-		
-		networkView.RPC("SpawnPlayer", RPCMode.AllBuffered, viewID, spawner.position);
-		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, tempTransform.networkView.viewID);
-	}
-	*/
-	/*
-	[RPC]
-	private void SpawnPlayer(NetworkViewID viewID, Vector3 location) {
-		tempTransform = Instantiate(player_prefab, location, Quaternion.identity) as Transform;
-		NetworkView nView;
-        nView = tempTransform.GetComponent<NetworkView>();
-        nView.viewID = viewID;
-	}
-	*/
+
 	void OnConnectedToServer() {		
 		
 		Transform spawner = spawners.transform;
 		goPlayer = SpawnPlayer(ref spawner);
 		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, goPlayer.networkView.viewID);
-		
-		/*
-		Transform spawner = spawners.transform;
-		NetworkViewID viewID = Network.AllocateViewID();
-		
-		networkView.RPC("SpawnPlayer", RPCMode.AllBuffered, viewID, spawner.position);
-		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, tempTransform.networkView.viewID);
-		*/
 	}
 	
 	private GameObject SpawnPlayer(ref Transform spawner) {

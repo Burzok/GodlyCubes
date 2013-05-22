@@ -1,15 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Shooting.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Networking\Networking.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="16" Column="17" />
-      <File FileName="Assets\Scripts\Player\ControllerBasic.cs" Line="14" Column="30" />
-      <File FileName="Assets\Scripts\Player\Rotator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="2" Column="17" />
+      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="47" Column="3" />
+      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="24" Column="2" />
       <File FileName="Assets\Scripts\Skills\BulletController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\Reloader.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\AITower.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\Reloader.cs" Line="41" Column="2" />
+      <File FileName="Assets\Scripts\World\AITower.cs" Line="22" Column="6" />
       <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="1" Column="1" />
     </Files>
@@ -19,10 +17,11 @@
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Networking" expanded="True" />
-                <Node name="Player" expanded="True">
-                  <Node name="Shooting.cs" selected="True" />
+                <Node name="Networking" expanded="True">
+                  <Node name="Networking.cs" selected="True" />
                 </Node>
+                <Node name="Player" expanded="True" />
+                <Node name="World" expanded="True" />
               </Node>
             </Node>
           </Node>
