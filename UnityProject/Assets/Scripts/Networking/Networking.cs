@@ -1,9 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
+public delegate void DrawGUI();
+
 public class Networking : MonoBehaviour {
+
 	public GameObject player_prefab;
-	
+	public DrawGUI drawGUI;
+
 	private enum MenuState{Main, CreateServer, Connect, ServerGame, ClientGame};
 	private MenuState guiState=MenuState.Main;
 	private string serverName = "Server Name";
@@ -13,91 +17,94 @@ public class Networking : MonoBehaviour {
 	private Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
 	private GameObject spawners;
 	private Transform tempTransform;
-	
+
 	void Awake () {
         MasterServer.ClearHostList();
         MasterServer.RequestHostList("GodlyCubesLight");
-		
-		spawners = GameObject.Find("Spawners");
-	}
-	
-	void OnGUI () {
-		if (guiState==MenuState.Main) {
-			if (GUI.Button (new Rect(Screen.width * 0.5f-120f, 20f, 100f, 50f), "Create Server"))
-				guiState = MenuState.CreateServer;
-				
-			if (GUI.Button (new Rect(Screen.width * 0.5f+20f, 20f, 100f, 50f), "Connect")) 
-				guiState = MenuState.Connect;
-			
-			if (GUI.Button (new Rect(Screen.width * 0.5f-50f, Screen.height - 70f, 100f, 50f),"Quit"))
-				Application.Quit();
-		}
-		
- 		if(guiState==MenuState.CreateServer) { 
-			serverName = GUI.TextField(new Rect(Screen.width * 0.5f-50f, 30f, 100f, 20f), serverName);
-			
-			if (GUI.Button (new Rect(Screen.width * 0.5f-50f, 55f, 100f, 50f),"Create")) {
-  				Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
-	  			MasterServer.RegisterHost("GodlyCubesLight", serverName);
-				timeHostWasRegistered = Time.time;
-				GameObject spawner = GameObject.Find("Spawner");
-				guiState = MenuState.ServerGame;
-			}
-			
-			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
-				guiState = MenuState.Main;
-		}	
-			
-		if(guiState==MenuState.Connect) {  
-			windowRect = GUI.Window(0, windowRect, ServerList, "Server List");
-			playerName = GUI.TextField(new Rect(Screen.width * .5f-50f, 175f, 100f, 20f), playerName);
-			
-			if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
-				guiState = MenuState.Main;
-		}
-		
-		if(guiState==MenuState.ServerGame) {  
-				GUI.Label(new Rect(5,5,250,40),"Server name: " + serverName);
-			
-			if (GUI.Button (new Rect(Screen.width-105f, 5f, 100f, 50f),"Back")) {				 
-				if(Network.isServer)
-   					networkView.RPC("ExitCL", RPCMode.Others);
-				
-				GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
-				foreach(GameObject player in players) {
-					Network.Destroy(player.networkView.viewID);					
-				}
-				
-				Network.Disconnect();
-				guiState = MenuState.Main;
-			}
-		}
-		
-		if(guiState==MenuState.ClientGame) {
-			GUI.Label(new Rect(5,5,250,40), "Server name: " + serverName);
-			
-			if (GUI.Button (new Rect(Screen.width-105f, 5f, 100f, 50f), "Back")) {  				
-				networkView.RPC("UnregisterPlayer", RPCMode.Server, goPlayer.networkView.viewID);
-				GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 
-				Network.Disconnect();
-				guiState = MenuState.Main;
-			}
+		spawners = GameObject.Find("Spawners");
+
+		drawGUI = DrawMainMenu;
+	}
+
+	void OnGUI() {
+		drawGUI();
+	}
+
+	private void DrawMainMenu() {
+		if (GUI.Button (new Rect(Screen.width * 0.5f-120f, 20f, 100f, 50f), "Create Server"))
+			drawGUI = DrawCreateServer;
+
+		if (GUI.Button (new Rect(Screen.width * 0.5f+20f, 20f, 100f, 50f), "Connect")) 
+			drawGUI = DrawConnect;
+
+		if (GUI.Button (new Rect(Screen.width * 0.5f-50f, Screen.height - 70f, 100f, 50f),"Quit"))
+			Application.Quit();
+	}
+
+	private void DrawCreateServer() {
+		serverName = GUI.TextField(new Rect(Screen.width * 0.5f-50f, 30f, 100f, 20f), serverName);
+
+		if (GUI.Button (new Rect(Screen.width * 0.5f-50f, 55f, 100f, 50f),"Create")) {
+  			Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
+	  		MasterServer.RegisterHost("GodlyCubesLight", serverName);
+			timeHostWasRegistered = Time.time;
+			GameObject spawner = GameObject.Find("Spawner");
+			drawGUI = DrawServerGame;
 		}
+
+		if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
+			drawGUI = DrawMainMenu;
 	}	
 
+	private void DrawConnect() {
+		windowRect = GUI.Window(0, windowRect, ServerList, "Server List");
+		playerName = GUI.TextField(new Rect(Screen.width * .5f-50f, 175f, 100f, 20f), playerName);
+
+		if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
+			drawGUI = DrawMainMenu;
+	}
+
+	private void DrawServerGame() {
+		GUI.Label(new Rect(5,5,250,40),"Server name: " + serverName);
+
+		if (GUI.Button (new Rect(Screen.width-105f, 5f, 100f, 50f),"Back")) {				 
+			if(Network.isServer)
+   				networkView.RPC("ExitCL", RPCMode.Others);
+
+			GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
+			foreach(GameObject player in players) {
+				Network.Destroy(player.networkView.viewID);					
+			}
+
+			Network.Disconnect();
+			drawGUI = DrawMainMenu;
+		}
+	}
+
+	private void DrawClientGame() {
+		GUI.Label(new Rect(5,5,250,40), "Server name: " + serverName);
+
+			if (GUI.Button (new Rect(Screen.width-105f, 5f, 100f, 50f), "Back")) {  				
+				networkView.RPC("UnregisterPlayer", RPCMode.Server, goPlayer.networkView.viewID);			
+				GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
+
+				Network.Disconnect();
+				drawGUI = DrawMainMenu;
+			}
+	}
+
 	void OnConnectedToServer() {		
-		
 		Transform spawner = spawners.transform;
 		goPlayer = SpawnPlayer(ref spawner);
 		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, goPlayer.networkView.viewID);
 	}
-	
+
 	private GameObject SpawnPlayer(ref Transform spawner) {
 		return Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) 
 			as GameObject;
 	}
-	
+
 	public Transform FindSpawn(ref int numberOfPlayers) {
 		if (numberOfPlayers == 0) 
 			return spawners.transform.FindChild("Spawn1");
@@ -110,7 +117,7 @@ public class Networking : MonoBehaviour {
 		else
 			return spawners.transform;
 	}
-	
+
 	void OnDisconnectedFromServer () {
 		GameObject []players = GameObject.FindGameObjectsWithTag(Tags.player);
 		foreach(GameObject player in players) {
@@ -118,7 +125,7 @@ public class Networking : MonoBehaviour {
 		}
 		GetComponent<PlayerList>().playerList.Clear();
 	}
-	
+
 	void OnPlayerDisconnected(NetworkPlayer player) {
 		Network.RemoveRPCs(player);
 		Network.DestroyPlayerObjects(player);
@@ -129,39 +136,39 @@ public class Networking : MonoBehaviour {
   		Network.Disconnect();
 		guiState = MenuState.Main;
 	}
-	
+
 	void ServerList (int windowID) {
 		if(Time.time - timeHostWasRegistered >= 1.0f) {
 			MasterServer.RequestHostList("GodlyCubesLight");
 		}
-		
+
 		HostData[] data = MasterServer.PollHostList();
 		foreach (HostData element in data) {
 			GUILayout.BeginHorizontal();	
 			var name = element.gameName + " " + element.connectedPlayers + " / " + element.playerLimit;
 			GUILayout.Label(name);	
 			GUILayout.Space(5);
-			
+
 			string hostInfo;
 			hostInfo = "[";
 			foreach (var host in element.ip)
 				hostInfo = hostInfo + host;
 			hostInfo = hostInfo + "]";
-			
+
 			GUILayout.Label(hostInfo);	
 			GUILayout.Space(5);
 			GUILayout.FlexibleSpace();
-			
+
 			if (GUILayout.Button("Connect")) {
 				Network.Connect(element);
 				serverName = element.gameName;
-				guiState = MenuState.ClientGame;					
+				drawGUI = DrawClientGame;				
 			}
-			
+
 			GUILayout.EndHorizontal();	
 		}
 	}
-	
+
 	public NetworkViewID getPlayerID() {
 		return goPlayer.networkView.viewID;
 	}
