@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\World\AITower.cs" />
      <Compile Include="Assets\Scripts\World\Reloader.cs" />
      <Compile Include="Assets\Scripts\World\TowerBullet.cs" />
+     <Compile Include="Assets\Scripts\World\TowerLife.cs" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />

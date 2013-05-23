@@ -83,7 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5d8e2c02f67e34489e09e8ddb688b6, type: 3}
   m_Name: 
   bulletSpeed: 15
-  damage: 10
+  lifeTime: .5
+  damage: 100
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

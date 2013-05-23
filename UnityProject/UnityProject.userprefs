@@ -1,15 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\World\TowerBullet.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\World\TowerLife.cs">
     <Files>
-      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="13" Column="44" />
+      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\Shooting.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Skills\BulletController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Skills\BulletController.cs" Line="34" Column="3" />
+      <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\World\Reloader.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\World\AITower.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="46" Column="18" />
-      <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="34" Column="31" />
+      <File FileName="Assets\Scripts\World\TowerLife.cs" Line="5" Column="29" />
+      <File FileName="Assets\Scripts\Player\ControllerBasic.cs" Line="7" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +23,7 @@
                 <Node name="Player" expanded="True" />
                 <Node name="Skills" expanded="True" />
                 <Node name="World" expanded="True">
-                  <Node name="TowerBullet.cs" selected="True" />
+                  <Node name="TowerLife.cs" selected="True" />
                 </Node>
               </Node>
             </Node>

@@ -89,7 +89,7 @@ public class ControllerBasic : MonoBehaviour {
 		Screen.lockCursor = false;
 	}
 	
-	void Hit(object []package) {
+	void Hit(object[] package) {
 		data.health -= (int)package[0];
 		if(data.health <= 0){
 			networkView.RPC("SwichPlayerState",RPCMode.AllBuffered, networkView.viewID);
