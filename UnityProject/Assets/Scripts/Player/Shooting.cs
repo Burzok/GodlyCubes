@@ -1,14 +1,18 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Shooting : MonoBehaviour {
 	public Transform bulletPrefab;
 	public float coolDown = 1.2f;
+	List<PlayerData> list;
 	
 	private Transform bulletSpawner;
 	private float coolDownTimer;
 	
 	void Awake() {
+		
+		list = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<PlayerList>().playerList;
 		bulletSpawner = this.transform.FindChild("BulletSpawner");
 		coolDownTimer = 5f;
 	}
@@ -37,6 +41,17 @@ public class Shooting : MonoBehaviour {
 	void SpawnBullet(NetworkViewID owner) {
 		Transform bullet = (Transform)Network.Instantiate(bulletPrefab, bulletSpawner.transform.position, bulletSpawner.rotation,0);
 		bullet.GetComponent<BulletController>().owner=owner;
+		
+		
+		foreach(PlayerData data in list) {
+			if (data.id == owner) {
+				if (data.team == Team.TeamA)
+					bullet.gameObject.layer = 9;
+				else if (data.team == Team.TeamB)
+					bullet.gameObject.layer = 10;					
+			}
+		}
+		
 	}
 	
 }

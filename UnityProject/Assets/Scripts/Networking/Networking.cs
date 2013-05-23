@@ -3,13 +3,16 @@ using System.Collections;
 
 public delegate void DrawGUI();
 
-public class Networking : MonoBehaviour {
+public enum Team {
+	TeamA,
+	TeamB	
+}
 
+public class Networking : MonoBehaviour {
+	
 	public GameObject player_prefab;
 	public DrawGUI drawGUI;
 
-	private enum MenuState{Main, CreateServer, Connect, ServerGame, ClientGame};
-	private MenuState guiState=MenuState.Main;
 	private string serverName = "Server Name";
 	private string playerName = "Player Name";
 	private GameObject goPlayer;
@@ -17,6 +20,7 @@ public class Networking : MonoBehaviour {
 	private Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
 	private GameObject spawners;
 	private Transform tempTransform;
+	Team actualTeam;
 
 	void Awake () {
         MasterServer.ClearHostList();
@@ -64,6 +68,24 @@ public class Networking : MonoBehaviour {
 		if (GUI.Button (new Rect(Screen.width * .5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
 			drawGUI = DrawMainMenu;
 	}
+	
+	private void DrawTeamSelect() {
+		if (GUI.Button (new Rect(Screen.width * 0.5f-120f, 20f, 100f, 50f), "Team A")) {
+			drawGUI = DrawClientGame;
+			ConnectToGame(Team.TeamA);
+		}
+
+		if (GUI.Button (new Rect(Screen.width * 0.5f+20f, 20f, 100f, 50f), "Team B")) {
+			drawGUI = DrawClientGame;
+			ConnectToGame(Team.TeamB);
+			
+		}
+
+		if (GUI.Button (new Rect(Screen.width * 0.5f-50f, Screen.height - 70f, 100f, 50f),"Disconnect")) {			
+			Network.Disconnect();
+			drawGUI = DrawMainMenu;
+		}
+	}
 
 	private void DrawServerGame() {
 		GUI.Label(new Rect(5,5,250,40),"Server name: " + serverName);
@@ -94,10 +116,10 @@ public class Networking : MonoBehaviour {
 			}
 	}
 
-	void OnConnectedToServer() {		
+	private void ConnectToGame(Team playerTeam) {
 		Transform spawner = spawners.transform;
 		goPlayer = SpawnPlayer(ref spawner);
-		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, goPlayer.networkView.viewID);
+		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, goPlayer.networkView.viewID, (int)playerTeam);
 	}
 
 	private GameObject SpawnPlayer(ref Transform spawner) {
@@ -134,7 +156,7 @@ public class Networking : MonoBehaviour {
 	[RPC]
 	void ExitCL() {
   		Network.Disconnect();
-		guiState = MenuState.Main;
+		drawGUI = DrawMainMenu;
 	}
 
 	void ServerList (int windowID) {
@@ -162,7 +184,7 @@ public class Networking : MonoBehaviour {
 			if (GUILayout.Button("Connect")) {
 				Network.Connect(element);
 				serverName = element.gameName;
-				drawGUI = DrawClientGame;				
+				drawGUI = DrawTeamSelect;				
 			}
 
 			GUILayout.EndHorizontal();	

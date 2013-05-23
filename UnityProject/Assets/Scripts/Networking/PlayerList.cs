@@ -7,6 +7,7 @@ public class PlayerData {
 	public Transform lokalTransform;
 	public string name;
 	public Vector3 color;
+	public Team team;
 	public int kills;
 	public int deaths;
 	public int assist;	
@@ -17,12 +18,13 @@ public class PlayerList : MonoBehaviour {
 	public List<PlayerData> playerList = new List<PlayerData>(4);
 
 	[RPC] //Server function
-	void RegisterPlayer(string playerName, NetworkViewID playerID) {
+	void RegisterPlayer(string playerName, NetworkViewID playerID, int playerTeam) {
 		
 		PlayerData player = new PlayerData();
 		
 		player.id = playerID;
 		player.name = playerName;
+		player.team = (Team)playerTeam;
 		
 		GameObject[] lokalPlayers = GameObject.FindGameObjectsWithTag(Tags.player);
 		foreach (GameObject lokalPlayer in lokalPlayers) {
@@ -30,9 +32,9 @@ public class PlayerList : MonoBehaviour {
 				player.lokalTransform = lokalPlayer.transform;
 		}
 		
-		if (playerList.Count == 0)
+		if (player.team == Team.TeamA)
 			player.color = new Vector3(1,0,0);
-		else
+		else if (player.team == Team.TeamB)
 			player.color = new Vector3(0,0,1);
 
 		player.kills=0;
@@ -41,17 +43,18 @@ public class PlayerList : MonoBehaviour {
 		
 		playerList.Add(player);
 		
-		networkView.RPC("UpdatePlayer", RPCMode.AllBuffered, player.id, player.color);
-		networkView.RPC("InfoToClient", RPCMode.OthersBuffered, player.id, player.name, player.color, player.kills, player.deaths, player.assist);
+		networkView.RPC("UpdatePlayer", RPCMode.AllBuffered, player.id, player.color, (int)player.team);
+		networkView.RPC("InfoToClient", RPCMode.OthersBuffered, player.id, player.name, player.color, (int)player.team, player.kills, player.deaths, player.assist);
 		SynchronizeClient(playerID);
 	}
 	
 	[RPC] //Server & Client function
-	private void UpdatePlayer(NetworkViewID id, Vector3 color) {
+	private void UpdatePlayer(NetworkViewID id, Vector3 color, int team) {
 		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 		
 		ChangeColor(ref id, ref color, ref players);
 		ChangePosition(ref id, ref players);
+		ChangeLayers(ref id, ref team, ref players);
 	}
 	
 	private void ChangeColor(ref NetworkViewID id, ref Vector3 color, ref GameObject[] players) {
@@ -73,14 +76,27 @@ public class PlayerList : MonoBehaviour {
 		}
 	}
 	
+	private void ChangeLayers(ref NetworkViewID id, ref int team, ref GameObject[] players) {
+		foreach(GameObject player in players) {		
+			if (id == player.networkView.viewID) {
+				if (team == 0) 
+					player.layer=9;				
+				else if (team == 1)
+					player.layer=10;				
+			}
+		}			
+	}
+		
+	
 	[RPC] //Client function
-	private void InfoToClient(NetworkViewID id, string playerName, Vector3 color, int kills, int deaths, int assist) {
+	private void InfoToClient(NetworkViewID id, string playerName, Vector3 color, int team, int kills, int deaths, int assist) {
 		
 		PlayerData player = new PlayerData();
 		
 		player.id=id;
 		player.name=playerName;
 		player.color=color;
+		player.team=(Team)team;
 		player.kills=kills;
 		player.deaths=deaths;
 		player.assist=assist;

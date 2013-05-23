@@ -1,17 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\World\TowerLife.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Shooting.cs">
     <Files>
-      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Skills\BulletController.cs" Line="34" Column="3" />
-      <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="11" Column="40" />
+      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="85" Column="21" />
+      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="15" Column="10" />
+      <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="20" Column="1" />
       <File FileName="Assets\Scripts\World\Reloader.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\AITower.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="34" Column="31" />
-      <File FileName="Assets\Scripts\World\TowerLife.cs" Line="5" Column="29" />
-      <File FileName="Assets\Scripts\Player\ControllerBasic.cs" Line="7" Column="25" />
+      <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,11 +16,11 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="Networking" expanded="True" />
-                <Node name="Player" expanded="True" />
-                <Node name="Skills" expanded="True" />
-                <Node name="World" expanded="True">
-                  <Node name="TowerLife.cs" selected="True" />
+                <Node name="Player" expanded="True">
+                  <Node name="Shooting.cs" selected="True" />
                 </Node>
+                <Node name="Skills" expanded="True" />
+                <Node name="World" expanded="True" />
               </Node>
             </Node>
           </Node>
