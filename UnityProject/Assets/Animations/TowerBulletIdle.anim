@@ -67,50 +67,50 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: 0, y: 4, z: 25}
-        inSlope: {x: 0, y: -1, z: 0}
-        outSlope: {x: 0, y: -1, z: 0}
-        tangentMode: -559038737
+        value: {x: 0, y: 4, z: 0}
+        inSlope: {x: 0, y: -1, z: 50}
+        outSlope: {x: 0, y: -1, z: 50}
+        tangentMode: 0
       - time: .5
         value: {x: 0, y: 3.5, z: 25}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
+        inSlope: {x: 0, y: 0, z: 50}
+        outSlope: {x: 0, y: 0, z: 50}
+        tangentMode: 554369060
       - time: 1
         value: {x: 0, y: 4, z: 25}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
+        tangentMode: 554369060
       - time: 1.5
         value: {x: 0, y: 3.5, z: 25}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
+        tangentMode: 554369060
       - time: 2
         value: {x: 0, y: 4, z: 25}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
+        tangentMode: 554369060
       - time: 2.5
         value: {x: 0, y: 3.5, z: 25}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
+        tangentMode: 554369060
       - time: 3
         value: {x: 0, y: 4, z: 25}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
+        tangentMode: 554369060
       - time: 3.5
         value: {x: 0, y: 3.5, z: 25}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -559038737
+        tangentMode: 554369060
       - time: 4
         value: {x: 0, y: 4, z: 25}
         inSlope: {x: 0, y: 1, z: 0}
         outSlope: {x: 0, y: 1, z: 0}
-        tangentMode: -559038737
+        tangentMode: 554369060
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: 
@@ -214,14 +214,14 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 25
-        inSlope: 0
-        outSlope: 0
+        value: 0
+        inSlope: 50
+        outSlope: 50
         tangentMode: 10
       - time: .5
         value: 25
-        inSlope: 0
-        outSlope: 0
+        inSlope: 50
+        outSlope: 50
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2

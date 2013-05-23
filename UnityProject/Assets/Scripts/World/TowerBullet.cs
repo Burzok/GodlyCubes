@@ -18,7 +18,7 @@ public class TowerBullet : MonoBehaviour {
 		owner = networkView.viewID;
 		target = null;
 		flag = true;
-		modif = 1f;
+		modif = 4f;
 		bulletSpeed = 1f;
 	}
 	
@@ -26,6 +26,7 @@ public class TowerBullet : MonoBehaviour {
 		if (target != null) {
 			if (flag) {
 				animation.Stop();
+				animation.CrossFade("TowerBulletShoot");
 				reloder.GetComponent<Reloader>().bullet = null;
 				flag = false;
 			}
@@ -38,14 +39,11 @@ public class TowerBullet : MonoBehaviour {
 				
 				mag = vecLenght.magnitude;
 				
-				if ((vecLenght.magnitude) <= 45f) {
+				if ((vecLenght.magnitude) <= 70f) {
 					modif = 8f;
 				}
-				else if ((vecLenght.magnitude) <= 50f) {
-					modif = 2f;	
-				}
-				else if ((vecLenght.magnitude) <= 60f) {
-					modif = 2f;	
+				else if ((vecLenght.magnitude) <= 100f) {
+					modif = 6f;	
 				}
 				
 				transform.position = Vector3.Lerp(transform.position, toPos, Time.deltaTime * bulletSpeed * modif);

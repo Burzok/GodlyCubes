@@ -28,7 +28,7 @@ public class BulletController : MonoBehaviour {
 			object[] data = new object[2];
 			data[0]=damage;
 			data[1]=owner;
-			other.SendMessage("Hit", data);
+			other.SendMessage("Hit", data, SendMessageOptions.DontRequireReceiver);
 			Network.Destroy(this.gameObject);
 		}
 	}

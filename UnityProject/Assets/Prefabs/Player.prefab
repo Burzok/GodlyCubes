@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 105e952d449dd9c49893209d63560a65, type: 3}
   m_Name: 
-  forwardSpeed: 35
+  forwardSpeed: 30
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
