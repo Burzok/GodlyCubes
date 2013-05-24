@@ -46,9 +46,9 @@ public class Shooting : MonoBehaviour {
 		foreach(PlayerData data in list) {
 			if (data.id == owner) {
 				if (data.team == Team.TeamA)
-					bullet.gameObject.layer = 9;
+					bullet.gameObject.layer = 11;
 				else if (data.team == Team.TeamB)
-					bullet.gameObject.layer = 10;					
+					bullet.gameObject.layer = 12;					
 			}
 		}
 		
