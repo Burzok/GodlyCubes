@@ -80,9 +80,9 @@ public class PlayerList : MonoBehaviour {
 		foreach(GameObject player in players) {		
 			if (id == player.networkView.viewID) {
 				if (team == 0) 
-					player.layer=9;				
+					player.layer=13;				
 				else if (team == 1)
-					player.layer=10;				
+					player.layer=14;				
 			}
 		}			
 	}
