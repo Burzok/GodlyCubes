@@ -1,13 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Shooting.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\World\BaseLife.cs">
     <Files>
-      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="85" Column="21" />
-      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="31" Column="3" />
+      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="35" Column="13" />
+      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\World\Reloader.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\BaseLife.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\TowerLife.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,11 +18,11 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="Networking" expanded="True" />
-                <Node name="Player" expanded="True">
-                  <Node name="Shooting.cs" selected="True" />
-                </Node>
+                <Node name="Player" expanded="True" />
                 <Node name="Skills" expanded="True" />
-                <Node name="World" expanded="True" />
+                <Node name="World" expanded="True">
+                  <Node name="BaseLife.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

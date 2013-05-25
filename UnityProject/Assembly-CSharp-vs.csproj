@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Unused\RandomFloorBotMovement.cs" />
      <Compile Include="Assets\Scripts\Unused\ScrollingUVs.cs" />
      <Compile Include="Assets\Scripts\World\AITower.cs" />
+     <Compile Include="Assets\Scripts\World\BaseLife.cs" />
      <Compile Include="Assets\Scripts\World\Reloader.cs" />
      <Compile Include="Assets\Scripts\World\TowerBullet.cs" />
      <Compile Include="Assets\Scripts\World\TowerLife.cs" />
