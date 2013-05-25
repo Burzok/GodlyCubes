@@ -53,7 +53,7 @@ public class PlayerList : MonoBehaviour {
 		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 		
 		ChangeColor(ref id, ref color, ref players);
-		ChangePosition(ref id, ref players);
+		ChangePosition(ref id, ref team, ref players);
 		ChangeLayers(ref id, ref team, ref players);
 	}
 	
@@ -64,10 +64,8 @@ public class PlayerList : MonoBehaviour {
 		}
 	}
 	
-	private void ChangePosition(ref NetworkViewID id, ref GameObject[] players) {
-		int numberOfPlayers = playerList.Count;
-		
-		Transform spawningPoint = gameObject.GetComponent<Networking>().FindSpawn(ref numberOfPlayers);
+	private void ChangePosition(ref NetworkViewID id, ref int team, ref GameObject[] players) {
+		Transform spawningPoint = gameObject.GetComponent<Networking>().FindSpawn((Team)team);
 		foreach(GameObject player in players) {
 			if (id == player.networkView.viewID) {
 				player.GetComponent<PlayerGameData>().respawnPosition = spawningPoint.position;
