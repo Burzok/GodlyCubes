@@ -117,8 +117,12 @@ public class Networking : MonoBehaviour {
 			}
 	}
 	
+	void OnConnectedToServer() {
+		drawGUI = DrawTeamSelect;	
+	}
+	
 	private void ConnectToGame(Team playerTeam) {
-		networkView.RPC("DownloadCounterData", RPCMode.Server, networkView.owner);
+		networkView.RPC("DownloadTeamCounterData", RPCMode.Server, networkView.owner);
 		networkView.RPC("IncCounters", RPCMode.AllBuffered, (int)playerTeam);
 		Transform spawner = FindSpawn(playerTeam);
 		goPlayer = SpawnPlayer(ref spawner);
@@ -221,8 +225,7 @@ public class Networking : MonoBehaviour {
 
 			if (GUILayout.Button("Connect")) {
 				Network.Connect(element);
-				serverName = element.gameName;
-				drawGUI = DrawTeamSelect;				
+				serverName = element.gameName;			
 			}
 
 			GUILayout.EndHorizontal();	
