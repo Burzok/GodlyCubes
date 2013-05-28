@@ -1,15 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Networking\Networking.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuGUI.cs">
     <Files>
-      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="125" Column="32" />
-      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\..\..\..\Users\Burzok\Desktop\FTJ-master\FTJ Project\Assets\Scripts\DrawEmptyScript.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\..\..\..\Users\Burzok\Desktop\FTJ-master\FTJ Project\Assets\Scripts\DrawSpawnerScript.cs" Line="6" Column="2" />
       <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\Reloader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="43" Column="55" />
       <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\World\BaseLife.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\World\TowerLife.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\TowerTeamChoser.cs" Line="21" Column="1" />
+      <File FileName="Assets\Scripts\World\Reloader.cs" Line="65" Column="50" />
+      <File FileName="Assets\Scripts\World\AITower.cs" Line="16" Column="26" />
+      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="18" Column="25" />
+      <File FileName="Assets\Scripts\MenuGUI.cs" Line="107" Column="4" />
+      <File FileName="Assets\Scripts\Networking\Chat.cs" Line="86" Column="63" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,11 +23,10 @@
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Networking" expanded="True">
-                  <Node name="Networking.cs" selected="True" />
-                </Node>
+                <Node name="Networking" expanded="True" />
                 <Node name="Player" expanded="True" />
                 <Node name="World" expanded="True" />
+                <Node name="MenuGUI.cs" selected="True" />
               </Node>
             </Node>
           </Node>

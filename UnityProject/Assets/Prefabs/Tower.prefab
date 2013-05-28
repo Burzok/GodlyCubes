@@ -29,7 +29,8 @@ GameObject:
   - 148: {fileID: 14800000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
-  m_Layer: 9
+  - 114: {fileID: 11400006}
+  m_Layer: 13
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: .382683486, z: 0, w: .923879564}
-  m_LocalPosition: {x: 13.5441933, y: .5, z: 42.6940994}
+  m_LocalPosition: {x: 13.5441933, y: 2.5, z: 42.6940994}
   m_LocalScale: {x: 2, y: 5, z: 2}
   m_Children:
   - {fileID: 400004}
@@ -217,6 +218,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88a343042877944b8d55b4bbe2dca0d, type: 3}
   m_Name: 
   maxhealth: 500
+  health: 0
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1eca0aec0771441ac51e0e40846050, type: 3}
+  m_Name: 
+  teamSelect: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

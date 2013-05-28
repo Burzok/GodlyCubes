@@ -35,7 +35,6 @@ public class AITower : MonoBehaviour {
 		if (Network.isServer) {
 			if (target == null) 
 				networkView.RPC("SetTowerTarget", RPCMode.All, networkView.viewID, other.networkView.viewID);
-				//target = other.transform;
 		}
 	}
 	
@@ -43,7 +42,6 @@ public class AITower : MonoBehaviour {
 		if (Network.isServer) {
 			if (target == null) 
 				networkView.RPC("SetTowerTarget", RPCMode.All, networkView.viewID, other.networkView.viewID);
-				//target = other.transform;
 		}
 	}
 	

@@ -15,8 +15,8 @@ TagManager:
   Builtin Layer 6: 
   Builtin Layer 7: 
   User Layer 8: Dynamic Objects
-  User Layer 9: Movement
-  User Layer 10: AIDetection
+  User Layer 9: AITeamA
+  User Layer 10: AITeamB
   User Layer 11: ProjectilesA
   User Layer 12: ProjectilesB
   User Layer 13: TeamA

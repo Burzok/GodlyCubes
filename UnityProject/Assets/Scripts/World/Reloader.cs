@@ -10,6 +10,7 @@ public class Reloader : MonoBehaviour {
 	private Transform detector;
 	private Transform spawner;
 	private float timer;
+	private Team towerTeam;
 	
 	void Awake() {
 		timer = 0;
@@ -55,11 +56,21 @@ public class Reloader : MonoBehaviour {
 	[RPC]
 	private void InstantiateTowerBullet(NetworkViewID id) {
 		bullet = Instantiate(bulletPrefab, spawner.position, spawner.rotation) as Transform;
+		
+		if (towerTeam == Team.TeamA)
+			bullet.gameObject.layer = 11;
+		else if (towerTeam == Team.TeamB)
+			bullet.gameObject.layer = 12;
+						
 		bullet.GetComponent<NetworkView>().viewID = id;
 		
 		detector.GetComponent<AITower>().bullet = bullet;
 		
 		bullet.GetComponent<TowerBullet>().towerDetector = detector;
 		bullet.GetComponent<TowerBullet>().reloder = this.transform;
+	}
+	
+	public void SetTeam(Team team) {
+		towerTeam = team;
 	}
 }
