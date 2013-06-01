@@ -33,7 +33,8 @@ public class Networking : MonoBehaviour {
 		mainMenu.SetTeamSelectState();
 	}
 	
-	public void ConnectToGame(Team playerTeam) {
+	public void ConnectToGame(Team playerTeam) { 
+		Debug.Log(playerTeam);
 		actualTeam = playerTeam;
 		networkView.RPC("IncCounters", RPCMode.AllBuffered, (int)playerTeam);
 		Transform spawner = FindSpawn(playerTeam);

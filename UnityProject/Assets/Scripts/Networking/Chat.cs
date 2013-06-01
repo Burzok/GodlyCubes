@@ -9,6 +9,11 @@ public class Chat : MonoBehaviour {
 	string playerName = "";
 	Vector2 scroll;
 	List<string> chatHistory = new List<string>();
+	MenuGUI menuGUI;
+	
+	void Awake() {
+		menuGUI = GetComponent<MenuGUI>();
+	}
 	
 	void Update () {
 		if (Network.isClient) {
@@ -50,7 +55,7 @@ public class Chat : MonoBehaviour {
 	}
 	
 	void DrawChat()	{
-		if (Network.isClient || Network.isServer) {
+		if (menuGUI.drawChat) {
 			GUI.Box (new Rect(5f, Screen.height-200f, 300f, 165f),"");
 			GUI.BeginGroup(new Rect(5f, Screen.height-200f, 300, 165f));
 			scroll = GUILayout.BeginScrollView(scroll,GUILayout.Width(300),GUILayout.Height(165));			

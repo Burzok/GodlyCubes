@@ -2,20 +2,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuGUI.cs">
     <Files>
-      <File FileName="..\..\..\..\..\..\Users\Burzok\Desktop\FTJ-master\FTJ Project\Assets\Scripts\DrawEmptyScript.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\..\..\..\Users\Burzok\Desktop\FTJ-master\FTJ Project\Assets\Scripts\DrawSpawnerScript.cs" Line="6" Column="2" />
-      <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="43" Column="55" />
-      <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\BaseLife.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\TowerLife.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\TowerTeamChoser.cs" Line="21" Column="1" />
-      <File FileName="Assets\Scripts\World\Reloader.cs" Line="65" Column="50" />
-      <File FileName="Assets\Scripts\World\AITower.cs" Line="16" Column="26" />
-      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="18" Column="25" />
-      <File FileName="Assets\Scripts\MenuGUI.cs" Line="107" Column="4" />
-      <File FileName="Assets\Scripts\Networking\Chat.cs" Line="86" Column="63" />
+      <File FileName="Assets\Scripts\World\BaseLife.cs" Line="28" Column="3" />
+      <File FileName="Assets\Scripts\MenuGUI.cs" Line="137" Column="24" />
+      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="6" Column="8" />
+      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="158" Column="9" />
+      <File FileName="Assets\Scripts\Networking\Chat.cs" Line="63" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

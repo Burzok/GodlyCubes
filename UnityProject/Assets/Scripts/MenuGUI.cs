@@ -5,6 +5,8 @@ public delegate void DrawGUI();
 
 public class MenuGUI : MonoBehaviour {
 	public DrawGUI drawGUI;
+	public bool drawChat;
+	public bool drawStats;
 	
 	private Networking networking;
 	private Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
@@ -43,6 +45,8 @@ public class MenuGUI : MonoBehaviour {
 	  		MasterServer.RegisterHost("GodlyCubesLight", networking.GetServerName() );
 			timeHostWasRegistered = Time.time;
 			SetServerGameState();
+			drawChat = true;
+			drawStats = true;
 		}
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
@@ -70,11 +74,15 @@ public class MenuGUI : MonoBehaviour {
 		if (GUI.Button (new Rect(Screen.width * 0.5f-120f, 20f, 100f, 50f), "Team A")) {
 			networking.ConnectToGame(Team.TeamA);
 			SetClientGameState();
+			drawChat = true;
+			drawStats = true;
 		}
 
 		if (GUI.Button (new Rect(Screen.width * 0.5f+20f, 20f, 100f, 50f), "Team B")) {
 			networking.ConnectToGame(Team.TeamB);
 			SetClientGameState();
+			drawChat = true;
+			drawStats = true;
 		}
 
 		if (GUI.Button (new Rect(Screen.width * 0.5f-50f, Screen.height - 70f, 100f, 50f),"Disconnect")) {			
@@ -106,6 +114,27 @@ public class MenuGUI : MonoBehaviour {
 		if (GUI.Button(new Rect(Screen.width-105f, 5f, 100f, 50f), "Back")) {  				
 			networkView.RPC("UnregisterPlayer", RPCMode.Server, networking.getPlayerID());
 			networkView.RPC("DecCounters", RPCMode.AllBuffered, (int)networking.actualTeam);
+			Network.Disconnect();
+			SetMainMenuState();
+		}
+	}
+	
+	private void DrawWinState() {
+		GUI.Box(new Rect(Screen.width*0.5f-100f, 50f, 200f, 80f), "You Win");
+		Input.ResetInputAxes();
+		
+		if (GUI.Button(new Rect(Screen.width*0.5f-50f,Screen.height*0.7f,100f,30f), "Disconnect")) {
+			Network.Disconnect();
+			SetMainMenuState();
+		}
+	}
+	
+	private void DrawLoseState() {
+		GUI.Box(new Rect(Screen.width*0.5f-100f, 50f, 200f, 80f), "You Lose");
+		Input.ResetInputAxes();
+		
+		
+		if (GUI.Button(new Rect(Screen.width*0.5f-50f,Screen.height*0.7f,100f,30f), "Disconnect")) {
 			Network.Disconnect();
 			SetMainMenuState();
 		}
@@ -145,6 +174,18 @@ public class MenuGUI : MonoBehaviour {
 
 			GUILayout.EndHorizontal();	
 		}
+	}
+	
+	public void SetWinState() {
+		drawChat = false;
+		drawStats = false;
+		drawGUI = DrawWinState;
+	}
+	
+	public void SetLoseState() {
+		drawChat = false;
+		drawStats = false;
+		drawGUI = DrawLoseState;
 	}
 	
 	public void SetMainMenuState() {

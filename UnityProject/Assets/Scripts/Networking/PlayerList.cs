@@ -15,7 +15,12 @@ public class PlayerData {
 
 public class PlayerList : MonoBehaviour {
 	
+	MenuGUI menuGUI;
 	public List<PlayerData> playerList = new List<PlayerData>(4);
+	
+	void Awake() {
+		menuGUI = GetComponent<MenuGUI>();
+	}	
 
 	[RPC] //Server function
 	void RegisterPlayer(string playerName, NetworkViewID playerID, int playerTeam) {
@@ -140,7 +145,7 @@ public class PlayerList : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		if (Network.isClient || Network.isServer) { 
+		if (menuGUI.drawStats) { 
 			GUI.Box (new Rect(5f, 50f, 140f, 50f),"");
 			GUI.BeginGroup(new Rect(5f, 50f, 140f, 50f));
 			foreach(PlayerData player in playerList) {
