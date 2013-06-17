@@ -85,7 +85,7 @@ public class Networking : MonoBehaviour {
 		}
 		GetComponent<PlayerList>().playerList.Clear();
 	}
-
+	
 	void OnPlayerDisconnected(NetworkPlayer player) {
 		Network.RemoveRPCs(player);
 		Network.DestroyPlayerObjects(player);

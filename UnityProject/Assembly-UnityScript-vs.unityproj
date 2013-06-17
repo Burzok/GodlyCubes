@@ -49,6 +49,7 @@
      <Compile Include="Assets\Image Effects\Vignetting.js" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\GlowConeTap.shader" />
@@ -71,6 +72,7 @@
      <None Include="Assets\Image Effects\_Sources\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\frag_ao.cginc" />
      <None Include="Assets\Shaders\ReflectiveDiffuseSpec.shader" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\TiltShift.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\ConvertDepth.shader" />
@@ -80,7 +82,9 @@
      <None Include="Assets\Image Effects\_Sources\Shaders\CreaseApply.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\GlobalFog.shader" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\CameraMotionBlurDX11.shader" />
