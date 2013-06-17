@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\MenuGUI.cs" />
+     <Compile Include="Assets\Scripts\MiniMapRotator.cs" />
      <Compile Include="Assets\Scripts\Networking\Chat.cs" />
      <Compile Include="Assets\Scripts\Networking\Networking.cs" />
      <Compile Include="Assets\Scripts\Networking\PlayerList.cs" />

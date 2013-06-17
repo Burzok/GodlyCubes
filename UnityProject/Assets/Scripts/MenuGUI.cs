@@ -3,19 +3,42 @@ using System.Collections;
 
 public delegate void DrawGUI();
 
+public enum Map { 
+	CrystalCaverns,
+	BurzokGrounds
+}
+
 public class MenuGUI : MonoBehaviour {
 	public DrawGUI drawGUI;
 	public bool drawChat;
 	public bool drawStats;
+	public GameObject crystalCaverns, burzokGrounds;
+	
+	
+	public Map selectedMap;
 	
 	private Networking networking;
 	private Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
 	private float timeHostWasRegistered;
+	private GameObject miniCrystalCaverns, miniBurzokGrounds;
 	
 	void Awake() {
 		networking = GetComponent<Networking>();
 		
 		drawGUI = DrawMainMenu;
+		selectedMap = Map.CrystalCaverns;
+		
+		crystalCaverns=GameObject.Find("CrystalCaverns");
+		crystalCaverns.SetActive(false);
+		
+		burzokGrounds=GameObject.Find("BurzokGrounds");
+		burzokGrounds.SetActive(false);
+		
+		miniCrystalCaverns=GameObject.Find("miniCrystalCaverns");
+		miniCrystalCaverns.SetActive(false);
+		
+		miniBurzokGrounds=GameObject.Find("miniBurzokGrounds");
+		miniBurzokGrounds.SetActive(false);
 	}
 	
 	void OnGUI() {
@@ -41,16 +64,41 @@ public class MenuGUI : MonoBehaviour {
 		networking.SetServerName(GUI.TextField(screenCoordinates, networking.GetServerName() ));
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, 55f, 100f, 50f), "Create")) {
+			if(selectedMap == Map.CrystalCaverns)
+				crystalCaverns.SetActive(true);
+			if(selectedMap == Map.BurzokGrounds)
+				burzokGrounds.SetActive(true);
+			
   			Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
 	  		MasterServer.RegisterHost("GodlyCubesLight", networking.GetServerName() );
 			timeHostWasRegistered = Time.time;
 			SetServerGameState();
 			drawChat = true;
 			drawStats = true;
+			miniCrystalCaverns.SetActive(false);
+			miniBurzokGrounds.SetActive(false);
 		}
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
 			SetMainMenuState();
+		
+		GUI.Box(new Rect(Screen.width*0.05f, Screen.height*0.2f, Screen.width*0.3f, Screen.height*0.2f), "Select Map");
+		if (GUI.Button (new Rect(Screen.width*0.07f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f),"Crystal Caverns")) {
+			selectedMap = Map.CrystalCaverns;
+			miniCrystalCaverns.SetActive(true);
+			miniBurzokGrounds.SetActive(false);
+		}
+		if (GUI.Button (new Rect(Screen.width*0.23f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f),"Burzok Grounds")) {
+			selectedMap = Map.BurzokGrounds;
+			miniBurzokGrounds.SetActive(true);
+			miniCrystalCaverns.SetActive(false);
+		}
+		
+		GUI.Box(new Rect(Screen.width*0.05f ,Screen.height*0.6f, Screen.width*0.3f, Screen.height*0.2f), "Select Mode");
+		if (GUI.Button (new Rect(Screen.width*0.07f, Screen.height*0.65f, Screen.width*0.1f, Screen.height*0.1f),"Classic"));
+			//TODO: Funkcja do wyboru trybu classic
+		if (GUI.Button (new Rect(Screen.width*0.23f, Screen.height*0.65f, Screen.width*0.1f, Screen.height*0.1f),"Weird"));
+			//TODO: Funkcja do wyboru trybu weird
 	}	
 
 	private void DrawConnect() {

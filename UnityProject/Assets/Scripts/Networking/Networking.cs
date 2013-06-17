@@ -86,11 +86,23 @@ public class Networking : MonoBehaviour {
 		GetComponent<PlayerList>().playerList.Clear();
 	}
 	
+	void OnPlayerConnected(NetworkPlayer player) {
+		networkView.RPC("SetMap", player, (int)mainMenu.selectedMap);
+	}
+	
 	void OnPlayerDisconnected(NetworkPlayer player) {
 		Network.RemoveRPCs(player);
 		Network.DestroyPlayerObjects(player);
 	}
 	
+	[RPC]
+	private void SetMap(int currentMap) {
+		if(currentMap == (int)Map.CrystalCaverns)
+			mainMenu.crystalCaverns.SetActive(true);
+		if(currentMap == (int)Map.BurzokGrounds)
+			mainMenu.burzokGrounds.SetActive(true);
+	}
+ 	
 	[RPC]
 	void ExitCL() {
   		Network.Disconnect();
