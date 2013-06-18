@@ -18,6 +18,8 @@ public class Reloader : MonoBehaviour {
 		target = null;
 		detector = transform.FindChild("Detection");
 		spawner = transform.FindChild("Spawner");
+		if(Network.isServer || Network.isClient)
+			networkView.RPC("FirstReload", RPCMode.All);
 	}
 	
 	void FixedUpdate() {
@@ -48,10 +50,20 @@ public class Reloader : MonoBehaviour {
 	private void Reload() {
 		NetworkViewID viewID = Network.AllocateViewID();
 		
-		networkView.RPC("InstantiateTowerBullet", RPCMode.AllBuffered, viewID);
+		networkView.RPC("InstantiateTowerBullet", RPCMode.All, viewID);
 		
 		timer = 0;
 	}
+	
+	[RPC]
+	private void FirstReload() {
+		NetworkViewID viewID = Network.AllocateViewID();
+		
+		networkView.RPC("InstantiateTowerBullet", RPCMode.All, viewID);
+		
+		timer = 0;
+	}
+	
 	
 	[RPC]
 	private void InstantiateTowerBullet(NetworkViewID id) {

@@ -79,8 +79,11 @@ public class MenuGUI : MonoBehaviour {
 			miniBurzokGrounds.SetActive(false);
 		}
 
-		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height - 70f, 100f, 50f),"Back"))
+		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {
+			miniBurzokGrounds.SetActive(false);
+			miniCrystalCaverns.SetActive(false);
 			SetMainMenuState();
+		}
 		
 		GUI.Box(new Rect(Screen.width*0.05f, Screen.height*0.2f, Screen.width*0.3f, Screen.height*0.2f), "Select Map");
 		if (GUI.Button (new Rect(Screen.width*0.07f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f),"Crystal Caverns")) {
@@ -114,8 +117,10 @@ public class MenuGUI : MonoBehaviour {
 	private void DrawOptionsMenu() {
 		GUI.Box(new Rect(Screen.width*0.5f-100f, 50f, 200f, 180f), "TODO: Make options");
 		
-		if (GUI.Button(new Rect(Screen.width*0.5f-50f,Screen.height*0.7f,100f,30f), "Back"))
-			SetMainMenuState();
+		if (GUI.Button(new Rect(Screen.width*0.5f-50f,Screen.height*0.7f,100f,30f), "Back")) {
+			
+			SetMainMenuState();			
+		}
 	}
 	
 	private void DrawTeamSelect() {
