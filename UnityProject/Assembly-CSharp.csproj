@@ -37,10 +37,10 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity 4.1/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity4/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity 4.1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity4/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +136,7 @@
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\SimpleClear.shader" />
+     <None Include="Assets\Standard Assets\Gem Rendering\diamond shader.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\EdgeDetectX.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
