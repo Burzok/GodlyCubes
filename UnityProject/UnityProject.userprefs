@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Shooting.cs">
     <Files>
-      <File FileName="Assets\Scripts\MenuGUI.cs" Line="51" Column="3" />
-      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="101" Column="44" />
+      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="52" Column="47" />
+      <File FileName="Assets\Scripts\MenuGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="62" Column="43" />
       <File FileName="Assets\Scripts\MiniMapRotator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="37" Column="31" />
-      <File FileName="Assets\Scripts\Skills\BulletController.cs" Line="21" Column="2" />
-      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="72" Column="27" />
+      <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Skills\BulletController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
