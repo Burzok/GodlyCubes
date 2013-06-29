@@ -22,15 +22,40 @@ public class Shooting : MonoBehaviour {
 			coolDownTimer += Time.deltaTime;
 			
 			if(Input.GetMouseButton(0))
-				CheckCoolDown();
+				CheckBasicAttackCoolDown();
+			
+			if(Input.GetKeyDown(KeyCode.Alpha1))
+				CheckSkill1();
+			if(Input.GetKeyDown(KeyCode.Alpha2))
+				CheckSkill2();
+			if(Input.GetKeyDown(KeyCode.Alpha3))
+				CheckSkill3();
+			if(Input.GetKeyDown(KeyCode.Alpha4))
+				CheckSkill4();
 		}
 	}
 	
-	private void CheckCoolDown() {
+	private void CheckBasicAttackCoolDown() {
 		if (coolDownTimer >= coolDown) {
 			Shoot();
 			coolDownTimer = 0f;
 		}
+	}
+	
+	private void CheckSkill1() {
+		
+	}
+	
+	private void CheckSkill2() {
+		
+	}
+	
+	private void CheckSkill3() {
+		
+	}
+	
+	private void CheckSkill4() {
+		
 	}
 	
 	private void Shoot() {

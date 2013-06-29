@@ -54,7 +54,12 @@
      <Compile Include="Assets\Scripts\Player\PlayerGameData.cs" />
      <Compile Include="Assets\Scripts\Player\Rotator.cs" />
      <Compile Include="Assets\Scripts\Player\Shooting.cs" />
+     <Compile Include="Assets\Scripts\Skills\ActiveSkill.cs" />
+     <Compile Include="Assets\Scripts\Skills\Attack\CrystalShard.cs" />
      <Compile Include="Assets\Scripts\Skills\BulletController.cs" />
+     <Compile Include="Assets\Scripts\Skills\PassiveSkill.cs" />
+     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
+     <Compile Include="Assets\Scripts\Skills\SkillType.cs" />
      <Compile Include="Assets\Scripts\Unapplied\Tags.cs" />
      <Compile Include="Assets\Scripts\Unused\AudioOffset.cs" />
      <Compile Include="Assets\Scripts\Unused\CaptureNormals.cs" />

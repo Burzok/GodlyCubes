@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{5B580621-09B4-68CB-B5F4-5B9DD210A60F}</ProjectGuid>
+	<ProjectGuid>{8869CCC3-C429-23F7-1189-F19B43E8872C}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript-Editor</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,35 +44,20 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\MenuGUI.cs" />
-     <Compile Include="Assets\Scripts\MiniMapRotator.cs" />
-     <Compile Include="Assets\Scripts\Networking\Chat.cs" />
-     <Compile Include="Assets\Scripts\Networking\Networking.cs" />
-     <Compile Include="Assets\Scripts\Networking\PlayerList.cs" />
-     <Compile Include="Assets\Scripts\Player\ControllerBasic.cs" />
-     <Compile Include="Assets\Scripts\Player\MovementBasic.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerGameData.cs" />
-     <Compile Include="Assets\Scripts\Player\Rotator.cs" />
-     <Compile Include="Assets\Scripts\Player\Shooting.cs" />
-     <Compile Include="Assets\Scripts\Skills\ActiveSkill.cs" />
-     <Compile Include="Assets\Scripts\Skills\Attack\CrystalShard.cs" />
-     <Compile Include="Assets\Scripts\Skills\BulletController.cs" />
-     <Compile Include="Assets\Scripts\Skills\PassiveSkill.cs" />
-     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
-     <Compile Include="Assets\Scripts\Skills\SkillType.cs" />
-     <Compile Include="Assets\Scripts\Unapplied\Tags.cs" />
-     <Compile Include="Assets\Scripts\Unused\AudioOffset.cs" />
-     <Compile Include="Assets\Scripts\Unused\CaptureNormals.cs" />
-     <Compile Include="Assets\Scripts\Unused\Controller.cs" />
-     <Compile Include="Assets\Scripts\Unused\Punch.cs" />
-     <Compile Include="Assets\Scripts\Unused\RandomFloorBotMovement.cs" />
-     <Compile Include="Assets\Scripts\Unused\ScrollingUVs.cs" />
-     <Compile Include="Assets\Scripts\World\AITower.cs" />
-     <Compile Include="Assets\Scripts\World\BaseLife.cs" />
-     <Compile Include="Assets\Scripts\World\Reloader.cs" />
-     <Compile Include="Assets\Scripts\World\TowerBullet.cs" />
-     <Compile Include="Assets\Scripts\World\TowerLife.cs" />
-     <Compile Include="Assets\Scripts\World\TowerTeamChoser.cs" />
+     <Compile Include="Assets\Editor\Image Effects\AntialiasingAsPostEffectEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\BloomAndLensFlaresEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\BloomEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\CameraMotionBlurEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\ColorCorrectionCurvesEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\ColorCorrectionLutEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\DepthOfField34Editor.js" />
+     <Compile Include="Assets\Editor\Image Effects\DepthOfFieldScatterEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\EdgeDetectEffectNormalsEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\NoiseAndGrainEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\SunShaftsEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\TiltShiftEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\TonemappingEditor.js" />
+     <Compile Include="Assets\Editor\Image Effects\VignettingEditor.js" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
@@ -146,6 +131,13 @@
      <None Include="Assets\Image Effects\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:\Program Files\Unity 4.1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{137A7369-EC96-0CC2-09B9-FE1D6DE1A3E3}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

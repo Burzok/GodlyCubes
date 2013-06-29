@@ -109,6 +109,9 @@ public class MenuGUI : MonoBehaviour {
 		
 		Rect screenCoordinates = new Rect(Screen.width * .5f-50f, 175f, 100f, 20f);
 		networking.SetPlayerName(GUI.TextField(screenCoordinates, networking.GetPlayerName()));
+		
+		if (GUI.Button (new Rect(Screen.width*0.5f-50f, 200f, 100f, 50f), "Skill Build"))
+			SetSkillSelect();
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height-70f, 100f, 50f), "Back"))
 			SetMainMenuState();
@@ -117,10 +120,8 @@ public class MenuGUI : MonoBehaviour {
 	private void DrawOptionsMenu() {
 		GUI.Box(new Rect(Screen.width*0.5f-100f, 50f, 200f, 180f), "TODO: Make options");
 		
-		if (GUI.Button(new Rect(Screen.width*0.5f-50f,Screen.height*0.7f,100f,30f), "Back")) {
-			
-			SetMainMenuState();			
-		}
+		if (GUI.Button(new Rect(Screen.width*0.5f-50f,Screen.height*0.7f,100f,30f), "Back")) 			
+			SetMainMenuState();	
 	}
 	
 	private void DrawTeamSelect() {
@@ -142,6 +143,13 @@ public class MenuGUI : MonoBehaviour {
 			Network.Disconnect();
 			SetMainMenuState();
 		}
+	}
+	
+	private void DrawSkillSelect() {
+		
+		
+		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height-70f, 100f, 50f), "Back"))
+			SetConnectState();
 	}
 
 	private void DrawServerGame() {
@@ -271,5 +279,9 @@ public class MenuGUI : MonoBehaviour {
 	
 	public void SetConnectingState() {
 		drawGUI = DrawConnecting;
+	}
+	
+	public void SetSkillSelect() {
+		drawGUI = DrawSkillSelect;
 	}
 }

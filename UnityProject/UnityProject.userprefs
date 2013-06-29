@@ -1,11 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Networking\Networking.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuGUI.cs">
     <Files>
-      <File FileName="Assets\Scripts\MenuGUI.cs" Line="75" Column="19" />
-      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="101" Column="44" />
-      <File FileName="Assets\Scripts\MiniMapRotator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="37" Column="31" />
+      <File FileName="Assets\Scripts\Skills\Skill.cs" Line="23" Column="37" />
+      <File FileName="Assets\Scripts\Skills\ActiveSkill.cs" Line="10" Column="42" />
+      <File FileName="Assets\Scripts\Skills\Attack\CrystalShard.cs" Line="21" Column="2" />
+      <File FileName="Assets\Scripts\Skills\SkillType.cs" Line="8" Column="51" />
+      <File FileName="Assets\Scripts\Skills\BulletController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MenuGUI.cs" Line="127" Column="3" />
+      <File FileName="Assets\Scripts\Player\PlayerGameData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\ControllerBasic.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
