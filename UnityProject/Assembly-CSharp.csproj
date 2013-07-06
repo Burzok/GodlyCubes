@@ -49,6 +49,11 @@
      <Compile Include="Assets\Scripts\Networking\Chat.cs" />
      <Compile Include="Assets\Scripts\Networking\Networking.cs" />
      <Compile Include="Assets\Scripts\Networking\PlayerList.cs" />
+     <Compile Include="Assets\Scripts\New\AnimTriggers.cs" />
+     <Compile Include="Assets\Scripts\New\BotControlScript.cs" />
+     <Compile Include="Assets\Scripts\New\LaserEyes.cs" />
+     <Compile Include="Assets\Scripts\New\Samoflange.cs" />
+     <Compile Include="Assets\Scripts\New\ThirdPersonCamera.cs" />
      <Compile Include="Assets\Scripts\Player\ControllerBasic.cs" />
      <Compile Include="Assets\Scripts\Player\MovementBasic.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerGameData.cs" />

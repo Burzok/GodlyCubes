@@ -64,8 +64,21 @@ public class PlayerList : MonoBehaviour {
 	
 	private void ChangeColor(ref NetworkViewID id, ref Vector3 color, ref GameObject[] players) {
 		foreach(GameObject player in players) {
-			if (id == player.networkView.viewID)
-				player.GetComponentInChildren<Renderer>().material.color = new Color(color.x,color.y,color.z);
+			if (id == player.networkView.viewID) {
+				Transform playerArmature = player.transform.Find("Animator");
+				Renderer[] playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();
+					
+				float tuning = 0.5f;
+				
+				foreach(Renderer rend in playerRenderers) {
+					if(rend.gameObject.name == "Player"){
+						rend.material.color = new Color(color.x*tuning, color.y*tuning, color.z*tuning);
+					}
+					else {
+						rend.material.color = new Color(color.x, color.y, color.z);
+					}
+				}
+			}
 		}
 	}
 	
@@ -90,7 +103,6 @@ public class PlayerList : MonoBehaviour {
 		}			
 	}
 		
-	
 	[RPC] //Client function
 	private void InfoToClient(NetworkViewID id, string playerName, Vector3 color, int team, int kills, int deaths, int assist) {
 		
