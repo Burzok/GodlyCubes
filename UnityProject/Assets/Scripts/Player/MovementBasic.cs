@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class MovementBasic : MonoBehaviour {
-	public float forwardSpeed = 20f; 
+	public float forwardSpeed = 50f; 
 	
 	private float horizontalInput;
 	private float verticalInput;
@@ -18,7 +18,7 @@ public class MovementBasic : MonoBehaviour {
 			}
 			
 			if ( horizontalInput != 0 ) {
-				rigidbody.AddForce( transform.right * Time.deltaTime * forwardSpeed * horizontalInput, 
+				rigidbody.AddForce( transform.right * Time.deltaTime * forwardSpeed * horizontalInput * 0.8f, 
 									ForceMode.VelocityChange);
 			}
 		}

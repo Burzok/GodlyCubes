@@ -12,7 +12,7 @@ public class Shooting : MonoBehaviour {
 	
 	public PlayerData dataPublic;
 	
-	private List<PlayerData> list;
+	public List<PlayerData> list;
 	private Transform bulletSpawner;
 	
 	private Animator animator;

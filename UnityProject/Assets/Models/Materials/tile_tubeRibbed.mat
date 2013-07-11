@@ -7,7 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: tile_tubeRibbed
-  m_Shader: {fileID: 4, guid: 0000000000000000e000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 9ce107479d11178d11005b9844295342, type: 3}
+  m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -25,7 +26,18 @@ Material:
           m_Texture: {fileID: 2800000, guid: 987560774a0ae9543bd328e2b799e1b2, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ToonShade
+        second:
+          m_Texture: {fileID: 8900000, guid: b995d4bd9d11078d11005b9844295342, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
+      data:
+        first:
+          name: _Outline
+        second: .00499999989
       data:
         first:
           name: _Shininess
@@ -34,7 +46,11 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .917910457, g: .917910457, b: .917910457, a: 1}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _SpecColor

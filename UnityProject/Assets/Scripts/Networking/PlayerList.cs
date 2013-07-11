@@ -2,112 +2,98 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerData {
-	public NetworkViewID id;
-	public Transform lokalTransform;
-	public string name;
-	public Vector3 color;
-	public Team team;
-	public int kills;
-	public int deaths;
-	public int assist;	
-};
-
 public class PlayerList : MonoBehaviour {
-	
-	MenuGUI menuGUI;
+	public Transform playerDataPrefab;
 	public List<PlayerData> playerList = new List<PlayerData>(4);
+	
+	private MenuGUI menuGUI;
+	private Networking networkingScript;
 	
 	void Awake() {
 		menuGUI = GetComponent<MenuGUI>();
+		networkingScript = GetComponent<Networking>();
 	}	
 
-	[RPC] //Server function
+	[RPC] // Clients & Server
 	void RegisterPlayer(string playerName, NetworkViewID playerID, int playerTeam) {
+		Transform player2 = Instantiate(playerDataPrefab, transform.position, transform.rotation) as Transform;
+
+		player2.transform.parent = transform;
 		
-		PlayerData player = new PlayerData();
+		PlayerData player = player2.GetComponent<PlayerData>();
 		
+		FillPlayerData(ref player, ref playerName, ref playerID, ref playerTeam);
+		
+		playerList.Add(player);
+		
+		UpdatePlayerLocalTransform(ref player.localTransform);
+	}
+	
+	private void FillPlayerData(ref PlayerData player, ref string playerName, ref NetworkViewID playerID, ref int playerTeam) {
 		player.id = playerID;
 		player.name = playerName;
 		player.team = (Team)playerTeam;
 		
-		GameObject[] lokalPlayers = GameObject.FindGameObjectsWithTag(Tags.player);
-		foreach (GameObject lokalPlayer in lokalPlayers) {
-			if (player.id == lokalPlayer.networkView.viewID)
-				player.lokalTransform = lokalPlayer.transform;
+		GameObject[] localPlayers = GameObject.FindGameObjectsWithTag(Tags.player);
+		foreach (GameObject localPlayer in localPlayers) {
+			if (player.id == localPlayer.networkView.viewID)
+				player.localTransform = localPlayer.transform;
 		}
 		
-		if (player.team == Team.TeamA)
+		player.localTransform.GetComponent<ControllerBasic>().data = player;
+		
+		if (player.team == Team.TeamA) {
 			player.color = new Vector3(1,0,0);
-		else if (player.team == Team.TeamB)
+			player.name = "A"+networkingScript.numOfPlayersA;
+		}
+		else if (player.team == Team.TeamB) {
 			player.color = new Vector3(0,0,1);
-
+			player.name = "B"+networkingScript.numOfPlayersB;
+		}
+		
+		player.respawnPosition = player.localTransform.position;
+		
 		player.kills=0;
 		player.deaths=0;
 		player.assist=0;		
-		
-		playerList.Add(player);
-		
-		networkView.RPC("UpdatePlayer", RPCMode.AllBuffered, player.id, player.color, (int)player.team);
-		networkView.RPC("InfoToClient", RPCMode.OthersBuffered, player.id, player.name, player.color, (int)player.team, player.kills, player.deaths, player.assist);
-		SynchronizeClient(playerID);
 	}
 	
-	[RPC] //Server & Client function
-	private void UpdatePlayer(NetworkViewID id, Vector3 color, int team) {
-		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
-		
-		ChangeColor(ref id, ref color, ref players);
-		ChangePosition(ref id, ref team, ref players);
-		ChangeLayers(ref id, ref team, ref players);
+	private void UpdatePlayerLocalTransform(ref Transform localTransform) {
+		ChangeColor(ref localTransform);
+		ChangeLayers(ref localTransform);
 	}
 	
-	private void ChangeColor(ref NetworkViewID id, ref Vector3 color, ref GameObject[] players) {
-		foreach(GameObject player in players) {
-			if (id == player.networkView.viewID) {
-				Transform playerArmature = player.transform.Find("Animator");
-				Renderer[] playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();
-					
-				float tuning = 0.5f;
-				
-				foreach(Renderer rend in playerRenderers) {
-					if(rend.gameObject.name == "Player"){
-						rend.material.color = new Color(color.x*tuning, color.y*tuning, color.z*tuning);
-					}
-					else {
-						rend.material.color = new Color(color.x, color.y, color.z);
-					}
-				}
-			}
+	private void ChangeColor(ref Transform localTransform) {
+		PlayerData data = localTransform.GetComponent<ControllerBasic>().data;
+		Transform playerArmature = localTransform.Find("Animator");
+		Renderer[] playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();
+		float tuning = 0.5f;
+		
+		foreach(Renderer rend in playerRenderers) {
+			if(rend.gameObject.name == "Player")
+				rend.material.color = new Color(data.color.x*tuning, data.color.y*tuning, data.color.z*tuning);
+			else 
+				rend.material.color = new Color(data.color.x, data.color.y, data.color.z);
 		}
 	}
 	
-	private void ChangePosition(ref NetworkViewID id, ref int team, ref GameObject[] players) {
-		Transform spawningPoint = gameObject.GetComponent<Networking>().FindSpawn((Team)team);
-		foreach(GameObject player in players) {
-			if (id == player.networkView.viewID) {
-				player.GetComponent<PlayerGameData>().respawnPosition = spawningPoint.position;
-				player.transform.position = spawningPoint.position;
-			}
-		}
-	}
-	
-	private void ChangeLayers(ref NetworkViewID id, ref int team, ref GameObject[] players) {
-		foreach(GameObject player in players) {		
-			if (id == player.networkView.viewID) {
-				if (team == 0) 
-					player.layer=13;				
-				else if (team == 1)
-					player.layer=14;				
-			}
-		}			
+	private void ChangeLayers(ref Transform localTransform) {
+		PlayerData data = localTransform.GetComponent<ControllerBasic>().data;
+		
+		if (data.team == Team.TeamA) 
+			localTransform.gameObject.layer=13;
+		else if (data.team == Team.TeamB)
+			localTransform.gameObject.layer=14;			
 	}
 		
 	[RPC] //Client function
 	private void InfoToClient(NetworkViewID id, string playerName, Vector3 color, int team, int kills, int deaths, int assist) {
-		
 		PlayerData player = new PlayerData();
-		
+		FillPlayerData(ref player, id, playerName, color, team, kills, deaths, assist);
+		playerList.Add(player);
+	}
+	
+	private void FillPlayerData(ref PlayerData player, NetworkViewID id, string playerName, Vector3 color, int team, int kills, int deaths, int assist) {
 		player.id=id;
 		player.name=playerName;
 		player.color=color;
@@ -116,13 +102,11 @@ public class PlayerList : MonoBehaviour {
 		player.deaths=deaths;
 		player.assist=assist;
 		
-		GameObject[] lokalPlayers = GameObject.FindGameObjectsWithTag(Tags.player);
-		foreach (GameObject lokalPlayer in lokalPlayers) {
-			if (player.id == lokalPlayer.networkView.viewID)
-				player.lokalTransform = lokalPlayer.transform;
+		GameObject[] localPlayers = GameObject.FindGameObjectsWithTag(Tags.player);
+		foreach (GameObject localPlayer in localPlayers) {
+			if (player.id == localPlayer.networkView.viewID)
+				player.localTransform = localPlayer.transform;
 		}
-		
-		playerList.Add(player);
 	}
 	
 	private void SynchronizeClient(NetworkViewID clientID) {

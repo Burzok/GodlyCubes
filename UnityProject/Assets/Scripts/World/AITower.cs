@@ -15,7 +15,7 @@ public class AITower : MonoBehaviour {
 	void FixedUpdate() {
 		if (Network.isServer) {
 			if (target != null && bullet != null) {
-				if (target.GetComponent<PlayerGameData>().isAlive) {
+				if (target.GetComponent<ControllerBasic>().data.isAlive) {
 					networkView.RPC("SetBulletTarget", RPCMode.All);
 				}
 				else
@@ -58,7 +58,7 @@ public class AITower : MonoBehaviour {
 			List<PlayerData> playerDataList = globalScriptObject.GetComponent<PlayerList>().playerList;
 			foreach( PlayerData playerData in playerDataList ) {
 				if ( targetID == playerData.id )
-					target = playerData.lokalTransform;
+					target = playerData.localTransform;
 			}
 		}
 	}

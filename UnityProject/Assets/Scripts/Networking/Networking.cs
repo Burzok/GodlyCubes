@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public enum Team {
 	TeamA,
@@ -37,9 +38,11 @@ public class Networking : MonoBehaviour {
 		Debug.Log(playerTeam);
 		actualTeam = playerTeam;
 		networkView.RPC("IncCounters", RPCMode.AllBuffered, (int)playerTeam);
+		
 		Transform spawner = FindSpawn(playerTeam);
 		goPlayer = SpawnPlayer(ref spawner);
-		networkView.RPC("RegisterPlayer", RPCMode.Server, playerName, getPlayerID(), (int)playerTeam);
+		
+		networkView.RPC("RegisterPlayer", RPCMode.AllBuffered, playerName, getPlayerID(), (int)playerTeam);
 	}
 	
 	[RPC]
@@ -73,7 +76,7 @@ public class Networking : MonoBehaviour {
 			return TB.FindChild("Spawn"+numOfPlayersB);
 		}
 		else {
-			Debug.Log("Error wrong spawn select");
+			Debug.LogError("Wrong spawn select");
 			return spawners.transform;
 		}
 	}

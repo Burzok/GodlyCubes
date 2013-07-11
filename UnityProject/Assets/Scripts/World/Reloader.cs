@@ -32,7 +32,7 @@ public class Reloader : MonoBehaviour {
 	
 	private void CheckIfTargetIsAlive() {
 		if (target != null) {
-			if (!target.GetComponent<PlayerGameData>().isAlive)
+			if (!target.GetComponent<ControllerBasic>().data.isAlive)
 				target = null;
 		}
 	}

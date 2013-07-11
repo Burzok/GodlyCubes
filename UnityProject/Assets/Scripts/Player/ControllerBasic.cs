@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ControllerBasic : MonoBehaviour {
-	
 	public int damage = 10;
+	public PlayerData data;
+	public Transform playerCam;
+	public Transform playerCamPos;
 	
 	private GameObject[] mainCam;
 	private GameObject mainScript;
-	private PlayerGameData data;
 	private bool resFlag = false;
-	private float timer=0;
+	private float timer = 0;
 	private Transform meshChild;
 	private bool locked = false; 
 	
@@ -18,9 +19,7 @@ public class ControllerBasic : MonoBehaviour {
 		mainCam = GameObject.FindGameObjectsWithTag(Tags.mainCamera);
 		mainScript = GameObject.FindGameObjectWithTag(Tags.gameController);
 		
-		data = gameObject.GetComponent<PlayerGameData>();
-		
-		meshChild = this.transform.FindChild("Mesh");
+		//meshChild = this.transform.FindChild("Mesh");
 		
 		if(!networkView.isMine) {
 			rigidbody.isKinematic = true;
@@ -30,8 +29,13 @@ public class ControllerBasic : MonoBehaviour {
 				TurnOffMainCameras();
 		}
 		else {
-			TurnOffMainCameras();
-			transform.FindChild("Camera").gameObject.SetActive(true);
+			TurnOffMainCameras(); 
+			
+			playerCamPos.gameObject.SetActive(true);
+			playerCam = GameObject.FindGameObjectWithTag(Tags.playerCamera).transform;
+			playerCam.GetComponent<Camera>().enabled = true;
+			playerCam.GetComponent<AudioListener>().enabled = true;
+			playerCam.GetComponent<ThirdPersonCamera>().enabled = true;
 		}
 	}
 	
@@ -91,7 +95,7 @@ public class ControllerBasic : MonoBehaviour {
 	
 	void Hit(object[] package) {
 		data.health -= (int)package[0];
-		if(data.health <= 0){
+		if(data.health <= 0) {
 			networkView.RPC("SwichPlayerState",RPCMode.AllBuffered, networkView.viewID);
 			
 			List<PlayerData> playerList = mainScript.GetComponent<PlayerList>().playerList;
@@ -104,9 +108,7 @@ public class ControllerBasic : MonoBehaviour {
 				playerList[id].kills++;	
 				networkView.RPC ("UpdateKill", RPCMode.Others, (NetworkViewID)package[1]);
 			}	
-			
 			resFlag = true;
-			
 		}
 		else
 			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, damage);
@@ -141,11 +143,11 @@ public class ControllerBasic : MonoBehaviour {
 	[RPC]
 	void SwichPlayerState(NetworkViewID viewID) {
 		if(networkView.viewID == viewID) {
-			this.GetComponent<PlayerGameData>().isAlive = !this.GetComponent<PlayerGameData>().isAlive;
-			this.collider.enabled = !this.collider.enabled;
-			this.GetComponent<MovementBasic>().enabled = !this.GetComponent<MovementBasic>().enabled;
-			this.GetComponent<Shooting>().enabled = !this.GetComponent<Shooting>().enabled;
-			meshChild.renderer.enabled = !meshChild.renderer.enabled;
+			data.isAlive = !data.isAlive;
+			collider.enabled = !collider.enabled;
+			GetComponent<MovementBasic>().enabled = !GetComponent<MovementBasic>().enabled;
+			GetComponent<Shooting>().enabled = !GetComponent<Shooting>().enabled;
+			//meshChild.renderer.enabled = !meshChild.renderer.enabled;
 		}
 	}
 	
