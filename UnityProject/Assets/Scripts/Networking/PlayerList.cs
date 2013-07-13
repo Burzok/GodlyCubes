@@ -153,7 +153,7 @@ public class PlayerList : MonoBehaviour {
 	          		GUI.contentColor = Color.blue;
 	       
 				GUILayout.Space(5f);				
-				GUILayout.Label(player.name+": ");
+				GUILayout.Label(player.playerName+": ");
 				
 				GUI.contentColor = Color.green;
 				GUILayout.Label("K: "+player.kills);
