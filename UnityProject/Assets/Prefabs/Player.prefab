@@ -32,6 +32,10 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400004}
+  - 114: {fileID: 11400012}
+  - 114: {fileID: 11400010}
+  - 114: {fileID: 11400014}
   m_Layer: 13
   m_Name: Player
   m_TagString: Player
@@ -495,7 +499,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 109.531624, y: 40.8500748, z: 33.3489799}
+  m_LocalPosition: {x: -7.73882675, y: 2.5115371e-06, z: 96.1654739}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -922,10 +926,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f7112f5ea3d6fc42a4bbb574cacc335, type: 3}
   m_Name: 
-  damage: 10
-  data: {fileID: 0}
-  playerCam: {fileID: 0}
-  playerCamPos: {fileID: 400004}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -942,6 +942,27 @@ MonoBehaviour:
   animSpeed: 2
   dataPublic: {fileID: 0}
   list: []
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a923e030ebbe454da1ffced31f9aaea, type: 3}
+  m_Name: 
+  playerName: 
+  color: {x: 0, y: 0, z: 0}
+  team: 0
+  isAlive: 1
+  health: 100
+  maxHealth: 100
+  respawnTime: 3
+  respawnPosition: {x: 0, y: 0, z: 0}
+  kills: 0
+  deaths: 0
+  assist: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -965,6 +986,39 @@ MonoBehaviour:
   m_Name: 
   rotateSpeed: 250
   rotationInput: 0
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2966a8e846a66342a3f94cd6263a396, type: 3}
+  m_Name: 
+  damage: 10
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1191ee6aa9889324e883393cc5c69646, type: 3}
+  m_Name: 
+  playerCam: {fileID: 0}
+  playerCamPos: {fileID: 400004}
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7112f5ea3d6fc42a4bbb574cacc335, type: 3}
+  m_Name: 
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

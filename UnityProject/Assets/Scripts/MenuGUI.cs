@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public delegate void DrawGUI();
 
@@ -14,16 +15,17 @@ public class MenuGUI : MonoBehaviour {
 	public bool drawStats;
 	public GameObject crystalCaverns, burzokGrounds;
 	
-	
 	public Map selectedMap;
 	
 	private Networking networking;
 	private Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
 	private float timeHostWasRegistered;
 	private GameObject miniCrystalCaverns, miniBurzokGrounds;
+	private List<PlayerData> playerList;
 	
 	void Awake() {
 		networking = GetComponent<Networking>();
+		playerList = GetComponent<PlayerList>().playerList;
 		
 		drawGUI = DrawMainMenu;
 		selectedMap = Map.CrystalCaverns;
@@ -169,6 +171,41 @@ public class MenuGUI : MonoBehaviour {
 			networkView.RPC("DecCounters", RPCMode.AllBuffered, (int)networking.actualTeam);
 			Network.Disconnect();
 			SetMainMenuState();
+		}
+		
+		DrawStats();
+	}
+	
+	private void DrawStats() {
+		if (drawStats) { 
+			GUI.Box (new Rect(5f, 50f, 140f, 50f),"");
+			GUI.BeginGroup(new Rect(5f, 50f, 140f, 50f));
+			foreach(PlayerData player in playerList) {
+				GUILayout.BeginHorizontal();
+				
+	        	if (player.color == new Vector3(1, 0, 0))  
+	          		GUI.contentColor = Color.red;
+	       		if (player.color == new Vector3(0, 0, 1))
+	          		GUI.contentColor = Color.blue;
+	       
+				GUILayout.Space(5f);
+				GUILayout.Label(player.playerName+": ");
+				
+				GUI.contentColor = Color.green;
+				GUILayout.Label("K: "+player.kills);
+				GUILayout.FlexibleSpace();
+				
+				GUI.contentColor = Color.red;
+				GUILayout.Label("D: "+player.deaths);
+				GUILayout.FlexibleSpace();
+				
+				GUI.contentColor = Color.yellow;
+				GUILayout.Label("A: "+player.assist);
+				GUILayout.FlexibleSpace();
+				
+				GUILayout.EndHorizontal();
+			}
+			GUI.EndGroup();
 		}
 	}
 	

@@ -77,14 +77,14 @@ public class Chat : MonoBehaviour {
 	[RPC] //Server function
 	void sendChatMessageToServer(string message) {
 		chatHistory.Add(message);
-		scroll.y=10000000;
+		scroll.y = 10000000;
 		networkView.RPC("sendChatMessageToClient",RPCMode.Others,message);
 	}
 	
 	[RPC] //Client function
 	void sendChatMessageToClient(string message) {
 		chatHistory.Add(message);
-		scroll.y=10000000;
+		scroll.y = 10000000;
 	}	
 	
 	void GetPlayerChatInfo() {
@@ -92,6 +92,6 @@ public class Chat : MonoBehaviour {
 		List<PlayerData> playerList = GetComponent<PlayerList>().playerList;
 		PlayerData player = playerList.Find(playerToFind => playerToFind.id == id);
 			
-		playerName=player.name;		
+		playerName = player.name;		
 	}	
 }

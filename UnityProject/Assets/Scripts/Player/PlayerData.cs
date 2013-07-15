@@ -3,8 +3,6 @@ using System.Collections;
 
 public class PlayerData : MonoBehaviour {
 	public NetworkViewID id;
-	
-	public Transform localTransform;
 	public string playerName;
 	
 	public Vector3 color;

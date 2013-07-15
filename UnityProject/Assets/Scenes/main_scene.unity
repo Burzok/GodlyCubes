@@ -3392,7 +3392,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f19a6119d780de44a085bbac121c03e, type: 3}
   m_Name: 
-  playerDataPrefab: {fileID: 400000, guid: 014a6a02a9545d94c847dca29b9f2e8b, type: 2}
   playerList: []
 --- !u!114 &113685777
 MonoBehaviour:

@@ -1,23 +1,25 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Networking\PlayerList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\World\Reloader.cs">
     <Files>
+      <File FileName="Assets\Scripts\World\Reloader.cs" Line="34" Column="24" />
+      <File FileName="Assets\Scripts\Player\PlayerData.cs" Line="8" Column="23" />
       <File FileName="Assets\Scripts\New\BotControlScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\Shooting.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MenuGUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Skills\BulletController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MiniMapRotator.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\World\TowerBullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\New\LaserEyes.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\New\AnimTriggers.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\New\ThirdPersonCamera.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\ControllerBasic.cs" Line="126" Column="35" />
       <File FileName="Assets\Scripts\World\AITower.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\Reloader.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\MovementBasic.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Networking\PlayerData.cs" Line="13" Column="29" />
-      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="82" Column="3" />
-      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="147" Column="46" />
+      <File FileName="Assets\Scripts\Networking\Chat.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MenuGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\CameraControll.cs" Line="12" Column="3" />
+      <File FileName="Assets\Scripts\Player\CursorLock.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

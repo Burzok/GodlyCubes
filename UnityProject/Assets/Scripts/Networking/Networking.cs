@@ -13,7 +13,7 @@ public class Networking : MonoBehaviour {
 	private string serverName = "Server Name";
 	private string playerName = "Player Name";
 	
-	private GameObject goPlayer;	
+	private GameObject goPlayer;
 	private GameObject spawners;
 	
 	public Team actualTeam;
@@ -35,7 +35,6 @@ public class Networking : MonoBehaviour {
 	}
 	
 	public void ConnectToGame(Team playerTeam) { 
-		Debug.Log(playerTeam);
 		actualTeam = playerTeam;
 		networkView.RPC("IncCounters", RPCMode.AllBuffered, (int)playerTeam);
 		
@@ -66,7 +65,7 @@ public class Networking : MonoBehaviour {
 			as GameObject;
 	}
 	
-	public Transform FindSpawn(Team playerTeam) {
+	private Transform FindSpawn(Team playerTeam) {
 		if (playerTeam == Team.TeamA) {
 			Transform TA = spawners.transform.FindChild("TeamA");
 			return TA.FindChild("Spawn"+numOfPlayersA);
