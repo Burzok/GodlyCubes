@@ -5,14 +5,17 @@ using System.Collections.Generic;
 public delegate void ShootingAnimationControl();
 
 public class Shooting : MonoBehaviour {
-	public Transform bulletPrefab;
+	public Transform bulletPrefabClient;
+	public Transform bulletPrefabServer;
+	
 	public float shootTime = 0.65f;
 	public float activationTime = 0.5f;
 	public float animSpeed = 2f;
 	
-	public PlayerData dataPublic;
+	private PlayerData data;
 	
 	public List<PlayerData> list;
+	
 	private Transform bulletSpawner;
 	
 	private Animator animator;
@@ -27,6 +30,7 @@ public class Shooting : MonoBehaviour {
 	void Awake() {
 		list = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<PlayerList>().playerList;
 		bulletSpawner = this.transform.FindChild("BulletSpawner");
+		data = GetComponent<PlayerData>();
 		
 		animator = this.transform.FindChild("Animator").GetComponent<Animator>();
 		bulletRenderer = transform.Find("Animator").Find("Armature").Find("Bone").Find("Bone_001").Find("Bone_L").Find("Bone_L_001").Find("Bullet").GetComponent<MeshRenderer>();
@@ -76,25 +80,31 @@ public class Shooting : MonoBehaviour {
 	}
 	
 	private void Shoot() {
-		networkView.RPC("SpawnBullet", RPCMode.Server, networkView.viewID);
+		networkView.RPC("ServerSpawnBulletCall", RPCMode.Server, networkView.viewID);
+	}
+	
+	[RPC]
+	void ServerSpawnBulletCall(NetworkViewID owner) {
+		networkView.RPC("SpawnBullet", RPCMode.AllBuffered, owner);
 	}
 	
 	[RPC]
 	void SpawnBullet(NetworkViewID owner) {
-		Transform bullet = (Transform)Network.Instantiate(bulletPrefab, bulletSpawner.transform.position, bulletSpawner.rotation,0);
-		bullet.GetComponent<BulletController>().owner=owner;
+		Transform bullet;
 		
-		foreach(PlayerData data in list) {
-			if (data.id == owner) {
-				if (data.team == Team.TeamA)
-					bullet.gameObject.layer = 11;
-				else if (data.team == Team.TeamB)
-					bullet.gameObject.layer = 12;	
+		if(Network.isServer)
+			bullet = Instantiate(bulletPrefabServer, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
+		else
+			bullet = Instantiate(bulletPrefabClient, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
+			
+		bullet.GetComponent<BulletController>().owner = owner;
+		
+		if (data.team == Team.TeamA)
+			bullet.gameObject.layer = 11;
+		else if (data.team == Team.TeamB)
+			bullet.gameObject.layer = 12;
 				
-				dataPublic = data;
-				bullet.transform.GetChild(0).renderer.material.color = new Color(data.color.x, data.color.y, data.color.z);
-			}
-		}
+		bullet.GetChild(0).renderer.material.color = new Color(data.color.x, data.color.y, data.color.z);
 	}
 	
 	private void Dumy() {

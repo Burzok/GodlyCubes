@@ -499,7 +499,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.73882675, y: 2.5115371e-06, z: 96.1654739}
+  m_LocalPosition: {x: -7.98284149, y: 2.19792742e-06, z: 95.5003891}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -936,11 +936,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c4f2bf1b4ed82d4da2be9dc3d6b4af3, type: 3}
   m_Name: 
-  bulletPrefab: {fileID: 400000, guid: 9bc14f7c8929afc4c81a3a37c3605dc8, type: 2}
+  bulletPrefabClient: {fileID: 400000, guid: 9bc14f7c8929afc4c81a3a37c3605dc8, type: 2}
+  bulletPrefabServer: {fileID: 400000, guid: 67d0cd8baff9938498d254cb83a255d0, type: 2}
   shootTime: .649999976
   activationTime: .5
   animSpeed: 2
-  dataPublic: {fileID: 0}
   list: []
 --- !u!114 &11400004
 MonoBehaviour:
@@ -1007,7 +1007,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1191ee6aa9889324e883393cc5c69646, type: 3}
   m_Name: 
-  playerCam: {fileID: 0}
   playerCamPos: {fileID: 400004}
 --- !u!114 &11400014
 MonoBehaviour:
