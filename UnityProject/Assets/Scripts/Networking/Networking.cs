@@ -109,7 +109,8 @@ public class Networking : MonoBehaviour {
 	[RPC]
 	void ExitCL() {
   		Network.Disconnect();
-		mainMenu.SetMainMenuState();
+		//mainMenu.SetMainMenuState();
+		Application.LoadLevel(0);
 	}
 
 	public NetworkViewID getMyPlayerID() {

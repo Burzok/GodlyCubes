@@ -160,7 +160,7 @@ public class MenuGUI : MonoBehaviour {
 			}
 
 			Network.Disconnect();
-			SetMainMenuState();
+			Application.LoadLevel(0);
 		}
 	}
 
@@ -171,7 +171,7 @@ public class MenuGUI : MonoBehaviour {
 			networkView.RPC("UnregisterPlayer", RPCMode.Server, networking.getMyPlayerID());
 			networkView.RPC("DecCounters", RPCMode.AllBuffered, (int)networking.actualTeam);
 			Network.Disconnect();
-			SetMainMenuState();
+			Application.LoadLevel(0);
 		}
 		
 		DrawStats();
@@ -216,7 +216,7 @@ public class MenuGUI : MonoBehaviour {
 		
 		if (GUI.Button(new Rect(Screen.width*0.5f-50f,Screen.height*0.7f,100f,30f), "Disconnect")) {
 			Network.Disconnect();
-			SetMainMenuState();
+			Application.LoadLevel(0);
 		}
 	}
 	
@@ -227,7 +227,7 @@ public class MenuGUI : MonoBehaviour {
 		
 		if (GUI.Button(new Rect(Screen.width*0.5f-50f,Screen.height*0.7f,100f,30f), "Disconnect")) {
 			Network.Disconnect();
-			SetMainMenuState();
+			Application.LoadLevel(0);
 		}
 	}
 	
