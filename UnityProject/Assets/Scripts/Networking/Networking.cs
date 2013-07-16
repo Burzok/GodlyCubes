@@ -9,18 +9,18 @@ public enum Team {
 
 public class Networking : MonoBehaviour {
 	public GameObject player_prefab;
-
+	public Team actualTeam;
+	
 	private string serverName = "Server Name";
 	private string playerName = "Player Name";
 	
-	private GameObject goPlayer;
 	private GameObject spawners;
 	
-	public Team actualTeam;
-	public int numOfPlayersA = 0;
-	public int numOfPlayersB = 0;
+	private int numOfPlayersA = 0;
+	private int numOfPlayersB = 0;
 	
 	private MenuGUI mainMenu;
+	private PlayerList playerListComponent;
 	
 	void Awake () {
         MasterServer.ClearHostList();
@@ -28,6 +28,7 @@ public class Networking : MonoBehaviour {
 
 		spawners = GameObject.Find("Spawners");
 		mainMenu = GetComponent<MenuGUI>();
+		playerListComponent = GetComponent<PlayerList>();
 	}
 
 	void OnConnectedToServer() {
@@ -39,9 +40,9 @@ public class Networking : MonoBehaviour {
 		networkView.RPC("IncCounters", RPCMode.AllBuffered, (int)playerTeam);
 		
 		Transform spawner = FindSpawn(playerTeam);
-		goPlayer = SpawnPlayer(ref spawner);
+		playerListComponent.myPlayer = SpawnPlayer(ref spawner);
 		
-		networkView.RPC("RegisterPlayer", RPCMode.AllBuffered, playerName, getPlayerID(), (int)playerTeam);
+		networkView.RPC("RegisterPlayer", RPCMode.AllBuffered, playerName, getMyPlayerID(), (int)playerTeam);
 	}
 	
 	[RPC]
@@ -111,8 +112,8 @@ public class Networking : MonoBehaviour {
 		mainMenu.SetMainMenuState();
 	}
 
-	public NetworkViewID getPlayerID() {
-		return goPlayer.networkView.viewID;
+	public NetworkViewID getMyPlayerID() {
+		return playerListComponent.myPlayer.networkView.viewID;
 	}
 	
 	public void SetServerName(string serwerName) {

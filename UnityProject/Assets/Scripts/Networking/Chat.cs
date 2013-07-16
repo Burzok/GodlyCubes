@@ -88,7 +88,7 @@ public class Chat : MonoBehaviour {
 	}	
 	
 	void GetPlayerChatInfo() {
-		NetworkViewID id = GetComponent<Networking>().getPlayerID();
+		NetworkViewID id = GetComponent<Networking>().getMyPlayerID();
 		List<PlayerData> playerList = GetComponent<PlayerList>().playerList;
 		PlayerData player = playerList.Find(playerToFind => playerToFind.id == id);
 			

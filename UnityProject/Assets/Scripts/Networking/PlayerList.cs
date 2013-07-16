@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerList : MonoBehaviour {
 	public List<PlayerData> playerList = new List<PlayerData>(4);
+	public GameObject myPlayer;
 	
 	private Networking networkingScript;
 	
@@ -39,14 +40,10 @@ public class PlayerList : MonoBehaviour {
 		player.playerName = playerName;
 		player.team = (Team)playerTeam;
 		
-		if (player.team == Team.TeamA) {
+		if (player.team == Team.TeamA)
 			player.color = new Vector3(1,0,0);
-			player.name = "A"+networkingScript.numOfPlayersA;
-		}
-		else if (player.team == Team.TeamB) {
+		else if (player.team == Team.TeamB)
 			player.color = new Vector3(0,0,1);
-			player.name = "B"+networkingScript.numOfPlayersB;
-		}
 		
 		player.respawnPosition = player.transform.position;
 		

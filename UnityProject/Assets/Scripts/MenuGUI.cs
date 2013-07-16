@@ -167,7 +167,7 @@ public class MenuGUI : MonoBehaviour {
 		GUI.Label(new Rect(5,5,250,40), "Server name: " + networking.GetServerName());
 
 		if (GUI.Button(new Rect(Screen.width-105f, 5f, 100f, 50f), "Back")) {  				
-			networkView.RPC("UnregisterPlayer", RPCMode.Server, networking.getPlayerID());
+			networkView.RPC("UnregisterPlayer", RPCMode.Server, networking.getMyPlayerID());
 			networkView.RPC("DecCounters", RPCMode.AllBuffered, (int)networking.actualTeam);
 			Network.Disconnect();
 			SetMainMenuState();

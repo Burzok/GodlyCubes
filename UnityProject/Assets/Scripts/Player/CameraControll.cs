@@ -2,13 +2,13 @@ using UnityEngine;
 using System.Collections;
 
 public class CameraControll : MonoBehaviour {
-	public Transform playerCam;
 	public Transform playerCamPos;
 	
-	private GameObject[] mainCam;
+	private Transform playerCam;
+	private GameObject[] mainCameras;
 	
 	void Awake() {
-		mainCam = GameObject.FindGameObjectsWithTag(Tags.mainCamera);
+		mainCameras = GameObject.FindGameObjectsWithTag(Tags.mainCamera);
 		
 		if(!networkView.isMine) {
 			if(!Network.isServer)
@@ -26,12 +26,12 @@ public class CameraControll : MonoBehaviour {
 	}
 	
 	void TurnOffMainCameras() {
-		foreach( GameObject cam in mainCam )
+		foreach( GameObject cam in mainCameras )
 			cam.SetActive(false);
 	}
 	
 	void TurnONMainCameras() {
-		foreach( GameObject cam in mainCam )
+		foreach( GameObject cam in mainCameras )
 			cam.SetActive(true);
 	}
 }
