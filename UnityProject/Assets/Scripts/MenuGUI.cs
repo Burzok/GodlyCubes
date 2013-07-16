@@ -18,6 +18,7 @@ public class MenuGUI : MonoBehaviour {
 	public Map selectedMap;
 	
 	private Networking networking;
+	private Rotator myPlayerRotator;
 	private Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
 	private float timeHostWasRegistered;
 	private GameObject miniCrystalCaverns, miniBurzokGrounds;
@@ -268,13 +269,24 @@ public class MenuGUI : MonoBehaviour {
 	
 	public void SetWinState() {
 		drawChat = false;
-		drawStats = false;
+		drawStats = false;		
+		if (Network.isClient) {
+			myPlayerRotator = GetComponent<PlayerList>().myPlayer.GetComponent<Rotator>();	
+			myPlayerRotator.enabled = false;
+			Screen.lockCursor = false;
+		}
 		drawGUI = DrawWinState;
 	}
 	
 	public void SetLoseState() {
 		drawChat = false;
 		drawStats = false;
+		Screen.lockCursor = false;
+		if (Network.isClient) {
+			myPlayerRotator = GetComponent<PlayerList>().myPlayer.GetComponent<Rotator>();	
+			myPlayerRotator.enabled = false;
+			Screen.lockCursor = false;
+		}
 		drawGUI = DrawLoseState;
 	}
 	

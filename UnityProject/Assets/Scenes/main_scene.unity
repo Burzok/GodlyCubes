@@ -3311,8 +3311,6 @@ MonoBehaviour:
   m_Name: 
   player_prefab: {fileID: 100002, guid: 8eee3ccacffcec74c8528c3809ec5a4b, type: 2}
   actualTeam: 0
-  numOfPlayersA: 0
-  numOfPlayersB: 0
 --- !u!82 &113685774
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3393,6 +3391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f19a6119d780de44a085bbac121c03e, type: 3}
   m_Name: 
   playerList: []
+  myPlayer: {fileID: 0}
 --- !u!114 &113685777
 MonoBehaviour:
   m_ObjectHideFlags: 0
