@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TowerBullet : MonoBehaviour {
+public class TowerBulletServer : MonoBehaviour {
 	public Transform target;
 	public float bulletSpeed;
 	public int damage = 30;
@@ -30,7 +30,7 @@ public class TowerBullet : MonoBehaviour {
 				reloder.GetComponent<Reloader>().bullet = null;
 				flag = false;
 			}
-			if (!flag) {
+			else {
 				Vector3 toPos = target.transform.position;
 				
 				Vector3 vecLenght = new Vector3 (transform.position.x + toPos.x, 

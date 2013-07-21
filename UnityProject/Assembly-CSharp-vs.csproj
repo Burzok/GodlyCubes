@@ -44,8 +44,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\MenuGUI.cs" />
-     <Compile Include="Assets\Scripts\MiniMapRotator.cs" />
      <Compile Include="Assets\Scripts\Networking\Chat.cs" />
      <Compile Include="Assets\Scripts\Networking\Networking.cs" />
      <Compile Include="Assets\Scripts\Networking\PlayerList.cs" />
@@ -69,12 +67,17 @@
      <Compile Include="Assets\Scripts\Unused\Punch.cs" />
      <Compile Include="Assets\Scripts\Unused\RandomFloorBotMovement.cs" />
      <Compile Include="Assets\Scripts\Unused\ScrollingUVs.cs" />
-     <Compile Include="Assets\Scripts\World\AITower.cs" />
      <Compile Include="Assets\Scripts\World\BaseLife.cs" />
+     <Compile Include="Assets\Scripts\World\MenuGUI.cs" />
+     <Compile Include="Assets\Scripts\World\MiniMapRotator.cs" />
      <Compile Include="Assets\Scripts\World\Reloader.cs" />
-     <Compile Include="Assets\Scripts\World\TowerBullet.cs" />
-     <Compile Include="Assets\Scripts\World\TowerLife.cs" />
-     <Compile Include="Assets\Scripts\World\TowerTeamChoser.cs" />
+     <Compile Include="Assets\Scripts\World\SpawnTower.cs" />
+     <Compile Include="Assets\Scripts\World\TowerAIServer.cs" />
+     <Compile Include="Assets\Scripts\World\TowerBulletClient.cs" />
+     <Compile Include="Assets\Scripts\World\TowerBulletServer.cs" />
+     <Compile Include="Assets\Scripts\World\TowerLifeServer.cs" />
+     <Compile Include="Assets\Scripts\World\TowerTeamChoserClient.cs" />
+     <Compile Include="Assets\Scripts\World\TowerTeamChoserServer.cs" />
      <None Include="Assets\Image Effects\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Image Effects\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />

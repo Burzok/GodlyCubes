@@ -3,7 +3,10 @@ using System.Collections;
 
 public class Reloader : MonoBehaviour {
 	public Transform bullet;
-	public Transform bulletPrefab;
+	
+	public Transform bulletPrefabClient;
+	public Transform bulletPrefabServer;
+	
 	public float reloadTime = 3;
 	public Transform target;
 	
@@ -18,7 +21,7 @@ public class Reloader : MonoBehaviour {
 		target = null;
 		detector = transform.FindChild("Detection");
 		spawner = transform.FindChild("Spawner");
-		if(Network.isServer || Network.isClient)
+		if(Network.isServer)
 			networkView.RPC("FirstReload", RPCMode.All);
 	}
 	
@@ -29,7 +32,16 @@ public class Reloader : MonoBehaviour {
 			RealoadIfItsTime();
 		}
 	}
-	
+	/*
+	void Update() {
+		if(Input.GetKeyDown(KeyCode.A)) {
+			Network.Destroy(bullet.gameObject);	
+		}	
+		if(Input.GetKeyDown(KeyCode.D)) {
+			Network.Destroy(this.gameObject);	
+		}	
+	}
+	*/
 	private void CheckIfTargetIsAlive() {
 		if (target != null) {
 			if (!target.GetComponent<PlayerData>().isAlive)
@@ -67,19 +79,24 @@ public class Reloader : MonoBehaviour {
 	
 	[RPC]
 	private void InstantiateTowerBullet(NetworkViewID id) {
-		bullet = Instantiate(bulletPrefab, spawner.position, spawner.rotation) as Transform;
-		
-		if (towerTeam == Team.TeamA)
-			bullet.gameObject.layer = 11;
-		else if (towerTeam == Team.TeamB)
-			bullet.gameObject.layer = 12;
+		if(Network.isServer) {
+			bullet = Instantiate(bulletPrefabServer, spawner.position, spawner.rotation) as Transform;
+			bullet.networkView.viewID = id;
+			
+			if (towerTeam == Team.TeamA)
+				bullet.gameObject.layer = 11;
+			else if (towerTeam == Team.TeamB)
+				bullet.gameObject.layer = 12;
 						
-		bullet.GetComponent<NetworkView>().viewID = id;
-		
-		detector.GetComponent<AITower>().bullet = bullet;
-		
-		bullet.GetComponent<TowerBullet>().towerDetector = detector;
-		bullet.GetComponent<TowerBullet>().reloder = this.transform;
+			bullet.GetComponent<TowerBulletServer>().towerDetector = detector;
+			bullet.GetComponent<TowerBulletServer>().reloder = this.transform;
+			
+			detector.GetComponent<TowerAIServer>().bullet = bullet;
+		}
+		else {
+			bullet = Instantiate(bulletPrefabClient, spawner.position, spawner.rotation) as Transform;
+			bullet.networkView.viewID = id;
+		}
 	}
 	
 	public void SetTeam(Team team) {

@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
   - 135: {fileID: 13500000}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: BulletServer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,13 +13,10 @@ public class CombatController : MonoBehaviour {
 	
 	void Awake() {
 		gameController = GameObject.FindGameObjectWithTag(Tags.gameController);
+		data = GetComponent<PlayerData>();
 		
-		if(networkView.isMine) {
-			data = GetComponent<PlayerData>();
-			
-			Transform playerArmature = transform.Find("Animator");
-			playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();
-		}	
+		Transform playerArmature = transform.Find("Animator");
+		playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();	
 	}
 
 	void Update() {

@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public enum Team {
 	TeamA,
-	TeamB	
+	TeamB,
+	Neutral
 }
 
 public class Networking : MonoBehaviour {

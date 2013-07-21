@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class AITower : MonoBehaviour {
+public class TowerAIServer : MonoBehaviour {
 	public Transform target;
 	public Transform bullet;
 	
@@ -26,7 +26,7 @@ public class AITower : MonoBehaviour {
 	
 	[RPC]
 	private void SetBulletTarget() {
-		TowerBullet towerBulletRefference = bullet.GetComponent<TowerBullet>();
+		TowerBulletServer towerBulletRefference = bullet.GetComponent<TowerBulletServer>();
 			if (towerBulletRefference.target == null)
 				towerBulletRefference.target = target;
 	}

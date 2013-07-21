@@ -36,7 +36,7 @@ GameObject:
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400010}
   - 114: {fileID: 11400014}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400006}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: BulletSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
