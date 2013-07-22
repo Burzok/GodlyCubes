@@ -117,13 +117,43 @@ public class MenuGUI : MonoBehaviour {
 			SetMainMenuState();
 	}
 	
+	private void ServerList(int windowID) {
+		if(Time.time - timeHostWasRegistered >= 1.0f) {
+			MasterServer.RequestHostList("GodlyCubesLight");
+		}
+
+		HostData[] data = MasterServer.PollHostList();
+		foreach (HostData element in data) {
+			GUILayout.BeginHorizontal();	
+			var name = element.gameName + " " + element.connectedPlayers + " / " + element.playerLimit;
+			GUILayout.Label(name);	
+			GUILayout.Space(5);
+
+			string hostInfo;
+			hostInfo = "[";
+			foreach (var host in element.ip)
+				hostInfo = hostInfo + host;
+			hostInfo = hostInfo + "]";
+
+			GUILayout.Label(hostInfo);	
+			GUILayout.Space(5);
+			GUILayout.FlexibleSpace();
+
+			if (GUILayout.Button("Connect")) {
+				Network.Connect(element);
+				networking.SetServerName(element.gameName);
+				SetConnectingState();
+			}
+
+			GUILayout.EndHorizontal();	
+		}
+	}
+	
 	private void DrawOptionsMenu() {
 		GUI.Box(new Rect(Screen.width*0.5f-100f, 50f, 200f, 180f), "TODO: Make options");
 		
-		if (GUI.Button(new Rect(Screen.width*0.5f-50f,Screen.height*0.7f,100f,30f), "Back")) {
-			
+		if (GUI.Button(new Rect(Screen.width*0.5f-50f,Screen.height*0.7f,100f,30f), "Back"))
 			SetMainMenuState();			
-		}
 	}
 	
 	private void DrawTeamSelect() {
@@ -235,37 +265,7 @@ public class MenuGUI : MonoBehaviour {
 		GUI.Box(new Rect(Screen.width*0.5f-100f, 50f, 200f, 180f), "CONNECTING ...");
 	}
 	
-	 private void ServerList(int windowID) {
-		if(Time.time - timeHostWasRegistered >= 1.0f) {
-			MasterServer.RequestHostList("GodlyCubesLight");
-		}
-
-		HostData[] data = MasterServer.PollHostList();
-		foreach (HostData element in data) {
-			GUILayout.BeginHorizontal();	
-			var name = element.gameName + " " + element.connectedPlayers + " / " + element.playerLimit;
-			GUILayout.Label(name);	
-			GUILayout.Space(5);
-
-			string hostInfo;
-			hostInfo = "[";
-			foreach (var host in element.ip)
-				hostInfo = hostInfo + host;
-			hostInfo = hostInfo + "]";
-
-			GUILayout.Label(hostInfo);	
-			GUILayout.Space(5);
-			GUILayout.FlexibleSpace();
-
-			if (GUILayout.Button("Connect")) {
-				Network.Connect(element);
-				networking.SetServerName(element.gameName);
-				SetConnectingState();
-			}
-
-			GUILayout.EndHorizontal();	
-		}
-	}
+	 
 	
 	public void SetWinState() {
 		drawChat = false;
