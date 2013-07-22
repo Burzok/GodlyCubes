@@ -7,3 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/main_scene.unity
+  - enabled: 1
+    path: Assets/Scenes/CrystalCaverns.unity
+  - enabled: 1
+    path: Assets/Scenes/CrystalCavernsServer.unity

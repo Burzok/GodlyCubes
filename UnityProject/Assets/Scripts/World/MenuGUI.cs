@@ -31,12 +31,6 @@ public class MenuGUI : MonoBehaviour {
 		drawGUI = DrawMainMenu;
 		selectedMap = Map.CrystalCaverns;
 		
-		crystalCaverns=GameObject.Find("CrystalCaverns");
-		crystalCaverns.SetActive(false);
-		
-		burzokGrounds=GameObject.Find("BurzokGrounds");
-		burzokGrounds.SetActive(false);
-		
 		miniCrystalCaverns=GameObject.Find("miniCrystalCaverns");
 		miniCrystalCaverns.SetActive(false);
 		
@@ -68,7 +62,7 @@ public class MenuGUI : MonoBehaviour {
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, 55f, 100f, 50f), "Create")) {
 			if(selectedMap == Map.CrystalCaverns)
-				crystalCaverns.SetActive(true);
+				Application.LoadLevel(2);
 			if(selectedMap == Map.BurzokGrounds)
 				burzokGrounds.SetActive(true);
 			

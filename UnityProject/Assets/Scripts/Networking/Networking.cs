@@ -25,14 +25,16 @@ public class Networking : MonoBehaviour {
 	
 	void Awake () {
         MasterServer.ClearHostList();
-        MasterServer.RequestHostList("GodlyCubesLight");
-
+        MasterServer.RequestHostList("GodlyCubesLight");		
+		
 		spawners = GameObject.Find("Spawners");
 		mainMenu = GetComponent<MenuGUI>();
 		playerListComponent = GetComponent<PlayerList>();
+		DontDestroyOnLoad(this);
 	}
 
 	void OnConnectedToServer() {
+		networkView.group = 1;
 		mainMenu.SetTeamSelectState();
 	}
 	
@@ -91,6 +93,9 @@ public class Networking : MonoBehaviour {
 	}
 	
 	void OnPlayerConnected(NetworkPlayer player) {
+		networkView.group = 1;
+		Network.RemoveRPCsInGroup(0);
+		Network.RemoveRPCsInGroup(1);
 		networkView.RPC("SetMap", player, (int)mainMenu.selectedMap);
 	}
 	
@@ -100,17 +105,31 @@ public class Networking : MonoBehaviour {
 	}
 	
 	[RPC]
-	private void SetMap(int currentMap) {
-		if(currentMap == (int)Map.CrystalCaverns)
-			mainMenu.crystalCaverns.SetActive(true);
+	private void SetMap(int currentMap) {		
+		DisableRPC();
+		Debug.Log("test!");
+		if(currentMap == (int)Map.CrystalCaverns) {
+			Network.SetLevelPrefix(1);
+			Application.LoadLevel(1);
+		}
 		if(currentMap == (int)Map.BurzokGrounds)
 			mainMenu.burzokGrounds.SetActive(true);
+		EnableRPC();
+		spawners = GameObject.Find("Spawners");
+	}
+	
+	private void DisableRPC() {
+		Network.isMessageQueueRunning = false;
+	}
+	
+	private void EnableRPC() {
+		Network.isMessageQueueRunning = true;
+		Network.SetSendingEnabled(0, true);
 	}
  	
 	[RPC]
 	void ExitCL() {
   		Network.Disconnect();
-		//mainMenu.SetMainMenuState();
 		Application.LoadLevel(0);
 	}
 
