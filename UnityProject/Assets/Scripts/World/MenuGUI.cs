@@ -13,7 +13,6 @@ public class MenuGUI : MonoBehaviour {
 	public DrawGUI drawGUI;
 	public bool drawChat;
 	public bool drawStats;
-	public GameObject crystalCaverns, burzokGrounds;
 	
 	public Map selectedMap;
 	
@@ -24,6 +23,9 @@ public class MenuGUI : MonoBehaviour {
 	private GameObject miniCrystalCaverns, miniBurzokGrounds;
 	private List<PlayerData> playerList;
 	
+	private int lastLevelPrefix = 0;
+	private string level = "CrystalCaverns";
+	
 	void Awake() {
 		networking = GetComponent<Networking>();
 		playerList = GetComponent<PlayerList>().playerList;
@@ -31,17 +33,8 @@ public class MenuGUI : MonoBehaviour {
 		drawGUI = DrawMainMenu;
 		selectedMap = Map.CrystalCaverns;
 		
-		crystalCaverns=GameObject.Find("CrystalCaverns");
-		crystalCaverns.SetActive(false);
-		
-		burzokGrounds=GameObject.Find("BurzokGrounds");
-		burzokGrounds.SetActive(false);
-		
-		miniCrystalCaverns=GameObject.Find("miniCrystalCaverns");
-		miniCrystalCaverns.SetActive(false);
-		
-		miniBurzokGrounds=GameObject.Find("miniBurzokGrounds");
-		miniBurzokGrounds.SetActive(false);
+		miniCrystalCaverns = GameObject.Find("miniCrystalCaverns");
+		miniBurzokGrounds = GameObject.Find("miniBurzokGrounds");
 	}
 	
 	void OnGUI() {
@@ -67,19 +60,14 @@ public class MenuGUI : MonoBehaviour {
 		networking.SetServerName(GUI.TextField(screenCoordinates, networking.GetServerName() ));
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, 55f, 100f, 50f), "Create")) {
-			if(selectedMap == Map.CrystalCaverns)
-				crystalCaverns.SetActive(true);
-			if(selectedMap == Map.BurzokGrounds)
-				burzokGrounds.SetActive(true);
-			
   			Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
 	  		MasterServer.RegisterHost("GodlyCubesLight", networking.GetServerName() );
 			timeHostWasRegistered = Time.time;
 			SetServerGameState();
 			drawChat = true;
 			drawStats = true;
-			miniCrystalCaverns.SetActive(false);
-			miniBurzokGrounds.SetActive(false);
+			
+			networkView.RPC( "LoadLevel", RPCMode.AllBuffered, level, lastLevelPrefix + 1);
 		}
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {
@@ -105,7 +93,53 @@ public class MenuGUI : MonoBehaviour {
 			//TODO: Funkcja do wyboru trybu classic
 		if (GUI.Button (new Rect(Screen.width*0.23f, Screen.height*0.65f, Screen.width*0.1f, Screen.height*0.1f),"Weird"));
 			//TODO: Funkcja do wyboru trybu weird
-	}	
+	}
+	
+	[RPC]
+	private void LoadLevel(string level, int levelPrefix) {
+		lastLevelPrefix = levelPrefix;
+	
+			// There is no reason to send any more data over the network on the default channel,
+			// because we are about to load the level, thus all those objects will get deleted anyway
+		Network.SetSendingEnabled(0, false);
+		foreach (NetworkPlayer player in Network.connections) {
+            Network.SetReceivingEnabled(player, 0, false);
+        }
+	
+			// We need to stop receiving because first the level must be loaded first.
+			// Once the level is loaded, rpc's and other state update attached to objects in the level are allowed to fire
+		//Network.isMessageQueueRunning = false;
+	
+			// All network views loaded from a level will get a prefix into their NetworkViewID.
+			// This will prevent old updates from clients leaking into a newly created scene.
+		Network.SetLevelPrefix(levelPrefix);
+		if(Network.isServer)
+			Application.LoadLevel(level+"Server");
+		else
+			Application.LoadLevel(level+"Client");
+		//yield;
+		//yield;
+	
+			// Allow receiving data again
+		//Network.isMessageQueueRunning = true;
+			// Now the level has been loaded and we can start sending out data to clients
+		
+	
+			//for (var go in FindObjectsOfType(GameObject))
+			//	go.SendMessage("OnNetworkLoadedLevel", SendMessageOptions.DontRequireReceiver);	
+	}
+	
+	void OnLevelWasLoaded(int level) {
+        foreach (NetworkPlayer player in Network.connections) {
+            Network.SetReceivingEnabled(player, 0, true);
+        }
+		Network.SetSendingEnabled(0, true);
+    }
+	
+	void OnDisconnectedFromServer ()
+	{
+		Application.LoadLevel(networking.disconnectedLevel);
+	}
 
 	private void DrawConnect() {
 		windowRect = GUI.Window(0, windowRect, ServerList, "Server List");

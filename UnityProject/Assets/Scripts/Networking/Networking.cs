@@ -23,7 +23,13 @@ public class Networking : MonoBehaviour {
 	private MenuGUI mainMenu;
 	private PlayerList playerListComponent;
 	
+	public string disconnectedLevel = "main_menu";
+	
 	void Awake () {
+		DontDestroyOnLoad(this);
+		networkView.group = 1;
+		Application.LoadLevel(disconnectedLevel);
+		
         MasterServer.ClearHostList();
         MasterServer.RequestHostList("GodlyCubesLight");
 
@@ -97,14 +103,6 @@ public class Networking : MonoBehaviour {
 	void OnPlayerDisconnected(NetworkPlayer player) {
 		Network.RemoveRPCs(player);
 		Network.DestroyPlayerObjects(player);
-	}
-	
-	[RPC]
-	private void SetMap(int currentMap) {
-		if(currentMap == (int)Map.CrystalCaverns)
-			mainMenu.crystalCaverns.SetActive(true);
-		if(currentMap == (int)Map.BurzokGrounds)
-			mainMenu.burzokGrounds.SetActive(true);
 	}
  	
 	[RPC]
