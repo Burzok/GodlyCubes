@@ -28,6 +28,8 @@ public class Shooting : MonoBehaviour {
 	static int basicAtackState = Animator.StringToHash("Base Layer.Basic_Atack");	
 	
 	void Awake() {
+		networkView.group = 0;
+		
 		list = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<PlayerList>().playerList;
 		bulletSpawner = this.transform.FindChild("BulletSpawner");
 		data = GetComponent<PlayerData>();

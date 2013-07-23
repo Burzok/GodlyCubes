@@ -12,20 +12,26 @@ public class Networking : MonoBehaviour {
 	public GameObject player_prefab;
 	public Team actualTeam;
 	
-	private string serverName = "Server Name";
-	private string playerName = "Player Name";
+	private string serverName;
+	private string playerName;
 	
 	private GameObject spawners;
 	
-	private int numOfPlayersA = 0;
-	private int numOfPlayersB = 0;
+	private int numOfPlayersA;
+	private int numOfPlayersB;
 	
 	private MenuGUI mainMenu;
 	private PlayerList playerListComponent;
 	
-	public string disconnectedLevel = "main_menu";
+	public string disconnectedLevel;
 	
 	void Awake () {
+		serverName = "Server Name";
+		playerName = "Player Name";
+		numOfPlayersA = 0;
+		numOfPlayersB = 0;
+		disconnectedLevel = "main_menu";
+		
 		DontDestroyOnLoad(this);
 		networkView.group = 1;
 		Application.LoadLevel(disconnectedLevel);
@@ -33,9 +39,13 @@ public class Networking : MonoBehaviour {
         MasterServer.ClearHostList();
         MasterServer.RequestHostList("GodlyCubesLight");
 
-		spawners = GameObject.Find("Spawners");
 		mainMenu = GetComponent<MenuGUI>();
 		playerListComponent = GetComponent<PlayerList>();
+	}
+	
+	void OnLevelWasLoaded(int level) {
+		if(level == 3)
+			spawners = GameObject.Find("Spawners");
 	}
 
 	void OnConnectedToServer() {
@@ -94,10 +104,6 @@ public class Networking : MonoBehaviour {
 			GameObject.Destroy(player);					
 		}
 		GetComponent<PlayerList>().playerList.Clear();
-	}
-	
-	void OnPlayerConnected(NetworkPlayer player) {
-		networkView.RPC("SetMap", player, (int)mainMenu.selectedMap);
 	}
 	
 	void OnPlayerDisconnected(NetworkPlayer player) {

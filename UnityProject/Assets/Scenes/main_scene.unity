@@ -228,6 +228,8 @@ MonoBehaviour:
   drawChat: 0
   drawStats: 0
   selectedMap: 0
+  miniCrystalCaverns: {fileID: 0}
+  miniBurzokGrounds: {fileID: 0}
 --- !u!1001 &1118679224
 Prefab:
   m_ObjectHideFlags: 0

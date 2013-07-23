@@ -20,7 +20,7 @@ public class MenuGUI : MonoBehaviour {
 	private Rotator myPlayerRotator;
 	private Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
 	private float timeHostWasRegistered;
-	private GameObject miniCrystalCaverns, miniBurzokGrounds;
+	public GameObject miniCrystalCaverns, miniBurzokGrounds;
 	private List<PlayerData> playerList;
 	
 	private int lastLevelPrefix = 0;
@@ -32,9 +32,6 @@ public class MenuGUI : MonoBehaviour {
 		
 		drawGUI = DrawMainMenu;
 		selectedMap = Map.CrystalCaverns;
-		
-		miniCrystalCaverns = GameObject.Find("miniCrystalCaverns");
-		miniBurzokGrounds = GameObject.Find("miniBurzokGrounds");
 	}
 	
 	void OnGUI() {
@@ -98,46 +95,38 @@ public class MenuGUI : MonoBehaviour {
 	[RPC]
 	private void LoadLevel(string level, int levelPrefix) {
 		lastLevelPrefix = levelPrefix;
-	
-			// There is no reason to send any more data over the network on the default channel,
-			// because we are about to load the level, thus all those objects will get deleted anyway
-		Network.SetSendingEnabled(0, false);
-		foreach (NetworkPlayer player in Network.connections) {
-            Network.SetReceivingEnabled(player, 0, false);
-        }
-	
-			// We need to stop receiving because first the level must be loaded first.
-			// Once the level is loaded, rpc's and other state update attached to objects in the level are allowed to fire
-		//Network.isMessageQueueRunning = false;
-	
-			// All network views loaded from a level will get a prefix into their NetworkViewID.
-			// This will prevent old updates from clients leaking into a newly created scene.
+
+		Debug.LogWarning("LoadLevel");
+
 		Network.SetLevelPrefix(levelPrefix);
+		
 		if(Network.isServer)
 			Application.LoadLevel(level+"Server");
 		else
 			Application.LoadLevel(level+"Client");
-		//yield;
-		//yield;
-	
-			// Allow receiving data again
-		//Network.isMessageQueueRunning = true;
-			// Now the level has been loaded and we can start sending out data to clients
-		
-	
-			//for (var go in FindObjectsOfType(GameObject))
-			//	go.SendMessage("OnNetworkLoadedLevel", SendMessageOptions.DontRequireReceiver);	
 	}
 	
 	void OnLevelWasLoaded(int level) {
-        foreach (NetworkPlayer player in Network.connections) {
-            Network.SetReceivingEnabled(player, 0, true);
-        }
-		Network.SetSendingEnabled(0, true);
+		
+		if(level == 3) {
+			Debug.LogWarning("group 0 on");
+		
+	        foreach (NetworkPlayer player in Network.connections) {
+	            Network.SetReceivingEnabled(player, 0, true);
+	        }
+			Network.SetSendingEnabled(0, true);
+		}
+			
+		if(level == 1) {
+			miniCrystalCaverns = GameObject.Find("miniCrystalCaverns");
+			miniBurzokGrounds = GameObject.Find("miniBurzokGrounds");
+			
+			miniCrystalCaverns.SetActive(false);
+			miniBurzokGrounds.SetActive(false);
+		}
     }
 	
-	void OnDisconnectedFromServer ()
-	{
+	void OnDisconnectedFromServer () {
 		Application.LoadLevel(networking.disconnectedLevel);
 	}
 
@@ -174,8 +163,21 @@ public class MenuGUI : MonoBehaviour {
 			GUILayout.FlexibleSpace();
 
 			if (GUILayout.Button("Connect")) {
+				
+				Debug.LogWarning("group 0 off");
+				
+				Network.SetSendingEnabled(0, false);
+				foreach (NetworkPlayer player in Network.connections) 
+            		Network.SetReceivingEnabled(player, 0, false);
+				
 				Network.Connect(element);
+				
 				networking.SetServerName(element.gameName);
+				
+				//Network.SetSendingEnabled(1, false);
+				//foreach (NetworkPlayer player in Network.connections) 
+            	//	Network.SetReceivingEnabled(player, 1, false);
+     
 				SetConnectingState();
 			}
 

@@ -7,16 +7,16 @@ public class SpawnTowerClient : MonoBehaviour {
 	public Team teamSelect;
 	public Transform tower;
 	
+	void Awake() {
+		networkView.group = 0;	
+	}
+	
 	[RPC]
 	private void InstantiateTowerOnClients(NetworkViewID towerID, NetworkViewID towerDetectorID) {
-
 		tower = Instantiate(towerPrefabClient, transform.position, transform.rotation) as Transform;
 		
-		//tower.networkView.viewID = towerID;
-		//tower.GetChild(0).networkView.viewID = towerDetectorID;
-		
-		tower.GetComponent<NetworkView>().viewID = towerID;
-		tower.GetChild(0).GetComponent<NetworkView>().viewID = towerDetectorID;
+		tower.networkView.viewID = towerID;
+		tower.GetChild(0).networkView.viewID = towerDetectorID;
 		
 		SetTeamInfoOnClient(teamSelect);
 	}

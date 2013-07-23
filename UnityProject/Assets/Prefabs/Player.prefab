@@ -35,7 +35,6 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400010}
-  - 114: {fileID: 11400014}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1008,16 +1007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1191ee6aa9889324e883393cc5c69646, type: 3}
   m_Name: 
   playerCamPos: {fileID: 400004}
---- !u!114 &11400014
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f7112f5ea3d6fc42a4bbb574cacc335, type: 3}
-  m_Name: 
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
