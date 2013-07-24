@@ -71,6 +71,8 @@
      <Compile Include="Assets\Scripts\World\MenuGUI.cs" />
      <Compile Include="Assets\Scripts\World\MiniMapRotator.cs" />
      <Compile Include="Assets\Scripts\World\Reloader.cs" />
+     <Compile Include="Assets\Scripts\World\SpawnBaseClient.cs" />
+     <Compile Include="Assets\Scripts\World\SpawnBaseServer.cs" />
      <Compile Include="Assets\Scripts\World\SpawnTowerClient.cs" />
      <Compile Include="Assets\Scripts\World\SpawnTowerServer.cs" />
      <Compile Include="Assets\Scripts\World\TowerAIServer.cs" />

@@ -67,7 +67,7 @@ public class MenuGUI : MonoBehaviour {
 			drawChat = true;
 			drawStats = true;
 			
-			networkView.RPC( "LoadLevel", RPCMode.AllBuffered, level, lastLevelPrefix + 1);
+			networkView.RPC("LoadLevel", RPCMode.AllBuffered, level, lastLevelPrefix+1);
 		}
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {
@@ -99,23 +99,17 @@ public class MenuGUI : MonoBehaviour {
 	private void LoadLevel(string level, int levelPrefix, NetworkMessageInfo info) {
 		lastLevelPrefix = levelPrefix;
 
-		Debug.LogWarning("Sender group: "+info.networkView.group);
-
-		Debug.LogWarning("LoadLevel");
-
-		//Network.SetLevelPrefix(levelPrefix);
+		Network.SetLevelPrefix(levelPrefix);
 		
-		//if(Network.isServer)
+		if(Network.isServer)
 			Application.LoadLevel(level+"Server");
-		//else
-		//	Application.LoadLevel(level+"Client");
+		else
+			Application.LoadLevel(level+"Client");
 	}
 	
 	void OnLevelWasLoaded(int level) {
 		
-		if(level == 3 || level == 2) {
-			Debug.LogWarning("group 0 on");
-		
+		if(level == 3) {
 	        foreach (NetworkPlayer player in Network.connections) {
 	            Network.SetReceivingEnabled(player, 0, true);
 	        }
@@ -169,15 +163,7 @@ public class MenuGUI : MonoBehaviour {
 
 			if (GUILayout.Button("Connect")) {
 				Network.Connect(element);
-				
-				
-				
 				networking.SetServerName(element.gameName);
-				
-				//Network.SetSendingEnabled(1, false);
-				//foreach (NetworkPlayer player in Network.connections) 
-            	//	Network.SetReceivingEnabled(player, 1, false);
-     
 				SetConnectingState();
 			}
 

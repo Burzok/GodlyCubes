@@ -5,6 +5,9 @@ TagManager:
   tags:
   - MainLight
   - PlayerCamera
+  - Tower
+  - TowerSpawner
+  - BaseSpawner
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

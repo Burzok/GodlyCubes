@@ -44,18 +44,34 @@ public class Networking : MonoBehaviour {
 	}
 	
 	void OnLevelWasLoaded(int level) {
-		if(level == 3)
+		if(level == 3) {
 			spawners = GameObject.Find("Spawners");
+			networkView.RPC("WhatToSpawn", RPCMode.Server);
+		}
+	}
+	
+	[RPC]
+	private void WhatToSpawn(NetworkMessageInfo info) {
+		NetworkPlayer sender = info.sender;
+		
+		GameObject[] towers = GameObject.FindGameObjectsWithTag(Tags.towerSpawner);
+		foreach(GameObject tower in towers) {
+			SpawnTowerServer towerSpawner = tower.GetComponent<SpawnTowerServer>();
+			towerSpawner.SpawnTowerOnClient(sender);
+		}
+		
+		//GameObject[] bases = GameObject.FindGameObjectsWithTag(Tags.baseSpawner);
+		//foreach(GameObject gameBase in bases) {
+		//	SpawnBaseServer baseSpawner = gameBase.GetComponent<SpawnBaseServer>();
+		//	gameBase.SpawnBaseOnClient(sender);
+		//}
 	}
 
 	void OnConnectedToServer() {
 		Network.SetSendingEnabled(0, false);
-				Debug.LogWarning(Network.connections.Length);
-				foreach (NetworkPlayer player in Network.connections)  {
-            		Network.SetReceivingEnabled(player, 0, false);
-					Debug.LogWarning("group 0 off");	
-				}
-		
+		foreach (NetworkPlayer player in Network.connections)  
+         	Network.SetReceivingEnabled(player, 0, false);
+	
 		mainMenu.SetTeamSelectState();
 	}
 	
