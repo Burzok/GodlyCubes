@@ -23,10 +23,13 @@ public class MenuGUI : MonoBehaviour {
 	public GameObject miniCrystalCaverns, miniBurzokGrounds;
 	private List<PlayerData> playerList;
 	
-	private int lastLevelPrefix = 0;
-	private string level = "CrystalCaverns";
+	private int lastLevelPrefix;
+	private string level;
 	
 	void Awake() {
+		lastLevelPrefix = 0;
+		level = "CrystalCaverns";
+		
 		networking = GetComponent<Networking>();
 		playerList = GetComponent<PlayerList>().playerList;
 		
@@ -93,22 +96,24 @@ public class MenuGUI : MonoBehaviour {
 	}
 	
 	[RPC]
-	private void LoadLevel(string level, int levelPrefix) {
+	private void LoadLevel(string level, int levelPrefix, NetworkMessageInfo info) {
 		lastLevelPrefix = levelPrefix;
+
+		Debug.LogWarning("Sender group: "+info.networkView.group);
 
 		Debug.LogWarning("LoadLevel");
 
-		Network.SetLevelPrefix(levelPrefix);
+		//Network.SetLevelPrefix(levelPrefix);
 		
-		if(Network.isServer)
+		//if(Network.isServer)
 			Application.LoadLevel(level+"Server");
-		else
-			Application.LoadLevel(level+"Client");
+		//else
+		//	Application.LoadLevel(level+"Client");
 	}
 	
 	void OnLevelWasLoaded(int level) {
 		
-		if(level == 3) {
+		if(level == 3 || level == 2) {
 			Debug.LogWarning("group 0 on");
 		
 	        foreach (NetworkPlayer player in Network.connections) {
@@ -163,14 +168,9 @@ public class MenuGUI : MonoBehaviour {
 			GUILayout.FlexibleSpace();
 
 			if (GUILayout.Button("Connect")) {
-				
-				Debug.LogWarning("group 0 off");
-				
-				Network.SetSendingEnabled(0, false);
-				foreach (NetworkPlayer player in Network.connections) 
-            		Network.SetReceivingEnabled(player, 0, false);
-				
 				Network.Connect(element);
+				
+				
 				
 				networking.SetServerName(element.gameName);
 				

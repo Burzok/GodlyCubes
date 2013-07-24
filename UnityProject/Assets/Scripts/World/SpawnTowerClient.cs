@@ -8,11 +8,18 @@ public class SpawnTowerClient : MonoBehaviour {
 	public Transform tower;
 	
 	void Awake() {
-		networkView.group = 0;	
+		networkView.group = 0;
+		Debug.LogWarning("Awake "+networkView.group);
+	}
+	
+	void Start() {
+		Debug.LogWarning(networkView.group);
 	}
 	
 	[RPC]
-	private void InstantiateTowerOnClients(NetworkViewID towerID, NetworkViewID towerDetectorID) {
+	private void InstantiateTowerOnClients(NetworkViewID towerID, NetworkViewID towerDetectorID, NetworkMessageInfo info) {
+		Debug.LogWarning("Sender group: "+info.networkView.group);
+		
 		tower = Instantiate(towerPrefabClient, transform.position, transform.rotation) as Transform;
 		
 		tower.networkView.viewID = towerID;

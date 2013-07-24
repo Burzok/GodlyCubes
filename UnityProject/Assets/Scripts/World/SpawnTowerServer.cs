@@ -11,13 +11,18 @@ public class SpawnTowerServer : MonoBehaviour {
 	private NetworkViewID towerID;
 	private NetworkViewID towerDetectorID;
 	
-	void Start () {
+	void Awake () {
 		networkView.group = 0;
 		
 		AllocateNetworkID();
 		InstantiateTowerOnServer();
 		SetTeamInfoOnServer(teamSelect);
+		Debug.LogWarning("Awake "+networkView.group);
 		networkView.RPC("InstantiateTowerOnClients", RPCMode.OthersBuffered, towerID, towerDetectorID);
+	}
+	
+	void Start() {
+		Debug.LogWarning("Start "+networkView.group);
 	}
 	
 	private void AllocateNetworkID() {
@@ -36,7 +41,9 @@ public class SpawnTowerServer : MonoBehaviour {
 	}
 	
 	[RPC]
-	private void InstantiateTowerOnClients(NetworkViewID towerID, NetworkViewID towerDetectorID) {
+	private void InstantiateTowerOnClients(NetworkViewID towerID, NetworkViewID towerDetectorID, NetworkMessageInfo info) {
+		Debug.LogWarning("Sender group: "+info.networkView.group);
+		
 		tower = Instantiate(towerPrefabClient, transform.position, transform.rotation) as Transform;
 		
 		tower.networkView.viewID = towerID;

@@ -49,6 +49,13 @@ public class Networking : MonoBehaviour {
 	}
 
 	void OnConnectedToServer() {
+		Network.SetSendingEnabled(0, false);
+				Debug.LogWarning(Network.connections.Length);
+				foreach (NetworkPlayer player in Network.connections)  {
+            		Network.SetReceivingEnabled(player, 0, false);
+					Debug.LogWarning("group 0 off");	
+				}
+		
 		mainMenu.SetTeamSelectState();
 	}
 	
