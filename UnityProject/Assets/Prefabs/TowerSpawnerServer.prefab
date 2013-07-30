@@ -12,7 +12,7 @@ GameObject:
   - 148: {fileID: 14800000}
   m_Layer: 0
   m_Name: TowerSpawnerServer
-  m_TagString: Untagged
+  m_TagString: TowerSpawner
   m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
+  towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
   tower: {fileID: 0}
 --- !u!148 &14800000

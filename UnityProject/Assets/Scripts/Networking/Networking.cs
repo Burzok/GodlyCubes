@@ -46,18 +46,21 @@ public class Networking : MonoBehaviour {
 	void OnLevelWasLoaded(int level) {
 		if(level == 3) {
 			spawners = GameObject.Find("Spawners");
-			networkView.RPC("WhatToSpawn", RPCMode.Server);
+			networkView.RPC("WhatToSpawnOnClient", RPCMode.Server);
 		}
 	}
 	
 	[RPC]
-	private void WhatToSpawn(NetworkMessageInfo info) {
+	private void WhatToSpawnOnClient(NetworkMessageInfo info) {
+		Debug.LogWarning("Server caches WhatToSpawnOnClient");
 		NetworkPlayer sender = info.sender;
 		
 		GameObject[] towers = GameObject.FindGameObjectsWithTag(Tags.towerSpawner);
 		foreach(GameObject tower in towers) {
 			SpawnTowerServer towerSpawner = tower.GetComponent<SpawnTowerServer>();
-			towerSpawner.SpawnTowerOnClient(sender);
+			if(towerSpawner.tower)
+				if(towerSpawner.tower.GetComponent<TowerLifeServer>().isAlive)
+					towerSpawner.SpawnTowerOnClient(sender);
 		}
 		
 		//GameObject[] bases = GameObject.FindGameObjectsWithTag(Tags.baseSpawner);

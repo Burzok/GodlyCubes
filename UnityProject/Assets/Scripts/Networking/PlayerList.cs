@@ -35,7 +35,9 @@ public class PlayerList : MonoBehaviour {
 		return null;
 	}
 	
-	private void FillPlayerData(ref PlayerData player, ref string playerName, ref NetworkViewID playerID, ref int playerTeam) {
+	private void FillPlayerData(
+		ref PlayerData player, ref string playerName, ref NetworkViewID playerID, ref int playerTeam
+		) {
 		player.id = playerID;
 		player.playerName = playerName;
 		player.team = (Team)playerTeam;

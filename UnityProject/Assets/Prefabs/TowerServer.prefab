@@ -32,7 +32,7 @@ GameObject:
   - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: TowerServer
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -195,7 +195,6 @@ MonoBehaviour:
   bulletPrefabClient: {fileID: 400000, guid: 8629abf722634c74a8dea372c523dfbf, type: 2}
   bulletPrefabServer: {fileID: 400000, guid: 7d76f6d98125c7946a64cb6892bd8655, type: 2}
   reloadTime: 3
-  target: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,7 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fafe4f7c7139504faeef63c8a20d164, type: 3}
   m_Name: 
   target: {fileID: 0}
-  bullet: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   maxhealth: 500
   health: 0
+  isAlive: 1
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

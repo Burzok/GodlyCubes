@@ -76,29 +76,39 @@ public class MenuGUI : MonoBehaviour {
 			SetMainMenuState();
 		}
 		
-		GUI.Box(new Rect(Screen.width*0.05f, Screen.height*0.2f, Screen.width*0.3f, Screen.height*0.2f), "Select Map");
-		if (GUI.Button (new Rect(Screen.width*0.07f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f),"Crystal Caverns")) {
+		GUI.Box(
+			new Rect(Screen.width*0.05f, Screen.height*0.2f, Screen.width*0.3f, Screen.height*0.2f), "Select Map");
+		if (GUI.Button (new Rect(
+			Screen.width*0.07f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f),"Crystal Caverns")) 
+		{
 			selectedMap = Map.CrystalCaverns;
 			miniCrystalCaverns.SetActive(true);
 			miniBurzokGrounds.SetActive(false);
 		}
-		if (GUI.Button (new Rect(Screen.width*0.23f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f),"Burzok Grounds")) {
+		if (GUI.Button (new Rect(
+			Screen.width*0.23f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f),"Burzok Grounds")) 
+		{
 			selectedMap = Map.BurzokGrounds;
 			miniBurzokGrounds.SetActive(true);
 			miniCrystalCaverns.SetActive(false);
 		}
 		
-		GUI.Box(new Rect(Screen.width*0.05f ,Screen.height*0.6f, Screen.width*0.3f, Screen.height*0.2f), "Select Mode");
-		if (GUI.Button (new Rect(Screen.width*0.07f, Screen.height*0.65f, Screen.width*0.1f, Screen.height*0.1f),"Classic"));
-			//TODO: Funkcja do wyboru trybu classic
-		if (GUI.Button (new Rect(Screen.width*0.23f, Screen.height*0.65f, Screen.width*0.1f, Screen.height*0.1f),"Weird"));
-			//TODO: Funkcja do wyboru trybu weird
+		GUI.Box(new Rect(
+			Screen.width*0.05f ,Screen.height*0.6f, Screen.width*0.3f, Screen.height*0.2f), "Select Mode");
+		if (GUI.Button(
+			new Rect(Screen.width*0.07f, Screen.height*0.65f, Screen.width*0.1f, Screen.height*0.1f),"Classic"));
+			Dumy();//TODO: Funkcja do wyboru trybu classic
+		if (GUI.Button(
+			new Rect(Screen.width*0.23f, Screen.height*0.65f, Screen.width*0.1f, Screen.height*0.1f),"Weird"));
+			Dumy();//TODO: Funkcja do wyboru trybu weird
 	}
 	
+	private void Dumy()
+	{}
+	
 	[RPC]
-	private void LoadLevel(string level, int levelPrefix, NetworkMessageInfo info) {
+	private void LoadLevel(string level, int levelPrefix) {
 		lastLevelPrefix = levelPrefix;
-
 		Network.SetLevelPrefix(levelPrefix);
 		
 		if(Network.isServer)

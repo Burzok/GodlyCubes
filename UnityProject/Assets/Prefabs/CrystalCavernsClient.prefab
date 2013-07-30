@@ -26559,7 +26559,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad9c146d1dac9f9429fad8b85af71fb5, type: 3}
   m_Name: 
-  towerPrefabClient: {fileID: 400002, guid: c080e53acd57ec248bb29fff5e5626e0, type: 2}
+  towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
   tower: {fileID: 0}
 --- !u!114 &11400002
@@ -26572,7 +26572,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad9c146d1dac9f9429fad8b85af71fb5, type: 3}
   m_Name: 
-  towerPrefabClient: {fileID: 400002, guid: c080e53acd57ec248bb29fff5e5626e0, type: 2}
+  towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
   tower: {fileID: 0}
 --- !u!114 &11400004
@@ -26585,7 +26585,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad9c146d1dac9f9429fad8b85af71fb5, type: 3}
   m_Name: 
-  towerPrefabClient: {fileID: 400002, guid: c080e53acd57ec248bb29fff5e5626e0, type: 2}
+  towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
   tower: {fileID: 0}
 --- !u!114 &11400006
@@ -26598,7 +26598,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad9c146d1dac9f9429fad8b85af71fb5, type: 3}
   m_Name: 
-  towerPrefabClient: {fileID: 400002, guid: c080e53acd57ec248bb29fff5e5626e0, type: 2}
+  towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
   tower: {fileID: 0}
 --- !u!114 &11400008
@@ -26611,7 +26611,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad9c146d1dac9f9429fad8b85af71fb5, type: 3}
   m_Name: 
-  towerPrefabClient: {fileID: 400002, guid: c080e53acd57ec248bb29fff5e5626e0, type: 2}
+  towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 2
   tower: {fileID: 0}
 --- !u!114 &11400010
@@ -26624,7 +26624,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad9c146d1dac9f9429fad8b85af71fb5, type: 3}
   m_Name: 
-  towerPrefabClient: {fileID: 400002, guid: c080e53acd57ec248bb29fff5e5626e0, type: 2}
+  towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
   tower: {fileID: 0}
 --- !u!114 &11400012
@@ -26637,7 +26637,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad9c146d1dac9f9429fad8b85af71fb5, type: 3}
   m_Name: 
-  towerPrefabClient: {fileID: 400002, guid: c080e53acd57ec248bb29fff5e5626e0, type: 2}
+  towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
   tower: {fileID: 0}
 --- !u!114 &11400014
@@ -26650,7 +26650,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad9c146d1dac9f9429fad8b85af71fb5, type: 3}
   m_Name: 
-  towerPrefabClient: {fileID: 400002, guid: c080e53acd57ec248bb29fff5e5626e0, type: 2}
+  towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
   tower: {fileID: 0}
 --- !u!114 &11400016
@@ -26691,7 +26691,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad9c146d1dac9f9429fad8b85af71fb5, type: 3}
   m_Name: 
-  towerPrefabClient: {fileID: 400002, guid: c080e53acd57ec248bb29fff5e5626e0, type: 2}
+  towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
   tower: {fileID: 0}
 --- !u!148 &14800000

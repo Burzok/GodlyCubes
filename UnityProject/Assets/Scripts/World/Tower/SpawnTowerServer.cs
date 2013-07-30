@@ -16,7 +16,7 @@ public class SpawnTowerServer : MonoBehaviour {
 		
 		AllocateNetworkID();
 		InstantiateTowerOnServer();
-		SetTeamInfoOnServer(teamSelect);
+		SetTeamInfoOnServer(ref teamSelect);
 	}
 	
 	private void AllocateNetworkID() {
@@ -30,25 +30,16 @@ public class SpawnTowerServer : MonoBehaviour {
 		tower.GetChild(0).networkView.viewID = towerDetectorID;
 	}
 	
-	private void SetTeamInfoOnServer(Team team) {
-		tower.GetComponent<TowerTeamChoserServer>().SetTeam(teamSelect);
+	private void SetTeamInfoOnServer(ref Team team) {
+		tower.GetComponent<TowerTeamChoserServer>().SetTeam(ref teamSelect);
 	}
 	
 	public void SpawnTowerOnClient(NetworkPlayer sender) {
+		Debug.LogWarning("server sends comand spawnTowers");
 		networkView.RPC("InstantiateTowerOnClient", sender, towerID, towerDetectorID);
 	}
 	
 	[RPC]
-	private void InstantiateTowerOnClient(NetworkViewID towerID, NetworkViewID towerDetectorID) {
-		tower = Instantiate(towerPrefabClient, transform.position, transform.rotation) as Transform;
-		
-		tower.networkView.viewID = towerID;
-		tower.GetChild(0).networkView.viewID = towerDetectorID;
-		
-		SetTeamInfoOnClient(teamSelect);
-	}
-	
-	private void SetTeamInfoOnClient(Team team) {
-		tower.GetComponent<TowerTeamChoserClient>().SetTeam(teamSelect);
-	}
+	private void InstantiateTowerOnClient(NetworkViewID towerID, NetworkViewID towerDetectorID) 
+	{}
 }

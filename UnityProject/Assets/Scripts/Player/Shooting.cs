@@ -35,7 +35,8 @@ public class Shooting : MonoBehaviour {
 		data = GetComponent<PlayerData>();
 		
 		animator = this.transform.FindChild("Animator").GetComponent<Animator>();
-		bulletRenderer = transform.Find("Animator").Find("Armature").Find("Bone").Find("Bone_001").Find("Bone_L").Find("Bone_L_001").Find("Bullet").GetComponent<MeshRenderer>();
+		bulletRenderer = transform.Find("Animator").Find("Armature").Find("Bone").Find("Bone_001").Find("Bone_L")
+			.Find("Bone_L_001").Find("Bullet").GetComponent<MeshRenderer>();
 		
 		shootingAnimationControl = Dumy;
 	}
@@ -94,12 +95,16 @@ public class Shooting : MonoBehaviour {
 	void SpawnBullet(NetworkViewID owner) {
 		Transform bullet;
 		
-		if(Network.isServer)
-			bullet = Instantiate(bulletPrefabServer, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
-		else
-			bullet = Instantiate(bulletPrefabClient, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
-			
-		bullet.GetComponent<BulletController>().owner = owner;
+		if(Network.isServer) {
+			bullet = Instantiate(
+				bulletPrefabServer, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
+			bullet.GetComponent<BulletControllerServer>().owner = owner;
+		}
+		else {
+			bullet = Instantiate(
+				bulletPrefabClient, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
+			bullet.GetComponent<BulletControllerClient>().owner = owner;	
+		}
 		
 		if (data.team == Team.TeamA)
 			bullet.gameObject.layer = 11;

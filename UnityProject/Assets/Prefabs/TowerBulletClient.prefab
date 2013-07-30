@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .353553414, y: .353553414, z: -.14644663, w: .853553355}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 63.9423065, y: 5.57192516, z: -94.7727356}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,14 +83,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2fa39539d12e244b9596517379e59d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a943adbd5f9be740b6e7ce701c6d34c, type: 3}
   m_Name: 
   target: {fileID: 0}
-  bulletSpeed: 1
+  bulletSpeed: 0
   damage: 30
   towerDetector: {fileID: 0}
   reloder: {fileID: 0}
-  modif: 1
+  modif: 0
   mag: 0
 --- !u!148 &14800000
 NetworkView:
