@@ -14,12 +14,12 @@ public class TowerAIClient : MonoBehaviour {
 	}
 	
 	[RPC]
-	private void Shoot(NetworkViewID targetID) {
-		FindTarget(ref targetID);
+	private void ShootOnClient(NetworkViewID targetID) {
+		FindTowerTarget(ref targetID);
 		SetTargetOnBullet();
 	}
 	
-	private void FindTarget(ref NetworkViewID targetID) {
+	private void FindTowerTarget(ref NetworkViewID targetID) {
 		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 		foreach(GameObject player in players) 
 			if(player.networkView.viewID == targetID)
@@ -27,24 +27,7 @@ public class TowerAIClient : MonoBehaviour {
 	}
 	
 	private void SetTargetOnBullet() {
-		towerReloader.bullet.GetComponent<TowerBulletClient>().target = target;
-		towerReloader.bullet = null;
-	}
-	
-	[RPC]
-	private void SetTowerTarget(NetworkViewID viewID, NetworkViewID targetID) { //TODO: split into functions
-		if(networkView.viewID == viewID) {
-			List<PlayerData> playerDataList = globalScriptObject.GetComponent<PlayerList>().playerList;
-			foreach( PlayerData playerData in playerDataList ) {
-				if ( targetID == playerData.id )
-					target = playerData.transform;
-			}
-		}
-	}
-	
-	[RPC]
-	private void ClearTowerTarget(NetworkViewID viewID) {
-		if(networkView.viewID == viewID) 
-			target = null;
+		towerReloader.bullet.GetComponent<TowerBulletClient>().SetTarget(target);
+		//towerReloader.bullet = null;
 	}
 }

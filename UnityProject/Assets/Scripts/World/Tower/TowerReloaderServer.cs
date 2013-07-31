@@ -6,7 +6,7 @@ public class TowerReloaderServer : MonoBehaviour {
 	
 	public Transform bulletPrefabClient;
 	public Transform bulletPrefabServer;
-	
+	public bool isReloading;
 	public float reloadTime = 3;
 	
 	private Transform detector;
@@ -14,34 +14,46 @@ public class TowerReloaderServer : MonoBehaviour {
 	private float timer;
 	private Team towerTeam;
 	private NetworkViewID bulletID;
-	
+
 	void Awake() {
+		isReloading = false;
 		timer = 0;
 		bullet = null;
 		detector = transform.FindChild("Detection");
 		spawner = transform.FindChild("Spawner");
 	}
 	
+	public void SetTeam(Team team) {
+		towerTeam = team;
+	}
+	
 	void FixedUpdate() {
+		CheckForReaload();
 		IncrementTimer();
 		RealoadIfItsTime();
 	}
 	
+	private void CheckForReaload() {
+		Debug.LogWarning("isRealoading: "+isReloading);
+		if(bullet == null) {
+			isReloading = true;
+			Debug.LogWarning(" chenge isRealoading: "+isReloading);
+		}
+	}
+	
 	private void IncrementTimer() {
-		if (bullet == null)
+		if (isReloading)
 			timer += Time.deltaTime;
 	}
 	
 	private void RealoadIfItsTime() {
-		if (bullet == null && timer >= reloadTime)
+		if (isReloading && timer >= reloadTime)
 			Reload();
 	}
 	
 	private void Reload() {
 		AllocateBulletID();
 		networkView.RPC("InstantiateTowerBullet", RPCMode.All, bulletID);
-		
-		timer = 0;
 	}
 	
 	private void AllocateBulletID() {
@@ -50,6 +62,7 @@ public class TowerReloaderServer : MonoBehaviour {
 	
 	[RPC]
 	private void InstantiateTowerBullet(NetworkViewID id) {
+		Debug.LogWarning("Instantiate on server, isRealoading: "+isReloading);
 		bullet = Instantiate(bulletPrefabServer, spawner.position, spawner.rotation) as Transform;
 		bullet.networkView.viewID = id;
 		
@@ -59,9 +72,9 @@ public class TowerReloaderServer : MonoBehaviour {
 			bullet.gameObject.layer = 12;
 				
 		bullet.GetComponent<TowerBulletServer>().SetReloader(transform.GetComponent<TowerReloaderServer>());
-	}
-	
-	public void SetTeam(Team team) {
-		towerTeam = team;
+		
+		timer = 0;
+		isReloading = false;
+		Debug.LogWarning("Instantiate isRealoading: "+isReloading);
 	}
 }

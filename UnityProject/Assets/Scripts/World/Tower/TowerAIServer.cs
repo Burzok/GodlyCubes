@@ -6,7 +6,7 @@ public class TowerAIServer : MonoBehaviour {
 	public Transform target;
 	
 	private GameObject globalScriptObject;
-	private TowerReloaderServer towerReloader;
+	public TowerReloaderServer towerReloader;
 	
 	void Awake() {
 		globalScriptObject = GameObject.FindGameObjectWithTag(Tags.gameController);	
@@ -15,21 +15,34 @@ public class TowerAIServer : MonoBehaviour {
 	
 	void FixedUpdate() {
 		CheckIfTargetIsAlive();
-		
-		if (target != null && towerReloader.bullet != null) {
-			if (target.GetComponent<PlayerData>().isAlive) {
-				networkView.RPC("ShootOnClient", RPCMode.Others, target.networkView.viewID);
-				ShootOnServer();
-			}
-			else   
-				networkView.RPC("ClearTowerTarget", RPCMode.All, networkView.viewID);
-		}
+		ShootIfUCan();
 	}
 	
 	private void CheckIfTargetIsAlive() {
 		if (target != null) 
 			if (!target.GetComponent<PlayerData>().isAlive)
 				target = null;
+	}
+	
+	private void ShootIfUCan() {
+			if (target != null ) {
+			if(!towerReloader.isReloading) {
+			//Debug.LogWarning("target&bullet");
+			if(towerReloader.bullet != null) {
+				//Debug.LogWarning("isRealoading");
+				if (target.GetComponent<PlayerData>().isAlive) {
+					//Debug.LogWarning("Shoot");
+					Shoot();
+				}
+			}
+		}
+		}
+	}
+		
+	private void Shoot() {
+		Debug.LogError("Shoot");
+		networkView.RPC("ShootOnClient", RPCMode.Others, target.networkView.viewID);
+		ShootOnServer();
 	}
 	
 	[RPC]
@@ -41,39 +54,37 @@ public class TowerAIServer : MonoBehaviour {
 	}
 
 	private void SetTargetOnBullet() {
-		towerReloader.bullet.GetComponent<TowerBulletServer>().target = target;
-		towerReloader.bullet = null;
+		SetBulletData();
+		ClearBulletReloaderReferenceToReload();
 	}
 	
-	/* by wprowadzic opoznienie wejscia w treager dopiero na Stay przekazuje target
-	void OnTriggerEnter(Collider other) {
-		if (target == null) 
-			networkView.RPC("SetTowerTarget", RPCMode.All, networkView.viewID, other.networkView.viewID);
-	}
-	*/
-	void OnTriggerStay(Collider other) {
-		if (target == null) 
-			networkView.RPC("SetTowerTarget", RPCMode.All, networkView.viewID, other.networkView.viewID);
+	private void SetBulletData() {
+		TowerBulletServer towerBulletScript = towerReloader.bullet.GetComponent<TowerBulletServer>();
+		Debug.LogWarning("set target on bullet");
+		towerBulletScript.SetTarget(target);
+		towerBulletScript.SetReloader(towerReloader);
 	}
 	
-	void OnTriggerExit(Collider other) {
-			if (target == other.transform)
-				networkView.RPC("ClearTowerTarget", RPCMode.All, networkView.viewID);
-	}
-	
-	[RPC]
-	private void SetTowerTarget(NetworkViewID viewID, NetworkViewID targetID) { //TODO: split into functions
-		if(networkView.viewID == viewID) {
-			List<PlayerData> playerDataList = globalScriptObject.GetComponent<PlayerList>().playerList;
-			foreach( PlayerData playerData in playerDataList ) 
-				if ( targetID == playerData.id ) 
-					target = playerData.transform;
+	private void ClearBulletReloaderReferenceToReload() {
+		if(!towerReloader.isReloading) {
+			Debug.LogWarning("CEAR BULLET");
+			towerReloader.bullet = null;
 		}
 	}
 	
-	[RPC]
-	private void ClearTowerTarget(NetworkViewID viewID) {
-		if(networkView.viewID == viewID) 
-			target = null;
+	/* by wprowadzic opoznienie wejscia w treager dopiero na Stay przekazuje target
+	void OnTriggerEnter(Collider enemy) {
+		if (target == null) 
+			target = enemy.transform
+	}
+	*/
+	void OnTriggerStay(Collider enemy) {
+		if (target == null)
+			target = enemy.transform;
+	}
+	
+	void OnTriggerExit(Collider enemy) {
+			if (target == enemy.transform)
+				target = null;
 	}
 }

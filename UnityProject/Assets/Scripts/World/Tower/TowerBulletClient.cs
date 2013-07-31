@@ -33,20 +33,16 @@ public class TowerBulletClient : MonoBehaviour {
 				flag = false;
 			}
 			else {
-				Vector3 toPos = target.transform.position;
-				
-				Vector3 vecLenght = new Vector3 (
-					transform.position.x+toPos.x, transform.position.y+toPos.y, transform.position.z+toPos.z
-					);
+				Vector3 toPos = target.position;
+				Vector3 fromPos = transform.position;
+				Vector3 vecLenght = new Vector3(fromPos.x+toPos.x, fromPos.y+toPos.y, fromPos.z+toPos.z);
 				
 				mag = vecLenght.magnitude;
 				
-				if ((vecLenght.magnitude) <= 70f) {
+				if ((vecLenght.magnitude) <= 70f)
 					modif = 8f;
-				}
-				else if ((vecLenght.magnitude) <= 100f) {
-					modif = 6f;	
-				}
+				else if ((vecLenght.magnitude) <= 100f) 
+					modif = 6f;
 				
 				transform.position = Vector3.Lerp(transform.position, toPos, Time.deltaTime * bulletSpeed * modif);
 			}

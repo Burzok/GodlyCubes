@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\World\Tower\TowerAIServer.cs">
     <Files>
-      <File FileName="Assets\Scripts\World\Tower\TowerReloaderServer.cs" Line="61" Column="67" />
-      <File FileName="Assets\Scripts\World\Tower\TowerReloaderClient.cs" Line="12" Column="44" />
-      <File FileName="Assets\Scripts\World\Tower\TowerAIServer.cs" Line="73" Column="2" />
-      <File FileName="Assets\Scripts\World\Tower\TowerAIClient.cs" Line="13" Column="72" />
-      <File FileName="Assets\Scripts\World\Tower\TowerBulletServer.cs" Line="73" Column="2" />
-      <File FileName="Assets\Scripts\World\Tower\TowerBulletClient.cs" Line="6" Column="27" />
+      <File FileName="Assets\Scripts\World\Tower\TowerReloaderClient.cs" Line="6" Column="38" />
+      <File FileName="Assets\Scripts\World\Tower\TowerReloaderServer.cs" Line="60" Column="39" />
+      <File FileName="Assets\Scripts\World\Tower\TowerAIClient.cs" Line="31" Column="33" />
+      <File FileName="Assets\Scripts\World\Tower\TowerAIServer.cs" Line="43" Column="27" />
+      <File FileName="Assets\Scripts\World\Tower\TowerBulletClient.cs" Line="29" Column="24" />
+      <File FileName="Assets\Scripts\World\Tower\TowerBulletServer.cs" Line="27" Column="47" />
       <File FileName="Assets\Scripts\World\Tower\TowerTeamChoserClient.cs" Line="15" Column="38" />
       <File FileName="Assets\Scripts\World\Tower\TowerTeamChoserServer.cs" Line="19" Column="26" />
       <File FileName="Assets\Scripts\World\Tower\SpawnTowerClient.cs" Line="15" Column="58" />

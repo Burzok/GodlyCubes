@@ -8,7 +8,7 @@ public class TowerBulletServer : MonoBehaviour {
 	public NetworkViewID owner;
 	
 	private bool flag;
-	private TowerReloaderServer reloder;
+	public TowerReloaderServer reloder;
 	
 	public float modif;
 	public float mag;
@@ -24,8 +24,13 @@ public class TowerBulletServer : MonoBehaviour {
 	}
 	
 	public void SetTarget(Transform newTarget) {
+		Debug.LogWarning("SETING TARGET ON BULLET");
 		target = newTarget;
 		targetData = target.GetComponent<PlayerData>();
+	}
+	
+	public void SetReloader(TowerReloaderServer newReloader) {
+		reloder = newReloader;
 	}
 	
 	void FixedUpdate() {
@@ -39,16 +44,14 @@ public class TowerBulletServer : MonoBehaviour {
 			}
 			else {
 				Vector3 toPos = target.transform.position;
-				
-				Vector3 vecLenght = new Vector3 (
-					transform.position.x+toPos.x, transform.position.y+toPos.y, transform.position.z+toPos.z
-					);
+				Vector3 fromPos = transform.position;
+				Vector3 vecLenght = new Vector3(fromPos.x+toPos.x, fromPos.y+toPos.y, fromPos.z+toPos.z);
 				
 				mag = vecLenght.magnitude;
 				
-				if ((vecLenght.magnitude) <= 70f) 
+				if (vecLenght.magnitude <= 70f) 
 					modif = 8f;
-				else if ((vecLenght.magnitude) <= 100f) 
+				else if (vecLenght.magnitude <= 100f) 
 					modif = 6f;	
 				
 				transform.position = Vector3.Lerp(transform.position, toPos, Time.deltaTime * bulletSpeed * modif);
@@ -79,11 +82,7 @@ public class TowerBulletServer : MonoBehaviour {
 	}
 	
 	private void DestroyBullet() {
-		Network.RemoveRPCs(networkView.viewID);
+		Network.RemoveRPCs(networkView.viewID); // sprawdzic czy przy braku tego jest jakas roznica
 		Network.Destroy(this.gameObject);
-	}
-	
-	public void SetReloader(TowerReloaderServer newReloader) {
-		reloder = newReloader;
 	}
 }
