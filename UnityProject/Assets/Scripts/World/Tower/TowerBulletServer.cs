@@ -7,24 +7,25 @@ public class TowerBulletServer : MonoBehaviour {
 	public int damage = 30;
 	public NetworkViewID owner;
 	
-	private bool flag;
+	public bool flag;
+	public bool flagflag;
 	public TowerReloaderServer reloder;
 	
 	public float modif;
 	public float mag;
 	
-	private PlayerData targetData;
+	public PlayerData targetData;
 	
-	void Start () {
-		owner = networkView.viewID;
+	void Awake() {
 		target = null;
+		owner = networkView.viewID;
 		flag = true;
+		flagflag = false;
 		modif = 4f;
 		bulletSpeed = 1f;
 	}
 	
 	public void SetTarget(Transform newTarget) {
-		Debug.LogWarning("SETING TARGET ON BULLET");
 		target = newTarget;
 		targetData = target.GetComponent<PlayerData>();
 	}

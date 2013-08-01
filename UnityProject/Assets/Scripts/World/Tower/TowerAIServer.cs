@@ -25,22 +25,14 @@ public class TowerAIServer : MonoBehaviour {
 	}
 	
 	private void ShootIfUCan() {
-			if (target != null ) {
-			if(!towerReloader.isReloading) {
-			//Debug.LogWarning("target&bullet");
-			if(towerReloader.bullet != null) {
-				//Debug.LogWarning("isRealoading");
-				if (target.GetComponent<PlayerData>().isAlive) {
-					//Debug.LogWarning("Shoot");
-					Shoot();
-				}
-			}
-		}
-		}
+		if (target != null ) 
+			if(!towerReloader.isReloading) 
+				if(towerReloader.bullet != null) 
+					if (target.GetComponent<PlayerData>().isAlive) 
+						Shoot();
 	}
 		
 	private void Shoot() {
-		Debug.LogError("Shoot");
 		networkView.RPC("ShootOnClient", RPCMode.Others, target.networkView.viewID);
 		ShootOnServer();
 	}
@@ -60,22 +52,21 @@ public class TowerAIServer : MonoBehaviour {
 	
 	private void SetBulletData() {
 		TowerBulletServer towerBulletScript = towerReloader.bullet.GetComponent<TowerBulletServer>();
-		Debug.LogWarning("set target on bullet");
 		towerBulletScript.SetTarget(target);
 		towerBulletScript.SetReloader(towerReloader);
 	}
 	
 	private void ClearBulletReloaderReferenceToReload() {
-		if(!towerReloader.isReloading) {
-			Debug.LogWarning("CEAR BULLET");
+		if(!towerReloader.isReloading)
 			towerReloader.bullet = null;
-		}
+			//towerReloader.isReloading = true;
 	}
 	
-	/* by wprowadzic opoznienie wejscia w treager dopiero na Stay przekazuje target
+	// by wprowadzic opoznienie wejscia w treager dopiero na Stay przekazuje target
+	/*
 	void OnTriggerEnter(Collider enemy) {
 		if (target == null) 
-			target = enemy.transform
+			target = enemy.transform;
 	}
 	*/
 	void OnTriggerStay(Collider enemy) {
@@ -84,7 +75,7 @@ public class TowerAIServer : MonoBehaviour {
 	}
 	
 	void OnTriggerExit(Collider enemy) {
-			if (target == enemy.transform)
-				target = null;
+		if (target == enemy.transform)
+			target = null;
 	}
 }

@@ -34,10 +34,8 @@ public class TowerReloaderServer : MonoBehaviour {
 	}
 	
 	private void CheckForReaload() {
-		Debug.LogWarning("isRealoading: "+isReloading);
 		if(bullet == null) {
 			isReloading = true;
-			Debug.LogWarning(" chenge isRealoading: "+isReloading);
 		}
 	}
 	
@@ -62,7 +60,6 @@ public class TowerReloaderServer : MonoBehaviour {
 	
 	[RPC]
 	private void InstantiateTowerBullet(NetworkViewID id) {
-		Debug.LogWarning("Instantiate on server, isRealoading: "+isReloading);
 		bullet = Instantiate(bulletPrefabServer, spawner.position, spawner.rotation) as Transform;
 		bullet.networkView.viewID = id;
 		
@@ -75,6 +72,5 @@ public class TowerReloaderServer : MonoBehaviour {
 		
 		timer = 0;
 		isReloading = false;
-		Debug.LogWarning("Instantiate isRealoading: "+isReloading);
 	}
 }

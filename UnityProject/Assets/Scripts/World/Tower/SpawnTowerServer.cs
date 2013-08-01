@@ -35,7 +35,6 @@ public class SpawnTowerServer : MonoBehaviour {
 	}
 	
 	public void SpawnTowerOnClient(NetworkPlayer sender) {
-		Debug.LogWarning("server sends comand spawnTowers");
 		networkView.RPC("InstantiateTowerOnClient", sender, towerID, towerDetectorID);
 	}
 	
