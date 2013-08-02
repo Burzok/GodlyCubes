@@ -72,6 +72,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &100008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400008}
+  - 120: {fileID: 12000000}
+  m_Layer: 0
+  m_Name: Laser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -90,10 +106,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: .382683486, z: 0, w: .923879564}
-  m_LocalPosition: {x: -95.9352264, y: -6.49159241, z: 135.169434}
+  m_LocalPosition: {x: -48.055748, y: 4.11456722e-06, z: 99.5650787}
   m_LocalScale: {x: 2, y: 5, z: 2}
   m_Children:
   - {fileID: 400004}
+  - {fileID: 400008}
   - {fileID: 400000}
   m_Father: {fileID: 0}
 --- !u!4 &400004
@@ -119,6 +136,17 @@ Transform:
   m_LocalScale: {x: .550000012, y: .200000003, z: .550000012}
   m_Children: []
   m_Father: {fileID: 400004}
+--- !u!4 &400008
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_LocalRotation: {x: 0, y: -5.86846397e-07, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .500000179, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400002}
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -194,6 +222,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   bulletPrefabClient: {fileID: 400000, guid: 8629abf722634c74a8dea372c523dfbf, type: 2}
   bulletPrefabServer: {fileID: 400000, guid: 7d76f6d98125c7946a64cb6892bd8655, type: 2}
+  isReloading: 0
   reloadTime: 3
 --- !u!114 &11400002
 MonoBehaviour:
@@ -230,6 +259,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1eca0aec0771441ac51e0e40846050, type: 3}
   m_Name: 
   teamSelect: 2
+--- !u!120 &12000000
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: fc40f7f533c0640babbb9927aaf3b077, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  m_Parameters:
+    startWidth: .0299999993
+    endWidth: .00999999978
+    m_StartColor:
+      serializedVersion: 2
+      rgba: 4283585279
+    m_EndColor:
+      serializedVersion: 2
+      rgba: 4278190335
+  m_UseWorldSpace: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

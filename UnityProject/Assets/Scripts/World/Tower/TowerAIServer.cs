@@ -6,22 +6,35 @@ public class TowerAIServer : MonoBehaviour {
 	public Transform target;
 	
 	private GameObject globalScriptObject;
-	public TowerReloaderServer towerReloader;
+	private TowerReloaderServer towerReloader;
+	private LineRenderer laserPointer;
 	
 	void Awake() {
 		globalScriptObject = GameObject.FindGameObjectWithTag(Tags.gameController);	
 		towerReloader = transform.parent.GetComponent<TowerReloaderServer>();
+		laserPointer = transform.parent.Find("Laser").GetComponent<LineRenderer>();
+		laserPointer.SetPosition(0,laserPointer.transform.position);
+		laserPointer.SetPosition(1,laserPointer.transform.position);
 	}
 	
 	void FixedUpdate() {
 		CheckIfTargetIsAlive();
+		SetLaserPointerIfTargetIsNotNull();
 		ShootIfUCan();
 	}
 	
 	private void CheckIfTargetIsAlive() {
 		if (target != null) 
-			if (!target.GetComponent<PlayerData>().isAlive)
+			if (!target.GetComponent<PlayerData>().isAlive) {
 				target = null;
+				laserPointer.SetPosition(1,laserPointer.transform.position);
+				networkView.RPC("ResetTarget", RPCMode.Others);
+			}
+	}
+	
+	private void SetLaserPointerIfTargetIsNotNull() {
+		if(target != null)
+			laserPointer.SetPosition(1,target.transform.position);
 	}
 	
 	private void ShootIfUCan() {
@@ -39,6 +52,10 @@ public class TowerAIServer : MonoBehaviour {
 	
 	[RPC]
 	private void ShootOnClient(NetworkViewID targetID) 
+	{}
+	
+	[RPC]
+	private void ResetTarget()
 	{}
 	
 	private void ShootOnServer() {
@@ -59,7 +76,7 @@ public class TowerAIServer : MonoBehaviour {
 	private void ClearBulletReloaderReferenceToReload() {
 		if(!towerReloader.isReloading)
 			towerReloader.bullet = null;
-			//towerReloader.isReloading = true;
+			//towerReloader.isReloading = true; // to tez dziala, ale jeszcze nie wiem, ktorego uzyc
 	}
 	
 	// by wprowadzic opoznienie wejscia w treager dopiero na Stay przekazuje target
@@ -69,13 +86,17 @@ public class TowerAIServer : MonoBehaviour {
 			target = enemy.transform;
 	}
 	*/
+	
 	void OnTriggerStay(Collider enemy) {
-		if (target == null)
-			target = enemy.transform;
+		if (target == null) 
+			target = enemy.transform;	
 	}
 	
 	void OnTriggerExit(Collider enemy) {
-		if (target == enemy.transform)
+		if (target == enemy.transform) {
 			target = null;
+			laserPointer.SetPosition(1,laserPointer.transform.position);
+			networkView.RPC("ResetTarget", RPCMode.Others);
+		}
 	}
 }

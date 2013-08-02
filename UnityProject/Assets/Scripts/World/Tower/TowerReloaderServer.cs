@@ -19,8 +19,8 @@ public class TowerReloaderServer : MonoBehaviour {
 		isReloading = false;
 		timer = 0;
 		bullet = null;
-		detector = transform.FindChild("Detection");
-		spawner = transform.FindChild("Spawner");
+		detector = transform.Find("Detection");
+		spawner = transform.Find("Spawner");
 	}
 	
 	public void SetTeam(Team team) {
