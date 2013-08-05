@@ -4,8 +4,7 @@ using System.Collections;
 public class TowerReloaderClient : MonoBehaviour {
 	public Transform bullet;
 	public Transform bulletPrefabClient;
-	
-	private Transform spawner;
+	public Transform spawner;
 	
 	void Awake() {
 		bullet = null;

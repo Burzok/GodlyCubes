@@ -55,19 +55,39 @@ public class Networking : MonoBehaviour {
 		Debug.LogWarning("Server caches WhatToSpawnOnClient");
 		NetworkPlayer sender = info.sender;
 		
+		TowersSpawn(ref sender);
+		TowersBulletSpawn(ref sender);
+		//BasesSpawn(ref sender);
+	}
+	
+	private void TowersSpawn(ref NetworkPlayer sender) {
 		GameObject[] towers = GameObject.FindGameObjectsWithTag(Tags.towerSpawner);
 		foreach(GameObject tower in towers) {
 			SpawnTowerServer towerSpawner = tower.GetComponent<SpawnTowerServer>();
 			if(towerSpawner.tower)
 				if(towerSpawner.tower.GetComponent<TowerLifeServer>().isAlive)
-					towerSpawner.SpawnTowerOnClient(sender);
+					towerSpawner.SpawnTowerOnClient(ref sender);
 		}
-		
-		//GameObject[] bases = GameObject.FindGameObjectsWithTag(Tags.baseSpawner);
-		//foreach(GameObject gameBase in bases) {
-		//	SpawnBaseServer baseSpawner = gameBase.GetComponent<SpawnBaseServer>();
-		//	gameBase.SpawnBaseOnClient(sender);
-		//}
+	}
+	
+	private void TowersBulletSpawn(ref NetworkPlayer sender) {
+		GameObject[] towers = GameObject.FindGameObjectsWithTag(Tags.towerSpawner);
+		foreach(GameObject tower in towers) {
+			SpawnTowerServer towerSpawner = tower.GetComponent<SpawnTowerServer>();
+			if(towerSpawner.tower) {	
+				TowerReloaderServer reloader = towerSpawner.tower.GetComponent<TowerReloaderServer>();
+				if(reloader.bullet)
+					towerSpawner.SpawnTowerBulletOnClient(ref sender, reloader.bullet.networkView.viewID);
+			}
+		}
+	}
+	
+	private void BasesSpawn(ref NetworkPlayer sender) {
+		GameObject[] bases = GameObject.FindGameObjectsWithTag(Tags.baseSpawner);
+		foreach(GameObject gameBase in bases) {
+			//SpawnBaseServer baseSpawner = gameBase.GetComponent<SpawnBaseServer>();
+			//gameBase.SpawnBaseOnClient(sender);
+		}
 	}
 
 	void OnConnectedToServer() {

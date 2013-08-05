@@ -19,4 +19,12 @@ public class SpawnTowerClient : MonoBehaviour {
 	private void SetTeamInfoOnClient(ref Team team) {
 		tower.GetComponent<TowerTeamChoserClient>().SetTeam(ref teamSelect);
 	}
+	
+	[RPC]
+	private void InstantiateTowerBulletOnClient(NetworkViewID bulletID) {
+		TowerReloaderClient reloader = tower.GetComponent<TowerReloaderClient>();
+		reloader.bullet = Instantiate(
+			reloader.bulletPrefabClient, reloader.spawner.position, reloader.spawner.rotation) as Transform;
+		reloader.bullet.networkView.viewID = bulletID;
+	}
 }

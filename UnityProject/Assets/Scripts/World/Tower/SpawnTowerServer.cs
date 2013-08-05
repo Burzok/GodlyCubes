@@ -34,11 +34,19 @@ public class SpawnTowerServer : MonoBehaviour {
 		tower.GetComponent<TowerTeamChoserServer>().SetTeam(ref teamSelect);
 	}
 	
-	public void SpawnTowerOnClient(NetworkPlayer sender) {
+	public void SpawnTowerOnClient(ref NetworkPlayer sender) {
 		networkView.RPC("InstantiateTowerOnClient", sender, towerID, towerDetectorID);
+	}
+	
+	public void SpawnTowerBulletOnClient(ref NetworkPlayer sender, NetworkViewID bulletID) {
+		networkView.RPC("InstantiateTowerBulletOnClient", sender, bulletID);
 	}
 	
 	[RPC]
 	private void InstantiateTowerOnClient(NetworkViewID towerID, NetworkViewID towerDetectorID) 
+	{}
+	
+	[RPC]
+	private void InstantiateTowerBulletOnClient(NetworkViewID bulletID) 
 	{}
 }
