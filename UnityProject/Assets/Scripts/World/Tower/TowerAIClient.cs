@@ -50,6 +50,6 @@ public class TowerAIClient : MonoBehaviour {
 	
 	private void SetTargetOnBullet() {
 		towerReloader.bullet.GetComponent<TowerBulletClient>().SetTarget(target);
-		//towerReloader.bullet = null;
+		towerReloader.bullet = null;
 	}
 }

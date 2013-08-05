@@ -10,7 +10,7 @@ public class TowerBulletClient : MonoBehaviour {
 	public float modif;
 	public float mag;
 	
-	void Start () {
+	void Awake() {
 		target = null;
 		flag = true;
 		modif = 4f;

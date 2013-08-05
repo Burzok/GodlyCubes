@@ -9,7 +9,6 @@ public class SpawnTowerClient : MonoBehaviour {
 	
 	[RPC]
 	private void InstantiateTowerOnClient(NetworkViewID towerID, NetworkViewID towerDetectorID) {
-		Debug.LogWarning("client resived SpawnTower");
 		tower = Instantiate(towerPrefabClient, transform.position, transform.rotation) as Transform;
 		tower.networkView.viewID = towerID;
 		tower.GetChild(0).networkView.viewID = towerDetectorID;
