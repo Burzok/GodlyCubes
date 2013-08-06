@@ -130,6 +130,7 @@ public class Networking : MonoBehaviour {
 	}
 	
 	private Transform FindSpawn(Team playerTeam) {
+		Debug.Log (spawners);
 		if (playerTeam == Team.TeamA) {
 			Transform TA = spawners.transform.FindChild("TeamA");
 			return TA.FindChild("Spawn"+numOfPlayersA);

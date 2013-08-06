@@ -157,7 +157,7 @@ public class MenuGUI : MonoBehaviour {
 		HostData[] data = MasterServer.PollHostList();
 		foreach (HostData element in data) {
 			GUILayout.BeginHorizontal();	
-			var name = element.gameName + " " + element.connectedPlayers + " / " + element.playerLimit;
+			var name = element.gameName + " " + (element.connectedPlayers-1) + " / " + (element.playerLimit-1);
 			GUILayout.Label(name);	
 			GUILayout.Space(5);
 
@@ -223,6 +223,8 @@ public class MenuGUI : MonoBehaviour {
 
 			Network.Disconnect();
 			Application.LoadLevel(0);
+			drawChat = false;
+			Destroy(this);
 		}
 	}
 
@@ -233,7 +235,9 @@ public class MenuGUI : MonoBehaviour {
 			networkView.RPC("UnregisterPlayer", RPCMode.Server, networking.getMyPlayerID());
 			networkView.RPC("DecCounters", RPCMode.AllBuffered, (int)networking.actualTeam);
 			Network.Disconnect();
-			Application.LoadLevel(0);
+			drawGUI = DrawMainMenu;
+			Application.LoadLevel(1);
+			drawChat = false;			
 		}
 		
 		DrawStats();
