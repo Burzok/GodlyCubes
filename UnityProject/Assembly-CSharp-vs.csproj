@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\Unused\RandomFloorBotMovement.cs" />
      <Compile Include="Assets\Scripts\Unused\ScrollingUVs.cs" />
      <Compile Include="Assets\Scripts\World\BaseLife.cs" />
+     <Compile Include="Assets\Scripts\World\GUIBar.cs" />
      <Compile Include="Assets\Scripts\World\MenuGUI.cs" />
      <Compile Include="Assets\Scripts\World\MiniMapRotator.cs" />
      <Compile Include="Assets\Scripts\World\SpawnBaseClient.cs" />

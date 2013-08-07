@@ -3725,6 +3725,9 @@ GameObject:
   - 20: {fileID: 278026430}
   - 124: {fileID: 278026428}
   - 81: {fileID: 278026427}
+  - 114: {fileID: 278026429}
+  - 114: {fileID: 278026432}
+  - 114: {fileID: 278026433}
   m_Layer: 0
   m_Name: Camera_Dynamic
   m_TagString: MainCamera
@@ -3746,6 +3749,23 @@ Behaviour:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 278026426}
   m_Enabled: 1
+--- !u!114 &278026429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 278026426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003cd52fcf55907418bb2ae12652952b, type: 3}
+  m_Name: 
+  texture: {fileID: 2800000, guid: 1b7f5c2cea4281f4ca99d2707d1b9260, type: 3}
+  material: {fileID: 2100000, guid: 09b319ffa6f20e946bf7c3a14468b0ce, type: 2}
+  health: 100
+  x: 10
+  y: 10
+  w: 300
+  h: 25
 --- !u!20 &278026430
 Camera:
   m_ObjectHideFlags: 0
@@ -3785,6 +3805,40 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 496576750}
+--- !u!114 &278026432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 278026426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003cd52fcf55907418bb2ae12652952b, type: 3}
+  m_Name: 
+  texture: {fileID: 2800000, guid: 7c7e42a994e11f6429220dc8ef8988dd, type: 3}
+  material: {fileID: 2100000, guid: 5e3a81845bdb0d14aaead7e651d3531d, type: 2}
+  health: 100
+  x: 10
+  y: 45
+  w: 100
+  h: 25
+--- !u!114 &278026433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 278026426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003cd52fcf55907418bb2ae12652952b, type: 3}
+  m_Name: 
+  texture: {fileID: 2800000, guid: 229943cc8b072434e8b813c715828059, type: 3}
+  material: {fileID: 2100000, guid: 58e7fa17d1272d6479302f6d50eb6abc, type: 2}
+  health: 100
+  x: 10
+  y: 80
+  w: 200
+  h: 25
 --- !u!1 &287529450
 GameObject:
   m_ObjectHideFlags: 0
