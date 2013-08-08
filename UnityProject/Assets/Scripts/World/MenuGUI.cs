@@ -25,6 +25,7 @@ public class MenuGUI : MonoBehaviour {
 	
 	private int lastLevelPrefix;
 	private string level;
+	private bool levelLoaded;
 	
 	void Awake() {
 		lastLevelPrefix = 0;
@@ -35,6 +36,7 @@ public class MenuGUI : MonoBehaviour {
 		
 		drawGUI = DrawMainMenu;
 		selectedMap = Map.CrystalCaverns;
+		levelLoaded = false;
 	}
 	
 	void OnGUI() {
@@ -67,7 +69,8 @@ public class MenuGUI : MonoBehaviour {
 			drawChat = true;
 			drawStats = true;
 			
-			networkView.RPC("LoadLevel", RPCMode.AllBuffered, level, lastLevelPrefix+1);
+			Network.SetLevelPrefix(lastLevelPrefix+1);
+			Application.LoadLevel(level+"Server");
 		}
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {
@@ -115,6 +118,11 @@ public class MenuGUI : MonoBehaviour {
 			Application.LoadLevel(level+"Server");
 		else
 			Application.LoadLevel(level+"Client");
+	}
+	
+	[RPC]
+	private void GetLevelFromServer(NetworkPlayer player) {
+		networkView.RPC("LoadLevel", player, level, lastLevelPrefix+1);
 	}
 	
 	void OnLevelWasLoaded(int level) {
@@ -189,6 +197,10 @@ public class MenuGUI : MonoBehaviour {
 	}
 	
 	private void DrawTeamSelect() {
+		if(!levelLoaded && Network.isClient) {
+			networkView.RPC("GetLevelFromServer", RPCMode.Server, Network.player);
+			levelLoaded = true; 
+		}
 		if (GUI.Button (new Rect(Screen.width * 0.5f-120f, 20f, 100f, 50f), "Team A")) {
 			networking.ConnectToGame(Team.TeamA);
 			SetClientGameState();
@@ -235,6 +247,7 @@ public class MenuGUI : MonoBehaviour {
 			networkView.RPC("UnregisterPlayer", RPCMode.Server, networking.getMyPlayerID());
 			networkView.RPC("DecCounters", RPCMode.AllBuffered, (int)networking.actualTeam);
 			Network.Disconnect();
+			levelLoaded = false; 
 			drawGUI = DrawMainMenu;
 			Application.LoadLevel(1);
 			drawChat = false;			
