@@ -53,6 +53,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -98,9 +100,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f19a6119d780de44a085bbac121c03e, type: 3}
   m_Name: 
-  playerDataPrefab: {fileID: 400000, guid: 014a6a02a9545d94c847dca29b9f2e8b, type: 2}
+  m_EditorClassIdentifier: 
   playerList: []
-  data: {fileID: 0}
+  myPlayer: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,6 +113,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d50eb3c32de51e4b8fd5a0aa418c787, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,11 +124,12 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d8bde1f317cfe541b0d68effbff9997, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   drawChat: 0
   drawStats: 0
-  crystalCaverns: {fileID: 0}
-  burzokGrounds: {fileID: 0}
   selectedMap: 0
+  miniCrystalCaverns: {fileID: 0}
+  miniBurzokGrounds: {fileID: 0}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,10 +140,12 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7eec7059e8b05445a34b9470ed7e9ad, type: 3}
   m_Name: 
-  player_prefab: {fileID: 100002, guid: 8eee3ccacffcec74c8528c3809ec5a4b, type: 2}
+  m_EditorClassIdentifier: 
+  playerPrefabServer: {fileID: 100002, guid: 162f2bb8275d3954e82bdaf4d6c1b90c, type: 2}
+  playerPrefabClient: {fileID: 100002, guid: 8eee3ccacffcec74c8528c3809ec5a4b, type: 2}
   actualTeam: 0
-  numOfPlayersA: 0
-  numOfPlayersB: 0
+  disconnectedLevel: 
+  NewPlayer: {fileID: 0}
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

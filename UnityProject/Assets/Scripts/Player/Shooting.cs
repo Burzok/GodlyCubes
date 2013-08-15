@@ -33,23 +33,25 @@ public class Shooting : MonoBehaviour {
 		list = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<PlayerList>().playerList;
 		bulletSpawner = this.transform.FindChild("BulletSpawner");
 		data = GetComponent<PlayerData>();
-		
-		animator = this.transform.FindChild("Animator").GetComponent<Animator>();
-		bulletRenderer = transform.Find("Animator").Find("Armature").Find("Bone").Find("Bone_001").Find("Bone_L")
-			.Find("Bone_L_001").Find("Bullet").GetComponent<MeshRenderer>();
-		
+		if(!Network.isServer) {
+			animator = this.transform.FindChild("Animator").GetComponent<Animator>();
+			bulletRenderer = transform.Find("Animator").Find("Armature").Find("Bone").Find("Bone_001").Find("Bone_L")
+				.Find("Bone_L_001").Find("Bullet").GetComponent<MeshRenderer>();
+		}
 		shootingAnimationControl = Dumy;
 	}
 	
 	void Update() {
-		if(networkView.isMine) {
-			currentBaseState = animator.GetCurrentAnimatorStateInfo(0);
-			animator.speed = animSpeed;
-			
-			if(Input.GetMouseButton(0) && currentBaseState.nameHash == idleState)
-				BasicAtack();
-
-			shootingAnimationControl();
+		if(!Network.isServer) {
+			if(networkView.isMine) {
+				currentBaseState = animator.GetCurrentAnimatorStateInfo(0);
+				animator.speed = animSpeed;
+				
+				if(Input.GetMouseButton(0) && currentBaseState.nameHash == idleState)
+					BasicAtack();
+	
+				shootingAnimationControl();
+			}
 		}
 	}
 	

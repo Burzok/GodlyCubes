@@ -36,7 +36,7 @@ GameObject:
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400010}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerClient
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -925,6 +925,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f7112f5ea3d6fc42a4bbb574cacc335, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -935,6 +936,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c4f2bf1b4ed82d4da2be9dc3d6b4af3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   bulletPrefabClient: {fileID: 400000, guid: 9bc14f7c8929afc4c81a3a37c3605dc8, type: 2}
   bulletPrefabServer: {fileID: 400000, guid: 67d0cd8baff9938498d254cb83a255d0, type: 2}
   shootTime: .649999976
@@ -951,6 +953,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a923e030ebbe454da1ffced31f9aaea, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   playerName: 
   color: {x: 0, y: 0, z: 0}
   team: 0
@@ -972,6 +975,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 105e952d449dd9c49893209d63560a65, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   forwardSpeed: 50
 --- !u!114 &11400008
 MonoBehaviour:
@@ -983,6 +987,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ef9dabcc2d120c4b91899985c3a1644, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   rotateSpeed: 250
   rotationInput: 0
 --- !u!114 &11400010
@@ -995,6 +1000,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2966a8e846a66342a3f94cd6263a396, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   damage: 10
 --- !u!114 &11400012
 MonoBehaviour:
@@ -1006,6 +1012,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1191ee6aa9889324e883393cc5c69646, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   playerCamPos: {fileID: 400004}
 --- !u!137 &13700000
 SkinnedMeshRenderer:

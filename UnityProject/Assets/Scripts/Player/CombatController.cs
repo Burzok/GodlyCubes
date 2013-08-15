@@ -15,8 +15,10 @@ public class CombatController : MonoBehaviour {
 		gameController = GameObject.FindGameObjectWithTag(Tags.gameController);
 		data = GetComponent<PlayerData>();
 		
-		Transform playerArmature = transform.Find("Animator");
-		playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();	
+		if(!Network.isServer) {
+			Transform playerArmature = transform.Find("Animator");
+			playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();	
+		}
 	}
 
 	void Update() {

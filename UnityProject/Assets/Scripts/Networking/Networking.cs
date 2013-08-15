@@ -9,13 +9,14 @@ public enum Team {
 }
 
 public class Networking : MonoBehaviour {
-	public GameObject player_prefab;
+	public GameObject playerPrefabServer;
+	public GameObject playerPrefabClient;
 	public Team actualTeam;
 	
 	private string serverName;
 	private string playerName;
 	
-	private GameObject spawners;
+	public GameObject spawners;
 	
 	private int numOfPlayersA;
 	private int numOfPlayersB;
@@ -24,6 +25,8 @@ public class Networking : MonoBehaviour {
 	private PlayerList playerListComponent;
 	
 	public string disconnectedLevel;
+	
+	public GameObject NewPlayer;
 	
 	void Awake () {
 		serverName = "Server Name";
@@ -44,7 +47,10 @@ public class Networking : MonoBehaviour {
 	}
 	
 	void OnLevelWasLoaded(int level) {
-		if(level == 3) {
+		if(level == 2) {
+			spawners = GameObject.Find("Spawners");
+		}
+		else if(level == 3) {
 			spawners = GameObject.Find("Spawners");
 			networkView.RPC("WhatToSpawnOnClient", RPCMode.Server);
 		}
@@ -58,6 +64,7 @@ public class Networking : MonoBehaviour {
 		TowersSpawn(ref sender);
 		TowersBulletSpawn(ref sender);
 		//BasesSpawn(ref sender);
+		PlayersSpawn(ref sender);
 	}
 	
 	private void TowersSpawn(ref NetworkPlayer sender) {
@@ -83,11 +90,30 @@ public class Networking : MonoBehaviour {
 	}
 	
 	private void BasesSpawn(ref NetworkPlayer sender) {
-		GameObject[] bases = GameObject.FindGameObjectsWithTag(Tags.baseSpawner);
-		foreach(GameObject gameBase in bases) {
+		//GameObject[] bases = GameObject.FindGameObjectsWithTag(Tags.baseSpawner);
+		//foreach(GameObject gameBase in bases) {
 			//SpawnBaseServer baseSpawner = gameBase.GetComponent<SpawnBaseServer>();
 			//gameBase.SpawnBaseOnClient(sender);
+		//}
+	}
+	
+	private void PlayersSpawn(ref NetworkPlayer sender) {
+		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
+		foreach(GameObject player in players) {
+			if(player.networkView.owner != sender) {
+				Debug.LogWarning("Serwer sends do client to spawn serwer");
+				NetworkViewID playerID = player.networkView.viewID;
+				Vector3 spawnPosition = player.GetComponent<PlayerData>().respawnPosition;
+				networkView.RPC("SpawnOtherPlayersOnClient", sender, playerID, spawnPosition);
+			}
 		}
+	}
+	
+	[RPC]
+	private void SpawnOtherPlayersOnClient(NetworkViewID playerID, Vector3 spawnPosition) {
+		Debug.LogWarning("Client caches player spawn from serwer");
+		NewPlayer = Instantiate(playerPrefabClient, spawnPosition, Quaternion.identity) as GameObject;
+		NewPlayer.networkView.viewID = playerID;
 	}
 
 	void OnConnectedToServer() {
@@ -100,12 +126,62 @@ public class Networking : MonoBehaviour {
 	
 	public void ConnectToGame(Team playerTeam) { 
 		actualTeam = playerTeam;
-		networkView.RPC("IncCounters", RPCMode.AllBuffered, (int)playerTeam);
+		networkView.RPC("SpawnPlayerOnServer", RPCMode.Server, (int)playerTeam);
+	}
+	
+	[RPC]
+	private void SpawnPlayerOnServer(int playerTeam) {
+		networkView.RPC("IncCounters", RPCMode.All, (int)playerTeam);
+		NetworkViewID playerID = AllocatePlayerID();
+		Transform spawner = FindSpawn((Team)playerTeam);
+		Debug.LogWarning(spawner);
+		SpawnPlayer(playerID, spawner);
+		networkView.RPC("SpawnPlayerOnClients", RPCMode.Others, playerID, playerTeam, spawner.position);
+		networkView.RPC("RegisterPlayer", RPCMode.All, playerName, playerID, playerTeam);
+	}
+	
+	private NetworkViewID AllocatePlayerID() {
+		return Network.AllocateViewID();
+	}
+	
+	private Transform FindSpawn(Team playerTeam) {
+		Debug.LogWarning(spawners);
+		if (playerTeam == Team.TeamA) {
+			Transform TA = spawners.transform.FindChild("TeamA");
+			return TA.FindChild("Spawn"+numOfPlayersA);
+		}
+		else if (playerTeam == Team.TeamB) {
+			Transform TB = spawners.transform.FindChild("TeamB");
+			return TB.FindChild("Spawn"+numOfPlayersB);
+		}
+		else {
+			Debug.LogError("Wrong spawn select");
+			return spawners.transform;
+		}
+	}
+	
+	private void SpawnPlayer(NetworkViewID playerID, Transform spawner) {
+		GameObject player = Instantiate(playerPrefabServer, spawner.position, spawner.rotation) as GameObject;
+		player.networkView.viewID = playerID;
+	}
+	
+	[RPC]
+	private void SpawnPlayerOnClients(NetworkViewID playerID, int playerTeam, Vector3 spawnerPosition) {
+		GameObject player = Instantiate(playerPrefabClient, spawnerPosition, Quaternion.identity) as GameObject;
+		player.networkView.viewID = playerID;
+	}
+			
+	private void OldConnect(Team playerTeam) {
+		actualTeam = playerTeam;
+		networkView.RPC("IncCounters", RPCMode.All, (int)playerTeam);
 		
 		Transform spawner = FindSpawn(playerTeam);
-		playerListComponent.myPlayer = SpawnPlayer(ref spawner);
+		//playerListComponent.myPlayer = SpawnPlayerOnClient(ref spawner);
+		//AllocatePlayerID();
+		//playerListComponent.myPlayer.networkView.viewID = 
 		
-		networkView.RPC("RegisterPlayer", RPCMode.AllBuffered, playerName, getMyPlayerID(), (int)playerTeam);
+		//networkView.RPC("SpawnPlayerOnOthers", RPCMode.Others);
+		networkView.RPC("RegisterPlayer", RPCMode.All, playerName, getMyPlayerID(), (int)playerTeam);
 	}
 	
 	[RPC]
@@ -122,27 +198,6 @@ public class Networking : MonoBehaviour {
 			numOfPlayersA--;
 		else if ((Team)playerTeam == Team.TeamB)
 			numOfPlayersB--;
-	}
-	
-	private GameObject SpawnPlayer(ref Transform spawner) {
-		return Network.Instantiate(player_prefab, spawner.transform.position, spawner.transform.rotation, 0) 
-			as GameObject;
-	}
-	
-	private Transform FindSpawn(Team playerTeam) {
-		Debug.Log (spawners);
-		if (playerTeam == Team.TeamA) {
-			Transform TA = spawners.transform.FindChild("TeamA");
-			return TA.FindChild("Spawn"+numOfPlayersA);
-		}
-		else if (playerTeam == Team.TeamB) {
-			Transform TB = spawners.transform.FindChild("TeamB");
-			return TB.FindChild("Spawn"+numOfPlayersB);
-		}
-		else {
-			Debug.LogError("Wrong spawn select");
-			return spawners.transform;
-		}
 	}
 	
 	void OnDisconnectedFromServer () {
