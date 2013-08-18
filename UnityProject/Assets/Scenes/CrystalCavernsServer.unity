@@ -1544,6 +1544,54 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 94915605}
   m_Mesh: {fileID: 4300442, guid: 9982d952e94e62845a8c888660d8e2e7, type: 3}
+--- !u!1001 &105506265
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_ViewID.m_ID
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+  m_RootGameObject: {fileID: 1165882816}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &109173907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,6 +2432,54 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 162185557}
   m_Mesh: {fileID: 4300610, guid: 9982d952e94e62845a8c888660d8e2e7, type: 3}
+--- !u!1001 &162492841
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_ViewID.m_ID
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+  m_RootGameObject: {fileID: 823861695}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &164346440
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,6 +6197,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 393465875}
   m_Mesh: {fileID: 4300388, guid: 9982d952e94e62845a8c888660d8e2e7, type: 3}
+--- !u!1 &397825236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+  m_PrefabInternal: {fileID: 1391778202}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 397825239}
+  - 148: {fileID: 397825238}
+  - 114: {fileID: 397825237}
+  m_Layer: 0
+  m_Name: CrystalSpawnerServer
+  m_TagString: CrystalSpawner
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &397825237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 091dc1a388bd44e408a92447b3d3a06e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1391778202}
+  m_GameObject: {fileID: 397825236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e427ff5aa5f8a084b8395fa7513cc690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystal: {fileID: 0}
+  crystalsType:
+  - {fileID: 100000, guid: 224fabfec9a0e35418085fe23513967f, type: 2}
+  - {fileID: 100000, guid: deb3916fad35aad44bfdcfffe580b573, type: 2}
+  - {fileID: 100000, guid: bb32fe08052015140a0c960440e8a7cc, type: 2}
+  - {fileID: 100000, guid: 0ce6b5eb3b469bd47a68187d54379dcf, type: 2}
+  - {fileID: 100000, guid: 0d39c3d690d569f45b2689ccfc1021a5, type: 2}
+  - {fileID: 100000, guid: d94c9d42a47289a49a39781c0974d26e, type: 2}
+  - {fileID: 100000, guid: 8008256fc83319f41a24b9cb43e55a01, type: 2}
+  - {fileID: 100000, guid: 33b38290ef6b4e345be44eda6d96782a, type: 2}
+  - {fileID: 100000, guid: 9e1ff78e2e43e9e4ea4a25557ceafa87, type: 2}
+  respawnTime: 10
+  timer: 0
+--- !u!148 &397825238
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800000, guid: 091dc1a388bd44e408a92447b3d3a06e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1391778202}
+  m_GameObject: {fileID: 397825236}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 397825239}
+  m_ViewID:
+    m_ID: 12
+    m_Type: 1
+--- !u!4 &397825239
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+  m_PrefabInternal: {fileID: 1391778202}
+  m_GameObject: {fileID: 397825236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 55, y: .5, z: -100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &413798126
 GameObject:
   m_ObjectHideFlags: 0
@@ -8267,6 +8429,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
@@ -12007,6 +12170,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 817567556}
   m_Mesh: {fileID: 4300560, guid: 9982d952e94e62845a8c888660d8e2e7, type: 3}
+--- !u!1 &823861695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+  m_PrefabInternal: {fileID: 162492841}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 823861698}
+  - 148: {fileID: 823861697}
+  - 114: {fileID: 823861696}
+  m_Layer: 0
+  m_Name: CrystalSpawnerServer
+  m_TagString: CrystalSpawner
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &823861696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 091dc1a388bd44e408a92447b3d3a06e,
+    type: 2}
+  m_PrefabInternal: {fileID: 162492841}
+  m_GameObject: {fileID: 823861695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e427ff5aa5f8a084b8395fa7513cc690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystal: {fileID: 0}
+  crystalsType:
+  - {fileID: 100000, guid: 224fabfec9a0e35418085fe23513967f, type: 2}
+  - {fileID: 100000, guid: deb3916fad35aad44bfdcfffe580b573, type: 2}
+  - {fileID: 100000, guid: bb32fe08052015140a0c960440e8a7cc, type: 2}
+  - {fileID: 100000, guid: 0ce6b5eb3b469bd47a68187d54379dcf, type: 2}
+  - {fileID: 100000, guid: 0d39c3d690d569f45b2689ccfc1021a5, type: 2}
+  - {fileID: 100000, guid: d94c9d42a47289a49a39781c0974d26e, type: 2}
+  - {fileID: 100000, guid: 8008256fc83319f41a24b9cb43e55a01, type: 2}
+  - {fileID: 100000, guid: 33b38290ef6b4e345be44eda6d96782a, type: 2}
+  - {fileID: 100000, guid: 9e1ff78e2e43e9e4ea4a25557ceafa87, type: 2}
+  respawnTime: 10
+  timer: 0
+--- !u!148 &823861697
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800000, guid: 091dc1a388bd44e408a92447b3d3a06e,
+    type: 2}
+  m_PrefabInternal: {fileID: 162492841}
+  m_GameObject: {fileID: 823861695}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 823861698}
+  m_ViewID:
+    m_ID: 10
+    m_Type: 1
+--- !u!4 &823861698
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+  m_PrefabInternal: {fileID: 162492841}
+  m_GameObject: {fileID: 823861695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35, y: .5, z: -100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &831653460
 GameObject:
   m_ObjectHideFlags: 0
@@ -17067,6 +17296,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163659006}
   m_Mesh: {fileID: 4300580, guid: 9982d952e94e62845a8c888660d8e2e7, type: 3}
+--- !u!1 &1165882816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+  m_PrefabInternal: {fileID: 105506265}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1165882819}
+  - 148: {fileID: 1165882818}
+  - 114: {fileID: 1165882817}
+  m_Layer: 0
+  m_Name: CrystalSpawnerServer
+  m_TagString: CrystalSpawner
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1165882817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 091dc1a388bd44e408a92447b3d3a06e,
+    type: 2}
+  m_PrefabInternal: {fileID: 105506265}
+  m_GameObject: {fileID: 1165882816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e427ff5aa5f8a084b8395fa7513cc690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystal: {fileID: 0}
+  crystalsType:
+  - {fileID: 100000, guid: 224fabfec9a0e35418085fe23513967f, type: 2}
+  - {fileID: 100000, guid: deb3916fad35aad44bfdcfffe580b573, type: 2}
+  - {fileID: 100000, guid: bb32fe08052015140a0c960440e8a7cc, type: 2}
+  - {fileID: 100000, guid: 0ce6b5eb3b469bd47a68187d54379dcf, type: 2}
+  - {fileID: 100000, guid: 0d39c3d690d569f45b2689ccfc1021a5, type: 2}
+  - {fileID: 100000, guid: d94c9d42a47289a49a39781c0974d26e, type: 2}
+  - {fileID: 100000, guid: 8008256fc83319f41a24b9cb43e55a01, type: 2}
+  - {fileID: 100000, guid: 33b38290ef6b4e345be44eda6d96782a, type: 2}
+  - {fileID: 100000, guid: 9e1ff78e2e43e9e4ea4a25557ceafa87, type: 2}
+  respawnTime: 10
+  timer: 0
+--- !u!148 &1165882818
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800000, guid: 091dc1a388bd44e408a92447b3d3a06e,
+    type: 2}
+  m_PrefabInternal: {fileID: 105506265}
+  m_GameObject: {fileID: 1165882816}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 1165882819}
+  m_ViewID:
+    m_ID: 11
+    m_Type: 1
+--- !u!4 &1165882819
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+  m_PrefabInternal: {fileID: 105506265}
+  m_GameObject: {fileID: 1165882816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 45, y: .5, z: -100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1170444933
 GameObject:
   m_ObjectHideFlags: 0
@@ -19062,6 +19357,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
@@ -19681,6 +19977,54 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1387703839}
   m_Mesh: {fileID: 4300248, guid: 9982d952e94e62845a8c888660d8e2e7, type: 3}
+--- !u!1001 &1391778202
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_ViewID.m_ID
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+      propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 091dc1a388bd44e408a92447b3d3a06e, type: 2}
+  m_RootGameObject: {fileID: 397825236}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1393030158
 GameObject:
   m_ObjectHideFlags: 0
@@ -22813,6 +23157,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 2
@@ -24517,6 +24862,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
@@ -24882,6 +25228,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
@@ -25499,6 +25846,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
@@ -25556,6 +25904,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
@@ -27191,6 +27540,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
@@ -27654,6 +28004,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1

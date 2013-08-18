@@ -5,12 +5,6 @@ using System.Collections.Generic;
 public class PlayerList : MonoBehaviour {
 	public List<PlayerData> playerList = new List<PlayerData>(4);
 	public GameObject myPlayer;
-	
-	private Networking networkingScript;
-	
-	void Awake() {
-		networkingScript = GetComponent<Networking>();
-	}	
 
 	[RPC] // Clients & Server
 	void RegisterPlayer(string playerName, NetworkViewID playerID, int playerTeam) {
@@ -25,7 +19,7 @@ public class PlayerList : MonoBehaviour {
 		UpdatePlayerLocalTransform(player.transform);
 	}
 	
-	private GameObject FindPlayer(ref NetworkViewID playerID) {
+	public GameObject FindPlayer(ref NetworkViewID playerID) {
 		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 		foreach(GameObject player in players) {
 			if(player.networkView.viewID == playerID)

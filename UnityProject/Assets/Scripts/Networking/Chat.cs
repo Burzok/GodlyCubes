@@ -6,7 +6,7 @@ public class Chat : MonoBehaviour {
 	
 	bool typing = false;
 	string currentMessage = "";
-	string playerName = "";
+	string chatPlayerName = "";
 	Vector2 scroll;
 	List<string> chatHistory = new List<string>();
 	MenuGUI menuGUI;
@@ -32,10 +32,10 @@ public class Chat : MonoBehaviour {
 	void CheckChatInput() {
 		if(typing) {
 			if(Event.current.Equals( Event.KeyboardEvent("return"))) {				
-				playerName = playerName + ": ";
-				currentMessage = playerName + currentMessage;
+				chatPlayerName = chatPlayerName + ": ";
+				currentMessage = chatPlayerName + currentMessage;
 				
-				if (currentMessage!=playerName)
+				if (currentMessage!=chatPlayerName)
 					networkView.RPC("sendChatMessageToServer",RPCMode.Server,currentMessage);
 				
 				typing = !typing;
@@ -92,6 +92,6 @@ public class Chat : MonoBehaviour {
 		List<PlayerData> playerList = GetComponent<PlayerList>().playerList;
 		PlayerData player = playerList.Find(playerToFind => playerToFind.id == id);
 			
-		playerName = player.name;		
+		chatPlayerName = player.playerName;		
 	}	
 }

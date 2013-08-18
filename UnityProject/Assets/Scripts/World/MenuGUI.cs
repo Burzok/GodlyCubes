@@ -62,7 +62,7 @@ public class MenuGUI : MonoBehaviour {
 		networking.SetServerName(GUI.TextField(screenCoordinates, networking.GetServerName() ));
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, 55f, 100f, 50f), "Create")) {
-  			Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
+  			Network.InitializeServer(4, 25000, !Network.HavePublicAddress());
 	  		MasterServer.RegisterHost("GodlyCubesLight", networking.GetServerName() );
 			timeHostWasRegistered = Time.time;
 			SetServerGameState();

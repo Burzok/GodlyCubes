@@ -18,7 +18,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_0;UNITY_4_2;UNITY_64;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_0;UNITY_4_2;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -37,10 +37,10 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity 4.2 Free/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity 4.2 Free/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -57,22 +57,22 @@
      <Compile Include="Assets\Scripts\Player\CursorLock.cs" />
      <Compile Include="Assets\Scripts\Player\MovementBasic.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerData.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\Player\Rotator.cs" />
      <Compile Include="Assets\Scripts\Player\Shooting.cs" />
      <Compile Include="Assets\Scripts\Skills\BulletControllerClient.cs" />
      <Compile Include="Assets\Scripts\Skills\BulletControllerServer.cs" />
-     <Compile Include="Assets\Scripts\Unapplied\Tags.cs" />
-     <Compile Include="Assets\Scripts\Unused\AudioOffset.cs" />
-     <Compile Include="Assets\Scripts\Unused\CaptureNormals.cs" />
-     <Compile Include="Assets\Scripts\Unused\Controller.cs" />
-     <Compile Include="Assets\Scripts\Unused\Punch.cs" />
-     <Compile Include="Assets\Scripts\Unused\RandomFloorBotMovement.cs" />
-     <Compile Include="Assets\Scripts\Unused\ScrollingUVs.cs" />
      <Compile Include="Assets\Scripts\World\BaseLife.cs" />
+     <Compile Include="Assets\Scripts\World\Crystals\CrystalClient.cs" />
+     <Compile Include="Assets\Scripts\World\Crystals\CrystalServer.cs" />
+     <Compile Include="Assets\Scripts\World\Crystals\CrystalSpawnerClient.cs" />
+     <Compile Include="Assets\Scripts\World\Crystals\CrystalSpawnerServer.cs" />
+     <Compile Include="Assets\Scripts\World\Crystals\CrystalType.cs" />
      <Compile Include="Assets\Scripts\World\MenuGUI.cs" />
      <Compile Include="Assets\Scripts\World\MiniMapRotator.cs" />
      <Compile Include="Assets\Scripts\World\SpawnBaseClient.cs" />
      <Compile Include="Assets\Scripts\World\SpawnBaseServer.cs" />
+     <Compile Include="Assets\Scripts\World\Tags.cs" />
      <Compile Include="Assets\Scripts\World\Tower\SpawnTowerClient.cs" />
      <Compile Include="Assets\Scripts\World\Tower\SpawnTowerServer.cs" />
      <Compile Include="Assets\Scripts\World\Tower\TowerAIClient.cs" />

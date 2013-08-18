@@ -10,8 +10,7 @@ public class PlayerData : MonoBehaviour {
 	
 	public bool isAlive = true;
 	
-	public int health = 100;
-	public int maxHealth = 100;
+	public PlayerStats stats;
 	
 	public float respawnTime = 3.0f;
 	public Vector3 respawnPosition;

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 148: {fileID: 14800000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: CrystalSpawnerServer
+  m_TagString: CrystalSpawner
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.4351883, y: 2.17091393, z: -101.534492}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e427ff5aa5f8a084b8395fa7513cc690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystal: {fileID: 0}
+  crystalsType:
+  - {fileID: 100000, guid: 224fabfec9a0e35418085fe23513967f, type: 2}
+  - {fileID: 100000, guid: deb3916fad35aad44bfdcfffe580b573, type: 2}
+  - {fileID: 100000, guid: bb32fe08052015140a0c960440e8a7cc, type: 2}
+  - {fileID: 100000, guid: 0ce6b5eb3b469bd47a68187d54379dcf, type: 2}
+  - {fileID: 100000, guid: 0d39c3d690d569f45b2689ccfc1021a5, type: 2}
+  - {fileID: 100000, guid: d94c9d42a47289a49a39781c0974d26e, type: 2}
+  - {fileID: 100000, guid: 8008256fc83319f41a24b9cb43e55a01, type: 2}
+  - {fileID: 100000, guid: 33b38290ef6b4e345be44eda6d96782a, type: 2}
+  - {fileID: 100000, guid: 9e1ff78e2e43e9e4ea4a25557ceafa87, type: 2}
+--- !u!148 &14800000
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 400000}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

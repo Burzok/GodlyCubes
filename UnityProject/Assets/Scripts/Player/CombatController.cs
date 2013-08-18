@@ -51,13 +51,13 @@ public class CombatController : MonoBehaviour {
 	void ChangePlayerState(NetworkViewID viewID) {
 		if(networkView.viewID == viewID) {
 			this.transform.position = data.respawnPosition;
-			data.health = data.maxHealth;
+			data.stats.currentHealth = data.stats.maxHealth;
 		}
 	}
 	
 	void Hit(object[] package) {
-		data.health -= (int)package[0];
-		if(data.health <= 0) {
+		data.stats.currentHealth -= (int)package[0];
+		if(data.stats.currentHealth <= 0) {
 			networkView.RPC("SwichPlayerState",RPCMode.AllBuffered, networkView.viewID);
 			
 			List<PlayerData> playerList = gameController.GetComponent<PlayerList>().playerList;
@@ -73,7 +73,7 @@ public class CombatController : MonoBehaviour {
 			resFlag = true;
 		}
 		else
-			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, damage);
+			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, (int)package[0]);
 	}
 	
 	[RPC]
@@ -93,6 +93,6 @@ public class CombatController : MonoBehaviour {
 	[RPC]
 	void SendHitConfirmationToClients(NetworkViewID viewID, int damage) {
 		if(networkView.viewID == viewID)
-			data.health -= damage;
+			data.stats.currentHealth -= damage;
 	}
 }

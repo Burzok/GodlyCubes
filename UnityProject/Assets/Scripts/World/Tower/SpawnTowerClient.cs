@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class SpawnTowerClient : MonoBehaviour {
 
 	public Transform towerPrefabClient;

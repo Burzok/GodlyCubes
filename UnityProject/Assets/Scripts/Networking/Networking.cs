@@ -57,6 +57,7 @@ public class Networking : MonoBehaviour {
 		
 		TowersSpawn(ref sender);
 		TowersBulletSpawn(ref sender);
+		CrystalSpawn(ref sender);
 		//BasesSpawn(ref sender);
 	}
 	
@@ -78,6 +79,16 @@ public class Networking : MonoBehaviour {
 				TowerReloaderServer reloader = towerSpawner.tower.GetComponent<TowerReloaderServer>();
 				if(reloader.bullet)
 					towerSpawner.SpawnTowerBulletOnClient(ref sender, reloader.bullet.networkView.viewID);
+			}
+		}
+	}
+	
+	private void CrystalSpawn(ref NetworkPlayer sender) {
+		GameObject[] crystals = GameObject.FindGameObjectsWithTag(Tags.crystalSpawner);
+		foreach(GameObject crystal in crystals) {
+			CrystalSpawnerServer crystalSpawner = crystal.GetComponent<CrystalSpawnerServer>();
+			if(crystalSpawner.crystal) {	
+					crystalSpawner.SpawnCrystalOnClient(ref sender);
 			}
 		}
 	}

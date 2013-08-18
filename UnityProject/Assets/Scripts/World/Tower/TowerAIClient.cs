@@ -5,12 +5,10 @@ using System.Collections.Generic;
 public class TowerAIClient : MonoBehaviour {
 	public Transform target;
 	
-	private GameObject globalScriptObject;
 	private TowerReloaderClient towerReloader;
 	private LineRenderer laserPointer;
 	
 	void Awake() {
-		globalScriptObject = GameObject.FindGameObjectWithTag(Tags.gameController);	
 		towerReloader = transform.parent.GetComponent<TowerReloaderClient>();
 		laserPointer = transform.parent.Find("Laser").GetComponent<LineRenderer>();
 		laserPointer.SetPosition(0,laserPointer.transform.position);
