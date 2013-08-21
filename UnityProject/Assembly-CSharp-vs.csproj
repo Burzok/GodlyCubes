@@ -44,9 +44,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Data\GameData.cs" />
      <Compile Include="Assets\Scripts\Networking\Chat.cs" />
      <Compile Include="Assets\Scripts\Networking\Networking.cs" />
      <Compile Include="Assets\Scripts\Networking\PlayerList.cs" />
+     <Compile Include="Assets\Scripts\Networking\PlayerSpawnerClient.cs" />
+     <Compile Include="Assets\Scripts\Networking\PlayerSpawnerServer.cs" />
+     <Compile Include="Assets\Scripts\Networking\SceneFillerServer.cs" />
      <Compile Include="Assets\Scripts\New\AnimTriggers.cs" />
      <Compile Include="Assets\Scripts\New\BotControlScript.cs" />
      <Compile Include="Assets\Scripts\New\LaserEyes.cs" />

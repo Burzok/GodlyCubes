@@ -5,12 +5,6 @@ using System.Collections.Generic;
 public class PlayerList : MonoBehaviour {
 	public List<PlayerData> playerList = new List<PlayerData>(4);
 	public GameObject myPlayer;
-	
-	private Networking networkingScript;
-	
-	void Awake() {
-		networkingScript = GetComponent<Networking>();
-	}	
 
 	[RPC]
 	void RegisterPlayer(string playerName, NetworkViewID playerID, int playerTeam) {

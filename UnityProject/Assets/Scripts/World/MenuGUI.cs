@@ -59,11 +59,11 @@ public class MenuGUI : MonoBehaviour {
 
 	private void DrawCreateServer() {
 		Rect screenCoordinates = new Rect(Screen.width*0.5f-50f, 30f, 100f, 20f);
-		networking.SetServerName(GUI.TextField(screenCoordinates, networking.GetServerName() ));
+		GameData.SERVER_NAME = GUI.TextField(screenCoordinates, GameData.SERVER_NAME);
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, 55f, 100f, 50f), "Create")) {
   			Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
-	  		MasterServer.RegisterHost("GodlyCubesLight", networking.GetServerName() );
+	  		MasterServer.RegisterHost("GodlyCubesLight", GameData.SERVER_NAME);
 			timeHostWasRegistered = Time.time;
 			SetServerGameState();
 			drawChat = true;
@@ -151,7 +151,7 @@ public class MenuGUI : MonoBehaviour {
 		windowRect = GUI.Window(0, windowRect, ServerList, "Server List");
 		
 		Rect screenCoordinates = new Rect(Screen.width * .5f-50f, 175f, 100f, 20f);
-		networking.SetPlayerName(GUI.TextField(screenCoordinates, networking.GetPlayerName()));
+		GameData.PLAYER_NAME = GUI.TextField(screenCoordinates, GameData.PLAYER_NAME);
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height-70f, 100f, 50f), "Back"))
 			SetMainMenuState();
@@ -181,7 +181,7 @@ public class MenuGUI : MonoBehaviour {
 
 			if (GUILayout.Button("Connect")) {
 				Network.Connect(element);
-				networking.SetServerName(element.gameName);
+				GameData.SERVER_NAME = element.gameName;
 				SetConnectingState();
 			}
 
@@ -222,7 +222,7 @@ public class MenuGUI : MonoBehaviour {
 	}
 
 	private void DrawServerGame() {
-		GUI.Label(new Rect(5,5,250,40), "Server name: " + networking.GetServerName());
+		GUI.Label(new Rect(5,5,250,40), "Server name: " + GameData.SERVER_NAME);
 
 		if (GUI.Button (new Rect(Screen.width-105f, 5f, 100f, 50f), "Back")) {				 
 			if(Network.isServer)
@@ -241,11 +241,11 @@ public class MenuGUI : MonoBehaviour {
 	}
 
 	private void DrawClientGame() {
-		GUI.Label(new Rect(5,5,250,40), "Server name: " + networking.GetServerName());
+		GUI.Label(new Rect(5,5,250,40), "Server name: " +GameData.SERVER_NAME);
 
 		if (GUI.Button(new Rect(Screen.width-105f, 5f, 100f, 50f), "Back")) {  				
 			networkView.RPC("UnregisterPlayer", RPCMode.Server, networking.getMyPlayerID());
-			networkView.RPC("DecCounters", RPCMode.AllBuffered, (int)networking.actualTeam);
+			networkView.RPC("DecCounters", RPCMode.AllBuffered, GameData.ACTUAL_CLIENT_TEAM);
 			Network.Disconnect();
 			levelLoaded = false; 
 			drawGUI = DrawMainMenu;
