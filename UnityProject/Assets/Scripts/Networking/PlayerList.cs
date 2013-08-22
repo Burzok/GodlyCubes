@@ -5,7 +5,11 @@ using System.Collections.Generic;
 public class PlayerList : MonoBehaviour {
 	public List<PlayerData> playerList = new List<PlayerData>(4);
 	public GameObject myPlayer;
-
+	
+	public void CallRegisterPlayer(NetworkViewID playerID, int playerTeam) {
+		networkView.RPC("RegisterPlayer", RPCMode.All, GameData.PLAYER_NAME, playerID, playerTeam);	
+	}
+	
 	[RPC]
 	void RegisterPlayer(string playerName, NetworkViewID playerID, int playerTeam) {
 		GameObject player = FindPlayer(ref playerID);
@@ -19,7 +23,7 @@ public class PlayerList : MonoBehaviour {
 		UpdatePlayerLocalTransform(player.transform);
 	}
 	
-	private GameObject FindPlayer(ref NetworkViewID playerID) {
+	public GameObject FindPlayer(ref NetworkViewID playerID) {
 		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 		foreach(GameObject player in players) {
 			if(player.networkView.viewID == playerID)
@@ -36,9 +40,9 @@ public class PlayerList : MonoBehaviour {
 		player.playerName = playerName;
 		player.team = (Team)playerTeam;
 		
-		if (player.team == Team.TeamA)
+		if (player.team == Team.TEAM_A)
 			player.color = new Vector3(1,0,0);
-		else if (player.team == Team.TeamB)
+		else if (player.team == Team.TEAM_B)
 			player.color = new Vector3(0,0,1);
 		
 		player.respawnPosition = player.transform.position;
@@ -72,9 +76,9 @@ public class PlayerList : MonoBehaviour {
 	private void ChangeLayers(ref Transform localTransform) {
 		PlayerData data = localTransform.GetComponent<PlayerData>();
 		
-		if (data.team == Team.TeamA) 
+		if (data.team == Team.TEAM_A) 
 			localTransform.gameObject.layer=13;
-		else if (data.team == Team.TeamB)
+		else if (data.team == Team.TEAM_B)
 			localTransform.gameObject.layer=14;			
 	}
 	

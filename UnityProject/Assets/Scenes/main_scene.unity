@@ -120,12 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7eec7059e8b05445a34b9470ed7e9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefabServer: {fileID: 100002, guid: 162f2bb8275d3954e82bdaf4d6c1b90c, type: 2}
-  playerPrefabClient: {fileID: 100002, guid: 8eee3ccacffcec74c8528c3809ec5a4b, type: 2}
-  actualTeam: 0
-  spawners: {fileID: 0}
   disconnectedLevel: 
-  NewPlayer: {fileID: 0}
 --- !u!82 &113685774
 AudioSource:
   m_ObjectHideFlags: 0

@@ -14,17 +14,17 @@ public class TowerTeamChoserServer : MonoBehaviour {
 	
 	public void SetTeam(ref Team team) {
 		teamSelect = team;
-		if (teamSelect == Team.TeamA) {
+		if (teamSelect == Team.TEAM_A) {
 			teamName = "TowerTeamA";
 			gameObject.layer = 13;
 			transform.GetChild(0).gameObject.layer = 9;
-			GetComponent<TowerReloaderServer>().SetTeam(Team.TeamA);
+			GetComponent<TowerReloaderServer>().SetTeam(Team.TEAM_A);
 		}
-		else if (teamSelect == Team.TeamB) {
+		else if (teamSelect == Team.TEAM_B) {
 			teamName = "TowerTeamB";
 			gameObject.layer = 14;
 			transform.GetChild(0).gameObject.layer = 10;
-			GetComponent<TowerReloaderServer>().SetTeam(Team.TeamB);
+			GetComponent<TowerReloaderServer>().SetTeam(Team.TEAM_B);
 		}
 	}
 	

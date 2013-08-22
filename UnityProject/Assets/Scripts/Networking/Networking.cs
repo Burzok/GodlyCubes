@@ -2,12 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public enum Team {
-	TeamA,
-	TeamB,
-	Neutral
-}
-
 public class Networking : MonoBehaviour {
 	
 	public string disconnectedLevel;
@@ -37,6 +31,11 @@ public class Networking : MonoBehaviour {
 		playerListComponent = GetComponent<PlayerList>();
 	}
 	
+	void OnLevelWasLoaded(int level) {
+		if(level == GameData.LEVEL_CRYSTAL_CAVERNS_CLIENT)
+			playerSpawner = GameObject.Find("Spawners").GetComponent<PlayerSpawnerClient>();
+	}
+	
 	void OnConnectedToServer() {
 		Network.SetSendingEnabled(0, false);
 		foreach (NetworkPlayer player in Network.connections)  
@@ -53,15 +52,14 @@ public class Networking : MonoBehaviour {
 		GetComponent<PlayerList>().playerList.Clear();
 	}
 	
-	void OnPlayerDisconnected(NetworkPlayer player) {// TODO: Pytanie: czy ta funkcja jest bezurzyteczna obecnie?
-		//Network.RemoveRPCs(player);
-		//Network.DestroyPlayerObjects(player);
+	void OnPlayerDisconnected(NetworkPlayer player) {
+		Network.RemoveRPCs(player);
+		Network.DestroyPlayerObjects(player);
 	}
  	
 	[RPC]
 	void ExitCL() {
   		Network.Disconnect();
-		//mainMenu.SetMainMenuState();
 		Application.LoadLevel(0);
 	}
 

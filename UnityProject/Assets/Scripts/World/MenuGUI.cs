@@ -4,11 +4,6 @@ using System.Collections.Generic;
 
 public delegate void DrawGUI();
 
-public enum Map { 
-	CrystalCaverns,
-	BurzokGrounds
-}
-
 public class MenuGUI : MonoBehaviour {
 	public DrawGUI drawGUI;
 	public bool drawChat;
@@ -202,14 +197,14 @@ public class MenuGUI : MonoBehaviour {
 			levelLoaded = true; 
 		}
 		if (GUI.Button (new Rect(Screen.width * 0.5f-120f, 20f, 100f, 50f), "Team A")) {
-			networking.ConnectToGame(Team.TeamA);
+			networking.ConnectToGame(Team.TEAM_A);
 			SetClientGameState();
 			drawChat = true;
 			drawStats = true;
 		}
 
 		if (GUI.Button (new Rect(Screen.width * 0.5f+20f, 20f, 100f, 50f), "Team B")) {
-			networking.ConnectToGame(Team.TeamB);
+			networking.ConnectToGame(Team.TEAM_B);
 			SetClientGameState();
 			drawChat = true;
 			drawStats = true;

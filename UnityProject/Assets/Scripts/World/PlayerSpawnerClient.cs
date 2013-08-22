@@ -4,35 +4,24 @@ using System.Collections;
 public class PlayerSpawnerClient : MonoBehaviour {
 	public GameObject playerPrefabClient;
 	
-	private GameObject spawners;
 	private NetworkViewID playerID;
 	private PlayerList playerList;
 	
 	void Awake() {
-		playerList = GetComponent<PlayerList>();
-	}
-	
-	void OnLevelWasLoaded(int level) {
-		if(level == GameData.LEVEL_CRYSTAL_CAVERNS_CLIENT) {
-			spawners = GameObject.Find("Spawners");
-			networkView.RPC("WhatToSpawnOnClient", RPCMode.Server);
-		}
+		playerList = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<PlayerList>();
 	}
 	
 	public void CreatePlayer(Team playerTeam) { 
 		GameData.ACTUAL_CLIENT_TEAM = playerTeam;
 		SpawnContolPlayer(playerTeam);
-		networkView.RPC("SpawnPlayerOnOthers", RPCMode.Others, (int)playerTeam);
-		networkView.RPC("RegisterPlayer", RPCMode.All, GameData.PLAYER_NAME, playerID, playerTeam);
+		networkView.RPC("SpawnPlayerOnOthers", RPCMode.Others, playerID, (int)playerTeam);
+		playerList.CallRegisterPlayer(playerID, (int)playerTeam);
 	}
 	
 	private void SpawnContolPlayer(Team playerTeam) {
 		networkView.RPC("IncCounters", RPCMode.All, (int)playerTeam);
 		playerID = AllocatePlayerID();
 		Transform spawner = FindSpawn((Team)playerTeam);
-		
-		Debug.LogWarning(spawner);
-		
 		playerList.myPlayer = SpawnPlayer(playerID, spawner);
 	}
 	
@@ -41,19 +30,17 @@ public class PlayerSpawnerClient : MonoBehaviour {
 	}
 	
 	private Transform FindSpawn(Team playerTeam) {
-		Debug.LogWarning(spawners);
-		
-		if (playerTeam == Team.TeamA) {
-			Transform TA = spawners.transform.FindChild("TeamA");
-			return TA.FindChild("Spawn"+GameData.NUMBER_OF_PLAYERS_A);
+		if (playerTeam == Team.TEAM_A) {
+			Transform TA = this.transform.Find("TeamA");
+			return TA.Find("Spawn" + GameData.NUMBER_OF_PLAYERS_A);
 		}
-		else if (playerTeam == Team.TeamB) {
-			Transform TB = spawners.transform.FindChild("TeamB");
-			return TB.FindChild("Spawn"+GameData.NUMBER_OF_PLAYERS_B);
+		else if (playerTeam == Team.TEAM_B) {
+			Transform TB = this.transform.Find("TeamB");
+			return TB.Find("Spawn" + GameData.NUMBER_OF_PLAYERS_B);
 		}
 		else {
 			Debug.LogError("Wrong spawn select");
-			return spawners.transform;
+			return this.transform;
 		}
 	}
 	
@@ -66,23 +53,22 @@ public class PlayerSpawnerClient : MonoBehaviour {
 	[RPC]
 	private void SpawnPlayerOnOthers(NetworkViewID playerID, int playerTeam) {
 		Transform spawner = FindSpawn((Team)playerTeam);
-		Debug.LogWarning(spawner);
 		SpawnPlayer(playerID, spawner);
 	}
 	
 	[RPC]
 	private void IncCounters(int playerTeam) {
-		if ((Team)playerTeam == Team.TeamA)
+		if ((Team)playerTeam == Team.TEAM_A)
 			GameData.NUMBER_OF_PLAYERS_A++;
-		else if ((Team)playerTeam == Team.TeamB)
+		else if ((Team)playerTeam == Team.TEAM_B)
 			GameData.NUMBER_OF_PLAYERS_B++;
 	}
 	
 	[RPC]
 	private void DecCounters(int playerTeam) {
-		if ((Team)playerTeam == Team.TeamA)
+		if ((Team)playerTeam == Team.TEAM_A)
 			GameData.NUMBER_OF_PLAYERS_A--;
-		else if ((Team)playerTeam == Team.TeamB)
+		else if ((Team)playerTeam == Team.TEAM_B)
 			GameData.NUMBER_OF_PLAYERS_B--;
 	}
 }

@@ -1,18 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Networking\Networking.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\World\PlayerSpawnerClient.cs">
     <Files>
-      <File FileName="Assets\Scripts\Networking\Networking.cs" Line="10" Column="1" />
-      <File FileName="Assets\Scripts\Networking\PlayerSpawnerClient.cs" Line="12" Column="43" />
-      <File FileName="Assets\Scripts\Networking\PlayerSpawnerServer.cs" Line="15" Column="7" />
-      <File FileName="Assets\Scripts\World\MenuGUI.cs" Line="101" Column="1" />
-      <File FileName="Assets\Scripts\Networking\SceneFillerServer.cs" Line="12" Column="31" />
-      <File FileName="Assets\Scripts\Data\GameData.cs" Line="15" Column="24" />
-      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="7" Column="29" />
-      <File FileName="Assets\Scripts\World\BaseLife.cs" Line="40" Column="27" />
-      <File FileName="Assets\Scripts\World\Tower\TowerAIClient.cs" Line="11" Column="16" />
-      <File FileName="Assets\Scripts\World\Tower\TowerAIServer.cs" Line="13" Column="78" />
-      <File FileName="Assets\Scripts\World\Tower\TowerReloaderServer.cs" Line="12" Column="29" />
+      <File FileName="Assets\Scripts\World\PlayerSpawnerClient.cs" Line="16" Column="33" />
+      <File FileName="Assets\Scripts\World\PlayerSpawnerServer.cs" Line="23" Column="9" />
+      <File FileName="Assets\Scripts\World\SpawnBaseClient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\SpawnBaseServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\SceneFillerServer.cs" Line="49" Column="44" />
+      <File FileName="Assets\Scripts\World\SceneFillerClient.cs" Line="7" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

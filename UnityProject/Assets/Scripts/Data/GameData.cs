@@ -1,6 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum Team {
+	TEAM_A,
+	TEAM_B,
+	TEAM_NEUTRAL
+}
+
+public enum Map { 
+	CrystalCaverns,
+	BurzokGrounds
+}
+
 public class GameData {
 	
 	public const int LEVEL_CRYSTAL_CAVERNS_SERVER = 2;
@@ -13,4 +24,5 @@ public class GameData {
 	public static string PLAYER_NAME;
 	
 	public static Team ACTUAL_CLIENT_TEAM;
+	
 }

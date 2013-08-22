@@ -63,9 +63,9 @@ public class TowerReloaderServer : MonoBehaviour {
 		bullet = Instantiate(bulletPrefabServer, spawner.position, spawner.rotation) as Transform;
 		bullet.networkView.viewID = id;
 		
-		if (towerTeam == Team.TeamA)
+		if (towerTeam == Team.TEAM_A)
 			bullet.gameObject.layer = 11;
-		else if (towerTeam == Team.TeamB)
+		else if (towerTeam == Team.TEAM_B)
 			bullet.gameObject.layer = 12;
 				
 		bullet.GetComponent<TowerBulletServer>().SetReloader(transform.GetComponent<TowerReloaderServer>());

@@ -30,9 +30,9 @@ public class BaseLife : MonoBehaviour
 	public void setStateA() {
 		playerTeam = GameData.ACTUAL_CLIENT_TEAM;
 		
-		if(playerTeam == Team.TeamA) 
+		if(playerTeam == Team.TEAM_A) 
 			menuGUI.SetLoseState();
-		else if(playerTeam == Team.TeamB) 
+		else if(playerTeam == Team.TEAM_B) 
 			menuGUI.SetWinState();
 	}
 	
@@ -40,9 +40,9 @@ public class BaseLife : MonoBehaviour
 	public void setStateB() {
 		playerTeam = GameData.ACTUAL_CLIENT_TEAM;
 		
-		if(playerTeam == Team.TeamA) 	
+		if(playerTeam == Team.TEAM_A) 	
 			menuGUI.SetWinState();
-		else if(playerTeam == Team.TeamB) 
+		else if(playerTeam == Team.TEAM_B) 
 			menuGUI.SetLoseState();
 	}
 }

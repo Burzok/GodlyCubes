@@ -2532,6 +2532,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 168710742}
+  - 148: {fileID: 168710744}
+  - 114: {fileID: 168710743}
   m_Layer: 0
   m_Name: Spawners
   m_TagString: Untagged
@@ -2552,6 +2554,30 @@ Transform:
   - {fileID: 1842413619}
   - {fileID: 1639136897}
   m_Father: {fileID: 2119586758}
+--- !u!114 &168710743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168710741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3235784060e7948a6ffb722e2ca517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefabServer: {fileID: 100002, guid: 162f2bb8275d3954e82bdaf4d6c1b90c, type: 2}
+--- !u!148 &168710744
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168710741}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 0}
+  m_ViewID:
+    m_ID: 11
+    m_Type: 1
 --- !u!1 &177128295
 GameObject:
   m_ObjectHideFlags: 0
@@ -8267,6 +8293,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
@@ -19062,6 +19089,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
@@ -22813,6 +22841,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 2
@@ -24517,6 +24546,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
@@ -24882,6 +24912,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
@@ -25499,6 +25530,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 0
@@ -25556,6 +25588,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
@@ -27191,6 +27224,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
@@ -27654,6 +27688,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b1901261c2554ea9f88eade3b53e3, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   towerPrefabServer: {fileID: 400002, guid: 0b1bc64e7ddc7664abb06d2959d4dd44, type: 2}
   towerPrefabClient: {fileID: 400002, guid: 95d3634cf706a8f49bbd1187b9be3fe0, type: 2}
   teamSelect: 1
@@ -28086,6 +28121,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2119586758}
+  - 148: {fileID: 2119586760}
+  - 114: {fileID: 2119586759}
   m_Layer: 0
   m_Name: CrystalCavernsServer
   m_TagString: Untagged
@@ -28117,6 +28154,29 @@ Transform:
   - {fileID: 1707018689}
   - {fileID: 1349930514}
   m_Father: {fileID: 0}
+--- !u!114 &2119586759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119586757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7136b827c2cfd544d927e6d1c5618b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!148 &2119586760
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119586757}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 0}
+  m_ViewID:
+    m_ID: 10
+    m_Type: 1
 --- !u!1 &2119851210
 GameObject:
   m_ObjectHideFlags: 0

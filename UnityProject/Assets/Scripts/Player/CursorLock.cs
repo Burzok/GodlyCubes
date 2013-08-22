@@ -3,13 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CursorLock : MonoBehaviour {
-	private bool locked = false; 
+	private bool locked; 
 	
 	void Awake() {
-		if(!networkView.isMine) { // usune to jak przerobie instantiate graczy
-			rigidbody.isKinematic = true;
-			rigidbody.useGravity = false;
-		}
+		locked = false;	
 	}
 	
 	void Start() {
@@ -17,7 +14,7 @@ public class CursorLock : MonoBehaviour {
 	}
 	
 	void Update() {
-		if(networkView.isMine)
+		if(networkView.isMine == true)
 			InputCheck();
 	}
 	

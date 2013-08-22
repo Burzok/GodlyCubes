@@ -108,9 +108,9 @@ public class Shooting : MonoBehaviour {
 			bullet.GetComponent<BulletControllerClient>().owner = owner;	
 		}
 		
-		if (data.team == Team.TeamA)
+		if (data.team == Team.TEAM_A)
 			bullet.gameObject.layer = 11;
-		else if (data.team == Team.TeamB)
+		else if (data.team == Team.TEAM_B)
 			bullet.gameObject.layer = 12;
 				
 		bullet.GetChild(0).renderer.material.color = new Color(data.color.x, data.color.y, data.color.z);

@@ -3,14 +3,8 @@ using System.Collections;
 
 public class SceneFillerServer : MonoBehaviour {
 	
-	public GameObject playerPrefabClient;
-	public GameObject newPlayer;
-	
 	[RPC]
 	private void WhatToSpawnOnClient(NetworkMessageInfo info) {
-		
-		Debug.LogWarning("Server caches WhatToSpawnOnClient");
-		
 		NetworkPlayer sender = info.sender;
 
 		TowersSpawn(ref sender);
@@ -53,9 +47,6 @@ public class SceneFillerServer : MonoBehaviour {
 		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 		foreach(GameObject player in players) {
 			if(player.networkView.owner != sender) {
-				
-				Debug.LogWarning("Serwer sends do client to spawn serwer");
-				
 				NetworkViewID playerID = player.networkView.viewID;
 				Vector3 spawnPosition = player.GetComponent<PlayerData>().respawnPosition;
 				networkView.RPC("SpawnOtherPlayersOnClient", sender, playerID, spawnPosition);
@@ -64,11 +55,6 @@ public class SceneFillerServer : MonoBehaviour {
 	}
 	
 	[RPC]
-	private void SpawnOtherPlayersOnClient(NetworkViewID playerID, Vector3 spawnPosition) {
-		
-		Debug.LogWarning("Client caches player spawn from serwer");
-		
-		newPlayer = Instantiate(playerPrefabClient, spawnPosition, Quaternion.identity) as GameObject;
-		newPlayer.networkView.viewID = playerID;
-	}
+	private void SpawnOtherPlayersOnClient(NetworkViewID playerID, Vector3 spawnPosition) 
+	{}
 }

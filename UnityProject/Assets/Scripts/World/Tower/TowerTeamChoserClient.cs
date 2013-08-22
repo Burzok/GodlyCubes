@@ -14,12 +14,12 @@ public class TowerTeamChoserClient : MonoBehaviour {
 	
 	public void SetTeam(ref Team team) {
 		teamSelect = team;
-		if (teamSelect == Team.TeamA) {
+		if (teamSelect == Team.TEAM_A) {
 				teamName = "TowerTeamA";
 				gameObject.layer = 13;
 				transform.GetChild(0).gameObject.layer = 9;
 			}
-			else if (teamSelect == Team.TeamB) {
+			else if (teamSelect == Team.TEAM_B) {
 				teamName = "TowerTeamB";
 				gameObject.layer = 14;
 				transform.GetChild(0).gameObject.layer = 10;
