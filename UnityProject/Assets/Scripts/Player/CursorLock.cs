@@ -24,7 +24,7 @@ public class CursorLock : MonoBehaviour {
 	}
 	
 	private void CheckCursorLock() {
-		if (locked)
+		if (locked == true)
 			UnlockMousePosition();
 		else
 			LockMousePosition();

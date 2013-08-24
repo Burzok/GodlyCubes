@@ -29,7 +29,7 @@ public class BulletControllerServer : MonoBehaviour {
 			data[0]=damage;
 			data[1]=owner;
 			other.SendMessage("Hit", data, SendMessageOptions.DontRequireReceiver);
-			Network.Destroy(this.gameObject);
+ 			Network.Destroy(this.gameObject);
 		}
 	}
 }

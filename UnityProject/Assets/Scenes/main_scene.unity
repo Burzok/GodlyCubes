@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7eec7059e8b05445a34b9470ed7e9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disconnectedLevel: 
 --- !u!82 &113685774
 AudioSource:
   m_ObjectHideFlags: 0
@@ -229,11 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8bde1f317cfe541b0d68effbff9997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawChat: 0
-  drawStats: 0
-  selectedMap: 0
   miniCrystalCaverns: {fileID: 0}
   miniBurzokGrounds: {fileID: 0}
+  selectedMap: 0
 --- !u!1001 &1006046888
 Prefab:
   m_ObjectHideFlags: 0

@@ -3,15 +3,96 @@ using System.Collections;
 
 public class SceneFillerServer : MonoBehaviour {
 	
+	private MenuGUI menuGUI;
+	
+	void Awake() {
+		menuGUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<MenuGUI>();
+	}
+	
 	[RPC]
 	private void WhatToSpawnOnClient(NetworkMessageInfo info) {
 		NetworkPlayer sender = info.sender;
-
+		
+		PlayersSpawn(ref sender);
 		TowersSpawn(ref sender);
 		TowersBulletSpawn(ref sender);
 		//BasesSpawn(ref sender);
-		PlayersSpawn(ref sender);
 	}
+	
+	private void PlayersSpawn(ref NetworkPlayer sender) {
+		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
+		
+		if(players.Length == 0) {
+			networkView.RPC("NoPlayersToSpawn", sender);
+		}
+		else {
+			TurnOffPlayersNetworkView(ref sender, ref players);
+			SendSpawnOtherPlayersOnClientCommand(ref sender, ref players);
+		}
+	}
+	
+	private void TurnOffPlayersNetworkView(ref NetworkPlayer sender, ref GameObject[] players) {
+		foreach(GameObject player in players) {
+			if(player.networkView.owner != sender) { // nie ma jeszcze takiego ale w razie wu
+				Debug.LogWarning("Turning netV off");
+				//player.networkView.enabled = false;
+			}
+		}
+	}
+	
+	private void SendSpawnOtherPlayersOnClientCommand(ref NetworkPlayer sender, ref GameObject[] players) {
+		foreach(GameObject player in players) {
+			if(player.networkView.owner != sender) { // nie ma jeszcze takiego ale w razie wu
+				int numberOfPlayersToSpawn = players.Length;
+				NetworkViewID playerID = player.networkView.viewID;
+				Vector3 spawnPosition = player.GetComponent<PlayerData>().respawnPosition;
+				networkView.RPC("SpawnOtherPlayersOnClient", sender, playerID, spawnPosition, numberOfPlayersToSpawn);
+			}
+		}
+	}
+	
+	[RPC]
+	private void NoPlayersToSpawn() 
+	{}
+	
+	[RPC]
+	private void SpawnOtherPlayersOnClient(NetworkViewID playerID, Vector3 spawnPosition, int numberOfPlayersToSpawn) 
+	{}
+	
+	[RPC]
+	private void DecPlayersConnectingNumber() {
+		GameData.NUMBER_OF_CONNECTING_PLAYERS--;
+	}
+	
+	[RPC]
+	private void TurnOnPlayersNetworkViewsOnServer(NetworkMessageInfo info) {
+		if(GameData.NUMBER_OF_CONNECTING_PLAYERS == 0) {
+			GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
+			
+			if(players.Length != 0)
+				TurnOnNetworkViewsOff(ref players);
+			
+			networkView.RPC("CancelConnecting", RPCMode.All);
+			networkView.RPC("SetTeamSelectStateOnClient", info.sender);
+		}
+	}
+	
+	private void TurnOnNetworkViewsOff(ref GameObject[] players) {
+		foreach(GameObject player in players) {
+			Debug.LogWarning("Turning netV on");
+			player.networkView.enabled = true;
+		}
+	}
+	
+	[RPC]
+	private void CancelConnecting() {
+		GameTime.UnPauseGame();
+		menuGUI.HidePlayerConnectingPopup();
+	}
+	
+	[RPC]
+	private void SetTeamSelectStateOnClient() 
+	{}
 	
 	private void TowersSpawn(ref NetworkPlayer sender) {
 		GameObject[] towers = GameObject.FindGameObjectsWithTag(Tags.towerSpawner);
@@ -42,19 +123,4 @@ public class SceneFillerServer : MonoBehaviour {
 			//gameBase.SpawnBaseOnClient(sender);
 		//}
 	}
-	
-	private void PlayersSpawn(ref NetworkPlayer sender) {
-		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
-		foreach(GameObject player in players) {
-			if(player.networkView.owner != sender) {
-				NetworkViewID playerID = player.networkView.viewID;
-				Vector3 spawnPosition = player.GetComponent<PlayerData>().respawnPosition;
-				networkView.RPC("SpawnOtherPlayersOnClient", sender, playerID, spawnPosition);
-			}
-		}
-	}
-	
-	[RPC]
-	private void SpawnOtherPlayersOnClient(NetworkViewID playerID, Vector3 spawnPosition) 
-	{}
 }
