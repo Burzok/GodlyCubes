@@ -26,17 +26,7 @@ public class SceneFillerServer : MonoBehaviour {
 			networkView.RPC("NoPlayersToSpawn", sender);
 		}
 		else {
-			TurnOffPlayersNetworkView(ref sender, ref players);
 			SendSpawnOtherPlayersOnClientCommand(ref sender, ref players);
-		}
-	}
-	
-	private void TurnOffPlayersNetworkView(ref NetworkPlayer sender, ref GameObject[] players) {
-		foreach(GameObject player in players) {
-			if(player.networkView.owner != sender) { // nie ma jeszcze takiego ale w razie wu
-				Debug.LogWarning("Turning netV off");
-				//player.networkView.enabled = false;
-			}
 		}
 	}
 	
@@ -72,22 +62,21 @@ public class SceneFillerServer : MonoBehaviour {
 			if(players.Length != 0)
 				TurnOnNetworkViewsOff(ref players);
 			
-			networkView.RPC("CancelConnecting", RPCMode.All);
+			networkView.RPC("FinishConnecting", RPCMode.All);
 			networkView.RPC("SetTeamSelectStateOnClient", info.sender);
 		}
 	}
 	
 	private void TurnOnNetworkViewsOff(ref GameObject[] players) {
 		foreach(GameObject player in players) {
-			Debug.LogWarning("Turning netV on");
 			player.networkView.enabled = true;
 		}
 	}
 	
 	[RPC]
-	private void CancelConnecting() {
+	private void FinishConnecting() {
 		GameTime.UnPauseGame();
-		menuGUI.HidePlayerConnectingPopup();
+		menuGUI.HidePlayersConnectingPopup();
 	}
 	
 	[RPC]

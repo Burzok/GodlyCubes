@@ -40,19 +40,18 @@ public class Networking : MonoBehaviour {
 		mainMenu.AddInitializeConnecting();
 	}	
 	
-	void OnPlayerConnected(NetworkPlayer playerNetwork) {
+	void OnPlayerConnected() {
+		TurnPlayersNetworkViewOff();
+	}
+	
+	private void TurnPlayersNetworkViewOff() {
 		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 		foreach(GameObject player in players) {
-			Debug.LogWarning("Turning netV off");
 			player.networkView.enabled = false;
 		}
 	}
 	
 	void OnDisconnectedFromServer () {
-		GameObject []players = GameObject.FindGameObjectsWithTag(Tags.player);
-		foreach(GameObject player in players) {
-			GameObject.Destroy(player);					
-		}
 		GetComponent<PlayerList>().playerList.Clear();
 	}
 

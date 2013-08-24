@@ -88,7 +88,7 @@ public class MenuGUI : MonoBehaviour {
 			Application.LoadLevel(GameData.CURRENT_LEVEL_NAME + "Server");
 		}
 
-		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height - 70f, 100f, 50f),"Back")) {
+		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height-70f, 100f, 50f), "Back")) {
 			miniBurzokGrounds.SetActive(false);
 			miniCrystalCaverns.SetActive(false);
 			SetMainMenuState();
@@ -97,7 +97,7 @@ public class MenuGUI : MonoBehaviour {
 		GUI.Box(
 			new Rect(Screen.width*0.05f, Screen.height*0.2f, Screen.width*0.3f, Screen.height*0.2f), "Select Map");
 		if (GUI.Button (new Rect(
-			Screen.width*0.07f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f),"Crystal Caverns")) //TODO: globalna zmienna 
+			Screen.width*0.07f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f), "Crystal Caverns")) //TODO: globalna zmienna 
 		{
 			selectedMap = Map.CRYSTAL_CAVERNS;
 			
@@ -105,7 +105,7 @@ public class MenuGUI : MonoBehaviour {
 			miniBurzokGrounds.SetActive(false);
 		}
 		if (GUI.Button (new Rect(
-			Screen.width*0.23f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f),"Burzok Grounds")) //TODO: globalna zmienna
+			Screen.width*0.23f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.1f), "Burzok Grounds")) //TODO: globalna zmienna
 		{
 			selectedMap = Map.BurzokGrounds;
 			
@@ -129,7 +129,7 @@ public class MenuGUI : MonoBehaviour {
 	private void DrawConnect() {
 		windowRect = GUI.Window(0, windowRect, ServerList, "Server List");
 		
-		Rect screenCoordinates = new Rect(Screen.width * .5f-50f, 175f, 100f, 20f);
+		Rect screenCoordinates = new Rect(Screen.width*0.5f-50f, 175f, 100f, 20f);
 		GameData.PLAYER_NAME = GUI.TextField(screenCoordinates, GameData.PLAYER_NAME);
 
 		if (GUI.Button (new Rect(Screen.width*0.5f-50f, Screen.height-70f, 100f, 50f), "Back"))
@@ -144,14 +144,15 @@ public class MenuGUI : MonoBehaviour {
 		HostData[] data = MasterServer.PollHostList();
 		foreach (HostData element in data) {
 			GUILayout.BeginHorizontal();	
-			var name = element.gameName + " " + (element.connectedPlayers-1) + " / " + (element.playerLimit-1);
+			string name = element.gameName + " " + (element.connectedPlayers-1) + " / " + (element.playerLimit-1);
 			GUILayout.Label(name);	
 			GUILayout.Space(5);
 
 			string hostInfo;
 			hostInfo = "[";
-			foreach (var host in element.ip)
+			foreach (var host in element.ip) {
 				hostInfo = hostInfo + host;
+			}
 			hostInfo = hostInfo + "]";
 
 			GUILayout.Label(hostInfo);	
@@ -200,14 +201,6 @@ public class MenuGUI : MonoBehaviour {
 		GUI.Label(new Rect(5,5,250,40), "Server name: " + GameData.SERVER_NAME);
 
 		if (GUI.Button (new Rect(Screen.width-105f, 5f, 100f, 50f), "Back")) {				 
-			if(Network.isServer)
-   				networkView.RPC("ExitCL", RPCMode.Others);
-
-			GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
-			foreach(GameObject player in players) {
-				Network.Destroy(player.networkView.viewID);	
-			}
-
 			Network.Disconnect();
 			Application.LoadLevel(0);
 			GameData.DRAW_CHAT = false;
@@ -295,7 +288,7 @@ public class MenuGUI : MonoBehaviour {
 	private void InitializeConnecting() {
 		networkView.RPC("PauseGame", RPCMode.All);
 		networkView.RPC("IncPlayersConnectingNumber", RPCMode.Others);
-		networkView.RPC("ShowPlayerConnectingPopup", RPCMode.Others);
+		networkView.RPC("ShowPlayersConnectingPopup", RPCMode.Others);
 		networkView.RPC("GetLevelFromServer", RPCMode.Server, Network.player);
 		drawGUI -= InitializeConnecting;
 	}
@@ -312,12 +305,12 @@ public class MenuGUI : MonoBehaviour {
 	}
 	
 	[RPC]
-	private void ShowPlayerConnectingPopup() {
+	private void ShowPlayersConnectingPopup() {
 		if(drawGUI != DrawPlayerConnectingPopup)
 			drawGUI += DrawPlayerConnectingPopup;
 	}
 	
-	public void HidePlayerConnectingPopup() {
+	public void HidePlayersConnectingPopup() {
 		if(drawGUI == DrawPlayerConnectingPopup)
 			drawGUI -= DrawPlayerConnectingPopup;
 	}

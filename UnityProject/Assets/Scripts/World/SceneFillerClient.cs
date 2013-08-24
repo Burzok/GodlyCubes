@@ -52,9 +52,9 @@ public class SceneFillerClient : MonoBehaviour {
 	{}
 	
 	[RPC]
-	private void CancelConnecting() {
+	private void FinishConnecting() {
 		GameTime.UnPauseGame();
-		menuGUI.HidePlayerConnectingPopup();
+		menuGUI.HidePlayersConnectingPopup();
 	}
 	
 	[RPC]
