@@ -15,8 +15,10 @@ public class CombatController : MonoBehaviour {
 		gameController = GameObject.FindGameObjectWithTag(Tags.gameController);
 		data = GetComponent<PlayerData>();
 		
-		Transform playerArmature = transform.Find("Animator");
-		playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();	
+		if(!Network.isServer) {
+			Transform playerArmature = transform.Find("Animator");
+			playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();	
+		}
 	}
 
 	void Update() {
@@ -73,7 +75,7 @@ public class CombatController : MonoBehaviour {
 			resFlag = true;
 		}
 		else
-			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, (int)package[0]);
+			networkView.RPC("SendHitConfirmationToClients", RPCMode.OthersBuffered, networkView.viewID, damage);
 	}
 	
 	[RPC]

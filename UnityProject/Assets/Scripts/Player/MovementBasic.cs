@@ -8,7 +8,7 @@ public class MovementBasic : MonoBehaviour {
 	private float verticalInput;
 	
 	void FixedUpdate() {
-		if(networkView.isMine) {
+		if(networkView.isMine == true) {
 			horizontalInput = Input.GetAxis("Horizontal");
 			verticalInput = Input.GetAxis("Vertical");
 			

@@ -4,10 +4,10 @@ using System.Collections;
 public class Rotator : MonoBehaviour {
 	public float rotateSpeed = 250f;
 	
-	public float rotationInput = 0f;
+	private float rotationInput = 0f;
 	
 	void FixedUpdate() {
-		if(networkView.isMine) {
+		if(networkView.isMine == true) {
 			rotationInput = Input.GetAxis("Mouse X");	
 	
 			if ( rotationInput != 0 )

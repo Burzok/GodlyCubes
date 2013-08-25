@@ -6,7 +6,7 @@ public class Chat : MonoBehaviour {
 	
 	bool typing = false;
 	string currentMessage = "";
-	string chatPlayerName = "";
+	string playerName = "";
 	Vector2 scroll;
 	List<string> chatHistory = new List<string>();
 	MenuGUI menuGUI;
@@ -32,10 +32,10 @@ public class Chat : MonoBehaviour {
 	void CheckChatInput() {
 		if(typing) {
 			if(Event.current.Equals( Event.KeyboardEvent("return"))) {				
-				chatPlayerName = chatPlayerName + ": ";
-				currentMessage = chatPlayerName + currentMessage;
+				playerName = playerName + ": ";
+				currentMessage = playerName + currentMessage;
 				
-				if (currentMessage!=chatPlayerName)
+				if (currentMessage!=playerName)
 					networkView.RPC("sendChatMessageToServer",RPCMode.Server,currentMessage);
 				
 				typing = !typing;
@@ -55,7 +55,7 @@ public class Chat : MonoBehaviour {
 	}
 	
 	void DrawChat()	{
-		if (menuGUI.drawChat) {
+		if (GameData.DRAW_CHAT == true) {
 			GUI.Box (new Rect(5f, Screen.height-200f, 300f, 165f),"");
 			GUI.BeginGroup(new Rect(5f, Screen.height-200f, 300, 165f));
 			scroll = GUILayout.BeginScrollView(scroll,GUILayout.Width(300),GUILayout.Height(165));			
@@ -73,7 +73,6 @@ public class Chat : MonoBehaviour {
 		}
 	}	
 
-	
 	[RPC] //Server function
 	void sendChatMessageToServer(string message) {
 		chatHistory.Add(message);
@@ -92,6 +91,6 @@ public class Chat : MonoBehaviour {
 		List<PlayerData> playerList = GetComponent<PlayerList>().playerList;
 		PlayerData player = playerList.Find(playerToFind => playerToFind.id == id);
 			
-		chatPlayerName = player.playerName;		
+		playerName = player.name;		
 	}	
 }

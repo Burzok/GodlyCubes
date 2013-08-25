@@ -16,36 +16,33 @@ public class BaseLife : MonoBehaviour
 	
 	void Hit(object[] package) {
 		health -= (int)package[0];
-		if(health <= 0){
-			if(name=="BaseA") {
-				networkView.RPC("setStateA", RPCMode.All);
-			}
-			else if(name=="BaseB") {
-				networkView.RPC("setStateB", RPCMode.All);
-			}
+		if(health <= 0) {
+			if(name=="BaseA") 
+				networkView.RPC("setStateA", RPCMode.Others);
+			else if(name=="BaseB") 
+				networkView.RPC("setStateB", RPCMode.Others);
+			
 			Network.Destroy(this.gameObject);
 		}
 	}
 	
 	[RPC]	
 	public void setStateA() {
-		playerTeam = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<Networking>().actualTeam;
-		if(playerTeam == Team.TeamA) {
+		playerTeam = GameData.ACTUAL_CLIENT_TEAM;
+		
+		if(playerTeam == Team.TEAM_A) 
 			menuGUI.SetLoseState();
-		}
-		else if(playerTeam == Team.TeamB) {
+		else if(playerTeam == Team.TEAM_B) 
 			menuGUI.SetWinState();
-		}
 	}
 	
 	[RPC]	
 	public void setStateB() {
-		playerTeam = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<Networking>().actualTeam;
-		if(playerTeam == Team.TeamA) {			
+		playerTeam = GameData.ACTUAL_CLIENT_TEAM;
+		
+		if(playerTeam == Team.TEAM_A) 	
 			menuGUI.SetWinState();
-		}
-		else if(playerTeam == Team.TeamB) {
+		else if(playerTeam == Team.TEAM_B) 
 			menuGUI.SetLoseState();
-		}
 	}
 }
