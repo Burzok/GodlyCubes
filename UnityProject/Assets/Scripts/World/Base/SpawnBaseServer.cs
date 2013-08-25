@@ -4,10 +4,9 @@ using System.Collections;
 public class SpawnBaseServer : MonoBehaviour {
 
 	public Transform basePrefabServer;
-	public Transform basePrefabClient;
 	public Team teamSelect;
-	public Transform gameBase;
 	
+	public Transform gameBase;		// chenge to private after tests
 	private NetworkViewID baseID;
 	
 	void Awake () {
@@ -28,7 +27,7 @@ public class SpawnBaseServer : MonoBehaviour {
 	}
 	
 	private void SetTeamInfoOnServer(Team team) {
-		//base.GetComponent<BaseTeamChoserServer>().SetTeam(teamSelect);
+		gameBase.GetComponent<BaseTeamChoserServer>().SetTeam(ref teamSelect);
 	}
 	
 	public void SpawnBaseOnClient(NetworkPlayer sender) {
@@ -36,14 +35,6 @@ public class SpawnBaseServer : MonoBehaviour {
 	}
 	
 	[RPC]
-	private void InstantiateBaseOnClient(NetworkViewID baseID) {
-		gameBase = Instantiate(basePrefabClient, transform.position, transform.rotation) as Transform;
-		gameBase.networkView.viewID = baseID;
-		
-		SetTeamInfoOnClient(teamSelect);
-	}
-	
-	private void SetTeamInfoOnClient(Team team) {
-		//base.GetComponent<BaseTeamChoserClient>().SetTeam(teamSelect);
-	}
+	private void InstantiateBaseOnClient(NetworkViewID baseID) 
+	{}
 }

@@ -29,7 +29,7 @@ public class Networking : MonoBehaviour {
 	
 	void OnLevelWasLoaded(int level) {
 		if(level == GameData.LEVEL_CRYSTAL_CAVERNS_CLIENT)
-			playerSpawnerComponent = GameObject.Find("Spawners").GetComponent<PlayerSpawnerClient>();
+			playerSpawnerComponent = GameObject.Find("SpawnersClient").GetComponent<PlayerSpawnerClient>();
 	}
 	
 	void OnConnectedToServer() {

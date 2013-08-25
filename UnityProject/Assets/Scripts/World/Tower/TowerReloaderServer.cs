@@ -9,7 +9,7 @@ public class TowerReloaderServer : MonoBehaviour {
 	public bool isReloading;
 	public float reloadTime = 3;
 	
-	private Transform detector;
+	private Transform detector;	// bedzie mi potrzebne do komunikacji miedzy client-serwer-otherClient, ale juz nie pamietam dlaczego xD, TODO: ogarnac po co to
 	private Transform spawner;
 	private float timer;
 	private Team towerTeam;
