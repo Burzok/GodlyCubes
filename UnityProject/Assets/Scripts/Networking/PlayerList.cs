@@ -58,16 +58,18 @@ public class PlayerList : MonoBehaviour {
 	}
 	
 	private void ChangeColor(ref Transform localTransform) {
-		PlayerData data = localTransform.GetComponent<PlayerData>();
-		Transform playerArmature = localTransform.Find("Animator");
-		Renderer[] playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();
-		float tuning = 0.5f;
-		
-		foreach(Renderer rend in playerRenderers) {
-			if(rend.gameObject.name == "Player")
-				rend.material.color = new Color(data.color.x*tuning, data.color.y*tuning, data.color.z*tuning);
-			else 
-				rend.material.color = new Color(data.color.x, data.color.y, data.color.z);
+		if(!Network.isServer) {
+			PlayerData data = localTransform.GetComponent<PlayerData>();
+			Transform playerArmature = localTransform.Find("Animator");
+			Renderer[] playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();
+			float tuning = 0.5f;
+
+			foreach(Renderer rend in playerRenderers) {
+				if(rend.gameObject.name == "Player")
+					rend.material.color = new Color(data.color.x*tuning, data.color.y*tuning, data.color.z*tuning);
+				else 
+					rend.material.color = new Color(data.color.x, data.color.y, data.color.z);
+			}
 		}
 	}
 	
