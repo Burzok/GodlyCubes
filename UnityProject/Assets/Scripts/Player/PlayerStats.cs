@@ -19,4 +19,10 @@ public class PlayerStats : MonoBehaviour {
 	
 	public int penetration = 0;
 	public int focus = 0;
+	
+	void Start() {
+		currentHealth = maxHealth;
+		currentEnergy = maxEnergy;
+		currentUltiPower = maxUltiPower;
+	}
 }

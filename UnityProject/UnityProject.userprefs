@@ -1,14 +1,26 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\World\Crystals\CrystalServer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\CombatController.cs">
     <Files>
-      <File FileName="Assets\Scripts\World\Crystals\CrystalServer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\Crystals\CrystalSpawnerServer.cs" Line="37" Column="31" />
+      <File FileName="Assets\Scripts\Networking\Chat.cs" Line="20" Column="31" />
+      <File FileName="Assets\Scripts\World\Crystals\CrystalServer.cs" Line="25" Column="3" />
+      <File FileName="Assets\Scripts\World\Crystals\CrystalSpawnerServer.cs" Line="53" Column="34" />
       <File FileName="Assets\Scripts\World\Crystals\CrystalSpawnerClient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\CombatController.cs" Line="12" Column="2" />
+      <File FileName="Assets\Scripts\World\SceneFillerServer.cs" Line="112" Column="1" />
       <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="34" Column="3" />
-      <File FileName="Assets\Scripts\Player\CombatController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\PlayerData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\World\PlayerSpawnerClient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerStats.cs" Line="26" Column="26" />
+      <File FileName="Assets\Scripts\World\Tower\TowerBulletServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\Tower\TowerBulletClient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\Tower\TowerLifeServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\Tower\TowerReloaderClient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\Tower\TowerReloaderServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\Tower\TowerTeamChoserClient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\Tower\TowerTeamChoserServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\Tower\TowerAIClient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\Tower\SpawnTowerClient.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\World\Tower\SpawnTowerServer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

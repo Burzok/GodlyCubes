@@ -91,6 +91,6 @@ public class Chat : MonoBehaviour {
 		List<PlayerData> playerList = GetComponent<PlayerList>().playerList;
 		PlayerData player = playerList.Find(playerToFind => playerToFind.id == id);
 			
-		playerName = player.name;		
+		playerName = player.playerName;		
 	}	
 }
