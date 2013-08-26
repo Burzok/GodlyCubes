@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Data\GameData.cs" />
+     <Compile Include="Assets\Scripts\Data\PhysicsLayers.cs" />
      <Compile Include="Assets\Scripts\Data\Tags.cs" />
      <Compile Include="Assets\Scripts\Networking\Chat.cs" />
      <Compile Include="Assets\Scripts\Networking\Networking.cs" />
@@ -67,7 +68,10 @@
      <Compile Include="Assets\Scripts\Tutorials and References\RandomFloorBotMovement.cs" />
      <Compile Include="Assets\Scripts\Tutorials and References\ScrollingUVs.cs" />
      <Compile Include="Assets\Scripts\UI\MenuGUI.cs" />
-     <Compile Include="Assets\Scripts\World\Base\BaseLife.cs" />
+     <Compile Include="Assets\Scripts\World\Base\BaseLifeClient.cs" />
+     <Compile Include="Assets\Scripts\World\Base\BaseLifeServer.cs" />
+     <Compile Include="Assets\Scripts\World\Base\BaseTeamChoserClient.cs" />
+     <Compile Include="Assets\Scripts\World\Base\BaseTeamChoserServer.cs" />
      <Compile Include="Assets\Scripts\World\Base\SpawnBaseClient.cs" />
      <Compile Include="Assets\Scripts\World\Base\SpawnBaseServer.cs" />
      <Compile Include="Assets\Scripts\World\Camera\ThirdPersonCamera.cs" />

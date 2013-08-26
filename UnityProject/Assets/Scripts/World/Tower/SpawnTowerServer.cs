@@ -4,7 +4,6 @@ using System.Collections;
 public class SpawnTowerServer : MonoBehaviour {
 
 	public Transform towerPrefabServer;
-	public Transform towerPrefabClient;
 	public Team teamSelect;
 	public Transform tower;
 	

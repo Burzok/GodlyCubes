@@ -14,8 +14,7 @@ public enum Map {
 
 public class GameData {
 	
-	public static bool DRAW_CHAT;
-	public static bool DRAW_STATS;
+	public const int BASE_MAX_HEALTH = 2000;
 	
 	public const int LEVEL_MAIN_MENU = 1;
 	public const int LEVEL_CRYSTAL_CAVERNS_SERVER = 2;
@@ -30,9 +29,8 @@ public class GameData {
 	public static string PLAYER_NAME;
 	public static string CURRENT_LEVEL_NAME;
 	
+	public static bool DRAW_CHAT;
+	public static bool DRAW_STATS;
+	
 	public static Team ACTUAL_CLIENT_TEAM;
-	
-	
-	
-	
 }

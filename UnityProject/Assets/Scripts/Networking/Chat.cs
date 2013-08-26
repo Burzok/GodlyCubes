@@ -12,7 +12,7 @@ public class Chat : MonoBehaviour {
 	MenuGUI menuGUI;
 	
 	void Awake() {
-		menuGUI = GetComponent<MenuGUI>();
+		menuGUI = GetComponent<MenuGUI>(); // potrzebne do refaktoryzacji kodu z chatu
 	}
 	
 	void Update () {
