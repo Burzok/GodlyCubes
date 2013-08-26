@@ -21,6 +21,13 @@
       <File FileName="Assets\Scripts\World\Tower\TowerAIClient.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\World\Tower\SpawnTowerClient.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\World\Tower\SpawnTowerServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Data\PhysicsLayers.cs" Line="10" Column="49" />
+      <File FileName="Assets\Scripts\World\Base\BaseTeamChoserServer.cs" Line="16" Column="1" />
+      <File FileName="Assets\Scripts\World\Base\BaseTeamChoserClient.cs" Line="9" Column="3" />
+      <File FileName="Assets\Scripts\World\Base\SpawnBaseServer.cs" Line="27" Column="3" />
+      <File FileName="Assets\Scripts\World\Base\SpawnBaseClient.cs" Line="20" Column="73" />
+      <File FileName="Assets\Scripts\World\Base\BaseLifeServer.cs" Line="19" Column="3" />
+      <File FileName="Assets\Scripts\World\Base\BaseLifeClient.cs" Line="12" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
