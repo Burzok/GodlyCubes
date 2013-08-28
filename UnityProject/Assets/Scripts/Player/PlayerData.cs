@@ -11,6 +11,7 @@ public class PlayerData : MonoBehaviour {
 	public bool isAlive = true;
 	
 	public PlayerStats stats;
+	public PlayerSkills skills;
 	
 	public float respawnTime = 3.0f;
 	public Vector3 respawnPosition;

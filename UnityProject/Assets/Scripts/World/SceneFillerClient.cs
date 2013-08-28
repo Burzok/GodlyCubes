@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SceneFillerClient : MonoBehaviour {
@@ -6,10 +6,10 @@ public class SceneFillerClient : MonoBehaviour {
 	public GameObject testPlayer; // zmienna testowa do podgladu, jesli wszystko dziala to usunac
 	
 	private int otherPlayersSpawned;
-	private MenuGUI menuGUI;
+	private MenuUI menuGUI;
 	
 	void Awake() {
-		menuGUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<MenuGUI>();
+		menuGUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<MenuUI>();
 		otherPlayersSpawned = 0;
 	}
 	

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Networking : MonoBehaviour {
 	
-	private MenuGUI mainMenu;
+	private MenuUI mainMenu;
 	private PlayerList playerListComponent;
 	private PlayerSpawnerClient playerSpawnerComponent;
 	
@@ -23,7 +23,7 @@ public class Networking : MonoBehaviour {
         MasterServer.ClearHostList();
         MasterServer.RequestHostList("GodlyCubesLight"); //TODO: globalna zmienna w GameDAta
 
-		mainMenu = GetComponent<MenuGUI>();
+		mainMenu = GetComponent<MenuUI>();
 		playerListComponent = GetComponent<PlayerList>();
 	}
 	

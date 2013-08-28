@@ -36,6 +36,7 @@ GameObject:
   - 114: {fileID: 11400010}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400014}
+  - 114: {fileID: 11400016}
   m_Layer: 0
   m_Name: PlayerClient
   m_TagString: Player
@@ -499,7 +500,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.98284149, y: 2.19792742e-06, z: 95.5003891}
+  m_LocalPosition: {x: 187.407944, y: 233.498749, z: -169.296661}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -534,7 +535,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
-  m_LocalRotation: {x: 8.80259535e-17, y: 3.82898034e-17, z: .39888075, w: .917002797}
+  m_LocalRotation: {x: 8.80259601e-17, y: 3.82898067e-17, z: .39888078, w: .917002857}
   m_LocalPosition: {x: -.248015702, y: 1.33354945e-08, z: -6.22734864e-10}
   m_LocalScale: {x: .99999994, y: 1, z: 1}
   m_Children: []
@@ -810,7 +811,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100054}
-  m_LocalRotation: {x: .311709106, y: -.0283474363, z: -.387759417, w: .866992772}
+  m_LocalRotation: {x: .311709136, y: -.0283474382, z: -.387759447, w: .866992831}
   m_LocalPosition: {x: -.326657355, y: -.344655514, z: -.0159798432}
   m_LocalScale: {x: 26.2596588, y: 26.259655, z: 26.2596588}
   m_Children: []
@@ -960,6 +961,7 @@ MonoBehaviour:
   team: 0
   isAlive: 1
   stats: {fileID: 11400014}
+  skills: {fileID: 11400016}
   respawnTime: 3
   respawnPosition: {x: 0, y: 0, z: 0}
   kills: 0
@@ -1036,6 +1038,17 @@ MonoBehaviour:
   absorption: 0
   penetration: 0
   focus: 0
+--- !u!114 &11400016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e87419a713ba4971b2b674690a4683c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

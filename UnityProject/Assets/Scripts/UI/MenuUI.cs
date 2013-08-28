@@ -2,15 +2,16 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public delegate void DrawGUI();
+public delegate void DrawUI();
 
-public class MenuGUI : MonoBehaviour {
-	public DrawGUI drawGUI;
+public class MenuUI : MonoBehaviour {
+	public DrawUI drawUI;
 	
 	public GameObject miniCrystalCaverns;
 	public GameObject miniBurzokGrounds;
 	public Map selectedMap;
 	
+	private SkillSelectUI skillSelectUI;
 	private Networking networking;
 	private Rotator myPlayerRotator;
 	private Rect windowRect = new Rect(Screen.width * .5f-200f, 20f, 400f, 150f);
@@ -28,12 +29,14 @@ public class MenuGUI : MonoBehaviour {
 		networking = GetComponent<Networking>();
 		playerList = GetComponent<PlayerList>().playerList;
 		
-		drawGUI = DrawMainMenu;
+		drawUI = DrawMainMenu;
 		selectedMap = Map.CRYSTAL_CAVERNS;
+		
+		skillSelectUI = GetComponent<SkillSelectUI>();
 	}
 	
 	void OnGUI() {
-		drawGUI();
+		drawUI();
 	}
 	
 	void OnLevelWasLoaded(int level) {
@@ -179,9 +182,9 @@ public class MenuGUI : MonoBehaviour {
 	private void DrawTeamSelect() {
 		if (GUI.Button (new Rect(Screen.width * 0.5f-120f, 20f, 100f, 50f), "Team A")) {
 			networking.ConnectToGame(Team.TEAM_A);
-			SetClientGameState();
-			GameData.DRAW_CHAT = true;
-			GameData.DRAW_STATS = true;
+		 	skillSelectUI.SetSkillSelect();
+			//GameData.DRAW_CHAT = true;
+			//GameData.DRAW_STATS = true;
 		}
 
 		if (GUI.Button (new Rect(Screen.width * 0.5f+20f, 20f, 100f, 50f), "Team B")) {
@@ -215,7 +218,7 @@ public class MenuGUI : MonoBehaviour {
 			networkView.RPC("UnregisterPlayer", RPCMode.Server, networking.getMyPlayerID());
 			networkView.RPC("DecCounters", RPCMode.AllBuffered, GameData.ACTUAL_CLIENT_TEAM);
 			Network.Disconnect();
-			drawGUI = DrawMainMenu;
+			drawUI = DrawMainMenu;
 			Application.LoadLevel(GameData.LEVEL_MAIN_MENU);
 			GameData.DRAW_CHAT = false;			
 		}
@@ -282,7 +285,7 @@ public class MenuGUI : MonoBehaviour {
 	}
 	
 	public void AddInitializeConnecting() {
-		drawGUI += InitializeConnecting;
+		drawUI += InitializeConnecting;
 	}
 	
 	private void InitializeConnecting() {
@@ -290,7 +293,7 @@ public class MenuGUI : MonoBehaviour {
 		networkView.RPC("IncPlayersConnectingNumber", RPCMode.Others);
 		networkView.RPC("ShowPlayersConnectingPopup", RPCMode.Others);
 		networkView.RPC("GetLevelFromServer", RPCMode.Server, Network.player);
-		drawGUI -= InitializeConnecting;
+		drawUI -= InitializeConnecting;
 	}
 	
 	[RPC]
@@ -306,13 +309,13 @@ public class MenuGUI : MonoBehaviour {
 	
 	[RPC]
 	private void ShowPlayersConnectingPopup() {
-		if(drawGUI != DrawPlayerConnectingPopup)
-			drawGUI += DrawPlayerConnectingPopup;
+		if(drawUI != DrawPlayerConnectingPopup)
+			drawUI += DrawPlayerConnectingPopup;
 	}
 	
 	public void HidePlayersConnectingPopup() {
-		if(drawGUI == DrawPlayerConnectingPopup)
-			drawGUI -= DrawPlayerConnectingPopup;
+		if(drawUI == DrawPlayerConnectingPopup)
+			drawUI -= DrawPlayerConnectingPopup;
 	}
 	
 	private void DrawPlayerConnectingPopup() {
@@ -348,7 +351,7 @@ public class MenuGUI : MonoBehaviour {
 			Screen.lockCursor = false;
 		}
 		
-		drawGUI = DrawWinState;
+		drawUI = DrawWinState;
 	}
 	
 	public void SetLoseState() {
@@ -362,38 +365,38 @@ public class MenuGUI : MonoBehaviour {
 			Screen.lockCursor = false;
 		}
 		
-		drawGUI = DrawLoseState;
+		drawUI = DrawLoseState;
 	}
 	
 	public void SetMainMenuState() {
-		drawGUI = DrawMainMenu;
+		drawUI = DrawMainMenu;
 	}
 	
 	public void SetTeamSelectState() {
-		drawGUI = DrawTeamSelect;
+		drawUI = DrawTeamSelect;
 	}
 	
 	public void SetServerGameState() {
-		drawGUI = DrawServerGame;
+		drawUI = DrawServerGame;
 	}
 	
 	public void SetClientGameState() {
-		drawGUI = DrawClientGame;
+		drawUI = DrawClientGame;
 	}
 	
 	public void SetCreateServerState() {
-		drawGUI = DrawCreateServer;
+		drawUI = DrawCreateServer;
 	}
 	
 	public void SetConnectState() {
-		drawGUI = DrawConnect;
+		drawUI = DrawConnect;
 	}
 	
 	public void SetOptionsMenuState() {
-		drawGUI = DrawOptionsMenu;
+		drawUI = DrawOptionsMenu;
 	}
 	
 	public void SetConnectingState() {
-		drawGUI = DrawConnecting;
+		drawUI = DrawConnecting;
 	}
 }

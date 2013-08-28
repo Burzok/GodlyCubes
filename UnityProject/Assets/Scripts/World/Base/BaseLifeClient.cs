@@ -4,10 +4,10 @@ using System.Collections;
 public class BaseLifeClient : MonoBehaviour {
 	public Team team;
 	
-	private MenuGUI menuGUI;
+	private MenuUI menuGUI;
 	
 	void Awake() {
-		menuGUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<MenuGUI>();
+		menuGUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<MenuUI>();
 	}
 	
 	[RPC]

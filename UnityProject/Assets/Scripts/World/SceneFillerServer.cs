@@ -1,12 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SceneFillerServer : MonoBehaviour {
 	
-	private MenuGUI menuGUI;
+	private MenuUI menuGUI;
 	
 	void Awake() {
-		menuGUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<MenuGUI>();
+		menuGUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<MenuUI>();
 	}
 	
 	[RPC]

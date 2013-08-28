@@ -9,10 +9,10 @@ public class Chat : MonoBehaviour {
 	string playerName = "";
 	Vector2 scroll;
 	List<string> chatHistory = new List<string>();
-	MenuGUI menuGUI;
+	MenuUI menuGUI;
 	
 	void Awake() {
-		menuGUI = GetComponent<MenuGUI>(); // potrzebne do refaktoryzacji kodu z chatu
+		menuGUI = GetComponent<MenuUI>(); // potrzebne do refaktoryzacji kodu z chatu
 	}
 	
 	void Update () {
