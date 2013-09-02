@@ -11,6 +11,7 @@ GameObject:
   - 65: {fileID: 6500000}
   - 148: {fileID: 14800000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: BaseClient
   m_TagString: Untagged
@@ -106,6 +107,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a45e3d76d43d9499e9b8bc68cdde81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamSelect: 0
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2e7715945acc74e972a4740eef801d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

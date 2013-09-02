@@ -6895,7 +6895,7 @@ GameObject:
   - 114: {fileID: 11400022}
   m_Layer: 0
   m_Name: BaseSpawnerClient
-  m_TagString: Untagged
+  m_TagString: BaseSpawner
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7217,7 +7217,7 @@ GameObject:
   - 114: {fileID: 11400024}
   m_Layer: 0
   m_Name: BaseSpawnerClient
-  m_TagString: Untagged
+  m_TagString: BaseSpawner
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26662,7 +26662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702dd2d5e66c45c4f8bbd2c4ef21214b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePrefabClient: {fileID: 400000, guid: b7bb539db4579984f93e732e00c3400f, type: 2}
+  basePrefabClient: {fileID: 400000, guid: cc28635e26aec45c7899e24c5c64d2c1, type: 2}
   teamSelect: 0
   gameBase: {fileID: 0}
 --- !u!114 &11400024
@@ -26676,7 +26676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702dd2d5e66c45c4f8bbd2c4ef21214b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePrefabClient: {fileID: 400000, guid: b7bb539db4579984f93e732e00c3400f, type: 2}
+  basePrefabClient: {fileID: 400000, guid: cc28635e26aec45c7899e24c5c64d2c1, type: 2}
   teamSelect: 1
   gameBase: {fileID: 0}
 --- !u!148 &14800000

@@ -6,11 +6,11 @@ public class SpawnBaseClient : MonoBehaviour {
 	public Transform basePrefabClient;
 	public Team teamSelect;
 	
-	public GameObject gameBase; // chenge to private after tests
+	public Transform gameBase; // chenge to private after tests
 	
 	[RPC]
 	private void InstantiateBaseOnClient(NetworkViewID baseID) {
-		gameBase = Instantiate(basePrefabClient, transform.position, transform.rotation) as GameObject;
+		gameBase = Instantiate(basePrefabClient, transform.position, transform.rotation) as Transform;
 		gameBase.networkView.viewID = baseID;
 		
 		SetTeamInfoOnClient();
