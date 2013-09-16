@@ -56,7 +56,7 @@ public class Networking : MonoBehaviour {
 	}
 
 	public NetworkViewID getMyPlayerID() {
-		return playerListComponent.myPlayer.networkView.viewID;
+		return PlayerManager.singleton.myPlayer.networkView.viewID;
 	}
 	
 	public void ConnectToGame(Team playerTeam) {

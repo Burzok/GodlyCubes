@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerSkills : MonoBehaviour {
-	public ISkill skill1;
-	public ISkill skill2;
-	public ISkill skill3;
-	public ISkill skill4;
+	public Dictionary<string, ISkill> skill;
+	
+	void Awake() {
+		skill = new Dictionary<string, ISkill>();
+	}
 	
 	public void SetSkill() {
 		

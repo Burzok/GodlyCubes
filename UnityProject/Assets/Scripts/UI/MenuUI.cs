@@ -1,11 +1,9 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
-public delegate void DrawUI();
-
 public class MenuUI : MonoBehaviour {
-	public DrawUI drawUI;
+	
+	public static MenuUI singleton;
 	
 	public GameObject miniCrystalCaverns;
 	public GameObject miniBurzokGrounds;
@@ -21,7 +19,12 @@ public class MenuUI : MonoBehaviour {
 	
 	private int lastLevelPrefix;
 	
-	void Awake() {
+	void OnEnable() {
+		if (singleton == null)
+			singleton = this;
+	}
+	
+	void Start() {
 		lastLevelPrefix = 0;
 		
 		GameData.CURRENT_LEVEL_NAME = "CrystalCaverns";
@@ -29,14 +32,11 @@ public class MenuUI : MonoBehaviour {
 		networking = GetComponent<Networking>();
 		playerList = GetComponent<PlayerList>().playerList;
 		
-		drawUI = DrawMainMenu;
+		SetMainMenuState();
+		
 		selectedMap = Map.CRYSTAL_CAVERNS;
 		
 		skillSelectUI = GetComponent<SkillSelectUI>();
-	}
-	
-	void OnGUI() {
-		drawUI();
 	}
 	
 	void OnLevelWasLoaded(int level) {
@@ -218,7 +218,9 @@ public class MenuUI : MonoBehaviour {
 			networkView.RPC("UnregisterPlayer", RPCMode.Server, networking.getMyPlayerID());
 			networkView.RPC("DecCounters", RPCMode.AllBuffered, GameData.ACTUAL_CLIENT_TEAM);
 			Network.Disconnect();
-			drawUI = DrawMainMenu;
+			
+			SetMainMenuState();
+			
 			Application.LoadLevel(GameData.LEVEL_MAIN_MENU);
 			GameData.DRAW_CHAT = false;			
 		}
@@ -285,7 +287,7 @@ public class MenuUI : MonoBehaviour {
 	}
 	
 	public void AddInitializeConnecting() {
-		drawUI += InitializeConnecting;
+		DrawUI.singleton.drawUI += InitializeConnecting;
 	}
 	
 	private void InitializeConnecting() {
@@ -293,7 +295,7 @@ public class MenuUI : MonoBehaviour {
 		networkView.RPC("IncPlayersConnectingNumber", RPCMode.Others);
 		networkView.RPC("ShowPlayersConnectingPopup", RPCMode.Others);
 		networkView.RPC("GetLevelFromServer", RPCMode.Server, Network.player);
-		drawUI -= InitializeConnecting;
+		DrawUI.singleton.drawUI -= InitializeConnecting;
 	}
 	
 	[RPC]
@@ -309,13 +311,13 @@ public class MenuUI : MonoBehaviour {
 	
 	[RPC]
 	private void ShowPlayersConnectingPopup() {
-		if(drawUI != DrawPlayerConnectingPopup)
-			drawUI += DrawPlayerConnectingPopup;
+		if(DrawUI.singleton.drawUI != DrawPlayerConnectingPopup)
+			DrawUI.singleton.drawUI += DrawPlayerConnectingPopup;
 	}
 	
 	public void HidePlayersConnectingPopup() {
-		if(drawUI == DrawPlayerConnectingPopup)
-			drawUI -= DrawPlayerConnectingPopup;
+		if(DrawUI.singleton.drawUI == DrawPlayerConnectingPopup)
+			DrawUI.singleton.drawUI -= DrawPlayerConnectingPopup;
 	}
 	
 	private void DrawPlayerConnectingPopup() {
@@ -346,12 +348,12 @@ public class MenuUI : MonoBehaviour {
 		GameData.DRAW_STATS = false;
 		
 		if (Network.isClient) {
-			myPlayerRotator = GetComponent<PlayerList>().myPlayer.GetComponent<Rotator>();	
+			myPlayerRotator = PlayerManager.singleton.myPlayer.GetComponent<Rotator>();	
 			myPlayerRotator.enabled = false;
 			Screen.lockCursor = false;
 		}
 		
-		drawUI = DrawWinState;
+		DrawUI.singleton.drawUI = DrawWinState;
 	}
 	
 	public void SetLoseState() {
@@ -360,43 +362,45 @@ public class MenuUI : MonoBehaviour {
 		Screen.lockCursor = false;
 		
 		if (Network.isClient) {
-			myPlayerRotator = GetComponent<PlayerList>().myPlayer.GetComponent<Rotator>();	
+			myPlayerRotator = PlayerManager.singleton.myPlayer.GetComponent<Rotator>();	
 			myPlayerRotator.enabled = false;
 			Screen.lockCursor = false;
 		}
 		
-		drawUI = DrawLoseState;
+		DrawUI.singleton.drawUI = DrawLoseState;
 	}
 	
 	public void SetMainMenuState() {
-		drawUI = DrawMainMenu;
+		Debug.LogWarning(DrawUI.singleton);
+		Debug.LogWarning(DrawUI.singleton.drawUI);
+		DrawUI.singleton.drawUI = DrawMainMenu;
 	}
 	
 	public void SetTeamSelectState() {
-		drawUI = DrawTeamSelect;
+		DrawUI.singleton.drawUI = DrawTeamSelect;
 	}
 	
 	public void SetServerGameState() {
-		drawUI = DrawServerGame;
+		DrawUI.singleton.drawUI = DrawServerGame;
 	}
 	
 	public void SetClientGameState() {
-		drawUI = DrawClientGame;
+		DrawUI.singleton.drawUI = DrawClientGame;
 	}
 	
 	public void SetCreateServerState() {
-		drawUI = DrawCreateServer;
+		DrawUI.singleton.drawUI = DrawCreateServer;
 	}
 	
 	public void SetConnectState() {
-		drawUI = DrawConnect;
+		DrawUI.singleton.drawUI = DrawConnect;
 	}
 	
 	public void SetOptionsMenuState() {
-		drawUI = DrawOptionsMenu;
+		DrawUI.singleton.drawUI = DrawOptionsMenu;
 	}
 	
 	public void SetConnectingState() {
-		drawUI = DrawConnecting;
+		DrawUI.singleton.drawUI = DrawConnecting;
 	}
 }

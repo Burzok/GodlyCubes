@@ -22,7 +22,7 @@ public class PlayerSpawnerClient : MonoBehaviour {
 		networkView.RPC("IncCounters", RPCMode.All, (int)playerTeam);
 		playerID = AllocatePlayerID();
 		Transform spawner = FindSpawn((Team)playerTeam);
-		playerList.myPlayer = SpawnPlayer(playerID, spawner);
+		PlayerManager.singleton.myPlayer = SpawnPlayer(playerID, spawner);
 	}
 	
 	private NetworkViewID AllocatePlayerID() {
@@ -44,10 +44,10 @@ public class PlayerSpawnerClient : MonoBehaviour {
 		}
 	}
 	
-	private GameObject SpawnPlayer(NetworkViewID playerID, Transform spawner) {
+	private PlayerData SpawnPlayer(NetworkViewID playerID, Transform spawner) {
 		GameObject player = Instantiate(playerPrefabClient, spawner.position, spawner.rotation) as GameObject;
 		player.networkView.viewID = playerID;
-		return player;
+		return player.GetComponent<PlayerData>();
 	}
 	
 	[RPC]

@@ -1,14 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\World\Base\BaseLifeServer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Skills\SkillSelect.cs">
     <Files>
-      <File FileName="Assets\Scripts\World\SceneFillerClient.cs" Line="37" Column="44" />
-      <File FileName="Assets\Scripts\World\SceneFillerServer.cs" Line="104" Column="49" />
-      <File FileName="Assets\Scripts\World\Base\SpawnBaseServer.cs" Line="34" Column="62" />
-      <File FileName="Assets\Scripts\World\Base\SpawnBaseClient.cs" Line="23" Column="1" />
-      <File FileName="Assets\Scripts\World\Base\BaseTeamChoserClient.cs" Line="4" Column="78" />
-      <File FileName="Assets\Scripts\World\Base\BaseLifeClient.cs" Line="16" Column="3" />
-      <File FileName="Assets\Scripts\World\Base\BaseLifeServer.cs" Line="29" Column="2" />
+      <File FileName="Assets\Scripts\UI\DrawUI.cs" Line="12" Column="17" />
+      <File FileName="Assets\Scripts\Data\Skills.cs" Line="4" Column="22" />
+      <File FileName="Assets\Scripts\UI\SkillSelectUI.cs" Line="13" Column="48" />
+      <File FileName="Assets\Scripts\Skills\SkillSelect.cs" Line="38" Column="13" />
+      <File FileName="Assets\Scripts\UI\MenuUI.cs" Line="374" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerSkills.cs" Line="8" Column="44" />
+      <File FileName="Assets\Scripts\Networking\PlayerList.cs" Line="13" Column="25" />
+      <File FileName="Assets\Scripts\Player\SkillControler.cs" Line="19" Column="31" />
+      <File FileName="Assets\Scripts\Networking\PlayerManager.cs" Line="9" Column="66" />
+      <File FileName="Assets\Scripts\Player\PlayerData.cs" Line="14" Column="2" />
+      <File FileName="Assets\Scripts\Skills\ISkill.cs" Line="3" Column="7" />
+      <File FileName="Assets\Scripts\Skills\Utility\Heal.cs" Line="6" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

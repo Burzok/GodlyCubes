@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class PlayerData : MonoBehaviour {
 	public NetworkViewID id;
@@ -19,4 +18,12 @@ public class PlayerData : MonoBehaviour {
 	public int kills;
 	public int deaths;
 	public int assist;	
+	
+	void OnEnable() {
+		PlayerManager.singleton.AddPlayer(this);
+	}
+	
+	void OnDisable() {
+		PlayerManager.singleton.RemovePlayer(this);
+	}
 }

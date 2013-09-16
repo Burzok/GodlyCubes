@@ -37,19 +37,21 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity 4.2 Free/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity 4.2 Free/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Data\GameData.cs" />
      <Compile Include="Assets\Scripts\Data\PhysicsLayers.cs" />
+     <Compile Include="Assets\Scripts\Data\Skills.cs" />
      <Compile Include="Assets\Scripts\Data\Tags.cs" />
      <Compile Include="Assets\Scripts\Networking\Chat.cs" />
      <Compile Include="Assets\Scripts\Networking\Networking.cs" />
      <Compile Include="Assets\Scripts\Networking\PlayerList.cs" />
+     <Compile Include="Assets\Scripts\Networking\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\Player\CameraControl.cs" />
      <Compile Include="Assets\Scripts\Player\CombatController.cs" />
      <Compile Include="Assets\Scripts\Player\CursorLock.cs" />
@@ -63,6 +65,7 @@
      <Compile Include="Assets\Scripts\Skills\BulletControllerClient.cs" />
      <Compile Include="Assets\Scripts\Skills\BulletControllerServer.cs" />
      <Compile Include="Assets\Scripts\Skills\ISkill.cs" />
+     <Compile Include="Assets\Scripts\Skills\SkillSelect.cs" />
      <Compile Include="Assets\Scripts\Skills\Utility\Heal.cs" />
      <Compile Include="Assets\Scripts\Tutorials and References\AudioOffset.cs" />
      <Compile Include="Assets\Scripts\Tutorials and References\BotControlScript.cs" />
@@ -71,6 +74,7 @@
      <Compile Include="Assets\Scripts\Tutorials and References\Punch.cs" />
      <Compile Include="Assets\Scripts\Tutorials and References\RandomFloorBotMovement.cs" />
      <Compile Include="Assets\Scripts\Tutorials and References\ScrollingUVs.cs" />
+     <Compile Include="Assets\Scripts\UI\DrawUI.cs" />
      <Compile Include="Assets\Scripts\UI\MenuUI.cs" />
      <Compile Include="Assets\Scripts\UI\SkillSelectUI.cs" />
      <Compile Include="Assets\Scripts\World\Base\BaseLifeClient.cs" />

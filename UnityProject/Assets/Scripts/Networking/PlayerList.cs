@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class PlayerList : MonoBehaviour {
 	public List<PlayerData> playerList = new List<PlayerData>(4);
-	public GameObject myPlayer;
 	
 	public void CallRegisterPlayer(NetworkViewID playerID, int playerTeam) {
 		networkView.RPC("RegisterPlayer", RPCMode.All, GameData.PLAYER_NAME, playerID, playerTeam);	
@@ -34,8 +33,8 @@ public class PlayerList : MonoBehaviour {
 	}
 	
 	private void FillPlayerData(
-		ref PlayerData player, ref string playerName, ref NetworkViewID playerID, ref int playerTeam
-		) {
+		ref PlayerData player, ref string playerName, ref NetworkViewID playerID, ref int playerTeam)
+	{
 		player.id = playerID;
 		player.playerName = playerName;
 		player.team = (Team)playerTeam;
