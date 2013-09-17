@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour {
 		playerDataList.Remove(p);
 	}
 	
-	public PlayerData returnPlayerData(string playerName) {
+	public PlayerData ReturnPlayerData(string playerName) {
 		foreach(PlayerData playerData in playerDataList) {
 			if (playerData.playerName == playerName)
 				return playerData;
@@ -32,11 +32,11 @@ public class PlayerManager : MonoBehaviour {
 		return null;
 	}
 	
-	public Transform returnPlayerTransform(string playerName) {
-		return returnPlayerData(playerName).transform;
+	public Transform ReturnPlayerTransform(string playerName) {
+		return ReturnPlayerData(playerName).transform;
 	}
 	
-	public PlayerStats returnPlayerStats(string playerName) {
-		return returnPlayerData(playerName).stats;
+	public PlayerStats ReturnPlayerStats(string playerName) {
+		return ReturnPlayerData(playerName).stats;
 	}
 }

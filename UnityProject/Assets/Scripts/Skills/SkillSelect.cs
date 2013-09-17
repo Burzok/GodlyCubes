@@ -31,9 +31,10 @@ public class SkillSelect : MonoBehaviour {
 		foreach(KeyValuePair<int,string> skill in keyBinding) {
 			switch(skill.Value) {
 				case Skills.HEAL:
-					Debug.LogWarning("allockate heal");
-					PlayerManager.singleton.myPlayer.skills.skill.Add(
-							skill.Value, new Heal(PlayerManager.singleton.myPlayer.stats));
+					PlayerSkills skills = PlayerManager.singleton.myPlayer.skills;
+				
+					skills.SetSkill(skill.Value, Heal.CreateInstance(Skills.HEAL));
+					skills.SetSkillData(Skills.HEAL, PlayerManager.singleton.myPlayer.stats);
 					break;
 				default:
 					break;

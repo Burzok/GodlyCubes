@@ -1,6 +1,6 @@
 ﻿public interface ISkill {
-
-	void Use();
 	
-
+	bool InUse();
+	void Use();
+	void SetData(PlayerStats stats);
 }

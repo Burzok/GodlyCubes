@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPlayer: {fileID: 0}
+  playerDataList: []
 --- !u!114 &113685781
 MonoBehaviour:
   m_ObjectHideFlags: 0

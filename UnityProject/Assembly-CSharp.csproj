@@ -95,6 +95,7 @@
      <Compile Include="Assets\Scripts\World\PlayerSpawnerServer.cs" />
      <Compile Include="Assets\Scripts\World\SceneFillerClient.cs" />
      <Compile Include="Assets\Scripts\World\SceneFillerServer.cs" />
+     <Compile Include="Assets\Scripts\World\Timer.cs" />
      <Compile Include="Assets\Scripts\World\Tower\SpawnTowerClient.cs" />
      <Compile Include="Assets\Scripts\World\Tower\SpawnTowerServer.cs" />
      <Compile Include="Assets\Scripts\World\Tower\TowerAIClient.cs" />
