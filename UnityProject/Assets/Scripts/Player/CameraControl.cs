@@ -2,8 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class CameraControl : MonoBehaviour {
-	public Transform playerCamPos;
-	
+	public Transform playerCamPos;	
 	private Transform playerCam;
 	
 	void Start() {
