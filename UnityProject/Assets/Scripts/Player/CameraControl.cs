@@ -6,6 +6,8 @@ public class CameraControl : MonoBehaviour {
 	private Transform playerCam;
 	
 	void Start() {
+		
+		
 		if(networkView.isMine == true) {
 			playerCamPos.gameObject.SetActive(true);
 			playerCam = GameObject.FindGameObjectWithTag(Tags.playerCamera).transform;

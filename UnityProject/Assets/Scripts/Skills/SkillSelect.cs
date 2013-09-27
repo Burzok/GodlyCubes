@@ -10,6 +10,9 @@ public class SkillSelect : MonoBehaviour {
 	
 	void Awake() {
 		keyBinding = new Dictionary<int, string>();	
+		
+		
+		
 	}
 	
 	void OnEnable() {
