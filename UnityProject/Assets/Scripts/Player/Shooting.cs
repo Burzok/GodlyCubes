@@ -15,7 +15,8 @@ public class Shooting : MonoBehaviour {
 	private PlayerData data;
 	
 	public List<PlayerData> list;
-	
+
+    private Transform bullet;
 	private Transform bulletSpawner;
 	
 	private Animator animator;
@@ -23,6 +24,7 @@ public class Shooting : MonoBehaviour {
 	
 	private MeshRenderer bulletRenderer;
 	private ShootingAnimationControl shootingAnimationControl;
+    private NetworkViewID bulletID;
 	
 	static int idleState = Animator.StringToHash("Base Layer.Idle");	
 	static int basicAtackState = Animator.StringToHash("Base Layer.Basic_Atack");	
@@ -90,31 +92,43 @@ public class Shooting : MonoBehaviour {
 	
 	[RPC]
 	void ServerSpawnBulletCall(NetworkViewID owner) {
-		networkView.RPC("SpawnBullet", RPCMode.AllBuffered, owner);
+        bullet = Instantiate(
+            bulletPrefabServer, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
+        bullet.GetComponent<BulletControllerServer>().owner = owner;
+       
+        bulletID = AllocateBulletID();
+        bullet.networkView.viewID = bulletID;
+		networkView.RPC("SpawnBulletOnClient", RPCMode.Others, owner, bulletID);
+
+        SetLayers();
+        SetColor();
 	}
 	
 	[RPC]
-	void SpawnBullet(NetworkViewID owner) {
-		Transform bullet;
-		
-		if(Network.isServer) {
-			bullet = Instantiate(
-				bulletPrefabServer, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
-			bullet.GetComponent<BulletControllerServer>().owner = owner;
-		}
-		else {
-			bullet = Instantiate(
-				bulletPrefabClient, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
-			bullet.GetComponent<BulletControllerClient>().owner = owner;	
-		}
-		
-		if (data.team == Team.TEAM_A)
-			bullet.gameObject.layer = 11;
-		else if (data.team == Team.TEAM_B)
-			bullet.gameObject.layer = 12;
-				
-		bullet.GetChild(0).renderer.material.color = new Color(data.color.x, data.color.y, data.color.z);
+	void SpawnBulletOnClient(NetworkViewID owner, NetworkViewID bulletID) {      
+		bullet = Instantiate(
+		    bulletPrefabClient, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
+       
+        bullet.networkView.viewID = bulletID;
+
+        SetLayers();
+        SetColor();
 	}
+
+    private NetworkViewID AllocateBulletID() {
+        return Network.AllocateViewID();
+    }
+
+    private void SetLayers() {
+        if (data.team == Team.TEAM_A)
+            bullet.gameObject.layer = 11;
+        else if (data.team == Team.TEAM_B)
+            bullet.gameObject.layer = 12;
+    }
+
+    private void SetColor() {
+        bullet.GetChild(0).renderer.material.color = new Color(data.color.x, data.color.y, data.color.z);
+    }
 	
 	private void Dumy() {
 	}
