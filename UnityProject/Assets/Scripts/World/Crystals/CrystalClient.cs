@@ -4,6 +4,7 @@ using System.Collections;
 public class CrystalClient : MonoBehaviour {
 	private PlayerList playerList;
 	private bool eatingKeyPressed;
+    private bool requestSent;
 	
 	private CrystalType type;
 	private int increaseStatValue;
@@ -13,6 +14,7 @@ public class CrystalClient : MonoBehaviour {
 	
 	void Awake() {
 		playerList = GameObject.FindWithTag(Tags.gameController).GetComponent<PlayerList>();
+        requestSent = false;
 	}
 	
 	void FixedUpdate() {
@@ -24,8 +26,10 @@ public class CrystalClient : MonoBehaviour {
 	
 	void OnTriggerStay(Collider player) {
 		if(player.networkView.isMine) {
-			if(eatingKeyPressed)
-				networkView.RPC("RequestStatIncrease", RPCMode.Server, player.networkView.viewID);
+            if (eatingKeyPressed && !requestSent) {
+                networkView.RPC("RequestStatIncrease", RPCMode.Server, player.networkView.viewID);
+                requestSent = true;
+            }
 		}
 	}	
 	
@@ -67,6 +71,11 @@ public class CrystalClient : MonoBehaviour {
 		if(type == CrystalType.Focus) 
 			increasingPlayerStats.focus += increaseStatValue;
 	}
+
+    [RPC]
+    void DestroyCrystal() {
+        Destroy(this.gameObject);
+    }
 	
 	[RPC]
 	void RequestStatIncrease(NetworkViewID increasingPlayerID) 

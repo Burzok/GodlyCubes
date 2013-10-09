@@ -31,8 +31,9 @@ public class CrystalServer : MonoBehaviour {
 		
 		ApplyStatAccordingToType();
  		networkView.RPC("ReplyStatIncrease", RPCMode.Others, increasingPlayerID, (int)type, increaseStatValue);
-		
-		Network.Destroy(this.gameObject);
+
+        networkView.RPC("DestroyCrystal", RPCMode.Others);
+        Destroy(this.gameObject);
 	}	
 	
 	void ApplyStatAccordingToType() {
@@ -63,6 +64,11 @@ public class CrystalServer : MonoBehaviour {
 		if(type == CrystalType.Focus) 
 			increasingPlayerStats.focus += increaseStatValue;
 	}
+
+    [RPC]
+    void DestroyCrystal()  {
+        Destroy(this.gameObject);
+    }
 	
 	[RPC]
 	void ReplyStatIncrease(NetworkViewID increasingPlayerID, int aquiredType, int aquiredIncreaseStatValue)

@@ -10,5 +10,10 @@ public class BulletControllerClient : MonoBehaviour {
 	void FixedUpdate() {
 		transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);
 	}
-	
+
+    [RPC]
+    void DestroyBullet() {
+        Network.RemoveRPCs(networkView.viewID);
+        Destroy(this.gameObject);
+    }
 }
