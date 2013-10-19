@@ -7,6 +7,7 @@ public class BulletControllerClient : MonoBehaviour {
 	void Start() {
 		Network.RemoveRPCs(networkView.viewID);		
 	}	
+
 	void FixedUpdate() {
 		transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);
 	}

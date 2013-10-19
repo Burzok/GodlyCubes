@@ -172,15 +172,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c4f2bf1b4ed82d4da2be9dc3d6b4af3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1679f9321f26bf54daf21c16ef7030ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefabClient: {fileID: 400000, guid: 9bc14f7c8929afc4c81a3a37c3605dc8, type: 2}
   bulletPrefabServer: {fileID: 400000, guid: 67d0cd8baff9938498d254cb83a255d0, type: 2}
-  shootTime: .649999976
-  activationTime: .5
-  animSpeed: 2
-  list: []
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,6 +192,7 @@ MonoBehaviour:
   team: 0
   isAlive: 1
   stats: {fileID: 11400000}
+  skills: {fileID: 0}
   respawnTime: 3
   respawnPosition: {x: 0, y: 0, z: 0}
   kills: 0

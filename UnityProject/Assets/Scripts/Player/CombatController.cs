@@ -43,7 +43,7 @@ public class CombatController : MonoBehaviour {
 			data.isAlive = !data.isAlive;
 			collider.enabled = !collider.enabled;
 			GetComponent<MovementBasic>().enabled = !GetComponent<MovementBasic>().enabled;
-			GetComponent<Shooting>().enabled = !GetComponent<Shooting>().enabled;
+			GetComponent<ShootingControllerClient>().enabled = !GetComponent<ShootingControllerClient>().enabled;
 			foreach(Renderer rend in playerRenderers)
 				rend.enabled = !rend.enabled;
 		}

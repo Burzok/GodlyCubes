@@ -4,17 +4,14 @@ using System.Collections.Generic;
 
 public delegate void ShootingAnimationControl();
 
-public class Shooting : MonoBehaviour {
+public class ShootingControllerClient : MonoBehaviour {
 	public Transform bulletPrefabClient;
-	public Transform bulletPrefabServer;
 	
 	public float shootTime = 0.65f;
 	public float activationTime = 0.5f;
 	public float animSpeed = 2f;
 	
 	private PlayerData data;
-	
-	public List<PlayerData> list;
 
     private Transform bullet;
 	private Transform bulletSpawner;
@@ -24,7 +21,6 @@ public class Shooting : MonoBehaviour {
 	
 	private MeshRenderer bulletRenderer;
 	private ShootingAnimationControl shootingAnimationControl;
-    private NetworkViewID bulletID;
 	
 	static int idleState = Animator.StringToHash("Base Layer.Idle");	
 	static int basicAtackState = Animator.StringToHash("Base Layer.Basic_Atack");	
@@ -32,28 +28,25 @@ public class Shooting : MonoBehaviour {
 	void Awake() {
 		networkView.group = 0;
 		
-		list = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<PlayerList>().playerList;
 		bulletSpawner = this.transform.FindChild("BulletSpawner");
 		data = GetComponent<PlayerData>();
-		if(!Network.isServer) {
-			animator = this.transform.FindChild("Animator").GetComponent<Animator>();
-			bulletRenderer = transform.Find("Animator").Find("Armature").Find("Bone").Find("Bone_001").Find("Bone_L")
-				.Find("Bone_L_001").Find("Bullet").GetComponent<MeshRenderer>();
-		}
-		shootingAnimationControl = Dumy;
+		
+        animator = this.transform.FindChild("Animator").GetComponent<Animator>();
+		bulletRenderer = transform.Find("Animator").Find("Armature").Find("Bone").Find("Bone_001").Find("Bone_L")
+			.Find("Bone_L_001").Find("Bullet").GetComponent<MeshRenderer>();
+		
+		shootingAnimationControl = Idle;
 	}
 	
 	void Update() {
-		if(!Network.isServer) {
-			if(networkView.isMine) {
-				currentBaseState = animator.GetCurrentAnimatorStateInfo(0);
-				animator.speed = animSpeed;
-				
-				if(Input.GetMouseButton(0) && currentBaseState.nameHash == idleState)
-					BasicAtack();
+		if(networkView.isMine) {
+			currentBaseState = animator.GetCurrentAnimatorStateInfo(0);
+			animator.speed = animSpeed;
+			
+			if(Input.GetMouseButton(0) && currentBaseState.nameHash == idleState)
+				BasicAtack();
 	
-				shootingAnimationControl();
-			}
+			shootingAnimationControl();
 		}
 	}
 	
@@ -81,7 +74,7 @@ public class Shooting : MonoBehaviour {
 				bulletRenderer.enabled = false;
 				Shoot();
 				animator.SetBool("Atack", false);
-				shootingAnimationControl = Dumy;
+				shootingAnimationControl = Idle;
 			}
 		}
 	}
@@ -89,21 +82,7 @@ public class Shooting : MonoBehaviour {
 	private void Shoot() {
 		networkView.RPC("ServerSpawnBulletCall", RPCMode.Server, networkView.viewID);
 	}
-	
-	[RPC]
-	void ServerSpawnBulletCall(NetworkViewID owner) {
-        bullet = Instantiate(
-            bulletPrefabServer, bulletSpawner.transform.position, bulletSpawner.rotation) as Transform;
-        bullet.GetComponent<BulletControllerServer>().owner = owner;
-       
-        bulletID = AllocateBulletID();
-        bullet.networkView.viewID = bulletID;
-		networkView.RPC("SpawnBulletOnClient", RPCMode.Others, owner, bulletID);
-
-        SetLayers();
-        SetColor();
-	}
-	
+		
 	[RPC]
 	void SpawnBulletOnClient(NetworkViewID owner, NetworkViewID bulletID) {      
 		bullet = Instantiate(
@@ -115,9 +94,8 @@ public class Shooting : MonoBehaviour {
         SetColor();
 	}
 
-    private NetworkViewID AllocateBulletID() {
-        return Network.AllocateViewID();
-    }
+    [RPC]
+    void ServerSpawnBulletCall(NetworkViewID owner) {}
 
     private void SetLayers() {
         if (data.team == Team.TEAM_A)
@@ -130,7 +108,7 @@ public class Shooting : MonoBehaviour {
         bullet.GetChild(0).renderer.material.color = new Color(data.color.x, data.color.y, data.color.z);
     }
 	
-	private void Dumy() {
+	private void Idle() {
 	}
 	
 }

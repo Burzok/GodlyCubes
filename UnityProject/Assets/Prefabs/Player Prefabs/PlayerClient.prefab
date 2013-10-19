@@ -937,15 +937,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c4f2bf1b4ed82d4da2be9dc3d6b4af3, type: 3}
+  m_Script: {fileID: 11500000, guid: 24666d9018ec2db49a0509aecbaaa8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefabClient: {fileID: 400000, guid: 9bc14f7c8929afc4c81a3a37c3605dc8, type: 2}
-  bulletPrefabServer: {fileID: 400000, guid: 67d0cd8baff9938498d254cb83a255d0, type: 2}
   shootTime: .649999976
   activationTime: .5
   animSpeed: 2
-  list: []
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1061,6 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0706f5197ed7462d80472a528927567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillInUse: 0
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
