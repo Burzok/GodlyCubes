@@ -20,10 +20,10 @@ public class PlayerData : MonoBehaviour {
 	public int assist;	
 	
 	void OnEnable() {
-		PlayerManager.singleton.AddPlayer(this);
+		PlayerManager.instance.AddPlayer(this);
 	}
 	
 	void OnDisable() {
-		PlayerManager.singleton.RemovePlayer(this);
+		PlayerManager.instance.RemovePlayer(this);
 	}
 }

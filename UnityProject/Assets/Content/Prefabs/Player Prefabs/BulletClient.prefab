@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: BulletClient
   m_TagString: Untagged
@@ -111,9 +111,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 678c513264140a849810b6c9e77a4bf5, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   bulletSpeed: 10
-  lifeTime: 3
-  damage: 10
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

@@ -23,7 +23,7 @@ public class SkillControler : MonoBehaviour {
 			if(skillInUse == false)
 			{
 				skillInUse = true;
-				string skillName = SkillSelect.singleton.keyBinding[1];
+				string skillName = SkillSelect.instance.keyBinding[1];
 				skills.UseSkill(skillName);
 			}
 		}
@@ -33,7 +33,7 @@ public class SkillControler : MonoBehaviour {
 			if(skillInUse == false)
 			{
 				skillInUse = true;
-				string skillName = SkillSelect.singleton.keyBinding[2];
+				string skillName = SkillSelect.instance.keyBinding[2];
 				skills.UseSkill(skillName);
 			}
 		}
@@ -43,7 +43,7 @@ public class SkillControler : MonoBehaviour {
 			if(skillInUse == false)
 			{
 				skillInUse = true;
-				string skillName = SkillSelect.singleton.keyBinding[3];
+				string skillName = SkillSelect.instance.keyBinding[3];
 				skills.UseSkill(skillName);
 			}
 		}
@@ -53,7 +53,7 @@ public class SkillControler : MonoBehaviour {
 			if(skillInUse == false)
 			{
 				skillInUse = true;
-				string skillName = SkillSelect.singleton.keyBinding[4];
+				string skillName = SkillSelect.instance.keyBinding[4];
 				skills.UseSkill(skillName);
 			}
 		}

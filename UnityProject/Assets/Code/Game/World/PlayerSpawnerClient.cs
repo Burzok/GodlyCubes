@@ -22,7 +22,7 @@ public class PlayerSpawnerClient : MonoBehaviour {
 		networkView.RPC("IncCounters", RPCMode.All, (int)playerTeam);
 		playerID = AllocatePlayerID();
 		Transform spawner = FindSpawn((Team)playerTeam);
-		PlayerManager.singleton.myPlayer = SpawnPlayer(playerID, spawner);
+		PlayerManager.instance.myPlayer = SpawnPlayer(playerID, spawner);
 	}
 	
 	private NetworkViewID AllocatePlayerID() {

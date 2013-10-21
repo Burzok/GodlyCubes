@@ -12,26 +12,27 @@ public class SkillSelectUI : MonoBehaviour {
 		if(GUI.Button(
 			new Rect(Screen.width*0.20f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.05f), "ActiveSkill1"))
 		{
-			SkillSelect.singleton.removeSkill(keyToBind);
+			SkillSelect.instance.removeSkill(keyToBind);
 			keyToBind--;
 		}
 		
 		if(GUI.Button(
 			new Rect(Screen.width*0.20f, Screen.height*0.75f, Screen.width*0.1f, Screen.height*0.05f), Skills.HEAL))
 		{
-			SkillSelect.singleton.AddSkill(Skills.HEAL, keyToBind);
+            Debug.LogWarning(SkillSelect.instance);
+			SkillSelect.instance.AddSkill(Skills.HEAL, keyToBind);
 			keyToBind++;
 		}
 		
 		if(GUI.Button(
 			new Rect(Screen.width*0.50f, Screen.height*0.25f, Screen.width*0.1f, Screen.height*0.05f), "Done"))
 		{
-			SkillSelect.singleton.skillsToChose();
-			MenuUI.singleton.SetClientGameState();
+			SkillSelect.instance.skillsToChose();
+			MenuUI.instance.SetClientGameState();
 		}
 	}
 
 	public void SetSkillSelect() {
-		DrawUI.singleton.drawUI = DrawSkillSelect;
+        DrawUI.instance.drawUI = DrawSkillSelect;
 	}
 }

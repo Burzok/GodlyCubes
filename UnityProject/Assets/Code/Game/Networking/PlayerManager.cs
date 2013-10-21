@@ -1,17 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class PlayerManager : MonoBehaviour {
+public class PlayerManager : SingletonComponent<PlayerManager> {
 
-	public static PlayerManager singleton;
 	public PlayerData myPlayer;
 	
 	public List<PlayerData> playerDataList = new List<PlayerData>();
-	
-	void OnEnable() {
-		if (singleton == null)
-			singleton = this;
-	}
 	
 	public void AddPlayer(PlayerData p) {
 		if(playerDataList.Contains(p) == false)
