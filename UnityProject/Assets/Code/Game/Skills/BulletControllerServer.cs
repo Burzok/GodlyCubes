@@ -6,8 +6,11 @@ public class BulletControllerServer : MonoBehaviour {
 	public float lifeTime = 2.0f;
 	public int damage = 10;
 	public NetworkViewID owner;
+
+    private bool isDestroyed;
 	
 	void Start() {
+        isDestroyed = false;
 		if(Network.isServer)
 			StartCoroutine(DestroyAfterLifeTime());
 	}
@@ -15,7 +18,10 @@ public class BulletControllerServer : MonoBehaviour {
 	IEnumerator DestroyAfterLifeTime() {
 		yield return new WaitForSeconds(lifeTime);
         Network.RemoveRPCs(networkView.viewID);
-        networkView.RPC("DestroyBullet", RPCMode.Others);
+        if (!isDestroyed) {
+            isDestroyed = true;
+            networkView.RPC("DestroyBullet", RPCMode.Others);
+        }
         Destroy(this.gameObject);
 	}
 	
@@ -30,7 +36,10 @@ public class BulletControllerServer : MonoBehaviour {
 			data[1]=owner;
 			other.SendMessage("Hit", data, SendMessageOptions.DontRequireReceiver);
             Network.RemoveRPCs(networkView.viewID);
-            networkView.RPC("DestroyBullet", RPCMode.Others);
+            if (!isDestroyed) {
+               isDestroyed = true;
+               networkView.RPC("DestroyBullet", RPCMode.Others);
+            }
             Destroy(this.gameObject);
 		}
 	}
