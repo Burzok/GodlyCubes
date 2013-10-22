@@ -38,6 +38,7 @@ GameObject:
   - 114: {fileID: 11400014}
   - 114: {fileID: 11400016}
   - 114: {fileID: 11400018}
+  - 114: {fileID: 11400020}
   m_Layer: 0
   m_Name: PlayerClient
   m_TagString: Player
@@ -1060,6 +1061,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillInUse: 0
+--- !u!114 &11400020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7469eedec71ac46bbb8ca035594f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystalMaterials:
+  - {fileID: 2100000, guid: a3d49e2af0874514aaa470b37cbcd2eb, type: 2}
+  - {fileID: 2100000, guid: 81d3fd317a28beb4fb876548ec0a5cb8, type: 2}
+  - {fileID: 2100000, guid: 860d47b4ab6ed0743a0e530affecdaea, type: 2}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -5,7 +5,7 @@ public class CrystalColorServer : MonoBehaviour
 {
     private PlayerStats playerStats;
     private CrystalServer crystalServer;
-    private CrystalType crystalType;
+    private int crystalType;
     private bool colorChanged;
     private int currentValue;
 
@@ -17,35 +17,35 @@ public class CrystalColorServer : MonoBehaviour
 
     void Update() {
        crystalType = CheckPrimaryStat();
-       if(colorChanged) {
-           networkView.RPC("ChangePlayerCrystalColor", RPCMode.Others, (int)crystalType, networkView.viewID);
+       if(colorChanged && crystalType != -1) {
+           networkView.RPC("ChangePlayerCrystalColor", RPCMode.Others, crystalType, networkView.viewID);
            colorChanged = false;
        }
     }
 
-    CrystalType CheckPrimaryStat() {
+    int CheckPrimaryStat() {
         if (playerStats.strength > playerStats.wisdom && playerStats.strength > playerStats.hardness &&
             playerStats.strength != currentValue) {
             currentValue = playerStats.strength;
             colorChanged = true;
-            return CrystalType.Strength;
+            return (int)CrystalType.Strength;
         }
 
         if (playerStats.wisdom > playerStats.strength && playerStats.wisdom > playerStats.hardness &&
             playerStats.wisdom != currentValue) {
             currentValue = playerStats.wisdom;
             colorChanged = true;
-            return CrystalType.Wisdom;
+            return (int)CrystalType.Wisdom;
         }
 
         if (playerStats.hardness > playerStats.wisdom && playerStats.hardness > playerStats.strength &&
             playerStats.wisdom != currentValue) {
             currentValue = playerStats.hardness;
             colorChanged = true;
-            return CrystalType.Hardness;
+            return (int)CrystalType.Hardness;
         }
 
-        return 0;
+        return -1;
     }
 
     [RPC]
