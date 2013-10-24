@@ -6,10 +6,10 @@ public class SceneFillerClient : MonoBehaviour {
 	public GameObject testPlayer; // zmienna testowa do podgladu, jesli wszystko dziala to usunac
 	
 	private int otherPlayersSpawned;
-	private MenuUI menuGUI;
+    private TeamSelectUI teamSelectUI;
 	
 	void Awake() {
-		menuGUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<MenuUI>();
+        teamSelectUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<TeamSelectUI>();
 		otherPlayersSpawned = 0;
 	}
 	
@@ -54,11 +54,11 @@ public class SceneFillerClient : MonoBehaviour {
 	[RPC]
 	private void FinishConnecting() {
 		GameTime.UnPauseGame();
-		menuGUI.HidePlayersConnectingPopup();
+		ServerManager.instance.HidePlayersConnectingPopup();
 	}
 	
 	[RPC]
 	private void SetTeamSelectStateOnClient() {
-		menuGUI.SetTeamSelectState();
+		teamSelectUI.SetTeamSelectState();
 	}
 }

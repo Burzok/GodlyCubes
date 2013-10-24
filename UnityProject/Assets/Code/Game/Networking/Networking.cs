@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Networking : MonoBehaviour {
 	
-	private MenuUI mainMenu;
 	private PlayerList playerListComponent;
 	private PlayerSpawnerClient playerSpawnerComponent;
 	
@@ -23,7 +22,6 @@ public class Networking : MonoBehaviour {
         MasterServer.ClearHostList();
         MasterServer.RequestHostList("GodlyCubesLight"); //TODO: globalna zmienna w GameDAta
 
-		mainMenu = GetComponent<MenuUI>();
 		playerListComponent = GetComponent<PlayerList>();
 	}
 	
@@ -37,7 +35,7 @@ public class Networking : MonoBehaviour {
 		foreach (NetworkPlayer player in Network.connections) {
          	Network.SetReceivingEnabled(player, 0, false);
 		}
-		mainMenu.AddInitializeConnecting();
+		ServerManager.instance.AddInitializeConnecting();
 	}	
 	
 	void OnPlayerConnected() {

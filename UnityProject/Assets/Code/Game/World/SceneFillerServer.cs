@@ -3,12 +3,6 @@ using System.Collections;
 
 public class SceneFillerServer : MonoBehaviour {
 	
-	private MenuUI menuGUI;
-	
-	void Awake() {
-		menuGUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<MenuUI>();
-	}
-	
 	[RPC]
 	private void WhatToSpawnOnClient(NetworkMessageInfo info) {
 		NetworkPlayer sender = info.sender;
@@ -77,7 +71,7 @@ public class SceneFillerServer : MonoBehaviour {
 	[RPC]
 	private void FinishConnecting() {
 		GameTime.UnPauseGame();
-		menuGUI.HidePlayersConnectingPopup();
+		ServerManager.instance.HidePlayersConnectingPopup();
 	}
 	
 	[RPC]

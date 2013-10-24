@@ -9,11 +9,6 @@ public class Chat : MonoBehaviour {
 	string playerName = "";
 	Vector2 scroll;
 	List<string> chatHistory = new List<string>();
-	MenuUI menuGUI;
-	
-	void Awake() {
-		menuGUI = GetComponent<MenuUI>(); // potrzebne do refaktoryzacji kodu z chatu
-	}
 	
 	void Update () {
 		if (Network.isClient) {
