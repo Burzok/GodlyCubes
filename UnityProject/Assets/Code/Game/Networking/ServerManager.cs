@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class ServerManager : SingletonComponent<ServerManager> {
 
-    private string serverName = "GodlyCubes";
     public GameObject miniCrystalCaverns;
     public GameObject miniBurzokGrounds;
     public Map selectedMap;
@@ -21,7 +20,7 @@ public class ServerManager : SingletonComponent<ServerManager> {
         lastLevelPrefix = 0;
 
         Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
-        MasterServer.RegisterHost(serverName, GameData.SERVER_NAME);
+        MasterServer.RegisterHost("GodlyCubesLight", GameData.SERVER_NAME);
         timeHostWasRegistered = Time.time;
 
         Network.SetLevelPrefix(lastLevelPrefix + 1);
@@ -31,6 +30,10 @@ public class ServerManager : SingletonComponent<ServerManager> {
     public void Unregister() {
         Network.Disconnect();
         Application.LoadLevel(0);
+        Destroy(gameObject);
+    }
+
+    void DestroyGameObject() {
         Destroy(this);
     }
 

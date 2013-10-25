@@ -12,6 +12,7 @@ public class FinishStateUI : MonoBehaviour {
         if (GUI.Button(new Rect(Screen.width * 0.5f - 50f, Screen.height * 0.7f, 100f, 30f), "Disconnect")) {
             Network.Disconnect();
             Application.LoadLevel(0);
+            Destroy(gameObject);
         }
     }
 
@@ -23,6 +24,7 @@ public class FinishStateUI : MonoBehaviour {
         if (GUI.Button(new Rect(Screen.width * 0.5f - 50f, Screen.height * 0.7f, 100f, 30f), "Disconnect")) {
             Network.Disconnect();
             Application.LoadLevel(0);
+            Destroy(gameObject);
         }
     }
 
