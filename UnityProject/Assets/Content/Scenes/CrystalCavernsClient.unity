@@ -20,7 +20,7 @@ RenderSettings:
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientLight: {r: 0, g: 0, b: 0, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 931987be26c9646429c56f8a4692bb81, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: da976b1a4f7ebb949b0f71341e4f1821, type: 2}
   m_HaloStrength: .5
   m_FlareStrength: 1
   m_HaloTexture: {fileID: 0}
@@ -15703,7 +15703,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400016, guid: 41b21d716a10ff24ea727a05d849d16d, type: 2}
   m_PrefabInternal: {fileID: 1278593602}
   m_GameObject: {fileID: 1002379413}
-  m_LocalRotation: {x: -.580781162, y: .203134075, z: .137958065, w: -.776142657}
+  m_LocalRotation: {x: .466438085, y: -.311569154, z: -.251276821, w: .788809299}
   m_LocalPosition: {x: 0, y: -.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -15733,7 +15733,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
-  m_Flare: {fileID: 0}
+  m_Flare: {fileID: 12100000, guid: 09ebe82dbd1113c3d000dc0b8d76c639, type: 2}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
@@ -19955,6 +19955,27 @@ Prefab:
     - target: {fileID: 14800020, guid: 41b21d716a10ff24ea727a05d849d16d, type: 2}
       propertyPath: m_ViewID.m_Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 41b21d716a10ff24ea727a05d849d16d, type: 2}
+      propertyPath: m_Flare
+      value: 
+      objectReference: {fileID: 12100000, guid: 09ebe82dbd1113c3d000dc0b8d76c639,
+        type: 2}
+    - target: {fileID: 400016, guid: 41b21d716a10ff24ea727a05d849d16d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .466438085
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 41b21d716a10ff24ea727a05d849d16d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.311569154
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 41b21d716a10ff24ea727a05d849d16d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.251276821
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 41b21d716a10ff24ea727a05d849d16d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .788809299
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b21d716a10ff24ea727a05d849d16d, type: 2}

@@ -17,12 +17,10 @@ public class SceneFillerServer : MonoBehaviour {
 	private void PlayersSpawn(ref NetworkPlayer sender) {
 		GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 		
-		if(players.Length == 0) {
+		if(players.Length == 0)
 			networkView.RPC("NoPlayersToSpawn", sender);
-		}
-		else {
+		else
 			SendSpawnOtherPlayersOnClientCommand(ref sender, ref players);
-		}
 	}
 	
 	private void SendSpawnOtherPlayersOnClientCommand(ref NetworkPlayer sender, ref GameObject[] players) {
@@ -31,7 +29,12 @@ public class SceneFillerServer : MonoBehaviour {
 				int numberOfPlayersToSpawn = players.Length;
 				NetworkViewID playerID = player.networkView.viewID;
 				Vector3 spawnPosition = player.GetComponent<PlayerData>().respawnPosition;
-				networkView.RPC("SpawnOtherPlayersOnClient", sender, playerID, spawnPosition, numberOfPlayersToSpawn);
+                int playerTeam = (int)player.GetComponent<PlayerData>().team;
+
+                Vector3 playerBackColor = player.GetComponent<PlayerData>().color;
+
+				networkView.RPC("SpawnOtherPlayersOnClient", sender, 
+                    playerID, spawnPosition, playerTeam, playerBackColor,  numberOfPlayersToSpawn);
 			}
 		}
 	}
@@ -41,7 +44,8 @@ public class SceneFillerServer : MonoBehaviour {
 	{}
 	
 	[RPC]
-	private void SpawnOtherPlayersOnClient(NetworkViewID playerID, Vector3 spawnPosition, int numberOfPlayersToSpawn) 
+	private void SpawnOtherPlayersOnClient(
+        NetworkViewID playerID, Vector3 spawnPosition, int playerTeam, Vector3 playerBackColor, int numberOfPlayersToSpawn) 
 	{}
 	
 	[RPC]

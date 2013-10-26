@@ -2,8 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class SceneFillerClient : MonoBehaviour {
-	public GameObject playerPrefabClient;
-	public GameObject testPlayer; // zmienna testowa do podgladu, jesli wszystko dziala to usunac
+	[SerializeField] private GameObject playerPrefabClient;
+    [SerializeField] private GameObject testPlayer; // zmienna testowa do podgladu, jesli wszystko dziala to usunac
 	
 	private int otherPlayersSpawned;
     private TeamSelectUI teamSelectUI;
@@ -30,12 +30,40 @@ public class SceneFillerClient : MonoBehaviour {
 	}
 	
 	[RPC]
-	private void SpawnOtherPlayersOnClient(NetworkViewID playerID, Vector3 spawnPosition, int numberOfPlayersToSpawn) {
+	private void SpawnOtherPlayersOnClient(
+            NetworkViewID playerID, Vector3 spawnPosition, int playerTeam, Vector3 playerBackColor, int numberOfPlayersToSpawn)
+    {
+
 		otherPlayersSpawned++;
 		
 		testPlayer = Instantiate(playerPrefabClient, spawnPosition, Quaternion.identity) as GameObject;
 		testPlayer.networkView.viewID = playerID;
-		
+        testPlayer.rigidbody.isKinematic = true;
+
+        PlayerData data = testPlayer.GetComponent<PlayerData>();
+
+        if ((Team)playerTeam == Team.TEAM_A) {
+            testPlayer.layer = PhysicsLayers.LAYER_TEAM_A;
+            data.color = new Vector3(1, 0, 0);
+        }
+        else if ((Team)playerTeam == Team.TEAM_B) {
+            testPlayer.layer = PhysicsLayers.LAYER_TEAM_B;
+            data.color = new Vector3(0, 0, 1);
+        }
+
+        Transform playerArmature = testPlayer.transform.Find("Animator");
+        Renderer[] playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();
+        float tuning = 0.5f;
+
+        foreach (Renderer rend in playerRenderers) {
+            if (rend.gameObject.name == "Player")
+                rend.material.color = new Color(data.color.x * tuning, data.color.y * tuning, data.color.z * tuning);
+            else if (rend.gameObject.name == "Bullet")
+                rend.material.color = new Color(data.color.x, data.color.y, data.color.z);
+            else
+                rend.material.color = new Color(playerBackColor.x, playerBackColor.y, playerBackColor.z);
+        }
+
 		if(otherPlayersSpawned == numberOfPlayersToSpawn) {
 			networkView.RPC("DecPlayersConnectingNumber", RPCMode.Others);
 			networkView.RPC("TurnOnPlayersNetworkViewsOnServer", RPCMode.Server);

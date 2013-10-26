@@ -45,7 +45,8 @@ public class CombatController : MonoBehaviour {
 			GetComponent<MovementBasic>().enabled = !GetComponent<MovementBasic>().enabled;
 			GetComponent<ShootingControllerClient>().enabled = !GetComponent<ShootingControllerClient>().enabled;
 			foreach(Renderer rend in playerRenderers)
-				rend.enabled = !rend.enabled;
+                if (rend.name != "Bullet")
+				    rend.enabled = !rend.enabled;
 		}
 	}
 	
