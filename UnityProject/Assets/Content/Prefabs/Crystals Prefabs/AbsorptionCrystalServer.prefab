@@ -12,7 +12,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 148: {fileID: 14800000}
   - 114: {fileID: 11400000}
-  m_Layer: 18
+  m_Layer: 0
   m_Name: AbsorptionCrystalServer
   m_TagString: Crystal
   m_Icon: {fileID: 0}
@@ -69,6 +69,7 @@ MonoBehaviour:
   type: 6
   minimumValueRange: 10
   maximumValueRange: 20
+  eatingTime: 2
   crystalSpawnerServer: {fileID: 11400000, guid: 091dc1a388bd44e408a92447b3d3a06e,
     type: 2}
 --- !u!148 &14800000

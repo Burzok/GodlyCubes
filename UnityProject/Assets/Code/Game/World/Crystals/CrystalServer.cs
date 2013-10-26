@@ -5,14 +5,19 @@ public class CrystalServer : MonoBehaviour {
 	public CrystalType type;	
 	public int minimumValueRange = 10;
 	public int maximumValueRange = 20;
+    public float eatingTime = 2;
 	public CrystalSpawnerServer crystalSpawnerServer;
-	private int increaseStatValue;	
+	
+    private int increaseStatValue;
+    private NetworkViewID eatingPlayerID;
 	
 	private PlayerList playerList;
 	
 	private GameObject increasingPlayer;
 	private PlayerStats increasingPlayerStats;
-	
+    private bool eatingInProgress;
+    private float timer;
+
 	void Awake() {		
 		playerList = GameObject.FindWithTag(Tags.gameController).GetComponent<PlayerList>();
 		increaseStatValue = Random.Range(minimumValueRange, maximumValueRange);
@@ -22,8 +27,32 @@ public class CrystalServer : MonoBehaviour {
 			maximumValueRange = minimumValueRange;
 			minimumValueRange = tempValueRange;
 		}
+        timer = 0;
+        eatingInProgress = false;
 	}
-	
+
+    void FixedUpdate() {
+        if(eatingInProgress) {
+            IncrementTimer();
+            if (timer >= eatingTime) {
+                networkView.RPC("StopCrystalEating", eatingPlayerID.owner);
+                eatingInProgress = false;
+                timer = 0;
+            }
+        }
+    }
+
+    private void IncrementTimer() {
+            timer += Time.deltaTime;
+    }
+
+    [RPC]
+    void RequestCrystalEating(NetworkViewID aquiredEatingPlayerID) {
+        networkView.RPC("ReplyCrystalEating", aquiredEatingPlayerID.owner);
+        eatingPlayerID = aquiredEatingPlayerID;
+        eatingInProgress = true;
+    }
+
 	[RPC]
 	void RequestStatIncrease(NetworkViewID increasingPlayerID) {
 		increasingPlayer = playerList.FindPlayer(ref increasingPlayerID);
@@ -71,6 +100,11 @@ public class CrystalServer : MonoBehaviour {
     }
 	
 	[RPC]
-	void ReplyStatIncrease(NetworkViewID increasingPlayerID, int aquiredType, int aquiredIncreaseStatValue)
-	{}
+	void ReplyStatIncrease(NetworkViewID increasingPlayerID, int aquiredType, int aquiredIncreaseStatValue)	{}
+
+    [RPC]
+    void ReplyCrystalEating() {}
+
+    [RPC]
+    void StopCrystalEating() {}
 }

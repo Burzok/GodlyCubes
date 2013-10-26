@@ -4,17 +4,21 @@ using System.Collections;
 public class CrystalClient : MonoBehaviour {
 	private PlayerList playerList;
 	private bool eatingKeyPressed;
+    private bool eatingInProgress;
     private bool requestSent;
 	
 	private CrystalType type;
 	private int increaseStatValue;
+    private Collider collidingPlayer;
 	
 	private GameObject increasingPlayer;
 	private PlayerStats increasingPlayerStats;
+    private Rotator myPlayerRotator;
 	
 	void Awake() {
 		playerList = GameObject.FindWithTag(Tags.gameController).GetComponent<PlayerList>();
         requestSent = false;
+        eatingInProgress = false;
 	}
 	
 	void FixedUpdate() {
@@ -22,16 +26,37 @@ public class CrystalClient : MonoBehaviour {
 			eatingKeyPressed = true;
 		else
 			eatingKeyPressed = false;
+
+        if (eatingInProgress) {
+            Input.ResetInputAxes();
+            myPlayerRotator.enabled = false;
+        }
+           
 	}
 	
 	void OnTriggerStay(Collider player) {
 		if(player.networkView.isMine) {
             if (eatingKeyPressed && !requestSent) {
-                networkView.RPC("RequestStatIncrease", RPCMode.Server, player.networkView.viewID);
+                collidingPlayer = player;
+                networkView.RPC("RequestCrystalEating", RPCMode.Server, player.networkView.viewID);               
                 requestSent = true;
             }
 		}
-	}	
+	}
+
+    [RPC]
+    void ReplyCrystalEating() {
+        if(myPlayerRotator == null)
+            myPlayerRotator = PlayerManager.instance.myPlayer.GetComponent<Rotator>();
+        eatingInProgress = true;
+    }
+
+    [RPC]
+    void StopCrystalEating() {
+        eatingInProgress = false;
+        myPlayerRotator.enabled = true;
+        networkView.RPC("RequestStatIncrease", RPCMode.Server, collidingPlayer.networkView.viewID);
+    }
 	
 	[RPC]
 	void ReplyStatIncrease(NetworkViewID increasingPlayerID, int aquiredType, int aquiredIncreaseStatValue) {
@@ -79,5 +104,9 @@ public class CrystalClient : MonoBehaviour {
 	
 	[RPC]
 	void RequestStatIncrease(NetworkViewID increasingPlayerID) 
+	{}
+
+    [RPC]
+    void RequestCrystalEating(NetworkViewID increasingPlayerID) 
 	{}
 }
