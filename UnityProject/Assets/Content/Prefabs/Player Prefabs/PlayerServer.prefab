@@ -210,6 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe6b77470bb62140a3e0f8f876b2ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crystalMaterials:
+  - {fileID: 2100000, guid: a3d49e2af0874514aaa470b37cbcd2eb, type: 2}
+  - {fileID: 2100000, guid: 81d3fd317a28beb4fb876548ec0a5cb8, type: 2}
+  - {fileID: 2100000, guid: 860d47b4ab6ed0743a0e530affecdaea, type: 2}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

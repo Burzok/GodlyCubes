@@ -64,6 +64,8 @@ public class SceneFillerClient : MonoBehaviour {
                 rend.material.color = new Color(playerBackColor.x, playerBackColor.y, playerBackColor.z);
         }
 
+        data.color = playerBackColor;
+
 		if(otherPlayersSpawned == numberOfPlayersToSpawn) {
 			networkView.RPC("DecPlayersConnectingNumber", RPCMode.Others);
 			networkView.RPC("TurnOnPlayersNetworkViewsOnServer", RPCMode.Server);

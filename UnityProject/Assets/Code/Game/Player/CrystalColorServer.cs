@@ -8,6 +8,7 @@ public class CrystalColorServer : MonoBehaviour
     private int crystalType;
     private bool colorChanged;
     private int currentValue;
+    [SerializeField] private Material[] crystalMaterials;
 
     void Awake() {
         playerStats = gameObject.GetComponent<PlayerStats>();
@@ -19,9 +20,30 @@ public class CrystalColorServer : MonoBehaviour
        crystalType = CheckPrimaryStat();
        if(colorChanged && crystalType != -1) {
            networkView.RPC("ChangePlayerCrystalColor", RPCMode.Others, crystalType, networkView.viewID);
+
+           if (crystalType == (int)CrystalType.Strength) {
+               gameObject.GetComponent<PlayerData>().color.x = crystalMaterials[0].color.r;
+               gameObject.GetComponent<PlayerData>().color.y = crystalMaterials[0].color.g;
+               gameObject.GetComponent<PlayerData>().color.z = crystalMaterials[0].color.b;
+           }
+
+           if (crystalType == (int)CrystalType.Wisdom) {
+               gameObject.GetComponent<PlayerData>().color.x = crystalMaterials[1].color.r;
+               gameObject.GetComponent<PlayerData>().color.y = crystalMaterials[1].color.g;
+               gameObject.GetComponent<PlayerData>().color.z = crystalMaterials[1].color.b;
+           }
+
+           if (crystalType == (int)CrystalType.Hardness) {
+               gameObject.GetComponent<PlayerData>().color.x = crystalMaterials[2].color.r;
+               gameObject.GetComponent<PlayerData>().color.y = crystalMaterials[2].color.g;
+               gameObject.GetComponent<PlayerData>().color.z = crystalMaterials[2].color.b;
+           }
+
            colorChanged = false;
        }
     }
+
+
 
     int CheckPrimaryStat() {
         if (playerStats.strength > playerStats.wisdom && playerStats.strength > playerStats.hardness &&
