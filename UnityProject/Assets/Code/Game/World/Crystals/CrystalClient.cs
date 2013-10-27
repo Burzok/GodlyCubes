@@ -14,6 +14,7 @@ public class CrystalClient : MonoBehaviour {
 	private GameObject increasingPlayer;
 	private PlayerStats increasingPlayerStats;
     private Rotator myPlayerRotator;
+    private Animator animator;
 	
 	void Awake() {
 		playerList = GameObject.FindWithTag(Tags.gameController).GetComponent<PlayerList>();
@@ -38,6 +39,11 @@ public class CrystalClient : MonoBehaviour {
 		if(player.networkView.isMine) {
             if (eatingKeyPressed && !requestSent) {
                 collidingPlayer = player;
+
+                if(animator == null)
+                    animator = collidingPlayer.transform.FindChild("Animator").GetComponent<Animator>();
+
+                animator.SetBool("Eat", true);
                 networkView.RPC("RequestCrystalEating", RPCMode.Server, player.networkView.viewID);               
                 requestSent = true;
             }
@@ -55,6 +61,7 @@ public class CrystalClient : MonoBehaviour {
     void StopCrystalEating() {
         eatingInProgress = false;
         myPlayerRotator.enabled = true;
+        animator.SetBool("Eat", false);
         networkView.RPC("RequestStatIncrease", RPCMode.Server, collidingPlayer.networkView.viewID);
     }
 	
