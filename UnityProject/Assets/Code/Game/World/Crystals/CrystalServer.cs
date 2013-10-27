@@ -5,7 +5,7 @@ public class CrystalServer : MonoBehaviour {
 	public CrystalType type;	
 	public int minimumValueRange = 10;
 	public int maximumValueRange = 20;
-    public float eatingTime = 2;
+    public float eatingTime = GameData.CRYSTAL_EATING_TIME;
 	public CrystalSpawnerServer crystalSpawnerServer;
 	
     private int increaseStatValue;

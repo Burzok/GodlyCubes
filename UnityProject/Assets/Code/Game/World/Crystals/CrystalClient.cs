@@ -15,9 +15,11 @@ public class CrystalClient : MonoBehaviour {
 	private PlayerStats increasingPlayerStats;
     private Rotator myPlayerRotator;
     private Animator animator;
+    private CrystalBarUI crystalBarUI;
 	
 	void Awake() {
 		playerList = GameObject.FindWithTag(Tags.gameController).GetComponent<PlayerList>();
+        crystalBarUI = GameObject.Find("Camera_GUI").GetComponent<CrystalBarUI>();
         requestSent = false;
         eatingInProgress = false;
 	}
@@ -55,11 +57,13 @@ public class CrystalClient : MonoBehaviour {
         if(myPlayerRotator == null)
             myPlayerRotator = PlayerManager.instance.myPlayer.GetComponent<Rotator>();
         eatingInProgress = true;
+        crystalBarUI.eatingInProgress = true;
     }
 
     [RPC]
     void StopCrystalEating() {
         eatingInProgress = false;
+        crystalBarUI.eatingInProgress = false;
         myPlayerRotator.enabled = true;
         animator.SetBool("Eat", false);
         networkView.RPC("RequestStatIncrease", RPCMode.Server, collidingPlayer.networkView.viewID);
