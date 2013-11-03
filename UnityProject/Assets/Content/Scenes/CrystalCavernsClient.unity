@@ -4160,12 +4160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texture: {fileID: 2800000, guid: 8fe8ec089c70678469bcc28afcc0a67f, type: 3}
   material: {fileID: 2100000, guid: e5ffb1c8d37980f44a9983aa83a113b8, type: 2}
-  eatingTime: 2
   eatingInProgress: 0
-  x: 0
-  y: 0
-  w: 0
-  h: 0
 --- !u!92 &261691223
 Behaviour:
   m_ObjectHideFlags: 0
@@ -4208,7 +4203,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 261691221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.94139147, y: 34.837944, z: -13.9574919}
+  m_LocalPosition: {x: 5.94139147, y: 34.8379478, z: -13.9574947}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2002117991}

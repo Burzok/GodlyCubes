@@ -22,8 +22,9 @@ public class TeamSelectUI : MonoBehaviour {
         if (GUI.Button(new Rect(Screen.width * 0.5f - 120f, 20f, 100f, 50f), "Team A")) {
             networking.ConnectToGame(Team.TEAM_A);
             skillSelectUI.SetSkillSelect();
-            //GameData.DRAW_CHAT = true;
-            //GameData.DRAW_STATS = true;
+            GameData.DRAW_CHAT = true;
+            GameData.DRAW_STATS = true;
+            GameData.DRAW_MINIMAP = true;
         }
 
         if (GUI.Button(new Rect(Screen.width * 0.5f + 20f, 20f, 100f, 50f), "Team B")) {
@@ -31,6 +32,7 @@ public class TeamSelectUI : MonoBehaviour {
             clientGameUI.SetClientGameState();
             GameData.DRAW_CHAT = true;
             GameData.DRAW_STATS = true;
+            GameData.DRAW_MINIMAP = true;
         }
 
         if (GUI.Button(new Rect(Screen.width * 0.5f - 50f, Screen.height - 70f, 100f, 50f), "Disconnect")) {

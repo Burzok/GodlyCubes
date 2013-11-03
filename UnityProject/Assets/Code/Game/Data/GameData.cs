@@ -33,6 +33,7 @@ public class GameData {
 	
 	public static bool DRAW_CHAT;
 	public static bool DRAW_STATS;
+    public static bool DRAW_MINIMAP;
 	
 	public static Team ACTUAL_CLIENT_TEAM;
 }
