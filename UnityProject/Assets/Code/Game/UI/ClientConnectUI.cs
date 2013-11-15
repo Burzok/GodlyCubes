@@ -28,7 +28,7 @@ public class ClientConnectUI : MonoBehaviour
         HostData[] data = MasterServer.PollHostList();
         foreach (HostData element in data) {
             GUILayout.BeginHorizontal();
-            string name = element.gameName + " " + (element.connectedPlayers - 1) + " / " + (element.playerLimit - 1);
+            string name = element.gameName + " " + (element.connectedPlayers - 1) + " / " + (element.playerLimit);
             GUILayout.Label(name);
             GUILayout.Space(5);
 

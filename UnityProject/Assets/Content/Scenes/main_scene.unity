@@ -434,6 +434,7 @@ MonoBehaviour:
   myPlayerIcon: {fileID: 2800000, guid: 82b19d4205f89054a9be288511a4dcd3, type: 3}
   redTeamIcon: {fileID: 2800000, guid: 90d7150ce63add6448c5774489e686bc, type: 3}
   blueTeamIcon: {fileID: 2800000, guid: 032edb2ab5904d74dbea816dbe837f18, type: 3}
+  minimapPlayerList: []
   miniMapX: 114
   miniMapY: 178
 --- !u!1001 &672528405
