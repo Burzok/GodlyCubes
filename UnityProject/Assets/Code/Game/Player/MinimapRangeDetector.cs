@@ -30,20 +30,22 @@ public class MinimapRangeDetector : MonoBehaviour {
     }
 
     void OnTriggerExit(Collider collidingPlayer){
-        if (collidingPlayer.transform.parent.GetComponent<PlayerData>().team != PlayerManager.instance.myPlayer.team)
+        if (collidingPlayer.transform.parent.GetComponent<PlayerData>().team != PlayerManager.instance.myPlayer.team && collidingPlayer.transform.parent.GetComponent<PlayerData>().team != checkingPlayer.team)
             minimapUI.RemovePlayer(collidingPlayerData);
         collidingPlayerData = null;
     }
 
-    public void CheckPlayerVisible(PlayerData collidingPlayer) {
-        Vector3 direction = collidingPlayer.transform.position - checkingPlayer.transform.position;
+    public void CheckPlayerVisible(PlayerData collidingPlayerData) {
+        Vector3 direction = collidingPlayerData.transform.position - checkingPlayer.transform.position;
         direction = direction.normalized;
 
         Physics.Raycast(checkingPlayer.transform.position, direction, out hitInfo);
-        if (hitInfo.collider == collidingPlayer.collider)
-            minimapUI.AddPlayer(collidingPlayer);
-        else
-            return;
+        if (hitInfo.collider == collidingPlayerData.collider)
+            minimapUI.AddPlayer(collidingPlayerData);
+        else {
+            if (collidingPlayerData.team != PlayerManager.instance.myPlayer.team && collidingPlayerData.team != checkingPlayer.team)
+                minimapUI.RemovePlayer(collidingPlayerData);
+        }
     }
 
     private void AddPlayerToMinimapList() {
