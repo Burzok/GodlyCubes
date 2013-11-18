@@ -45,10 +45,12 @@ public class SceneFillerClient : MonoBehaviour {
         if ((Team)playerTeam == Team.TEAM_A) {
             testPlayer.layer = PhysicsLayers.LAYER_TEAM_A;
             data.color = new Vector3(1, 0, 0);
+            data.team = Team.TEAM_A;
         }
         else if ((Team)playerTeam == Team.TEAM_B) {
             testPlayer.layer = PhysicsLayers.LAYER_TEAM_B;
             data.color = new Vector3(0, 0, 1);
+            data.team = Team.TEAM_B;
         }
 
         Transform playerArmature = testPlayer.transform.Find("Animator");

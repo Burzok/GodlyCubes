@@ -38,12 +38,13 @@ public class MinimapUI : MonoBehaviour {
     }
 
     public void AddPlayer(PlayerData p) {
-        if (minimapPlayerList.Contains(p) == false)
+        if(minimapPlayerList.Contains(p) == false)
             minimapPlayerList.Add(p);
     }
 
     public void RemovePlayer(PlayerData p) {
-        minimapPlayerList.Remove(p);
+        if(minimapPlayerList.Contains(p) == true)
+            minimapPlayerList.Remove(p);
     }
 
     private void DrawMinimap() {

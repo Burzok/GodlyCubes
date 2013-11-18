@@ -17,10 +17,8 @@ public class MinimapRangeDetector : MonoBehaviour {
     }
 
     void Update() {
-        if (PlayerManager.instance.myPlayer != null && !checkingPlayerAdded) { 
+        if (PlayerManager.instance.myPlayer != null) 
             AddPlayerToMinimapList();
-            checkingPlayerAdded = true;
-        }
     }
 
     void OnTriggerStay(Collider collidingPlayer) {
@@ -32,7 +30,6 @@ public class MinimapRangeDetector : MonoBehaviour {
     void OnTriggerExit(Collider collidingPlayer){
         if (collidingPlayer.transform.parent.GetComponent<PlayerData>().team != PlayerManager.instance.myPlayer.team && collidingPlayer.transform.parent.GetComponent<PlayerData>().team != checkingPlayer.team)
             minimapUI.RemovePlayer(collidingPlayerData);
-        collidingPlayerData = null;
     }
 
     public void CheckPlayerVisible(PlayerData collidingPlayerData) {
