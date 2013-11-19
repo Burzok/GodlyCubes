@@ -9,11 +9,7 @@ public class MinimapUI : MonoBehaviour {
     public Texture2D redTeamIcon;
     public Texture2D blueTeamIcon;
 
-    public List<PlayerData> minimapPlayerList;
-
     private int iconHalfSize;
-
-    private PlayerManager playerManager;
 
     private int mapOffSetX = Screen.width - 120;
     private int mapOffSetY = Screen.height - 190;
@@ -29,7 +25,6 @@ public class MinimapUI : MonoBehaviour {
     private int mapSizeY = 250;
 
 	void Awake () {
-        playerManager = GameObject.FindWithTag(Tags.gameController).GetComponent<PlayerManager>();
         iconHalfSize = iconSize / 2;
 	}
 
@@ -37,20 +32,10 @@ public class MinimapUI : MonoBehaviour {
         DrawMinimap();
     }
 
-    public void AddPlayer(PlayerData p) {
-        if(minimapPlayerList.Contains(p) == false)
-            minimapPlayerList.Add(p);
-    }
-
-    public void RemovePlayer(PlayerData p) {
-        if(minimapPlayerList.Contains(p) == true)
-            minimapPlayerList.Remove(p);
-    }
-
     private void DrawMinimap() {
         if(GameData.DRAW_MINIMAP == true) { 
             GUI.BeginGroup(new Rect(mapOffSetX, mapOffSetY, miniMapX, miniMapY), minimap);
-            foreach (PlayerData player in minimapPlayerList) {
+            foreach (PlayerData player in MinimapPlayerList.instance.minimapPlayerList) {
                     if(player.id.isMine)
                         DrawMyPlayer(player);
                     else if(player.team == Team.TEAM_A) {       

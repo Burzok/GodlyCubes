@@ -8,17 +8,18 @@ public class MinimapRangeDetector : MonoBehaviour {
     private PlayerData collidingPlayerData;
     private RaycastHit hitInfo;
 
-    private MinimapUI minimapUI;
-    private bool checkingPlayerAdded = false;
-
     void Awake() {
         checkingPlayer = transform.parent.GetComponent<PlayerData>();
-        minimapUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<MinimapUI>();
     }
 
     void Update() {
         if (PlayerManager.instance.myPlayer != null) 
             AddPlayerToMinimapList();
+    }
+
+    private void AddPlayerToMinimapList()  {
+        if (PlayerManager.instance.myPlayer.team == checkingPlayer.team)
+            MinimapPlayerList.instance.AddPlayer(checkingPlayer);
     }
 
     void OnTriggerStay(Collider collidingPlayer) {
@@ -28,8 +29,9 @@ public class MinimapRangeDetector : MonoBehaviour {
     }
 
     void OnTriggerExit(Collider collidingPlayer){
-        if (collidingPlayer.transform.parent.GetComponent<PlayerData>().team != PlayerManager.instance.myPlayer.team && collidingPlayer.transform.parent.GetComponent<PlayerData>().team != checkingPlayer.team)
-            minimapUI.RemovePlayer(collidingPlayerData);
+        if (collidingPlayer.transform.parent.GetComponent<PlayerData>().team != PlayerManager.instance.myPlayer.team &&
+            collidingPlayer.transform.parent.GetComponent<PlayerData>().team != checkingPlayer.team)
+                MinimapPlayerList.instance.RemovePlayer(collidingPlayerData);
     }
 
     public void CheckPlayerVisible(PlayerData collidingPlayerData) {
@@ -38,15 +40,11 @@ public class MinimapRangeDetector : MonoBehaviour {
 
         Physics.Raycast(checkingPlayer.transform.position, direction, out hitInfo);
         if (hitInfo.collider == collidingPlayerData.collider)
-            minimapUI.AddPlayer(collidingPlayerData);
+            MinimapPlayerList.instance.AddPlayer(collidingPlayerData);
         else {
-            if (collidingPlayerData.team != PlayerManager.instance.myPlayer.team && collidingPlayerData.team != checkingPlayer.team)
-                minimapUI.RemovePlayer(collidingPlayerData);
+            if (collidingPlayerData.team != PlayerManager.instance.myPlayer.team &&
+                collidingPlayerData.team != checkingPlayer.team)
+                    MinimapPlayerList.instance.RemovePlayer(collidingPlayerData);
         }
-    }
-
-    private void AddPlayerToMinimapList() {
-        if (PlayerManager.instance.myPlayer.team == checkingPlayer.team)
-            minimapUI.AddPlayer(checkingPlayer);
     }
 }

@@ -103,6 +103,7 @@ GameObject:
   - 114: {fileID: 113685791}
   - 114: {fileID: 113685792}
   - 114: {fileID: 113685793}
+  - 114: {fileID: 113685794}
   m_Layer: 0
   m_Name: GlobalScriptObject
   m_TagString: GameController
@@ -434,9 +435,21 @@ MonoBehaviour:
   myPlayerIcon: {fileID: 2800000, guid: 82b19d4205f89054a9be288511a4dcd3, type: 3}
   redTeamIcon: {fileID: 2800000, guid: 90d7150ce63add6448c5774489e686bc, type: 3}
   blueTeamIcon: {fileID: 2800000, guid: 032edb2ab5904d74dbea816dbe837f18, type: 3}
-  minimapPlayerList: []
   miniMapX: 114
   miniMapY: 178
+--- !u!114 &113685794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400038, guid: 021a0db1e9293b14ea2d1d89034909d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 672528405}
+  m_GameObject: {fileID: 113685771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7842178550b0f5941a02665b8bf455f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimapPlayerList: []
 --- !u!1001 &672528405
 Prefab:
   m_ObjectHideFlags: 0
