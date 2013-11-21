@@ -140,6 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToBind: 0
+  healthTexture: {fileID: 2800000, guid: 23204d8128d88d34cb172d36769926e8, type: 3}
+  attackTexture: {fileID: 2800000, guid: 61b0504db877bde46888ef4fb75a715c, type: 3}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

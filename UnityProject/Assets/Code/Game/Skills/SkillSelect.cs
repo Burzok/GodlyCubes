@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public delegate void SkillsToChose();
 
@@ -7,7 +8,7 @@ public class SkillSelect : SingletonComponent<SkillSelect> {
 	
 	public Dictionary<int, string> keyBinding;
 	
-	void Awake() {
+	new void Awake() {
         base.Awake();
 		keyBinding = new Dictionary<int, string>();
 	}
@@ -19,7 +20,14 @@ public class SkillSelect : SingletonComponent<SkillSelect> {
 	
 	public void removeSkill(int keyNumber) {
 		Debug.LogWarning("remove key: " + keyNumber);
-		keyBinding.Remove(keyNumber);
+        try
+        {
+            keyBinding.Remove(keyNumber);
+        }
+        catch (ArgumentNullException e)
+        {
+            Debug.LogWarning("Nie ma elementu");
+        }
 	}
 	
 	public void skillsToChose() {

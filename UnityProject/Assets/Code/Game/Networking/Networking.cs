@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Networking : MonoBehaviour {
 	
-	private PlayerList playerListComponent;
 	private PlayerSpawnerClient playerSpawnerComponent;
 	
 	void Awake () {
@@ -21,8 +20,6 @@ public class Networking : MonoBehaviour {
 		
         MasterServer.ClearHostList();
         MasterServer.RequestHostList("GodlyCubesLight"); //TODO: globalna zmienna w GameDAta
-
-		playerListComponent = GetComponent<PlayerList>();
 	}
 	
 	void OnLevelWasLoaded(int level) {

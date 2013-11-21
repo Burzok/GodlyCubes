@@ -3,7 +3,7 @@ using System.Collections;
 
 public class OptionsUI : MonoBehaviour
 {
-    MenuUI menuUI;
+    private MenuUI menuUI;
 
     void Start() {
         menuUI = GetComponent<MenuUI>();

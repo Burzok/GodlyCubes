@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerSpawnerClient : MonoBehaviour {
-	public GameObject playerPrefabClient;
+	[SerializeField] private GameObject playerPrefabClient;
 	
 	private NetworkViewID playerID;
 	private PlayerList playerList;

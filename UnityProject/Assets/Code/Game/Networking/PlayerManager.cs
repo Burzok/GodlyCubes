@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 public class PlayerManager : SingletonComponent<PlayerManager> {
 
-	public PlayerData myPlayer;
-	
-	public List<PlayerData> playerDataList = new List<PlayerData>();
+	[SerializeField] public PlayerData myPlayer;
+	[SerializeField] public List<PlayerData> playerDataList = new List<PlayerData>();
 	
 	public void AddPlayer(PlayerData p) {
 		if(playerDataList.Contains(p) == false)

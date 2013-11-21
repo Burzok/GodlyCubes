@@ -11,6 +11,10 @@ public class ClientGameUI : MonoBehaviour {
         networking = GetComponent<Networking>();
         menuUI = GetComponent<MenuUI>();
         drawStatsUI = GetComponent<DrawStatsUI>();
+
+        GameData.DRAW_CHAT = true;
+        GameData.DRAW_STATS = true;
+        GameData.DRAW_MINIMAP = true;
     }
 
     private void DrawClientGame() {
