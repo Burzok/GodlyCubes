@@ -12,6 +12,7 @@ public class SceneFillerServer : MonoBehaviour {
 		TowersBulletSpawn(ref sender);
 		CrystalSpawn(ref sender);
 		BasesSpawn(ref sender);
+		ObstaclesSpawn(ref sender);
 	}
 	
 	private void PlayersSpawn(ref NetworkPlayer sender) {
@@ -118,6 +119,14 @@ public class SceneFillerServer : MonoBehaviour {
 		foreach(GameObject gameBase in bases) {
 			SpawnBaseServer baseSpawner = gameBase.GetComponent<SpawnBaseServer>();
 			baseSpawner.SpawnBaseOnClient(sender);
+		}
+	}
+
+	private void ObstaclesSpawn(ref NetworkPlayer sender) {
+		GameObject[] obstacles = GameObject.FindGameObjectsWithTag(Tags.obstacleSpawner);
+		foreach(GameObject obstacle in obstacles) {
+			ObstacleSpawnerServer obstacleSpawner = obstacle.GetComponent<ObstacleSpawnerServer>();
+			obstacleSpawner.SpawnObstacleOnClient(sender);
 		}
 	}
 }

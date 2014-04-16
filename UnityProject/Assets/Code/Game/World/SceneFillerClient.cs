@@ -14,7 +14,7 @@ public class SceneFillerClient : MonoBehaviour {
 	}
 	
 	void OnLevelWasLoaded(int level) {
-		if(level == GameData.LEVEL_CRYSTAL_CAVERNS_CLIENT) {
+		if(level == GameData.LEVEL_DEATH_MATCH_CLIENT) {
 			networkView.RPC("WhatToSpawnOnClient", RPCMode.Server);
 		}
 	}

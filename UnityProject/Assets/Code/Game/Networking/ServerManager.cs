@@ -13,7 +13,7 @@ public class ServerManager : SingletonComponent<ServerManager> {
 
     void Start() {
         playerList = GetComponent<PlayerList>().playerList;
-        selectedMap = Map.CRYSTAL_CAVERNS;
+        selectedMap = Map.DEATH_MATCH;
     }
     
     public void Register() {
@@ -45,7 +45,7 @@ public class ServerManager : SingletonComponent<ServerManager> {
 
     void OnLevelWasLoaded(int level) {
 
-        if (level == GameData.LEVEL_CRYSTAL_CAVERNS_CLIENT) {
+        if (level == GameData.LEVEL_DEATH_MATCH_CLIENT) {
             foreach (NetworkPlayer player in Network.connections) {
                 Network.SetReceivingEnabled(player, 0, true);
             }

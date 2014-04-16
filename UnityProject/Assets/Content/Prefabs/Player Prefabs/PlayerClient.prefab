@@ -36,8 +36,6 @@ GameObject:
   - 114: {fileID: 11400010}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400014}
-  - 114: {fileID: 11400016}
-  - 114: {fileID: 11400018}
   - 114: {fileID: 11400020}
   m_Layer: 0
   m_Name: PlayerClient
@@ -478,7 +476,6 @@ GameObject:
   - 4: {fileID: 400060}
   - 95: {fileID: 9500000}
   - 135: {fileID: 13500000}
-  - 114: {fileID: 11400022}
   m_Layer: 18
   m_Name: Animator
   m_TagString: Untagged
@@ -504,7 +501,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 187.407944, y: 233.498749, z: -169.296661}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -875,6 +872,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -911,6 +911,7 @@ BoxCollider:
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9500000
 Animator:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -921,6 +922,7 @@ Animator:
   m_CullingMode: 1
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -947,6 +949,7 @@ MonoBehaviour:
   shootTime: .649999976
   activationTime: .5
   animSpeed: 2
+  shootSpeed: 5
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -963,7 +966,6 @@ MonoBehaviour:
   team: 0
   isAlive: 1
   stats: {fileID: 11400014}
-  skills: {fileID: 11400016}
   respawnTime: 3
   respawnPosition: {x: 0, y: 0, z: 0}
   kills: 0
@@ -980,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105e952d449dd9c49893209d63560a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 50
+  forwardSpeed: 100
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1040,29 +1042,6 @@ MonoBehaviour:
   absorption: 0
   penetration: 0
   focus: 0
---- !u!114 &11400016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e87419a713ba4971b2b674690a4683c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11400018
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0706f5197ed7462d80472a528927567, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillInUse: 0
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1078,17 +1057,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a3d49e2af0874514aaa470b37cbcd2eb, type: 2}
   - {fileID: 2100000, guid: 81d3fd317a28beb4fb876548ec0a5cb8, type: 2}
   - {fileID: 2100000, guid: 860d47b4ab6ed0743a0e530affecdaea, type: 2}
---- !u!114 &11400022
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498e4ece948b13d439af70295e65da84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1119,6 +1087,9 @@ SkinnedMeshRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -1147,6 +1118,7 @@ SkinnedMeshRenderer:
   - {fileID: 400030}
   - {fileID: 400036}
   - {fileID: 400028}
+  m_BlendShapeWeights: []
   m_RootBone: {fileID: 400052}
   m_AABB:
     m_Center: {x: -.585825026, y: -.00933539867, z: .153820276}
@@ -1164,12 +1136,15 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 215977489d11178d11005b9844295342, type: 2}
+  - {fileID: 2100000, guid: c9135a6fefb6065429ed392dd114cf96, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -1198,6 +1173,7 @@ SkinnedMeshRenderer:
   - {fileID: 400030}
   - {fileID: 400036}
   - {fileID: 400028}
+  m_BlendShapeWeights: []
   m_RootBone: {fileID: 400052}
   m_AABB:
     m_Center: {x: -.374994755, y: .0121999979, z: .00700430572}

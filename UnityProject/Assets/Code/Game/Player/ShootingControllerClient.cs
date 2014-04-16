@@ -10,6 +10,7 @@ public class ShootingControllerClient : MonoBehaviour {
 	public float shootTime = 0.65f;
 	public float activationTime = 0.5f;
 	public float animSpeed = 2f;
+	public float shootSpeed = 5f;
 	
 	private PlayerData data;
 
@@ -36,13 +37,13 @@ public class ShootingControllerClient : MonoBehaviour {
 			.Find("Bone_L_001").Find("Bullet").GetComponent<MeshRenderer>();
 		
 		shootingAnimationControl = Idle;
+		animator.speed = animSpeed;
 	}
 	
 	void Update() {
 		if(networkView.isMine) {
 			currentBaseState = animator.GetCurrentAnimatorStateInfo(0);
-			animator.speed = animSpeed;
-			
+						
 			if(Input.GetMouseButton(0) && currentBaseState.nameHash == idleState)
 				BasicAtack();
 	
@@ -52,6 +53,7 @@ public class ShootingControllerClient : MonoBehaviour {
 	
 	private void BasicAtack() {
 		animator.SetBool("Atack", true);
+		animator.speed = shootSpeed;
 		shootingAnimationControl = BulletActivationControl;
 	}
 	
@@ -74,6 +76,7 @@ public class ShootingControllerClient : MonoBehaviour {
 				bulletRenderer.enabled = false;
 				Shoot();
 				animator.SetBool("Atack", false);
+				animator.speed = animSpeed;
 				shootingAnimationControl = Idle;
 			}
 		}
@@ -106,8 +109,9 @@ public class ShootingControllerClient : MonoBehaviour {
 
     private void SetColor() {
         bullet.GetChild(0).renderer.material.color = new Color(data.color.x, data.color.y, data.color.z);
+		bullet.GetComponent<TrailRenderer>().material.color = new Color(data.color.x, data.color.y, data.color.z);
     }
-	
+
 	private void Idle() {
 	}
 	

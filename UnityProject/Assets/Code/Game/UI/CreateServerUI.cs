@@ -32,8 +32,8 @@ public class CreateServerUI : MonoBehaviour {
         GUI.Box(
             new Rect(Screen.width * 0.05f, Screen.height * 0.2f, Screen.width * 0.3f, Screen.height * 0.2f), "Select Map");
         if (GUI.Button(new Rect(
-            Screen.width * 0.07f, Screen.height * 0.25f, Screen.width * 0.1f, Screen.height * 0.1f), "Crystal Caverns")) {
-            ServerManager.instance.selectedMap = Map.CRYSTAL_CAVERNS;
+            Screen.width * 0.07f, Screen.height * 0.25f, Screen.width * 0.1f, Screen.height * 0.1f), "Death Match")) {
+            ServerManager.instance.selectedMap = Map.DEATH_MATCH;
 
             ServerManager.instance.miniCrystalCaverns.SetActive(true);
             ServerManager.instance.miniBurzokGrounds.SetActive(false);

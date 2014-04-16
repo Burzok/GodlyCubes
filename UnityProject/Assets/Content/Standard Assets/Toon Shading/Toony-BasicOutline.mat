@@ -9,12 +9,20 @@ Material:
   m_Name: Toony-BasicOutline
   m_Shader: {fileID: 4800000, guid: 9ce107479d11178d11005b9844295342, type: 3}
   m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
       data:
         first:
           name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: c01aef0fa28d4504c9a44fedf70027a6, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DecalTex
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -29,12 +37,12 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Outline
-        second: .00659701508
-      data:
-        first:
           name: _Shininess
         second: .57971698
+      data:
+        first:
+          name: _Outline
+        second: .00659701508
     m_Colors:
       data:
         first:
@@ -42,12 +50,12 @@ Material:
         second: {r: .388059676, g: .388059676, b: .388059676, a: 1}
       data:
         first:
-          name: _OutlineColor
-        second: {r: 0, g: 0, b: 0, a: 1}
-      data:
-        first:
           name: _SpecColor
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _Emission

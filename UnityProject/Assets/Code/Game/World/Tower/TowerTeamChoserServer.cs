@@ -26,6 +26,12 @@ public class TowerTeamChoserServer : MonoBehaviour {
 			transform.GetChild(0).gameObject.layer = 10;
 			GetComponent<TowerReloaderServer>().SetTeam(Team.TEAM_B);
 		}
+		else if (teamSelect == Team.TEAM_NEUTRAL) {
+			teamName = "TowerNeutral";
+			gameObject.layer = 20;
+			transform.GetChild(0).gameObject.layer = 19;
+			GetComponent<TowerReloaderServer>().SetTeam(Team.TEAM_NEUTRAL);
+		}
 	}
 	
 	void OnDrawGizmos()	{

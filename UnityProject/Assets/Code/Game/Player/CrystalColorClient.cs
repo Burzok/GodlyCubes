@@ -6,12 +6,10 @@ public class CrystalColorClient : MonoBehaviour {
     public Material []crystalMaterials;
 
     private Renderer crystalRenderer;
-    private PlayerStats playerStats;
     private PlayerList playerList;
 
     void Awake() {
-        playerStats = gameObject.GetComponent<PlayerStats>();
-        playerList = playerList = GameObject.FindWithTag(Tags.gameController).GetComponent<PlayerList>();
+        playerList = GameObject.FindWithTag(Tags.gameController).GetComponent<PlayerList>();
     }
 
     [RPC]

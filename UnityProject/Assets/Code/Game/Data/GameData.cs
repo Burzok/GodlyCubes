@@ -9,6 +9,7 @@ public enum Team {
 
 public enum Map { 
 	CRYSTAL_CAVERNS,
+	DEATH_MATCH,
 	BurzokGrounds
 }
 
@@ -21,6 +22,8 @@ public class GameData {
 	public const int LEVEL_MAIN_MENU = 1;
 	public const int LEVEL_CRYSTAL_CAVERNS_SERVER = 2;
 	public const int LEVEL_CRYSTAL_CAVERNS_CLIENT = 3;
+	public const int LEVEL_DEATH_MATCH_CLIENT = 4;
+	public const int LEVEL_DEATH_MATCH_SERVER = 5;
 	public const int LEVEL_DISCONNECTED = 1;
 	
 	public static int NUMBER_OF_PLAYERS_A;

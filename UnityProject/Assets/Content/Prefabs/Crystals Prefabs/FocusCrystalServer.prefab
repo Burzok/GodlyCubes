@@ -48,6 +48,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -69,6 +72,7 @@ MonoBehaviour:
   type: 8
   minimumValueRange: 10
   maximumValueRange: 20
+  eatingTime: 2
   crystalSpawnerServer: {fileID: 11400000, guid: 091dc1a388bd44e408a92447b3d3a06e,
     type: 2}
 --- !u!148 &14800000

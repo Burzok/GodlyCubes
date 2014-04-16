@@ -50,6 +50,8 @@ MonoBehaviour:
   - {fileID: 100000, guid: 8008256fc83319f41a24b9cb43e55a01, type: 2}
   - {fileID: 100000, guid: 33b38290ef6b4e345be44eda6d96782a, type: 2}
   - {fileID: 100000, guid: 9e1ff78e2e43e9e4ea4a25557ceafa87, type: 2}
+  respawnTime: 10
+  timer: 0
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

@@ -24,6 +24,11 @@ public class TowerTeamChoserClient : MonoBehaviour {
 				gameObject.layer = 14;
 				transform.GetChild(0).gameObject.layer = 10;
 			}
+			else if (teamSelect == Team.TEAM_NEUTRAL) {
+				teamName = "TowerNeutral";
+				gameObject.layer = 20;
+				transform.GetChild(0).gameObject.layer = 19;
+			}
 	}
 	
 	void OnDrawGizmos()	{
