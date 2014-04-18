@@ -16,6 +16,7 @@ public enum Map {
 public class GameData {
 	
 	public const int BASE_MAX_HEALTH = 2000;
+	public const int OBSTACLE_MAX_HEALTH = 1000;
 
     public const float CRYSTAL_EATING_TIME = 2f;
 	
