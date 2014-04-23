@@ -51,12 +51,12 @@ public class SceneFillerServer : MonoBehaviour {
 	
 	[RPC]
 	private void DecPlayersConnectingNumber() {
-		GameData.NUMBER_OF_CONNECTING_PLAYERS--;
+		GameData.instance.gameDataAsset.NUMBER_OF_CONNECTING_PLAYERS--;
 	}
 	
 	[RPC]
 	private void TurnOnPlayersNetworkViewsOnServer(NetworkMessageInfo info) {
-		if(GameData.NUMBER_OF_CONNECTING_PLAYERS == 0) {
+		if(GameData.instance.gameDataAsset.NUMBER_OF_CONNECTING_PLAYERS == 0) {
 			GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 			
 			if(players.Length != 0)

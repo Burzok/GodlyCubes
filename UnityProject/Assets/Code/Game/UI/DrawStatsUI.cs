@@ -4,7 +4,7 @@ using System.Collections;
 public class DrawStatsUI : MonoBehaviour {
    
     public void DrawStats() {
-        if (GameData.DRAW_STATS == true)
+		if (GameData.instance.gameDataAsset.DRAW_STATS == true)
         {
             GUI.Box(new Rect(5f, 50f, 140f, 50f), "");
             GUI.BeginGroup(new Rect(5f, 50f, 140f, 50f));

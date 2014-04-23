@@ -6,7 +6,7 @@ public class PlayerList : MonoBehaviour {
 	public List<PlayerData> playerList = new List<PlayerData>(4);
 	
 	public void CallRegisterPlayer(NetworkViewID playerID, int playerTeam) {
-		networkView.RPC("RegisterPlayer", RPCMode.All, GameData.PLAYER_NAME, playerID, playerTeam);	
+		networkView.RPC("RegisterPlayer", RPCMode.All, GameData.instance.gameDataAsset.PLAYER_NAME, playerID, playerTeam);	
 	}
 	
 	[RPC] // Clients & Server

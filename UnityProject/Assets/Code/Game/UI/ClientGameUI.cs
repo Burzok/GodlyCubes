@@ -16,7 +16,7 @@ public class ClientGameUI : MonoBehaviour {
     }
 
     private void DrawClientGame() {
-        GUI.Label(new Rect(5, 5, 250, 40), "Server name: " + GameData.SERVER_NAME);
+		GUI.Label(new Rect(5, 5, 250, 40), "Server name: " + GameData.instance.gameDataAsset.SERVER_NAME);
 
         if (GUI.Button(new Rect(Screen.width - 105f, 5f, 100f, 50f), "Back")) {
             networkView.RPC("UnregisterPlayer", RPCMode.Server, networking.getMyPlayerID());
@@ -25,9 +25,9 @@ public class ClientGameUI : MonoBehaviour {
 
             menuUI.SetMainMenuState();
 
-            Application.LoadLevel(GameData.LEVEL_MAIN_MENU);
-            GameData.DRAW_CHAT = false;
-			GameData.DRAW_MINIMAP = false;
+			Application.LoadLevel(GameData.instance.gameDataAsset.LEVEL_MAIN_MENU);
+			GameData.instance.gameDataAsset.DRAW_CHAT = false;
+			GameData.instance.gameDataAsset.DRAW_MINIMAP = false;
 			mapList.minimapPlayerList.Clear();
         }
 

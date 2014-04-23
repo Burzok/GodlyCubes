@@ -12,7 +12,7 @@ public class BaseLifeClient : MonoBehaviour {
 	
 	[RPC]
 	public void SetStateALostBWin() {
-		team = GameData.ACTUAL_CLIENT_TEAM;
+		team = GameData.instance.gameDataAsset.ACTUAL_CLIENT_TEAM;
 		
 		if(team == Team.TEAM_A) 
 			finishStateUI.SetLoseState();
@@ -22,7 +22,7 @@ public class BaseLifeClient : MonoBehaviour {
 	
 	[RPC]	
 	public void SetStateBLostAWin() {
-		team = GameData.ACTUAL_CLIENT_TEAM;
+		team = GameData.instance.gameDataAsset.ACTUAL_CLIENT_TEAM;
 		
 		if(team == Team.TEAM_A)
             finishStateUI.SetWinState();

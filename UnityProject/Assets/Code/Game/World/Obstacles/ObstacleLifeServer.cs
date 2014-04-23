@@ -7,7 +7,7 @@ public class ObstacleLifeServer : MonoBehaviour {
 	private NetworkViewID obstacleID;
 
 	void Start() {
-		currentHealth = GameData.OBSTACLE_MAX_HEALTH;
+		currentHealth = GameData.instance.gameDataAsset.OBSTACLE_MAX_HEALTH;
 		obstacleID = networkView.viewID;
 	}
 

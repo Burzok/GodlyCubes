@@ -50,7 +50,7 @@ public class Chat : MonoBehaviour {
 	}
 	
 	void DrawChat()	{
-		if (GameData.DRAW_CHAT == true) {
+		if (GameData.instance.gameDataAsset.DRAW_CHAT == true) {
 			GUI.Box (new Rect(5f, Screen.height-200f, 300f, 165f),"");
 			GUI.BeginGroup(new Rect(5f, Screen.height-200f, 300, 165f));
 			scroll = GUILayout.BeginScrollView(scroll,GUILayout.Width(300),GUILayout.Height(165));			

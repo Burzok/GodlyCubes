@@ -14,7 +14,7 @@ public class SceneFillerClient : MonoBehaviour {
 	}
 	
 	void OnLevelWasLoaded(int level) {
-		if(level == GameData.LEVEL_DEATH_MATCH_CLIENT) {
+		if(level == GameData.instance.gameDataAsset.LEVEL_DEATH_MATCH_CLIENT) {
 			networkView.RPC("WhatToSpawnOnClient", RPCMode.Server);
 		}
 	}
@@ -76,7 +76,7 @@ public class SceneFillerClient : MonoBehaviour {
 	
 	[RPC]
 	private void DecPlayersConnectingNumber() {
-		GameData.NUMBER_OF_CONNECTING_PLAYERS--;
+		GameData.instance.gameDataAsset.NUMBER_OF_CONNECTING_PLAYERS--;
 	}
 	
 	[RPC]

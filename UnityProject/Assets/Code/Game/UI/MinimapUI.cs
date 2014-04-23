@@ -33,7 +33,7 @@ public class MinimapUI : MonoBehaviour {
     }
 
     private void DrawMinimap() {
-        if(GameData.DRAW_MINIMAP == true) { 
+		if(GameData.instance.gameDataAsset.DRAW_MINIMAP == true) { 
             GUI.BeginGroup(new Rect(mapOffSetX, mapOffSetY, miniMapX, miniMapY), minimap);
             foreach (PlayerData player in MinimapPlayerList.instance.minimapPlayerList) {
                     if(player.id.isMine)

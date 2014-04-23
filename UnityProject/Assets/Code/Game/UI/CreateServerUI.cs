@@ -13,14 +13,14 @@ public class CreateServerUI : MonoBehaviour {
 
     private void DrawCreateServer() {
         Rect screenCoordinates = new Rect(Screen.width * 0.5f - 50f, 30f, 100f, 20f);
-        GameData.SERVER_NAME = GUI.TextField(screenCoordinates, GameData.SERVER_NAME);
+		GameData.instance.gameDataAsset.SERVER_NAME = GUI.TextField(screenCoordinates, GameData.instance.gameDataAsset.SERVER_NAME);
 
         if (GUI.Button(new Rect(Screen.width * 0.5f - 50f, 55f, 100f, 50f), "Create")) {
             ServerManager.instance.Register();
            
             serverGameUI.SetServerGameState();
-            GameData.DRAW_CHAT = true;
-            GameData.DRAW_STATS = true;
+			GameData.instance.gameDataAsset.DRAW_CHAT = true;
+			GameData.instance.gameDataAsset.DRAW_STATS = true;
         }
 
         if (GUI.Button(new Rect(Screen.width * 0.5f - 50f, Screen.height - 70f, 100f, 50f), "Back")) {

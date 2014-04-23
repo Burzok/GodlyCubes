@@ -16,7 +16,7 @@ public class ClientConnectUI : MonoBehaviour
         windowRect = GUI.Window(0, windowRect, ServerList, "Server List");
 
         Rect screenCoordinates = new Rect(Screen.width * 0.5f - 50f, 175f, 100f, 20f);
-        GameData.PLAYER_NAME = GUI.TextField(screenCoordinates, GameData.PLAYER_NAME);
+		GameData.instance.gameDataAsset.PLAYER_NAME = GUI.TextField(screenCoordinates, GameData.instance.gameDataAsset.PLAYER_NAME);
 
         if (GUI.Button(new Rect(Screen.width * 0.5f - 50f, Screen.height - 70f, 100f, 50f), "Back"))
             menuUI.SetMainMenuState();
@@ -45,7 +45,7 @@ public class ClientConnectUI : MonoBehaviour
 
             if (GUILayout.Button("Connect")) {
                 Network.Connect(element);
-                GameData.SERVER_NAME = element.gameName;
+				GameData.instance.gameDataAsset.SERVER_NAME = element.gameName;
                 clientConnectingUI.SetConnectingState();
             }
 

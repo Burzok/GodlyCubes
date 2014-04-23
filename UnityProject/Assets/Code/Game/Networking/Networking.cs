@@ -7,23 +7,24 @@ public class Networking : MonoBehaviour {
 	private PlayerSpawnerClient playerSpawnerComponent;
 	
 	void Awake () {
-		GameData.SERVER_NAME = "Server Name";
-		GameData.PLAYER_NAME = "Player Name";
+		Debug.Log (GameData.instance);
+		GameData.instance.gameDataAsset.SERVER_NAME = "Server Name";
+		GameData.instance.gameDataAsset.PLAYER_NAME = "Player Name";
 		
-		GameData.NUMBER_OF_PLAYERS_A = 0;
-		GameData.NUMBER_OF_PLAYERS_A = 0;
+		GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A = 0;
+		GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A = 0;
 		
 		DontDestroyOnLoad(this);
 		
 		networkView.group = 1;
-		Application.LoadLevel(GameData.LEVEL_DISCONNECTED);
+		Application.LoadLevel(GameData.instance.gameDataAsset.LEVEL_DISCONNECTED);
 		
         MasterServer.ClearHostList();
         MasterServer.RequestHostList("GodlyCubesLight"); //TODO: globalna zmienna w GameDAta
 	}
 	
 	void OnLevelWasLoaded(int level) {
-		if(level == GameData.LEVEL_DEATH_MATCH_CLIENT)
+		if(level == GameData.instance.gameDataAsset.LEVEL_DEATH_MATCH_CLIENT)
 			playerSpawnerComponent = GameObject.Find("SpawnersClient").GetComponent<PlayerSpawnerClient>();
 	}
 	

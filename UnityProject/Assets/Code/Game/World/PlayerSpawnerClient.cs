@@ -12,7 +12,7 @@ public class PlayerSpawnerClient : MonoBehaviour {
 	}
 	
 	public void CreatePlayer(Team playerTeam) { 
-		GameData.ACTUAL_CLIENT_TEAM = playerTeam;
+		GameData.instance.gameDataAsset.ACTUAL_CLIENT_TEAM = playerTeam;
 		SpawnContolPlayer(playerTeam);
 		networkView.RPC("SpawnPlayerOnOthers", RPCMode.Others, playerID, (int)playerTeam);
 		playerList.CallRegisterPlayer(playerID, (int)playerTeam);
@@ -32,11 +32,11 @@ public class PlayerSpawnerClient : MonoBehaviour {
 	private Transform FindSpawn(Team playerTeam) {
 		if (playerTeam == Team.TEAM_A) {
 			Transform TA = this.transform.Find("TeamA");
-			return TA.Find("Spawn" + GameData.NUMBER_OF_PLAYERS_A);
+			return TA.Find("Spawn" + GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A);
 		}
 		else if (playerTeam == Team.TEAM_B) {
 			Transform TB = this.transform.Find("TeamB");
-			return TB.Find("Spawn" + GameData.NUMBER_OF_PLAYERS_B);
+			return TB.Find("Spawn" + GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_B);
 		}
 		else {
 			Debug.LogError("Wrong spawn select");
@@ -59,16 +59,16 @@ public class PlayerSpawnerClient : MonoBehaviour {
 	[RPC]
 	private void IncCounters(int playerTeam) {
 		if ((Team)playerTeam == Team.TEAM_A)
-			GameData.NUMBER_OF_PLAYERS_A++;
+			GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A++;
 		else if ((Team)playerTeam == Team.TEAM_B)
-			GameData.NUMBER_OF_PLAYERS_B++;
+			GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_B++;
 	}
 	
 	[RPC]
 	private void DecCounters(int playerTeam) {
 		if ((Team)playerTeam == Team.TEAM_A)
-			GameData.NUMBER_OF_PLAYERS_A--;
+			GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A--;
 		else if ((Team)playerTeam == Team.TEAM_B)
-			GameData.NUMBER_OF_PLAYERS_B--;
+			GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_B--;
 	}
 }
