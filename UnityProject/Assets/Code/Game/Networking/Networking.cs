@@ -6,11 +6,7 @@ public class Networking : MonoBehaviour {
 
 	private PlayerSpawnerClient playerSpawnerComponent;
 	
-	void Awake () {
-		Debug.Log (GameData.instance);
-		GameData.instance.gameDataAsset.SERVER_NAME = "Server Name";
-		GameData.instance.gameDataAsset.PLAYER_NAME = "Player Name";
-		
+	void Awake () {		
 		GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A = 0;
 		GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A = 0;
 		
