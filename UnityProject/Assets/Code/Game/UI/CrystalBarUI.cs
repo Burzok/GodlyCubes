@@ -6,7 +6,7 @@ public class CrystalBarUI : MonoBehaviour {
 	public Material material;  
     public bool eatingInProgress = false;
 
-    private float eatingTime = GameData.instance.gameDataAsset.CRYSTAL_EATING_TIME;
+	private float eatingTime;
     private float timer = 0.01f;
     private CrystalClient crystalClient;
     private bool startIncrementing;
@@ -15,6 +15,10 @@ public class CrystalBarUI : MonoBehaviour {
     private float y = Screen.width / 2 + 50;
     private float w = Screen.height / 2;
     private float h = 20;
+
+	void Start() {
+		eatingTime = GameData.instance.gameDataAsset.CRYSTAL_EATING_TIME;
+	}
 	
 	void OnGUI() {
         if (Event.current.type.Equals(EventType.Repaint)) {

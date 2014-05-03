@@ -11,7 +11,7 @@ Platform assembly: C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Buil
 Loading C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Builds\GodlyCubes_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Builds\GodlyCubes_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Builds\GodlyCubes_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.045 seconds
+- Completed reload, in  0.055 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
