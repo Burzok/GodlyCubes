@@ -5,7 +5,7 @@ public class CrystalServer : MonoBehaviour {
 	public CrystalType type;	
 	public int minimumValueRange = 10;
 	public int maximumValueRange = 20;
-	public float eatingTime = GameData.instance.gameDataAsset.CRYSTAL_EATING_TIME;
+	public float eatingTime;
 	public CrystalSpawnerServer crystalSpawnerServer;
 	
     private int increaseStatValue;
@@ -18,7 +18,8 @@ public class CrystalServer : MonoBehaviour {
     private bool eatingInProgress;
     private float timer;
 
-	void Awake() {		
+	void Awake() {
+		eatingTime = GameData.instance.gameDataAsset.CRYSTAL_EATING_TIME;
 		playerList = GameObject.FindWithTag(Tags.gameController).GetComponent<PlayerList>();
 		increaseStatValue = Random.Range(minimumValueRange, maximumValueRange);
 		

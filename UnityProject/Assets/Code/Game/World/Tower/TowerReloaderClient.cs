@@ -10,18 +10,7 @@ public class TowerReloaderClient : MonoBehaviour {
 		bullet = null;
 		spawner = transform.FindChild("Spawner");
 	}
-	
-	/*
-	void Update() {
-		if(Input.GetKeyDown(KeyCode.A)) {
-			Network.Destroy(bullet.gameObject);	
-		}	
-		if(Input.GetKeyDown(KeyCode.D)) {
-			Network.Destroy(this.gameObject);	
-		}	
-	}
-	*/
-	
+		
 	[RPC]
 	private void InstantiateTowerBullet(NetworkViewID id) {
 		bullet = Instantiate(bulletPrefabClient, spawner.position, spawner.rotation) as Transform;

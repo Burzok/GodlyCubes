@@ -1,8 +1,8 @@
 Initialize engine version: 4.3.4f1 (e444f76e01cd)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [nvumdshim.dll 9.18.13.2762]
-    Renderer: NVIDIA GeForce GT 755M     
+    Version:  Direct3D 9.0c [nvumdshim.dll 9.18.13.3523]
+    Renderer: NVIDIA GeForce GT 755M 
     Vendor:   NVIDIA
     VRAM:     1988 MB (via DXGI)
     Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
@@ -11,7 +11,4776 @@ Platform assembly: C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Buil
 Loading C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Builds\GodlyCubes_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Builds\GodlyCubes_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Builds\GodlyCubes_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.045 seconds
+- Completed reload, in  0.082 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+UnloadTime: 0.922086 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 6418.
+Total: 4.821455 ms (FindLiveObjects: 0.450779 ms CreateObjectMapping: 0.413009 ms MarkObjects: 1.447175 ms  DeleteObjects: 0.029559 ms)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Initialize engine version: 4.3.4f1 (e444f76e01cd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvumdshim.dll 9.18.13.3523]
+    Renderer: NVIDIA GeForce GT 755M 
+    Vendor:   NVIDIA
+    VRAM:     1988 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Builds\GodlyCubes_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Builds\GodlyCubes_Data\Managed\UnityEngine.dll into Unity Child Domain
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Platform assembly: C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Builds\GodlyCubes_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Builds\GodlyCubes_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.075 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+UnloadTime: 0.531657 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 6418.
+Total: 1.373277 ms (FindLiveObjects: 0.185977 ms CreateObjectMapping: 0.123984 ms MarkObjects: 0.565322 ms  DeleteObjects: 0.026274 ms)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Connected to master server at 67.225.180.24:23466
+ 
+(Filename:  Line: 2479)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Running as server. Player ID is 0.
+ 
+(Filename:  Line: 2479)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Attempting to connect to master server at 67.225.180.24:23466
+ 
+(Filename:  Line: 2479)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+UnloadTime: 0.605555 ms
+Allocating view ID AllocatedID: 1.
+
+ 
+(Filename:  Line: 2479)
+
+Allocating view ID AllocatedID: 2.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 1'
+
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 2'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 3.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 3'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 4.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 4'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 5.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 5'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 6.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 6'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 7.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 7'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 8.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 8'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 9.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 9'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 10.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 10'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 11.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 11'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 12.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 12'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 13.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatHdID: 0', new view ID 'AllocatedID: 13'
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 14.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 14'
+
+ 
+(Filename:  Line: 2489)
+
+andleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 6045 unused Assets to reduce memory usage. Loaded Objects now: 732.
+Total: 5.484898 ms (FindLiveObjects: 0.351838 ms CreateObjectMapping: 0.119468 ms MarkObjects: 0.310372 ms  DeleteObjects: 4.229858 ms)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Connected to facilitator at 67.225.180.24:50005
+
+ 
+(Filename:  Line: 2479)
+
+Connected to master server at 67.225.180.24:23466
+ 
+(Filename:  Line: 2479)
+
+Sent host registration to master server, registering a NAT assisted game as
+ "Fabryka Server", 1, 6, not password protected, ""
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received identifier 0 from master server
+ 
+(Filename:  Line: 2479)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+New connection established (192.168.0.16:54836)
+ 
+(Filename:  Line: 2479)
+
+Network protocol version 0 connected
+ 
+(Filename:  Line: 2489)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 1 Level Prefix: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 5 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 6 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 15 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 13 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 9 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 4 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 8 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 10 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 7 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 12 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 1 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 2 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 14 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 11 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for SceneID: 3 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 2
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 3
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 4
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 5
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 6
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 7
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 8
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 9
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 10
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 11
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 12
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 13
+ 
+(Filename:  Line: 2479)
+
+New scope index 0 is now in scope for AllocatedID: 14
+ 
+(Filename:  Line: 2479)
+
+Allocated 2 batches of size 50 for player 1
+ 
+(Filename:  Line: 2489)
+
+Sent initalization to player 1
+ 
+(Filename:  Line: 2479)
+
+Received RPC 'PauseGame'- mode 2 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: PauseGame - mode 2 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'IncPlayersConnectingNumber'- mode 1 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: IncPlayersConnectingNumber - mode 1 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'ShowPlayersConnectingPopup'- mode 1 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: ShowPlayersConnectingPopup - mode 1 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'GetLevelFromServer'- mode 0 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: GetLevelFromServer - mode 0 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received RPC 'WhatToSpawnOnClient'- mode 0 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: WhatToSpawnOnClient - mode 0 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'DecPlayersConnectingNumber'- mode 1 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: DecPlayersConnectingNumber - mode 1 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'TurnOnPlayersNetworkViewsOnServer'- mode 0 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: TurnOnPlayersNetworkViewsOnServer - mode 0 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Sent RPC call 'FinishConnecting' to all connected clients
+
+ 
+(Filename:  Line: 2479)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received RPC 'IncCounters'- mode 2 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: IncCounters - mode 2 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'SpawnPlayerOnOthers'- mode 1 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: SpawnPlayerOnOthers - mode 1 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 150'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'RegisterPlayer'- mode 2 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: RegisterPlayer - mode 2 - sender 192.168.0.16:54836
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 15.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 15'
+
+ 
+(Filename:  Line: 2489)
+
+Sent RPC call 'InstantiateTowerBullet' to all connected clients
+
+ 
+(Filename:  Line: 2479)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: needs reset, doing it
+FullResetD3DDevice
+ResetD3DDevice
+dev->Reset
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+D3Dwindow device not lost anymore
+Connected to master server at 67.225.180.24:23466
+ 
+(Filename:  Line: 2479)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Incoming host list query response from master server.
+ 
+(Filename:  Line: 2479)
+
+Running as client. No player ID set yet.
+ 
+(Filename:  Line: 2479)
+
+Connected to 192.168.0.16:25000
+
+ 
+(Filename:  Line: 2479)
+
+New connection established (192.168.0.16:54837)
+ 
+(Filename:  Line: 2479)
+
+Network protocol version 0 connected
+ 
+(Filename:  Line: 2489)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 1 Level Prefix: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 0
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 5 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 6 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 15 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 13 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 9 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 4 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 8 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 10 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 7 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 12 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 1 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 2 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 14 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 11 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for SceneID: 3 Level Prefix: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 1
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 2
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 3
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 4
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 5
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 6
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 7
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 8
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 9
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 10
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 11
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 12
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 13
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 14
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 150
+ 
+(Filename:  Line: 2479)
+
+New scope index 1 is now in scope for AllocatedID: 15
+ 
+(Filename:  Line: 2479)
+
+Allocated 2 batches of size 50 for player 2
+ 
+(Filename:  Line: 2489)
+
+Sent initalization to player 2
+ 
+(Filename:  Line: 2479)
+
+Set player ID to 2
+
+ 
+(Filename:  Line: 2479)
+
+Received RPC 'PauseGame'- mode 2 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: PauseGame - mode 2 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'IncPlayersConnectingNumber'- mode 1 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: IncPlayersConnectingNumber - mode 1 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'ShowPlayersConnectingPopup'- mode 1 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: ShowPlayersConnectingPopup - mode 1 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'GetLevelFromServer'- mode 0 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: GetLevelFromServer - mode 0 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'LoadLevelOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: LoadLevelOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+UnloadTime: 0.557111 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 5839 unused Assets to reduce memory usage. Loaded Objects now: 745.
+Total: 3.265895 ms (FindLiveObjects: 0.252896 ms CreateObjectMapping: 0.117826 ms MarkObjects: 0.312425 ms  DeleteObjects: 2.118418 ms)
+
+Received RPC 'WhatToSpawnOnClient'- mode 0 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: WhatToSpawnOnClient - mode 0 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'SpawnOtherPlayersOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: SpawnOtherPlayersOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 150'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateTowerOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateTowerOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 1'
+
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 2'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateTowerBulletOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateTowerBulletOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 15'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateCrystalOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateCrystalOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 3'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateCrystalOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateCrystalOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 9'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateBaseOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateBaseOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 11'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateBaseOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateBaseOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 14'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateObstacleOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateObstacleOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 4'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateObstacleOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateObstacleOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 5'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateObstacleOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiRtecObstacleOnClicPnla- mrode 3 - iender 192.168gNu1m:25000 m
+ 
+(e ilename:  Line: 168.021489)
+
+7
+ 
+(Filename:  Line: 2489)
+
+Relay RPC A ssigning a view ID: old vgNumber - modatedIe: 1 - sender 192. 'A8llocate4dID:
+ 
+6'
+
+ n
+ame:  Line: 2489)
+
+489)
+
+Receceivved RPC 'InrstantiateObstacrklieOnClient'- moded  0 -  ender 192.168.0.16:025000
+ 
+(Filen
+ e
+:F l name:  Li89e: 
+2
+489)ay
+ Relay RPC - Inst nname: TurnOneOnlayCrsNietworkmViewsOn Server - m.ode 0 - sen0der
+ 1
+9F2.168.0.16L:54:8347
+ 
+(
+Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'Aenlt RPC call0', nnew view ID 'AlloocatedID: 7c'
+
+ 
+(Filena
+m
+e:
+(  lename:  Line
+:
+ 2479)
+
+eivSd ndin g generiiatec initial statet'-pdatee, -brsoadcast9 on, view ID5 'Al
+l
+ociatnede: D:L n150'4
+
+ 
+(
+FiRelay RP Line: 2489)
+
+antiateObstacleOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 8'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateObstacleOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateObstacleOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 10'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateObstacleOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateObstacleOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 12'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'InstantiateObstacleOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: InstantiateObstacleOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 13'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'FinishConnecting'- mode 2 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: FinishConnecting - mode 2 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'SetTeamSelectStateOnClient'- mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: SetTeamSelectStateOnClient - mode 3 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 150'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 150'
+
+ 
+(Filename:  Line: 2489)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1650)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: needs reset, doing it
+FullResetD3DDevice
+ResetD3DDevice
+dev->Reset
+D3Dwindow device not lost anymore
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Allocating view ID AllocatedID: 250.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+New scope index 0 is now in scope for AllocatedID: 250
+ 
+(Filename:  Line: 2479)
+
+Sending generic initial state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Received RPC 'IncCounters'- mode 2 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: IncCounters - mode 2 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'SpawnPlayerOnOthers'- mode 1 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: SpawnPlayerOnOthers - mode 1 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'RegisterPlayer'- mode 2 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: RegisterPlayer - mode 2 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic initial state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'Sllonding generic state update, broadcaca oft, view ID 'AllocatedID: 250'
+
+ 
+(FilenedID: 250'
+
+ 
+89)
+
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'ServerSpawnBulletCall'- mode 0 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: ServerSpawnBulletCall - mode 0 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 16.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 16'
+
+ 
+(Filename:  Line: 2489)
+
+Sent RPC call 'SpawnBulletOnClient' to all connected clients
+
+ 
+(Filename:  Line: 2479)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'SpawnBulletOnClient'- mode 1 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: SpawnBulletOnClient - mode 1 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 16'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sent remove RPCs player command to server
+ 
+(Filename:  Line: 2479)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+0 RPC function were removed with RemoveRPC
+ 
+(Filename:  Line: 2479)
+
+0 RPC function were removed with RemoveRPC
+ 
+(Filename:  Line: 2479)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcasS oe, dvigw IDn 'AllocatedIpdate,0'
+
+ 
+(Filename: view ID: 'Alloc
+a
+tedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+0 RPC function were removed with RemoveRPC
+ 
+(Filename:  Line: 2479)
+
+Sent RPC call 'DestroyBullet' to all connected clients
+
+ 
+(Filename:  Line: 2479)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'DestroyBullet'- mode 1 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: DestroyBullet - mode 1 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Sent remove RPCs player command to server
+ 
+(Filename:  Line: 2479)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+0 RPC function were removed with RemoveRPC
+ 
+(Filename:  Line: 2479)
+
+0 RPC function were removed with RemoveRPC
+ 
+(Filename:  Line: 2479)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'ServerSpawnBulletCall'- mode 0 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: ServerSpawnBulletCall - mode 0 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 17.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 17'
+
+ 
+(Filename:  Line: 2489)
+
+Sent RPC call 'SpawnBulletOnClient' to all connected clients
+
+ 
+(Filename:  Line: 2479)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sent host update to master server with identifier 0
+ 
+(Filename:  Line: 2479)
+
+Received RPC 'SpawnBulletOnClient'- mode 1 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+R RPay RCC  function wereulletOnClient - mode 1 - s
+en
+dFirlename:8 0 L6i2ne00 2
+47
+9)
+
+ename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 17'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sent remove RPCs player command to server
+ 
+(Filename:  Line: 2479)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+0 RPC function were removed with RemoveRPC
+ 
+(Filename:  Line: 2479)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received identifier 0 from master server
+ 
+(Filename:  Line: 2479)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'ServerSpawnBulletCall'- mode 0 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: ServerSpawnBulletCall - mode 0 - sender 192.168.0.16:54837
+ 
+(Filename:  Line: 2489)
+
+Allocating view ID AllocatedID: 18.
+
+ 
+(Filename:  Line: 2479)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 18'
+
+ 
+(Filename:  Line: 2489)
+
+Sent RPC call 'SpawnBulletOnClient' to all connected clients
+
+ 
+(Filename:  Line: 2479)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received RPC 'SpawnBulletOnClient'- mode 1 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Relay RPC - name: SpawnBulletOnClient - mode 1 - sender 192.168.0.16:25000
+ 
+(Filename:  Line: 2489)
+
+Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 18'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sent remove RPCs player command to server
+ 
+(Filename:  Line: 2479)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+0 RPC function were removed with RemoveRPC
+ 
+(Filename:  Line: 2479)
+
+0 RPC function were removed with RemoveRPC
+ 
+(Filename:  Line: 2479)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sending generic state update, broadcast off, view ID 'AllocSteeID: 250ge
+n
+er
+ic state updLine: 2489)
+
+t on, vHewalD 'BarEnaemyI(Clone)
+ 
+
+(
+Filenname:  Line: 2489)
+work/d3d49558
+4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Received state update for view ID AllocatedID:H25e
+
+ tB(rEnlemy(Clone)n
+  2489
+
+(
+Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sending generic state update, broadcast off, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HealthBarEnemy(Clone)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+ForegroundEnemy
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Received state update for view ID AllocatedID: 250
+
+ 
+(Filename:  Line: 2489)
+
+Sending generic state update, broadcast on, view ID 'AllocatedID: 250'
+
+ 
+(Filename:  Line: 2489)
+
+A client has disconnected from this server. Player ID 2, IP 192.168.0.16:54837
+ 
+(Filename:  Line: 2479)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+Received state update for view ID AllocatedID: 150
+
+ 
+(Filename:  Line: 2489)
+
+A client has disconnected from this server. Player ID 1, IP 192.168.0.16:54836
+ 
+(Filename:  Line: 2479)
+
+0 RPC function were removed with RemoveRPC
+ 
+(Filename:  Line: 2479)
+
+Sent RPC call 'DestroyBullet' to all connected clients
+
+ 
+(Filename:  Line: 2479)
+
+0 RPC function were removed with RemoveRPC
+ 
+(Filename:  Line: 2479)
+
+Sent RPC call 'DestroyBullet' to all connected clients
+
+ 
+(Filename:  Line: 2479)
+
+Sent host update to master server with identifier 0
+ 
+(Filename:  Line: 2479)
+
+Received identifier 0 from master server
+ 
+(Filename:  Line: 2479)
+

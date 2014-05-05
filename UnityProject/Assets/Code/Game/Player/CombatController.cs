@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CombatController : MonoBehaviour {
-	public int damage = 10;
+	public int damage = 30;
 	
 	private bool resFlag = false;
 	private float timer = 0;

@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class PlayerStats : MonoBehaviour {
-	public int currentHealth = 100;
-	public int maxHealth = 100;
+	public float currentHealth = 100;
+	public float maxHealth = 100;
 	
 	public int currentEnergy = 100;
 	public int maxEnergy = 100 ;
@@ -19,10 +19,36 @@ public class PlayerStats : MonoBehaviour {
 	
 	public int penetration = 0;
 	public int focus = 0;
-	
+
+	public GameObject enemyProgressBarPrefab;
+	private GameObject cam;
+
+	private UIProgressBar progressBar;
+	private UIProgressBar enemyProgressBar;
+
 	void Start() {
 		currentHealth = maxHealth;
 		currentEnergy = maxEnergy;
 		currentUltiPower = maxUltiPower;
+
+		cam = GameObject.Find("Camera");
+
+		if(!Network.isServer && networkView.isMine)
+			progressBar = GameObject.Find("Foreground").GetComponent<UIProgressBar>();
+		else if(!Network.isServer) {
+			GameObject enemyBarInstance = Instantiate(enemyProgressBarPrefab) as GameObject;
+			enemyBarInstance.transform.parent = cam.transform;;
+			enemyBarInstance.GetComponent<EnemyHealthBarPositionUI>().enemy = gameObject;
+
+			enemyProgressBar = enemyBarInstance.GetComponentInChildren<UIProgressBar>();
+		}
+	}
+
+	void Update() {
+		if(!Network.isServer && networkView.isMine)
+			progressBar.value = currentHealth/maxHealth;
+		else if(!Network.isServer) {
+			enemyProgressBar.value = currentHealth/maxHealth;
+		}
 	}
 }

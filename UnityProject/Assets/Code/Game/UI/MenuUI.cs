@@ -9,6 +9,8 @@ public class MenuUI : SingletonComponent<MenuUI> {
 	
 	void Start() {
 		GameData.instance.gameDataAsset.CURRENT_LEVEL_NAME = "DeathMatch";
+		GameData.instance.gameDataAsset.DRAW_CHAT = false;
+		GameData.instance.gameDataAsset.DRAW_STATS = false;
 		
 		SetMainMenuState();
 		
