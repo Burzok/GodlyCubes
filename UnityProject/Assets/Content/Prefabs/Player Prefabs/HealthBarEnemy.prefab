@@ -228,7 +228,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   ignoreTimeScale: 1
   delay: 0
-  duration: 1
+  duration: .200000003
   steeperCurves: 0
   tweenGroup: 0
   onFinished: []

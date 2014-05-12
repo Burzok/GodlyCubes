@@ -1,11 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Game\UI\EnemyHealthBarPositionUI.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Game\Networking\ServerManager.cs">
     <Files>
-      <File FileName="Assets\Code\Game\UI\EnemyHealthBarPositionUI.cs" Line="8" Column="30" />
-      <File FileName="Assets\Code\Game\Player\PlayerData.cs" Line="18" Column="20" />
-      <File FileName="c:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Assets\Code\Game\Player\CrystalColorServer.cs" Line="18" Column="2" />
-      <File FileName="c:\Users\Marcin\Documents\GitHub\GodlyCubes\UnityProject\Assets\Code\Game\World\SceneFillerClient.cs" Line="5" Column="38" />
+      <File FileName="Assets\Code\Game\Player\ShootingControllerClient.cs" Line="69" Column="23" />
+      <File FileName="Assets\Code\Game\Networking\ServerManager.cs" Line="87" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -22,6 +22,8 @@ public class ShootingControllerClient : MonoBehaviour {
 	
 	private MeshRenderer bulletRenderer;
 	private ShootingAnimationControl shootingAnimationControl;
+
+	private TrailRenderer trail;
 	
 	static int idleState = Animator.StringToHash("Base Layer.Idle");	
 	static int basicAtackState = Animator.StringToHash("Base Layer.Basic_Atack");	
@@ -35,6 +37,10 @@ public class ShootingControllerClient : MonoBehaviour {
         animator = this.transform.FindChild("Animator").GetComponent<Animator>();
 		bulletRenderer = transform.Find("Animator").Find("Armature").Find("Bone").Find("Bone_001").Find("Bone_L")
 			.Find("Bone_L_001").Find("Bullet").GetComponent<MeshRenderer>();
+
+		trail = transform.Find("Animator").Find("Armature").Find("Bone").Find("Bone_001").Find("Bone_L")
+			.Find("Bone_L_001").Find("Bone_L_002").GetComponent<TrailRenderer>();
+
 		
 		shootingAnimationControl = Idle;
 		animator.speed = animSpeed;
@@ -53,13 +59,14 @@ public class ShootingControllerClient : MonoBehaviour {
 	
 	private void BasicAtack() {
 		animator.SetBool("Atack", true);
+		trail.enabled = true;
 		animator.speed = shootSpeed;
 		shootingAnimationControl = BulletActivationControl;
 	}
 	
 	private void BulletActivationControl() {
 		if (currentBaseState.nameHash == basicAtackState) {
-	 		float playbackTime = currentBaseState.normalizedTime % 1;
+	 		float playbackTime= currentBaseState.normalizedTime % 1;
 			
 			if (playbackTime >= activationTime) {
 				bulletRenderer.enabled = true;
@@ -76,6 +83,7 @@ public class ShootingControllerClient : MonoBehaviour {
 				bulletRenderer.enabled = false;
 				Shoot();
 				animator.SetBool("Atack", false);
+				trail.enabled = false;
 				animator.speed = animSpeed;
 				shootingAnimationControl = Idle;
 			}
