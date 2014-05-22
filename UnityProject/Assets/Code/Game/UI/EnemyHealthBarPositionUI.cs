@@ -11,11 +11,23 @@ public class EnemyHealthBarPositionUI : MonoBehaviour {
 	private Vector3 position;
 	private float distance;
 	private float size;
-	
+
+	private TweenAlpha tweenAlpha;
+	private bool tweenDirection;
+
 	void Start() {
+		tweenAlpha = GetComponent<TweenAlpha>();
 		playerCamera = NGUITools.FindCameraForLayer(enemy.layer);
 		guiCamera = NGUITools.FindCameraForLayer(gameObject.layer);
 		transform.localScale = Vector3.one;
+		tweenDirection = false;
+	}
+
+	void FixedUpdate() {
+		if (Input.GetKeyUp(KeyCode.V)) {
+			tweenAlpha.Play(tweenDirection);
+			tweenDirection = !tweenDirection;
+		}
 	}
 	
 	void LateUpdate() {
@@ -24,7 +36,7 @@ public class EnemyHealthBarPositionUI : MonoBehaviour {
 			UpdateBarSize();
 		}
 	}
-	
+
 	void UpdateBarPosition() {
 		position = playerCamera.WorldToViewportPoint(enemy.transform.position);
 		position = guiCamera.ViewportToWorldPoint(position);

@@ -1,11 +1,21 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Game\UI\EnemyHealthBarPositionUI.cs">
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Game\UI\CreateServerUI.cs">
     <Files>
-      <File FileName="Assets\Code\Game\UI\EnemyHealthBarPositionUI.cs" Line="48" Column="20" />
-      <File FileName="Assets\Code\Game\UI\EnemyHealthBarPositionUI.cs" Line="51" Column="1" />
-      <File FileName="Assets\Code\Game\UI\HealthBarUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\Game\Player\PlayerStats.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Game\Networking\ServerManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Game\World\PlayerSpawnerClient.cs" Line="8" Column="32" />
+      <File FileName="Assets\Code\Game\UI\CreateServerUI.cs" Line="6" Column="32" />
+      <File FileName="Assets\Code\Game\Networking\Chat.cs" Line="10" Column="26" />
+      <File FileName="Assets\NGUI\Scripts\UI\UITextList.cs" Line="1" Column="1" />
+      <File FileName="Assets\NGUI\Examples\Scripts\Other\ChatInput.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Game\Networking\ServerManager.cs">
+    <Files>
+      <File FileName="Assets\Code\Game\Player\ShootingControllerClient.cs" Line="69" Column="23" />
+      <File FileName="Assets\Code\Game\Networking\ServerManager.cs" Line="87" Column="6" />
+>>>>>>> d77984a7a39e751795318310e093ba35ade2a5d7
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

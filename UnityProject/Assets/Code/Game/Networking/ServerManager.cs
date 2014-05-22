@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class ServerManager : SingletonComponent<ServerManager> {
 
-    public GameObject miniCrystalCaverns;
+    public GameObject miniDeathmatch;
     public GameObject miniBurzokGrounds;
     public Map selectedMap;
     public float timeHostWasRegistered;
@@ -30,7 +30,7 @@ public class ServerManager : SingletonComponent<ServerManager> {
     public void Unregister() {
         Network.Disconnect();
         Application.LoadLevel(0);
-        Destroy(gameObject);
+       // Destroy(gameObject);
     }
 
     void DestroyGameObject() {
@@ -53,11 +53,11 @@ public class ServerManager : SingletonComponent<ServerManager> {
         }
 
 		if (level == GameData.instance.gameDataAsset.LEVEL_MAIN_MENU) {
-            miniCrystalCaverns = GameObject.Find("miniCrystalCaverns");
+			miniDeathmatch = GameObject.Find("miniDeathmatch");
             miniBurzokGrounds = GameObject.Find("miniBurzokGrounds");
 
-            miniCrystalCaverns.SetActive(false);
-            miniBurzokGrounds.SetActive(false);
+            miniDeathmatch.SetActive(true);
+            miniBurzokGrounds.SetActive(true);
         }
     }
 
@@ -66,7 +66,6 @@ public class ServerManager : SingletonComponent<ServerManager> {
         networkView.RPC("IncPlayersConnectingNumber", RPCMode.Others);
         networkView.RPC("ShowPlayersConnectingPopup", RPCMode.Others);
         networkView.RPC("GetLevelFromServer", RPCMode.Server, Network.player);
-        DrawUI.instance.drawUI -= InitializeConnecting;
     }
 
     [RPC]
@@ -82,9 +81,7 @@ public class ServerManager : SingletonComponent<ServerManager> {
 
     [RPC]
     private void ShowPlayersConnectingPopup() {
-        if (DrawUI.instance.drawUI != DrawPlayerConnectingPopup)
-            DrawUI.instance.drawUI += DrawPlayerConnectingPopup;
-    }
+  }
 
     [RPC]
     private void GetLevelFromServer(NetworkPlayer player) {
@@ -111,12 +108,9 @@ public class ServerManager : SingletonComponent<ServerManager> {
     }
 
     public void HidePlayersConnectingPopup() {
-        if (DrawUI.instance.drawUI == DrawPlayerConnectingPopup)
-            DrawUI.instance.drawUI -= DrawPlayerConnectingPopup;
     }
 
     public void AddInitializeConnecting() {
-        DrawUI.instance.drawUI += InitializeConnecting;
     }
 
     void OnDisconnectedFromServer() {

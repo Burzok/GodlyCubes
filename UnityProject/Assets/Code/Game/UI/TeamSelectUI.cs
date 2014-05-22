@@ -4,13 +4,11 @@ using System.Collections;
 public class TeamSelectUI : MonoBehaviour {
    
     private Networking networking;
-
-    private MenuUI menuUI;
+	
     private ClientGameUI clientGameUI;
 
     void Start() {
         networking = GetComponent<Networking>();
-        menuUI = GetComponent<MenuUI>();
         clientGameUI = GetComponent<ClientGameUI>();
     }
 
@@ -35,11 +33,9 @@ public class TeamSelectUI : MonoBehaviour {
 
         if (GUI.Button(new Rect(Screen.width * 0.5f - 50f, Screen.height - 70f, 100f, 50f), "Disconnect")) {
             Network.Disconnect();
-            menuUI.SetMainMenuState();
         }
     }
 
     public void SetTeamSelectState() {
-        DrawUI.instance.drawUI = DrawTeamSelect;
     }
 }

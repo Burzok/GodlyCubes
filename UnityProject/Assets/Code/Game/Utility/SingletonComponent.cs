@@ -9,9 +9,6 @@ public abstract class SingletonComponent<T> : MonoBehaviour where T : SingletonC
     }
 
     protected virtual void Awake() {
-        if (sInstance != null)
-            Debug.LogError(name + ": error: already initialized", this);
-
         sInstance = (T)this;
     }
 }

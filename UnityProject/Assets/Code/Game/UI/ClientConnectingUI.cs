@@ -8,6 +8,6 @@ public class ClientConnectingUI : MonoBehaviour
     }
 
     public void SetConnectingState() {
-        DrawUI.instance.drawUI = DrawConnecting;
+
     }
 }

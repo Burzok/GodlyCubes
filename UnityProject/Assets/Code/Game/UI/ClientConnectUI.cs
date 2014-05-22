@@ -4,11 +4,9 @@ using System.Collections;
 public class ClientConnectUI : MonoBehaviour
 {
     private Rect windowRect = new Rect(Screen.width * .5f - 200f, 20f, 400f, 150f);
-    MenuUI menuUI;
     ClientConnectingUI clientConnectingUI;
 
     void Start() {
-        menuUI = GetComponent<MenuUI>();
         clientConnectingUI = GetComponent<ClientConnectingUI>();
     }
 
@@ -18,8 +16,6 @@ public class ClientConnectUI : MonoBehaviour
         Rect screenCoordinates = new Rect(Screen.width * 0.5f - 50f, 175f, 100f, 20f);
 		GameData.instance.gameDataAsset.PLAYER_NAME = GUI.TextField(screenCoordinates, GameData.instance.gameDataAsset.PLAYER_NAME);
 
-        if (GUI.Button(new Rect(Screen.width * 0.5f - 50f, Screen.height - 70f, 100f, 50f), "Back"))
-            menuUI.SetMainMenuState();
     }
 
     private void ServerList(int windowID) {
@@ -54,6 +50,6 @@ public class ClientConnectUI : MonoBehaviour
     }
 
     public void SetConnectState() {
-        DrawUI.instance.drawUI = DrawConnect;
+
     }
 }

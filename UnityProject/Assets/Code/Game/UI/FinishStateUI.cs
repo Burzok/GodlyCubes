@@ -39,7 +39,6 @@ public class FinishStateUI : MonoBehaviour {
             Screen.lockCursor = false;
         }
 
-        DrawUI.instance.drawUI = DrawWinState;
     }
 
     public void SetLoseState() {
@@ -54,6 +53,5 @@ public class FinishStateUI : MonoBehaviour {
             Screen.lockCursor = false;
         }
 
-        DrawUI.instance.drawUI = DrawLoseState;
     }
 }
