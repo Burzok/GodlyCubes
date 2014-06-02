@@ -7,7 +7,7 @@ public class BaseLifeServer : MonoBehaviour {
 	public int currentHealth;
 	
 	void Awake() {
-		currentHealth = GameData.instance.gameDataAsset.BASE_MAX_HEALTH;
+		currentHealth = GameData.BASE_MAX_HEALTH;
 	}
 	
 	void Start() {

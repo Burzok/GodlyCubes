@@ -4,29 +4,29 @@ using System.Collections;
 public class BaseLifeClient : MonoBehaviour {
 	public Team team;
 	
-	private FinishStateUI finishStateUI;
+	private EndUI endUI;
 	
 	void Awake() {
-		finishStateUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<FinishStateUI>();
+		endUI = GameObject.Find("UI Root").GetComponent<EndUI>();
 	}
 	
 	[RPC]
 	public void SetStateALostBWin() {
-		team = GameData.instance.gameDataAsset.ACTUAL_CLIENT_TEAM;
+		team = GameData.ACTUAL_CLIENT_TEAM;
 		
 		if(team == Team.TEAM_A) 
-			finishStateUI.SetLoseState();
+			endUI.LoseState();
 		else if(team == Team.TEAM_B)
-            finishStateUI.SetWinState();
+			endUI.WonState();
 	}
 	
 	[RPC]	
 	public void SetStateBLostAWin() {
-		team = GameData.instance.gameDataAsset.ACTUAL_CLIENT_TEAM;
+		team = GameData.ACTUAL_CLIENT_TEAM;
 		
 		if(team == Team.TEAM_A)
-            finishStateUI.SetWinState();
+			endUI.WonState();
 		else if(team == Team.TEAM_B)
-            finishStateUI.SetLoseState();
+			endUI.LoseState();
 	}
 }

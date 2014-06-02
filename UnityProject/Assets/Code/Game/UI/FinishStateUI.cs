@@ -29,10 +29,6 @@ public class FinishStateUI : MonoBehaviour {
     }
 
     public void SetWinState() {
-		GameData.instance.gameDataAsset.DRAW_CHAT = false;
-		GameData.instance.gameDataAsset.DRAW_STATS = false;
-		GameData.instance.gameDataAsset.DRAW_MINIMAP = false;
-
         if (Network.isClient) {
             myPlayerRotator = PlayerManager.instance.myPlayer.GetComponent<Rotator>();
             myPlayerRotator.enabled = false;
@@ -42,9 +38,6 @@ public class FinishStateUI : MonoBehaviour {
     }
 
     public void SetLoseState() {
-		GameData.instance.gameDataAsset.DRAW_CHAT = false;
-		GameData.instance.gameDataAsset.DRAW_STATS = false;
-		GameData.instance.gameDataAsset.DRAW_MINIMAP = false;
         Screen.lockCursor = false;
 
         if (Network.isClient) {

@@ -3,24 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Networking : MonoBehaviour {
-
-	private PlayerSpawnerClient playerSpawnerComponent;
 	
+	private PlayerSpawnerClient playerSpawnerComponent;
+
 	void Awake () {		
-		GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A = 0;
-		GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A = 0;
+		GameData.NUMBER_OF_PLAYERS_A = 0;
+		GameData.NUMBER_OF_PLAYERS_B = 0;
 		
 		DontDestroyOnLoad(this);
 		
 		networkView.group = 1;
-		Application.LoadLevel(GameData.instance.gameDataAsset.LEVEL_DISCONNECTED);
+		Application.LoadLevel(GameData.LEVEL_DISCONNECTED);
 		
         MasterServer.ClearHostList();
         MasterServer.RequestHostList("GodlyCubesLight"); //TODO: globalna zmienna w GameDAta
 	}
 	
 	void OnLevelWasLoaded(int level) {
-		if(level == GameData.instance.gameDataAsset.LEVEL_DEATH_MATCH_CLIENT)
+		if(level == GameData.LEVEL_DEATH_MATCH_CLIENT)
 			playerSpawnerComponent = GameObject.Find("SpawnersClient").GetComponent<PlayerSpawnerClient>();
 	}
 	
@@ -29,7 +29,7 @@ public class Networking : MonoBehaviour {
 		foreach (NetworkPlayer player in Network.connections) {
          	Network.SetReceivingEnabled(player, 0, false);
 		}
-		ServerManager.instance.AddInitializeConnecting();
+		ServerManager.instance.InitializeConnecting();
 	}	
 	
 	void OnPlayerConnected() {

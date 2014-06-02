@@ -17,7 +17,7 @@ public class CrystalBarUI : MonoBehaviour {
     private float h = 20;
 
 	void Start() {
-		eatingTime = GameData.instance.gameDataAsset.CRYSTAL_EATING_TIME;
+		eatingTime = GameData.CRYSTAL_EATING_TIME;
 	}
 	
 	void OnGUI() {

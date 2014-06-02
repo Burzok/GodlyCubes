@@ -3,10 +3,8 @@ using System.Collections;
 
 public class DrawStatsUI : MonoBehaviour {
    
-    public void DrawStats() {
-		if (GameData.instance.gameDataAsset.DRAW_STATS == true)
-        {
-            GUI.Box(new Rect(5f, 50f, 140f, 50f), "");
+    public void ShowStats() {
+		    GUI.Box(new Rect(5f, 50f, 140f, 50f), "");
             GUI.BeginGroup(new Rect(5f, 50f, 140f, 50f));
             foreach (PlayerData player in ServerManager.instance.playerList)
             {
@@ -28,14 +26,10 @@ public class DrawStatsUI : MonoBehaviour {
                 GUILayout.Label("D: " + player.deaths);
                 GUILayout.FlexibleSpace();
 
-                GUI.contentColor = Color.yellow;
-                GUILayout.Label("A: " + player.assist);
-                GUILayout.FlexibleSpace();
-
                 GUILayout.EndHorizontal();
             }
             GUI.EndGroup();
-        }
+        
     }
 
 }

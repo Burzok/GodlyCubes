@@ -19,7 +19,7 @@ public class CrystalServer : MonoBehaviour {
     private float timer;
 
 	void Awake() {
-		eatingTime = GameData.instance.gameDataAsset.CRYSTAL_EATING_TIME;
+		eatingTime = GameData.CRYSTAL_EATING_TIME;
 		playerList = GameObject.FindWithTag(Tags.gameController).GetComponent<PlayerList>();
 		increaseStatValue = Random.Range(minimumValueRange, maximumValueRange);
 		

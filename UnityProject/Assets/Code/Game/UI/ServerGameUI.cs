@@ -12,7 +12,7 @@ public class ServerGameUI : MonoBehaviour {
 
     private void Start() 
 	{
-		serverNameLabel.text = "Server name: " + GameData.instance.gameDataAsset.SERVER_NAME;
+		serverNameLabel.text = "Server name: " + GameData.SERVER_NAME;
     }
 
 	public void TerminateServer()

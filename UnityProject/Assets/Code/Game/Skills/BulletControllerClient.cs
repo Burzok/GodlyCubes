@@ -7,7 +7,6 @@ public class BulletControllerClient : MonoBehaviour {
 
 	private Transform childBullet;
 
-
 	void Start() {
 		Network.RemoveRPCs(networkView.viewID);
 		childBullet = transform.GetChild(0);
@@ -23,7 +22,8 @@ public class BulletControllerClient : MonoBehaviour {
 		particleSystem.startColor = GetComponentInChildren<Renderer>().material.color;
 		particleSystem.Emit(amountOfParticles);
 		this.renderer.enabled = false;
-		childBullet.renderer.enabled = false;
+		if(childBullet)
+			childBullet.renderer.enabled = false;
         Destroy(this.gameObject,2f);
     }
 }

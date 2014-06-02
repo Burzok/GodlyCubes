@@ -8,9 +8,13 @@ public class CursorLock : MonoBehaviour {
 	void Awake() {
 		locked = false;	
 	}
-	
-	void Start() {
-		LockMousePosition();
+
+	private void Start()
+	{
+		if(networkView.isMine)
+		{
+			LockMousePosition();
+		}
 	}
 	
 	void Update() {

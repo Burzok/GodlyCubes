@@ -10,9 +10,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Content/Prefabs/Scenes/main_menu.unity
   - enabled: 1
-    path: Assets/Content/Prefabs/Scenes/CrystalCavernsServer.unity
-  - enabled: 1
     path: Assets/Content/Prefabs/Scenes/CrystalCavernsClient.unity
+  - enabled: 1
+    path: Assets/Content/Prefabs/Scenes/CrystalCavernsServer.unity
   - enabled: 1
     path: Assets/Content/Prefabs/Scenes/DeathMatchClient.unity
   - enabled: 1

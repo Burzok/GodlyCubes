@@ -13,11 +13,11 @@ public class PlayerSpawnerServer : MonoBehaviour {
 	private Transform FindSpawn(Team playerTeam) {
 		if (playerTeam == Team.TEAM_A) {
 			Transform TA = this.transform.Find("TeamA");
-			return TA.FindChild("Spawn" + GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A);
+			return TA.FindChild("Spawn1");
 		}
 		else if (playerTeam == Team.TEAM_B) {
 			Transform TB = this.transform.Find("TeamB");
-			return TB.FindChild("Spawn" + GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_B);
+			return TB.FindChild("Spawn1");
 		}
 		else {
 			Debug.LogError("Wrong spawn select");
@@ -33,16 +33,16 @@ public class PlayerSpawnerServer : MonoBehaviour {
 	[RPC]
 	private void IncCounters(int playerTeam) {
 		if ((Team)playerTeam == Team.TEAM_A)
-			GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A++;
+			GameData.NUMBER_OF_PLAYERS_A++;
 		else if ((Team)playerTeam == Team.TEAM_B)
-			GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_B++;
+			GameData.NUMBER_OF_PLAYERS_B++;
 	}
 	
 	[RPC]
 	private void DecCounters(int playerTeam) {
 		if ((Team)playerTeam == Team.TEAM_A)
-			GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_A--;
+			GameData.NUMBER_OF_PLAYERS_A--;
 		else if ((Team)playerTeam == Team.TEAM_B)
-			GameData.instance.gameDataAsset.NUMBER_OF_PLAYERS_B--;
+			GameData.NUMBER_OF_PLAYERS_B--;
 	}
 }

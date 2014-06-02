@@ -25,7 +25,7 @@ public class CreateServerUI : MonoBehaviour {
 
 	public void Create()
 	{
-		GameData.instance.gameDataAsset.SERVER_NAME = serverNameInput.text;
+		GameData.SERVER_NAME = serverNameInput.text;
 		serverManager.Register();
 	}
 }

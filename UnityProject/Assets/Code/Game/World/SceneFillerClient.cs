@@ -6,15 +6,13 @@ public class SceneFillerClient : MonoBehaviour {
     [SerializeField] private GameObject testPlayer; // zmienna testowa do podgladu, jesli wszystko dziala to usunac
 	
 	private int otherPlayersSpawned;
-    private TeamSelectUI teamSelectUI;
 	
 	void Awake() {
-        teamSelectUI = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<TeamSelectUI>();
 		otherPlayersSpawned = 0;
 	}
 	
 	void OnLevelWasLoaded(int level) {
-		if(level == GameData.instance.gameDataAsset.LEVEL_DEATH_MATCH_CLIENT) {
+		if(level == GameData.LEVEL_DEATH_MATCH_CLIENT) {
 			networkView.RPC("WhatToSpawnOnClient", RPCMode.Server);
 		}
 	}
@@ -31,7 +29,7 @@ public class SceneFillerClient : MonoBehaviour {
 	
 	[RPC]
 	private void SpawnOtherPlayersOnClient(
-            NetworkViewID playerID, Vector3 spawnPosition, int playerTeam, Vector3 playerBackColor, int numberOfPlayersToSpawn)
+            NetworkViewID playerID, Vector3 spawnPosition, int playerTeam, Vector3 playerBackColor, string playerName, int numberOfPlayersToSpawn)
     {
 
 		otherPlayersSpawned++;
@@ -52,6 +50,9 @@ public class SceneFillerClient : MonoBehaviour {
             data.color = new Vector3(0, 0, 1);
             data.team = Team.TEAM_B;
         }
+
+		data.id = playerID;
+		data.playerName = playerName;
 
         Transform playerArmature = testPlayer.transform.Find("Animator");
         Renderer[] playerRenderers = playerArmature.GetComponentsInChildren<Renderer>();
@@ -76,7 +77,7 @@ public class SceneFillerClient : MonoBehaviour {
 	
 	[RPC]
 	private void DecPlayersConnectingNumber() {
-		GameData.instance.gameDataAsset.NUMBER_OF_CONNECTING_PLAYERS--;
+		GameData.NUMBER_OF_CONNECTING_PLAYERS--;
 	}
 	
 	[RPC]
@@ -91,6 +92,6 @@ public class SceneFillerClient : MonoBehaviour {
 	
 	[RPC]
 	private void SetTeamSelectStateOnClient() {
-		teamSelectUI.SetTeamSelectState();
+
 	}
 }

@@ -1,55 +1,73 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ClientConnectUI : MonoBehaviour
 {
-    private Rect windowRect = new Rect(Screen.width * .5f - 200f, 20f, 400f, 150f);
-    ClientConnectingUI clientConnectingUI;
+	private GameObject mainMenuUI;
+	private GameObject connectServerUI;
 
-    void Start() {
-        clientConnectingUI = GetComponent<ClientConnectingUI>();
-    }
+	[SerializeField]
+	private GameObject serverEntry;
+	[SerializeField]
+	private UIInput playerName;
+	private GameObject localServerEntry;
+	private GameObject serverTable;
 
-    private void DrawConnect() {
-        windowRect = GUI.Window(0, windowRect, ServerList, "Server List");
+	private void Awake() 
+	{
+		mainMenuUI = GameObject.Find("MainMenu");
+		connectServerUI = GameObject.Find("ConnectServer");
+		serverTable = connectServerUI.transform.FindChild("ServerList").FindChild("Table").gameObject;
+	}
 
-        Rect screenCoordinates = new Rect(Screen.width * 0.5f - 50f, 175f, 100f, 20f);
-		GameData.instance.gameDataAsset.PLAYER_NAME = GUI.TextField(screenCoordinates, GameData.instance.gameDataAsset.PLAYER_NAME);
+	private void Start() 
+	{
+		playerName.value = GameData.PLAYER_NAME;
+	}
 
-    }
+	public void ServerListUpdate() {
+		serverTable.GetComponent<UITable>().Reposition();
 
-    private void ServerList(int windowID) {
         ServerManager.instance.RequestServersList();
-
         HostData[] data = MasterServer.PollHostList();
         foreach (HostData element in data) {
-            GUILayout.BeginHorizontal();
-            string name = element.gameName + " " + (element.connectedPlayers - 1) + " / " + (element.playerLimit);
-            GUILayout.Label(name);
-            GUILayout.Space(5);
+            string name = element.gameName + " - " + (element.connectedPlayers - 1) + " / " + (element.playerLimit);
 
             string hostInfo;
-            hostInfo = "[";
+            hostInfo = " - [";
             foreach (var host in element.ip) {
                 hostInfo = hostInfo + host;
             }
             hostInfo = hostInfo + "]";
-
-            GUILayout.Label(hostInfo);
-            GUILayout.Space(5);
-            GUILayout.FlexibleSpace();
-
-            if (GUILayout.Button("Connect")) {
-                Network.Connect(element);
-				GameData.instance.gameDataAsset.SERVER_NAME = element.gameName;
-                clientConnectingUI.SetConnectingState();
-            }
-
-            GUILayout.EndHorizontal();
+			localServerEntry = NGUITools.AddChild(serverTable, serverEntry);
+			localServerEntry.transform.GetChild(1).GetComponent<ServerLabelIPContainer>().server = element;
+			localServerEntry.transform.GetChild(0).GetComponent<UILabel>().text = name + hostInfo;
         }
     }
 
-    public void SetConnectState() {
+	public void SavePlayerName()
+	{
+		GameData.PLAYER_NAME = playerName.value;
+	}
 
-    }
+	public void Back()
+	{
+		GameObject[] serverEntries = GameObject.FindGameObjectsWithTag(Tags.serverEntry);
+		foreach (GameObject entry in serverEntries)
+		{
+			Destroy(entry);
+		}
+		mainMenuUI.SetActive(true);
+		connectServerUI.SetActive(false);
+	}
+	
+	public void Reload()
+	{
+		GameObject[] serverEntries = GameObject.FindGameObjectsWithTag(Tags.serverEntry);
+		foreach (GameObject entry in serverEntries)
+		{
+			Destroy(entry);
+		}
+		ServerListUpdate();
+	}
 }

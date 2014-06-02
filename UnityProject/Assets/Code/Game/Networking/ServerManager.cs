@@ -20,17 +20,16 @@ public class ServerManager : SingletonComponent<ServerManager> {
         lastLevelPrefix = 0;
 
         Network.InitializeServer(5, 25000, !Network.HavePublicAddress());
-		MasterServer.RegisterHost("GodlyCubesLight", GameData.instance.gameDataAsset.SERVER_NAME);
+		MasterServer.RegisterHost("GodlyCubesLight", GameData.SERVER_NAME);
         timeHostWasRegistered = Time.time;
 
         Network.SetLevelPrefix(lastLevelPrefix + 1);
-		Application.LoadLevel(GameData.instance.gameDataAsset.CURRENT_LEVEL_NAME + "Server");
+		Application.LoadLevel(GameData.CURRENT_LEVEL_NAME + "Server");
     }
 
     public void Unregister() {
         Network.Disconnect();
         Application.LoadLevel(0);
-       // Destroy(gameObject);
     }
 
     void DestroyGameObject() {
@@ -45,14 +44,14 @@ public class ServerManager : SingletonComponent<ServerManager> {
 
     void OnLevelWasLoaded(int level) {
 
-		if (level == GameData.instance.gameDataAsset.LEVEL_DEATH_MATCH_CLIENT) {
+		if (level == GameData.LEVEL_DEATH_MATCH_CLIENT) {
             foreach (NetworkPlayer player in Network.connections) {
                 Network.SetReceivingEnabled(player, 0, true);
             }
             Network.SetSendingEnabled(0, true);
         }
 
-		if (level == GameData.instance.gameDataAsset.LEVEL_MAIN_MENU) {
+		if (level == GameData.LEVEL_MAIN_MENU) {
 			miniDeathmatch = GameObject.Find("miniDeathmatch");
             miniBurzokGrounds = GameObject.Find("miniBurzokGrounds");
 
@@ -61,7 +60,7 @@ public class ServerManager : SingletonComponent<ServerManager> {
         }
     }
 
-    private void InitializeConnecting() {
+    public void InitializeConnecting() {
         networkView.RPC("PauseGame", RPCMode.All);
         networkView.RPC("IncPlayersConnectingNumber", RPCMode.Others);
         networkView.RPC("ShowPlayersConnectingPopup", RPCMode.Others);
@@ -76,7 +75,7 @@ public class ServerManager : SingletonComponent<ServerManager> {
 
     [RPC]
     private void IncPlayersConnectingNumber() {
-		GameData.instance.gameDataAsset.NUMBER_OF_CONNECTING_PLAYERS++;
+		GameData.NUMBER_OF_CONNECTING_PLAYERS++;
     }
 
     [RPC]
@@ -85,7 +84,7 @@ public class ServerManager : SingletonComponent<ServerManager> {
 
     [RPC]
     private void GetLevelFromServer(NetworkPlayer player) {
-		networkView.RPC("LoadLevelOnClient", player, GameData.instance.gameDataAsset.CURRENT_LEVEL_NAME, lastLevelPrefix + 1);
+		networkView.RPC("LoadLevelOnClient", player, GameData.CURRENT_LEVEL_NAME, lastLevelPrefix + 1);
     }
 
     [RPC]
@@ -100,7 +99,7 @@ public class ServerManager : SingletonComponent<ServerManager> {
     }
 
     private void DrawPlayerConnectingPopup() {
-		for (int i = 0; i < GameData.instance.gameDataAsset.NUMBER_OF_CONNECTING_PLAYERS; i++)
+		for (int i = 0; i < GameData.NUMBER_OF_CONNECTING_PLAYERS; i++)
         {
             GUI.Box(new Rect(Screen.width * 0.5f - 200f, Screen.height * 0.3f + i * 20f, 400f, 20f),
                 "NEW PLAYER CONNECTING, PLEASE WAIT");
@@ -114,6 +113,6 @@ public class ServerManager : SingletonComponent<ServerManager> {
     }
 
     void OnDisconnectedFromServer() {
-		Application.LoadLevel(GameData.instance.gameDataAsset.LEVEL_DISCONNECTED);
+		Application.LoadLevel(GameData.LEVEL_DISCONNECTED);
     }
 }

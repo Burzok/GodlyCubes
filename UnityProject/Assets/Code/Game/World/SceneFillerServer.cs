@@ -26,16 +26,17 @@ public class SceneFillerServer : MonoBehaviour {
 	
 	private void SendSpawnOtherPlayersOnClientCommand(ref NetworkPlayer sender, ref GameObject[] players) {
 		foreach(GameObject player in players) {
-			if(player.networkView.owner != sender) { // nie ma jeszcze takiego ale w razie wu
+			if(player.networkView.owner != sender) {
 				int numberOfPlayersToSpawn = players.Length;
 				NetworkViewID playerID = player.networkView.viewID;
 				Vector3 spawnPosition = player.GetComponent<PlayerData>().respawnPosition;
-                int playerTeam = (int)player.GetComponent<PlayerData>().team;
+				int playerTeam = (int)player.GetComponent<PlayerData>().team;
+				string playerName = player.GetComponent<PlayerData>().playerName;
 
                 Vector3 playerBackColor = player.GetComponent<PlayerData>().color;
 
 				networkView.RPC("SpawnOtherPlayersOnClient", sender, 
-                    playerID, spawnPosition, playerTeam, playerBackColor,  numberOfPlayersToSpawn);
+                    playerID, spawnPosition, playerTeam, playerBackColor, playerName, numberOfPlayersToSpawn);
 			}
 		}
 	}
@@ -46,17 +47,17 @@ public class SceneFillerServer : MonoBehaviour {
 	
 	[RPC]
 	private void SpawnOtherPlayersOnClient(
-        NetworkViewID playerID, Vector3 spawnPosition, int playerTeam, Vector3 playerBackColor, int numberOfPlayersToSpawn) 
+        NetworkViewID playerID, Vector3 spawnPosition, int playerTeam, Vector3 playerBackColor, string playerName, int numberOfPlayersToSpawn) 
 	{}
 	
 	[RPC]
 	private void DecPlayersConnectingNumber() {
-		GameData.instance.gameDataAsset.NUMBER_OF_CONNECTING_PLAYERS--;
+		GameData.NUMBER_OF_CONNECTING_PLAYERS--;
 	}
 	
 	[RPC]
 	private void TurnOnPlayersNetworkViewsOnServer(NetworkMessageInfo info) {
-		if(GameData.instance.gameDataAsset.NUMBER_OF_CONNECTING_PLAYERS == 0) {
+		if(GameData.NUMBER_OF_CONNECTING_PLAYERS == 0) {
 			GameObject[] players = GameObject.FindGameObjectsWithTag(Tags.player);
 			
 			if(players.Length != 0)

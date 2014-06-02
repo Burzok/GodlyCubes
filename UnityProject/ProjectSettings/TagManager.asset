@@ -11,6 +11,7 @@ TagManager:
   - Crystal
   - CrystalSpawner
   - ObstacleSpawner
+  - ServerEntry
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   User Layer 18: Player
   User Layer 19: ProjectilesNeutral
   User Layer 20: TeamNeutral
-  User Layer 21: 
+  User Layer 21: CollapseCube
   User Layer 22: 
   User Layer 23: 
   User Layer 24: 

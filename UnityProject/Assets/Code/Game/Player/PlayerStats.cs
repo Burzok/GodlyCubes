@@ -47,7 +47,7 @@ public class PlayerStats : MonoBehaviour {
 	void Update() {
 		if(!Network.isServer && networkView.isMine)
 			progressBar.value = currentHealth/maxHealth;
-		else if(!Network.isServer) {
+		else if(!Network.isServer && Network.isClient) {
 			enemyProgressBar.value = currentHealth/maxHealth;
 		}
 	}

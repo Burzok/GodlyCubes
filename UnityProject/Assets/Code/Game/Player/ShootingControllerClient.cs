@@ -24,6 +24,9 @@ public class ShootingControllerClient : MonoBehaviour {
 	private ShootingAnimationControl shootingAnimationControl;
 
 	private TrailRenderer trail;
+
+	private AudioSource[] audioSource;
+	private AudioSource shootSound;
 	
 	static int idleState = Animator.StringToHash("Base Layer.Idle");	
 	static int basicAtackState = Animator.StringToHash("Base Layer.Basic_Atack");	
@@ -41,7 +44,9 @@ public class ShootingControllerClient : MonoBehaviour {
 		trail = transform.Find("Animator").Find("Armature").Find("Bone").Find("Bone_001").Find("Bone_L")
 			.Find("Bone_L_001").Find("Bone_L_002").GetComponent<TrailRenderer>();
 
-		
+		audioSource = GetComponents<AudioSource>();
+		shootSound = audioSource[0];
+
 		shootingAnimationControl = Idle;
 		animator.speed = animSpeed;
 	}
@@ -59,6 +64,8 @@ public class ShootingControllerClient : MonoBehaviour {
 	
 	private void BasicAtack() {
 		animator.SetBool("Atack", true);
+		if(!shootSound.isPlaying)
+			shootSound.Play();
 		trail.enabled = true;
 		animator.speed = shootSpeed;
 		shootingAnimationControl = BulletActivationControl;

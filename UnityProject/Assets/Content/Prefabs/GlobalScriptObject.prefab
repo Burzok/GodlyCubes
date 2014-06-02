@@ -12,7 +12,6 @@ GameObject:
   - 148: {fileID: 14800000}
   - 114: {fileID: 11400014}
   - 114: {fileID: 11400000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400010}
   - 114: {fileID: 11400016}
   - 114: {fileID: 11400004}
@@ -104,17 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerList: []
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d50eb3c32de51e4b8fd5a0aa418c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0737beb57e95d174ba116e47e113a3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDataAsset: {fileID: 11400000, guid: 42e39bc902f2c19409b61e066d9622e6, type: 2}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,6 +9,15 @@ public class Chat : MonoBehaviour {
 	private UITextList chatHistory;
 	private UIInput uiInput;
 
+	private Networking networking;
+	private PlayerList playerListComponent;
+
+	private void Awake() 
+	{
+		networking = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<Networking>();
+		playerListComponent = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<PlayerList>();
+	}
+
 	private void Start()
 	{
 		chatHistory = GameObject.Find("Chat Window").transform.FindChild("Chat Area").GetComponent<UITextList>();
@@ -18,9 +27,10 @@ public class Chat : MonoBehaviour {
 
 	public void SubmitInput()
 	{
-		string currentMessage = NGUIText.StripSymbols(uiInput.value);
-			
-		if (!string.IsNullOrEmpty(currentMessage))
+		if(Network.isClient)
+		{
+			string currentMessage = NGUIText.StripSymbols(uiInput.value);
+			if (!string.IsNullOrEmpty(currentMessage))
 			{
 				GetPlayerChatInfo();
 				playerName = playerName + ": ";
@@ -32,6 +42,7 @@ public class Chat : MonoBehaviour {
 				uiInput.value = "";
 				uiInput.isSelected = false;
 			}
+		}
 	}
 
 	[RPC]
@@ -49,8 +60,8 @@ public class Chat : MonoBehaviour {
 	
 	void GetPlayerChatInfo()
 	{
-		NetworkViewID id = GetComponent<Networking>().getMyPlayerID();
-		List<PlayerData> playerList = GetComponent<PlayerList>().playerList;
+		NetworkViewID id = networking.getMyPlayerID();
+		List<PlayerData> playerList = playerListComponent.playerList;
 		PlayerData player = playerList.Find(playerToFind => playerToFind.id == id);
 			
 		playerName = player.playerName;		

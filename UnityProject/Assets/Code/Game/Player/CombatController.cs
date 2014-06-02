@@ -42,11 +42,18 @@ public class CombatController : MonoBehaviour {
 		if(networkView.viewID == viewID) {
 			data.isAlive = !data.isAlive;
 			collider.enabled = !collider.enabled;
-			GetComponent<MovementBasic>().enabled = !GetComponent<MovementBasic>().enabled;
-			GetComponent<ShootingControllerClient>().enabled = !GetComponent<ShootingControllerClient>().enabled;
-			foreach(Renderer rend in playerRenderers)
-                if (rend.name != "Bullet")
-				    rend.enabled = !rend.enabled;
+			if(Network.isClient)
+			{
+				GetComponent<MovementBasic>().enabled = !GetComponent<MovementBasic>().enabled;
+				GetComponent<ShootingControllerClient>().enabled = !GetComponent<ShootingControllerClient>().enabled;
+				foreach(Renderer rend in playerRenderers) 
+				{
+					if (rend.name != "Bullet" && rend.name != "Bone_L_002")
+					{
+						rend.enabled = !rend.enabled;
+					}
+				}
+			}
 		}
 	}
 	
@@ -81,15 +88,23 @@ public class CombatController : MonoBehaviour {
 	
 	[RPC]
 	void UpdateKill(NetworkViewID viewID) {
-		List<PlayerData> playerList = gameController.GetComponent<PlayerList>().playerList;
+		List<PlayerData> playerList = gameController.GetComponent<PlayerManager>().playerDataList;
 		int id = playerList.FindIndex(player => player.id == viewID);
+		foreach (PlayerData player in playerList)
+		{
+			Debug.Log (player.id + player.playerName);
+		}
 		playerList[id].kills++;		
 	}
 	
 	[RPC]
 	void UpdateDeath(NetworkViewID viewID) {
-		List<PlayerData> playerList = gameController.GetComponent<PlayerList>().playerList;
+		List<PlayerData> playerList = gameController.GetComponent<PlayerManager>().playerDataList;
 		int id = playerList.FindIndex(player => player.id == viewID);
+		foreach (PlayerData player in playerList)
+		{
+			Debug.Log (player.id + player.playerName);
+		}
 		playerList[id].deaths++;		
 	}
 	

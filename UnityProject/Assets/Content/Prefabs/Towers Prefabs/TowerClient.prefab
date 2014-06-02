@@ -163,6 +163,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!23 &2300002
 Renderer:
   m_ObjectHideFlags: 1
@@ -181,6 +184,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -217,8 +223,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e16cd9910cacb247a36090e95a1b377, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   bullet: {fileID: 0}
   bulletPrefabClient: {fileID: 400000, guid: 8629abf722634c74a8dea372c523dfbf, type: 2}
+  spawner: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,6 +237,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca57740397998944dad414f38b472d91, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   target: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
@@ -240,6 +249,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ed75c4c245fc7a4390f96622e4999e2, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   teamSelect: 0
 --- !u!120 &12000000
 LineRenderer:
@@ -259,6 +269,9 @@ LineRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

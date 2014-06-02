@@ -16,4 +16,5 @@ public class Tags : MonoBehaviour {
 	public const string crystalSpawner = "CrystalSpawner";
 	public const string obstacle = "Obstacle";
 	public const string obstacleSpawner ="ObstacleSpawner";
+	public const string serverEntry ="ServerEntry";
 }

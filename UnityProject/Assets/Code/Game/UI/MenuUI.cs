@@ -7,21 +7,28 @@ public class MenuUI : MonoBehaviour {
 	private GameObject createServerUI;
 	private GameObject clientConnectUI;
 
-	private void Awake() {
+	private void Awake()
+	{
 		mainMenuUI = gameObject.transform.FindChild("MainMenu").gameObject;
 		createServerUI = gameObject.transform.FindChild("CreateServer").gameObject;
 		clientConnectUI = gameObject.transform.FindChild("ConnectServer").gameObject;
+	}
 
+	private void Start()
+	{
 		createServerUI.SetActive(false);
 		clientConnectUI.SetActive(false);
+
 	}
-	
-	public void CreateServer() {
+
+	public void CreateServer()
+	{
 		createServerUI.SetActive(true);
 		mainMenuUI.SetActive(false);
 	}
 
-	public void ConnectServer() {
+	public void ConnectServer()
+	{
 		clientConnectUI.SetActive(true);
 		mainMenuUI.SetActive(false);
 	}

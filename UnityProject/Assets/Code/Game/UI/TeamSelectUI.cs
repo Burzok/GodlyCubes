@@ -3,39 +3,44 @@ using System.Collections;
 
 public class TeamSelectUI : MonoBehaviour {
    
-    private Networking networking;
-	
-    private ClientGameUI clientGameUI;
+    private Networking networking;	
 
-    void Start() {
-        networking = GetComponent<Networking>();
-        clientGameUI = GetComponent<ClientGameUI>();
+	[SerializeField]
+	private GameObject healthBar;
+	[SerializeField]
+	private GameObject teamSelect;
+	[SerializeField]
+	private GameObject gameHUD;		
+
+    private void Awake()
+	{
+        networking = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<Networking>();
     }
 
-	private void DrawTeamSelect()
-    {
-        if (GUI.Button(new Rect(Screen.width * 0.5f - 120f, 20f, 100f, 50f), "Team A")) {
-            networking.ConnectToGame(Team.TEAM_A);
-			GameData.instance.gameDataAsset.DRAW_CHAT = true;
-            GameData.instance.gameDataAsset.DRAW_STATS = true;
-			GameData.instance.gameDataAsset.DRAW_MINIMAP = true;
-			clientGameUI.SetClientGameState();
-        }
+	private void Start() 
+	{
+		healthBar.SetActive(false);
+		gameHUD.SetActive(false);
+	}
 
-        if (GUI.Button(new Rect(Screen.width * 0.5f + 20f, 20f, 100f, 50f), "Team B")) {
-            networking.ConnectToGame(Team.TEAM_B);
-            clientGameUI.SetClientGameState();
-			GameData.instance.gameDataAsset.DRAW_CHAT = true;
-			GameData.instance.gameDataAsset.DRAW_STATS = true;
-			GameData.instance.gameDataAsset.DRAW_MINIMAP = true;
-			clientGameUI.SetClientGameState();
-        }
+	public void SelectRedTeam()
+    {    
+    	networking.ConnectToGame(Team.TEAM_A);
+		healthBar.SetActive(true);
+		gameHUD.SetActive(true);
+		teamSelect.SetActive(false);
+	}
 
-        if (GUI.Button(new Rect(Screen.width * 0.5f - 50f, Screen.height - 70f, 100f, 50f), "Disconnect")) {
-            Network.Disconnect();
-        }
-    }
+	public void SelectBlueTeam()
+	{
+		networking.ConnectToGame(Team.TEAM_B);
+		healthBar.SetActive(true);
+		gameHUD.SetActive(true);
+		teamSelect.SetActive(false);
+	}
 
-    public void SetTeamSelectState() {
+    public void Disconnect()
+	{
+		Network.Disconnect();
     }
 }
